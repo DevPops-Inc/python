@@ -3,7 +3,7 @@
 # title case your title
 
 # declare variables
-title = str(input("type the title: "))
+title = str(input("type the title: (Example: foobar)"))
 
 # capitalize title
 x = title.title()

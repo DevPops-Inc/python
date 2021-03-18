@@ -3,7 +3,7 @@
 # capitalize title
 
 # declare variables
-title= # Example: "foobar"
+title=str(input("What is your title? (Example: foobar)"))
 
 # capitalize title
 title.capitalize()
