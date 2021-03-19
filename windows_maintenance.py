@@ -5,18 +5,16 @@
 # import OS module 
 import os 
 
-# define maintenance and restart lists
+# define maintenance list
 maintenance = ['echo y | chkdsk /f/r c:', 'SFC /scannow', 'Dism /Online /Cleanup-Image /ScanHealth', 'defrag c: /u']
-restart = ['pause', 'shutdown /r /t 0']
 
 # define maintenance for loop
 for job in maintenance: 
     os.system(job)
 
-# print message to user
-print("Please save your work and close applications.")
+# print message to user and wait for user input
+str(input("Please save your work and close applications. Press any key to restart Windows"))
 
-# define restart for loop
-for job in restart: 
-    os.system(job)
+# restart Windows
+os.system('shutdown /r /t 0')
     
