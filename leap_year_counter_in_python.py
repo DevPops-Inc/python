@@ -1,6 +1,6 @@
 #!/bin/python
 
-# display number of leap years between two years
+# leap year counter
 
 # import calendar module
 import calendar
@@ -12,4 +12,5 @@ year1=int(input("Enter the first year: "))
 year2=int(input("Enter the sceond year: "))
 leap=calendar.leapdays(year1, year2)
 
+# print number of leap years
 print("Number of leap years between", year1, "and", year2, "is", leap)
