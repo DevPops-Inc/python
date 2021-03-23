@@ -9,7 +9,7 @@ import os
 os.system('echo y | chkdsk /f/r c:')
 
 # print message to user and wait for user input
-str(input("Please save your documents and close applications. Press any key to restart Window."))
+str(input("Please save your documents and close applications.\nPress any key to restart Windows.\n"))
 
 # restart Windows 
 os.system('shutdown /r /t 0')
