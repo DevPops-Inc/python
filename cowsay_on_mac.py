@@ -2,7 +2,7 @@
 
 # cowsay on Mac
 
-# impossible OS module 
+# import OS module 
 import os
 
 # declare cowMessgae and cmd variables 
