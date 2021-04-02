@@ -6,7 +6,7 @@
 import os 
 
 # prompt user input 
-str(input("Windows maintenance.\nPress any key to continue.\n"))
+str(input("Windows maintenance.\nPress any key to continue or press Ctrl and C keys to quit.\n"))
 
 # define maintenance list and for loop 
 maintenance = ['echo y | chkdsk /f/r c:', 'SFC /scannow', 'Dism /Online /Cleanup-Image /ScanHealth', 'defrag c: /u']
