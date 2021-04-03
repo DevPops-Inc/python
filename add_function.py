@@ -2,6 +2,9 @@
 
 # add function
 
+# prompt user input 
+str(input("Let's add in Python!\nPress any key to continue or press Ctrl and C keys to quit.\n"))
+
 # declare variables 
 a = int(input("Let's add in Python!\nType first number:\n "))
 b = int(input("Type second number:\n "))
