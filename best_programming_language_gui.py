@@ -5,6 +5,9 @@
 # import tkinter module 
 from tkinter import * 
 
+# prompt user input
+str(input("Best programming language GUI.\nPress any key to continue or press Ctrl and C keys to quit.\n"))
+
 # declare variables
 root = Tk()
 v = IntVar()
