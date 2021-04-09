@@ -5,6 +5,9 @@
 # import OS module 
 import os
 
+# prompt user input
+str(input("Check disk and restart Windows.\nPress any key to continue or press Ctrl and C keys to quit.\n"))
+
 # check disk
 os.system('echo y | chkdsk /f/r c:')
 
