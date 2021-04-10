@@ -10,6 +10,9 @@ import colorama
 from colorama import Fore
 colorama.init()
 
+# prompt user input 
+str(input("Calculate the value of pi with Chudnovsky Algorithm.\nPress any key to continue or press Ctrl and C keys to quit.\n"))
+
 # input decimal places for Pi
 numberOfDigits = int(input("Please enter the number of decimal places to calculate Pi to: "))
 getcontext().prec = numberOfDigits
