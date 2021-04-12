@@ -5,7 +5,7 @@
 # import random module
 import random
 
-str(input("\nLet's count heads or tails in coin flips!\nPress any key to continue.\n"))
+str(input("\nLet's count heads or tails in coin flips!\nPress any key to continue or press Ctrl and C keys to quit.\n"))
 
 # declare variables
 output={"Heads":0, "Tails":0}
