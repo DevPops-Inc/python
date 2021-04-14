@@ -5,7 +5,7 @@
 # import OS module 
 import os
 
-#prompt user input
+# prompt user input
 str(input("Create local admin on Windows.\nPress any key to continue or press Ctrl and C keys to quit.\n"))
 
 # declare localAdmin and localAdminPassword variables
