@@ -6,7 +6,7 @@
 import os
 
 # prompt user input 
-str(input("Cowsay on Mac.\nPress any key to continue or press Ctrl and C keys to quit.\n"))
+str(input("Cowsay on Mac.\nPress any key to continue or press control and C keys to quit.\n"))
 
 # declare cowMessgae and cmd variables 
 cowMessage = str(input("What would you like the cow to say?\n"))
