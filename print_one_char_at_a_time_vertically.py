@@ -5,15 +5,18 @@
 # import module
 import time
 
-# declare variable 
-string = 'This has been the best week in a long time!'
+# prompt user input
+str(input("\nPrint one char at a time vertically.\nPress any key to continue or press Ctrl and C keys to quit.\n"))
+
+# declare verticalString variable 
+verticialString = str(input("\nWhat would you like to print vertically?\n"))
 
 # define function
-def delay_print(string):
+def delayPrint(verticialString):
     # define for loop
-    for char in string: 
-        print(char)
+    for char in verticialString: 
+        print("\n", char)
         time.sleep(.25)
     
-# call function and pass in string
-delay_print(string)
+# call function and pass in verticialString
+delayPrint(verticialString)
