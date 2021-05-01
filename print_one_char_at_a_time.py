@@ -2,19 +2,21 @@
 
 # print char at a time
 
-# import modules 
-import time
-import sys
+# import time and sys modules 
+import time, sys
 
-# declare variable 
-string = "This has been best week in a long time!\n"
+# prompt user input
+str(input("\nPrint char at a time.\nPress any key to continue or press Ctrl and C keys to quit.\n"))
+
+# declare inputString variable 
+inputString = str(input("What would you like to print one char at a time?\n"))
 
 # define function
-def delay_print(string):
-    for char in string: 
+def delayPrint(inputString):
+    for char in inputString: 
         sys.stdout.write(char)
         sys.stdout.flush()
         time.sleep(0.25)
 
-# call function and pass in string
-delay_print(string)
+# call function and pass in inputString
+delayPrint(inputString)
