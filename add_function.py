@@ -2,18 +2,43 @@
 
 # add function
 
-# prompt user input 
-str(input("Let's add in Python!\nPress any key to continue or press Ctrl and C keys to quit.\n"))
+import colorama, os, sys, time, traceback
+from colorama import Fore, Style 
+from datetime import datetime
+colorama.init()
 
-# declare variables 
-a = int(input("Let's add in Python!\nType first number:\n "))
-b = int(input("Type second number:\n "))
+def addFuction():
+    print("\nLet's add in Python!\n")
 
-# define add function 
-def add(a, b):
-    result = a + b
-    return result
+    if sys.platform == "Windows":
+        print(Fore.GREEN + "Operating System: Windows" + Style.RESET_ALL)
+        a = int(input("Type first number and press \"Enter\" key (Example: 2): "))
+        b = int(input("Type second number and press \"Enter\" key (Example: 2): "))
+    elif sys.platform == "darwin":
+        print(Fore.GREEN + "Operating System: macOS" + Style.RESET_ALL)
+        a = int(input("Type first number and press \"return\" key (Example: 2): "))
+        b = int(input("Type second number and press \"return\" key (Example: 2): "))
+    elif sys.platform == "Linux":
+        print(Fore.GREEN + "Operating System: Linux" + Style.RESET_ALL)
+        a = int(input("Type first number and press \"return\" key (Example: 2): "))
+        b = int(input("Type second number and press \"return\" key (Example: 2): "))
+    
+    try: 
+        print("\nStarted adding at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        start=time.clock()
 
-# print result
-print("The result is: ") 
-print(add(a, b))
+        result = a + b 
+        print(Fore.YELLOW + "The result is:", result)
+        
+        print(Fore.GREEN + "\nSuccessfully added in Python" + Style.RESET_ALL)
+        print("Finished adding at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        
+        print("Total execution time: {0} second(s)".format(time.clock() - start))
+
+    except Exception as e: 
+        print(Fore.RED + "Failed to add in Python.")
+        print(e)
+        print(traceback.print_stack)
+        print(Style.RESET_ALL)
+        
+addFuction()
