@@ -25,15 +25,17 @@ def addFuction():
     
     try: 
         print("\nStarted adding at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
-        start=time.clock()
+        start=time.process_time()
 
         result = a + b 
         print(Fore.YELLOW + "The result is:", result)
         
-        print(Fore.GREEN + "\nSuccessfully added in Python" + Style.RESET_ALL)
+        print(Fore.GREEN + "Successfully added in Python" + Style.RESET_ALL)
         print("Finished adding at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         
-        print("Total execution time: {0} second(s)".format(time.clock() - start))
+        print("Total execution time: {0} second(s)".format(round(time.process_time() - start)))
+
+        print("")
 
     except Exception as e: 
         print(Fore.RED + "Failed to add in Python.")
