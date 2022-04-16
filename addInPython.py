@@ -4,7 +4,6 @@
 
 # you can run this script with: python3 add_function.py < first number > < second number >
 
-from platform import mac_ver
 import colorama, os, sys, time, traceback
 from colorama import Fore, Style 
 from datetime import datetime
@@ -28,7 +27,6 @@ def checkOs():
     print("")
     return os
     
-
 def getFirstNumber(os):
     if os == "Windows":
         firstNumber = int(input("Type first number and press \"Enter\" key (Example: 2): "))
