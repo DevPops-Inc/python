@@ -97,7 +97,7 @@ def addFunction():
         print("Started adding at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         
         result = firstNumber + secondNumber
-        print("{0} + {1} = ".format(firstNumber, secondNumber) + Fore.YELLOW + "{0}".format(result))
+        print(Fore.YELLOW + "{0} + {1} = {2}".format(firstNumber, secondNumber, result))
         
         print(Fore.GREEN + "Successfully added in Python" + Style.RESET_ALL)
         print("Finished adding at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
