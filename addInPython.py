@@ -61,20 +61,20 @@ def checkParameters(firstNumber, secondNumber):
     print("-----------------")
 
     if firstNumber == None:
-        print(Fore.RED + "firstNumber is not set.")
+        print(Fore.RED + "firstNumber is not set." + Style.RESET_ALL)
         valid = "false"
 
     if secondNumber == None:
-        print(Fore.RED + "secondNumber is not set.")
+        print(Fore.RED + "secondNumber is not set." + Style.RESET_ALL)
         valid = "false"
 
     if valid == "true":
-        print(Fore.GREEN + "All parameter checks passed.")
+        print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         print("")
     else:
-        print(Fore.RED + "One or more parameter checks are incorrect.")
+        print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         print("")        
@@ -97,7 +97,7 @@ def addFunction():
         print("Started adding at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         
         result = firstNumber + secondNumber
-        print(Fore.YELLOW + "The result is:", result)
+        print("{0} + {1} = ".format(firstNumber, secondNumber) + Fore.YELLOW + "{0}".format(result))
         
         print(Fore.GREEN + "Successfully added in Python" + Style.RESET_ALL)
         print("Finished adding at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -111,5 +111,6 @@ def addFunction():
         print(e)
         print(traceback.print_stack)
         print(Style.RESET_ALL)
+        print("")
         
 addFunction()
