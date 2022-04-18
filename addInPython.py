@@ -103,7 +103,7 @@ def addFunction():
         print(Fore.GREEN + "Successfully added in Python" + Style.RESET_ALL)
 
         finished = datetime.now()
-        print("Finished adding at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished adding at", finished.strftime("%Y-%m-%d %H:%M %p"))
         
         duration = finished - start
         print("Total execution time: {0} second(s)".format(duration.seconds))
