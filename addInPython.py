@@ -4,7 +4,7 @@
 
 # you can run this script with: python3 add_function.py < first number > < second number >
 
-import colorama, os, sys, time, traceback
+import colorama, sys, traceback
 from colorama import Fore, Style 
 from datetime import datetime
 colorama.init()
@@ -93,19 +93,22 @@ def addFunction():
     checkParameters(firstNumber, secondNumber)
 
     try: 
-        start=time.process_time()
+        start=datetime.now()
         print("Started adding at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         
         result = firstNumber + secondNumber
+        
         print(Fore.YELLOW + "{0} + {1} = {2}".format(firstNumber, secondNumber, result))
         
         print(Fore.GREEN + "Successfully added in Python" + Style.RESET_ALL)
+
+        finished = datetime.now()
         print("Finished adding at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         
-        print("Total execution time: {0} second(s)".format(round(time.process_time() - start)))
+        duration = finished - start
+        print("Total execution time: {0} second(s)".format(duration.seconds))
 
         print("")
-
     except Exception as e: 
         print(Fore.RED + "Failed to add in Python.")
         print(e)
