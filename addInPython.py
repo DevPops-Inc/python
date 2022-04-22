@@ -55,10 +55,10 @@ def checkParameters(firstNumber, secondNumber):
     valid = "true"
 
     print("Parameters:")
-    print("-----------------")
+    print("---------------------------------------")
     print("firstNumber : {0}".format(firstNumber))
     print("secondNumber: {0}".format(secondNumber))
-    print("-----------------")
+    print("---------------------------------------")
 
     if firstNumber == None:
         print(Fore.RED + "firstNumber is not set." + Style.RESET_ALL)
@@ -84,17 +84,17 @@ def addFunction():
     os = checkOs()
 
     if len(sys.argv) > 2: 
-        firstNumber = int(sys.argv[1]) 
+        firstNumber  = int(sys.argv[1]) 
         secondNumber = int(sys.argv[2])
     else: 
-        firstNumber = getFirstNumber(os)
+        firstNumber  = getFirstNumber(os)
         secondNumber = getSecondNumber(os)
         
     checkParameters(firstNumber, secondNumber)
 
     try: 
         start=datetime.now()
-        print("Started adding at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Started adding at", start.strftime("%Y-%m-%d %H:%M %p"))
         
         result = firstNumber + secondNumber
         
@@ -107,13 +107,11 @@ def addFunction():
         
         duration = finished - start
         print("Total execution time: {0} second(s)".format(duration.seconds))
-
         print("")
     except Exception as e: 
         print(Fore.RED + "Failed to add in Python.")
         print(e)
         print(traceback.print_stack)
-        print(Style.RESET_ALL)
-        print("")
+        print("" + Style.RESET_ALL)
         
 addFunction()
