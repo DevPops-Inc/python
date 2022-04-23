@@ -4,7 +4,7 @@
 
 # you can run this script with: python3 add_function.py < first number > < second number >
 
-import colorama, sys, traceback
+import colorama, os, sys, traceback
 from colorama import Fore, Style 
 from datetime import datetime
 colorama.init()
@@ -14,36 +14,38 @@ def checkOs():
 
     if sys.platform == "Windows":
         print(Fore.GREEN + "Operating System: Windows" + Style.RESET_ALL)
-        os = "Windows"
+        operatingSystem = "Windows"
     elif sys.platform == "darwin": 
-        print(Fore.GREEN + "Operating System: macOS" + Style.RESET_ALL)
-        os = "macOS"
+        print(Fore.GREEN + "Operating System: ")
+        print(os.system('sw_vers'))
+        print(Style.RESET_ALL)
+        operatingSystem = "macOS"
     else: 
         print(Fore.GREEN + "Operating System: Linux" + Style.RESET_ALL)
-        os = "Linux"
+        operatingSystem = "Linux"
     
     print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     print("")
-    return os
+    return operatingSystem
     
-def getFirstNumber(os):
-    if os == "Windows":
+def getFirstNumber(operatingSystem):
+    if operatingSystem == "Windows":
         firstNumber = int(input("Type first number and press \"Enter\" key (Example: 2): "))
 
         print("")
-    elif os == "macOS" or os == "Linux": 
+    elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         firstNumber = int(input("Type first number and press \"return\" key (Example: 2): "))
 
         print("")
     return firstNumber
 
-def getSecondNumber(os):
-    if os == "Windows":
+def getSecondNumber(operatingSystem):
+    if operatingSystem == "Windows":
         secondNumber = int(input("Type second number and press \"Enter\" key (Example: 2): "))
 
         print("")
-    elif os == "macOS" or os == "Linux": 
+    elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         secondNumber = int(input("Type second number and press \"return\" key (Example: 2): "))
 
         print("")
@@ -77,18 +79,18 @@ def checkParameters(firstNumber, secondNumber):
         print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
-        print("")        
+        exit("")        
 
 def addFunction():
     print("\nLet's add in Python!\n")
-    os = checkOs()
+    operatingSystem = checkOs()
 
     if len(sys.argv) > 2: 
         firstNumber  = int(sys.argv[1]) 
         secondNumber = int(sys.argv[2])
     else: 
-        firstNumber  = getFirstNumber(os)
-        secondNumber = getSecondNumber(os)
+        firstNumber  = getFirstNumber(operatingSystem)
+        secondNumber = getSecondNumber(operatingSystem)
         
     checkParameters(firstNumber, secondNumber)
 
@@ -112,6 +114,6 @@ def addFunction():
         print(Fore.RED + "Failed to add in Python.")
         print(e)
         print(traceback.print_stack)
-        print("" + Style.RESET_ALL)
+        exit("" + Style.RESET_ALL)
         
 addFunction()
