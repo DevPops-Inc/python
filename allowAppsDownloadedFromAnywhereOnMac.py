@@ -11,7 +11,7 @@ def checkOsForMac():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "darwin":
-        print("Operating System: " + Fore.GREEN)
+        print(Fore.GREEN + "Operating System: ")
         print(os.system('sw_vers'))
 
         print(Style.RESET_ALL + "Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -63,7 +63,7 @@ def allowAppsDownloadedFromAnywhere():
 
         duration = finished - start
         print("Total execution time: {0} second(s)".format(duration.seconds))
-
+        print("")
     except Exception as e: 
         print(Fore.RED + "Failed to allow apps downloaded from anywhere.")
         print(e)
