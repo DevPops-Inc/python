@@ -19,17 +19,18 @@ def checkOsForMac():
         print("")
     else:
         print(Fore.RED + "Sorry but this script only runs on Mac.")
+
         print(Style.RESET_ALL + "Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         
-        print("")
-        sys.exit()
+        exit("")
+
 
 def allowAppsDownloadedFromAnywhere():
     print("\nAllow apps downloaded from anywhere on Mac.\n")
     checkOsForMac()
 
     try:
-        start=datetime.now()
+        start = datetime.now()
         
         print("Started allowing apps downloaded from anywhere at", start.strftime("%Y-%m-%d %H:%M %p")) 
         
@@ -57,7 +58,7 @@ def allowAppsDownloadedFromAnywhere():
 
         print(Fore.GREEN + "Successfully allowed apps downloaded from anywhere." + Style.RESET_ALL)
 
-        finished=datetime.now()
+        finished = datetime.now()
         
         print("Finished allowing apps downloaded from anywhere at", finished.strftime("%Y-%m-%d %H:%M %p"))
 
@@ -68,6 +69,7 @@ def allowAppsDownloadedFromAnywhere():
         print(Fore.RED + "Failed to allow apps downloaded from anywhere.")
         print(e)
         print(traceback.print_stack())
-        print("" + Style.RESET_ALL)
+        print(Style.RESET_ALL)
+        exit("")
 
 allowAppsDownloadedFromAnywhere()
