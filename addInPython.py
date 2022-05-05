@@ -2,7 +2,7 @@
 
 # add in Python
 
-# you can run this script with: python3 add_function.py < first number > < second number >
+# you can run this script with: python3 addInPython.py < first number > < second number >
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
@@ -13,7 +13,7 @@ def checkOs():
     print("Started checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "win32":
-        print(Fore.GREEN + "Operating System: Windows")
+        print(Fore.GREEN + "Operating System: ")
         print(os.system('ver'))
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
@@ -99,7 +99,7 @@ def addFunction():
     checkParameters(firstNumber, secondNumber)
 
     try: 
-        startDateTime=datetime.now()
+        startDateTime = datetime.now()
         print("Started adding at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
         
         result = firstNumber + secondNumber
