@@ -19,7 +19,7 @@ def checkOsForWindows():
         
         print("")
     else:
-        print(Fore.RED + "Sorry this script only works on Windows." + Style.RESET_ALL)
+        print(Fore.RED + "Sorry this script only runs on Windows." + Style.RESET_ALL)
     
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         
