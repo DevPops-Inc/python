@@ -40,7 +40,7 @@ check_pip() {
     fi
 }
 
-check_pygame() {
+check_pygame_module() {
     echo "Started checking pygame module at $(date)"
 
     pip list | grep pygame
@@ -59,33 +59,12 @@ check_pygame() {
     fi
 }
 
-check_python3() {
-    echo "Started checking Python 3 at $(date)"
-
-    which -s python3
-    if [[ $? == 0 ]]; then 
-        tput setaf 2; echo "Python 3 is installed."; tput sgr0
-        python3 --version 
-
-        echo "Finished checking Python 3 at $(date)"
-        echo ""
-    else 
-        tput setaf 1; echo "Python 3 is not installed."; tput sgr0
-
-        echo "Finished checking Python 3 at $(date)"
-        echo ""
-
-        exit 1
-    fi
-}
-
-install_pygame_with_pip() {
+install_pygame_module_with_pip() {
     printf "\nInstall pygame module with PIP on Mac.\n\n"
 
     check_os_for_mac
     check_pip
-    check_pygame
-    check_python3
+    check_pygame_module
 
     start=$(date +%s)
     echo "Started installing pygame module at $(date)"
@@ -102,4 +81,4 @@ install_pygame_with_pip() {
     echo ""
 }
 
-install_pygame_with_pip
+install_pygame_module_with_pip
