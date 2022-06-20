@@ -10,7 +10,7 @@ from datetime import datetime
 colorama.init()
 
 def checkOs():
-    print("Started checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "win32":
         print(Fore.GREEN + "Operating System: ")
@@ -28,7 +28,7 @@ def checkOs():
         print(Style.RESET_ALL)
         operatingSystem = "Linux"
     
-    print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     print("")
     return operatingSystem
