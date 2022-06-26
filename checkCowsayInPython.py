@@ -41,34 +41,56 @@ def checkCowsay():
         FNULL = open(os.devnull,'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-            
+
             checkCowsayOnMacOrLinux = subprocess.call(['which', 'cowsay'], stdout=FNULL)
 
+            if checkCowsayOnMacOrLinux == 0:
+                os.system('cowsay "Cowsay is installed"')
+                print(Fore.GREEN + "Successfully checked cowsay." + Style.RESET_ALL)
+
+                finishedDateTime = datetime.now()
+
+                print("Finished checking Cowsay at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+
+                duration = finishedDateTime - startDateTime
+                print("Total execution time: {0} second(s)".format(duration.seconds))
+                print("")
+            else: 
+                print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
+                
+                finishedDateTime = datetime.now()
+
+                print("Finished checking Cowsay at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+
+                duration = finishedDateTime - startDateTime
+                print("Total execution time: {0} second(s)".format(duration.seconds))
+                exit("")
+
         elif operatingSystem == "Windows": 
-
-            checkCowsayOnWindows = subprocess.call(['where', 'cowsay'], stdout=FNULL) 
-
-        if checkCowsayOnMacOrLinux == 0 or checkCowsayOnWindows == 0: 
-            os.system('cowsay "Cowsay is installed"')
-            print(Fore.GREEN + "Successfully checked cowsay." + Style.RESET_ALL)
-
-            finishedDateTime = datetime.now()
-
-            print("Finished checking Cowsay at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
-
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            print("")
-        else: 
-            print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
             
-            finishedDateTime = datetime.now()
+            checkCowsayOnWindows = subprocess.call(['where', 'cowsay'], stdout=FNULL) 
+            
+            if checkCowsayOnWindows == 0:
+                os.system('cowsay "Cowsay is installed"')
+                print(Fore.GREEN + "Successfully checked cowsay." + Style.RESET_ALL)
 
-            print("Finished checking Cowsay at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                finishedDateTime = datetime.now()
 
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            exit("")
+                print("Finished checking Cowsay at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+
+                duration = finishedDateTime - startDateTime
+                print("Total execution time: {0} second(s)".format(duration.seconds))
+                print("")
+            else: 
+                print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
+                
+                finishedDateTime = datetime.now()
+
+                print("Finished checking Cowsay at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+
+                duration = finishedDateTime - startDateTime
+                print("Total execution time: {0} second(s)".format(duration.seconds))
+                exit("")
     except Exception as e: 
         print(Fore.RED + "Failed to check Cowsay in Python.")
         print(e)
