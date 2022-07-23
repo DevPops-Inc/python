@@ -1,6 +1,6 @@
 #!/bin/python
 
-# check Terraform in Python 
+# check Ansible in Python 
 
 import colorama, os, sys, subprocess, traceback
 from colorama import Fore, Style
@@ -31,39 +31,39 @@ def checkOs():
     print("")
     return operatingSystem
 
-def checkTerraform(): 
-    print("\nCheck Terraform in Python.\n")
+def checkAnsible(): 
+    print("\nCheck Ansible in Python.\n")
     operatingSystem = checkOs()
 
     try:
         startDateTime = datetime.now()
         
-        print("Started checking Terraform at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started checking Ansible at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
         FNULL = open(os.devnull,'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
 
-            checkTerraformOnMacOrLinux = subprocess.call(['which', 'terraform'], stdout=FNULL) 
+            checkAnsibleOnMacOrLinux = subprocess.call(['which', 'ansible'], stdout=FNULL) 
 
-            if checkTerraformOnMacOrLinux == 0:
-                print(Fore.GREEN + "Terraform is installed."+ Style.RESET_ALL)
-                os.system('terraform --version')
-                print(Fore.GREEN + "Successfully checked Terraform." + Style.RESET_ALL)
+            if checkAnsibleOnMacOrLinux == 0:
+                print(Fore.GREEN + "Ansible is installed."+ Style.RESET_ALL)
+                os.system('ansible --version')
+                print(Fore.GREEN + "Successfully checked Ansible." + Style.RESET_ALL)
 
                 finishedDateTime = datetime.now()
 
-                print("Finished checking Terraform at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                print("Finished checking Ansible at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
                 print("")
             else: 
-                print(Fore.RED + "Terraform is not installed." + Style.RESET_ALL)
+                print(Fore.RED + "Ansible is not installed." + Style.RESET_ALL)
                 
                 finishedDateTime = datetime.now()
 
-                print("Finished checking Terraform at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                print("Finished checking Ansible at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -71,34 +71,34 @@ def checkTerraform():
 
         elif operatingSystem == "Windows": 
             
-            checkTerraformOnWindows = subprocess.call(['where', 'terraform'], stdout=FNULL)
+            checkAnsibleOnWindows = subprocess.call(['where', 'ansible'], stdout=FNULL)
 
-            if checkTerraformOnWindows == 0:
-                print(Fore.GREEN + "Terraform is installed."+ Style.RESET_ALL)
-                os.system('terraform --version')
-                print(Fore.GREEN + "Successfully checked Terraform." + Style.RESET_ALL)
+            if checkAnsibleOnWindows == 0:
+                print(Fore.GREEN + "Ansible is installed."+ Style.RESET_ALL)
+                os.system('ansible --version')
+                print(Fore.GREEN + "Successfully checked Ansible." + Style.RESET_ALL)
 
                 finishedDateTime = datetime.now()
 
-                print("Finished checking Terraform at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                print("Finished checking Ansible at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
                 print("")
             else: 
-                print(Fore.RED + "Terraform is not installed." + Style.RESET_ALL)
+                print(Fore.RED + "Ansible is not installed." + Style.RESET_ALL)
                 
                 finishedDateTime = datetime.now()
 
-                print("Finished checking Terraform at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                print("Finished checking Ansible at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
                 exit("")
     except Exception as e: 
-        print(Fore.RED + "Failed to check Terraform in Python.")
+        print(Fore.RED + "Failed to check Ansible in Python.")
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
 
-checkTerraform()
+checkAnsible()
