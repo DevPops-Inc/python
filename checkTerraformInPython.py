@@ -49,7 +49,7 @@ def checkTerraform():
             if checkTerraformOnMacOrLinux == 0:
                 print(Fore.GREEN + "Terraform is installed."+ Style.RESET_ALL)
                 os.system('terraform --version')
-                print(Fore.GREEN + "Successfully checked terraform." + Style.RESET_ALL)
+                print(Fore.GREEN + "Successfully checked Terraform." + Style.RESET_ALL)
 
                 finishedDateTime = datetime.now()
 
@@ -76,7 +76,7 @@ def checkTerraform():
             if checkTerraformOnWindows == 0:
                 print(Fore.GREEN + "Terraform is installed."+ Style.RESET_ALL)
                 os.system('terraform --version')
-                print(Fore.GREEN + "Successfully checked terraform." + Style.RESET_ALL)
+                print(Fore.GREEN + "Successfully checked Terraform." + Style.RESET_ALL)
 
                 finishedDateTime = datetime.now()
 
