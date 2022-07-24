@@ -89,7 +89,7 @@ def countCharacters():
         print("Started counting characters at", startDateTime.strftime("%Y-%M-%d %H:%M %p"))
 
         characterCount = len(inputString)
-        print(Fore.YELLOW + "The string has {0} characters.".format(characterCount))
+        print(Fore.BLUE + "The string has {0} characters.".format(characterCount))
         
         print(Fore.GREEN + "Successfully counted characters in input string." + Style.RESET_ALL)
 

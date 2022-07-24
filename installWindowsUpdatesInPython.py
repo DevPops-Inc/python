@@ -36,7 +36,7 @@ def installWindowsUpdates():
         
         print("Started installing Windows updates at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
-        print(Fore.YELLOW + "Please save your work and close your applications since the computer will restart after updates are installed.")
+        print(Fore.BLUE + "Please save your work and close your applications since the computer will restart after updates are installed.")
         
         windowsUpates = ['Powershell "Install-Module PSWindowsUpdate -Force"', 'PowerShell "Get-WindowsUpdate -AcceptAll -Install -AutoReboot"'] 
 

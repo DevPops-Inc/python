@@ -108,7 +108,7 @@ def calculateTotalProfit():
         
         totalProfit = totalSale * (profitMargin/100)
         
-        print(Fore.YELLOW + "Total profit from total sale of ${0} with {1}% profit margin is ${2}".format(totalSale, profitMargin, totalProfit) + Style.RESET_ALL)
+        print(Fore.BLUE + "Total profit from total sale of ${0} with {1}% profit margin is ${2}".format(totalSale, profitMargin, totalProfit) + Style.RESET_ALL)
 
         print(Fore.GREEN + "Successfully calculated total profit." + Style.RESET_ALL)
 

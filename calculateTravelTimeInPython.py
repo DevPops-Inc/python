@@ -101,7 +101,7 @@ def calculateTravelTime():
         
         print("Started calculating travel time at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
-        print(Fore.YELLOW + "Travel time: {0} hours ".format(distance / rate))
+        print(Fore.BLUE + "Travel time: {0} hours ".format(distance / rate))
         print(Fore.GREEN + "Successfully calcuated travel time." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()

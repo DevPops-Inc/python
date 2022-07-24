@@ -93,7 +93,7 @@ def countHeadsOrTailsInCoinFlips():
             output[random.choice(coin)]+=1
 
         print("The results of the coin flips are:")
-        print(Fore.YELLOW)
+        print(Fore.BLUE)
         print("Heads:", output["Heads"])
         print("Tails:", output["Tails"])
         print(Style.RESET_ALL)
