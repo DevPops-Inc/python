@@ -104,7 +104,7 @@ def addFunction():
         
         result = firstNumber + secondNumber
         
-        print(Fore.YELLOW + "{0} + {1} = {2}".format(firstNumber, secondNumber, result))
+        print(Fore.BLUE + "{0} + {1} = {2}".format(firstNumber, secondNumber, result))
         
         print(Fore.GREEN + "Successfully added in Python" + Style.RESET_ALL)
 
