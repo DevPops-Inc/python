@@ -24,15 +24,14 @@ def checkOsForMac():
         
         exit("")
 
-
 def allowAppsDownloadedFromAnywhere():
     print("\nAllow apps downloaded from anywhere on Mac.\n")
     checkOsForMac()
 
     try:
-        start = datetime.now()
+        startDateTime = datetime.now()
         
-        print("Started allowing apps downloaded from anywhere at", start.strftime("%Y-%m-%d %H:%M %p")) 
+        print("Started allowing apps downloaded from anywhere at", startDateTime.strftime("%Y-%m-%d %H:%M %p")) 
         
         os.system('sudo spctl --master-disable')
 
@@ -58,13 +57,14 @@ def allowAppsDownloadedFromAnywhere():
 
         print(Fore.GREEN + "Successfully allowed apps downloaded from anywhere." + Style.RESET_ALL)
 
-        finished = datetime.now()
+        finishedDateTime = datetime.now()
         
-        print("Finished allowing apps downloaded from anywhere at", finished.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished allowing apps downloaded from anywhere at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
-        duration = finished - start
+        duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
+
     except Exception as e: 
         print(Fore.RED + "Failed to allow apps downloaded from anywhere.")
         print(e)

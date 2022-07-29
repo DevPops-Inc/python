@@ -17,11 +17,13 @@ def checkOs():
         print(os.system('ver'))
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
+
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('sw_vers'))
         print(Style.RESET_ALL)
         operatingSystem = "macOS"
+
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('uname -r'))
@@ -38,10 +40,12 @@ def getTotalSale(operatingSystem):
         totalSale = float(input("Please type the total sale amount and press \"Enter\" key (Example: 100): "))
 
         print("")
+
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         totalSale = float(input("Please type the total sale amount and press \"return\" key (Example: 100): "))
 
         print("")
+
     return totalSale
 
 
@@ -50,10 +54,12 @@ def getProfitMargin(operatingSystem):
         profitMargin = float(input("Please type the profit margin and press \"Enter\" key (Example: 20): "))
 
         print("")
+
     if operatingSystem == "macOS" or operatingSystem == "Linux": 
         profitMargin = float(input("Please type the profit margin and press \"Enter\" key (Example: 20): "))
 
         print("")
+
     return profitMargin
         
 def checkParameters(totalSale, profitMargin): 
@@ -81,6 +87,7 @@ def checkParameters(totalSale, profitMargin):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else: 
         print(Fore.RED + "One or more parameter checks passed." + Style.RESET_ALL)
 
@@ -95,6 +102,7 @@ def calculateTotalProfit():
     if len(sys.argv) > 2: 
         totalSale    = float(sys.argv[1])
         profitMargin = float(sys.argv[2])
+
     else: 
         totalSale    = getTotalSale(operatingSystem)
         profitMargin = getProfitMargin(operatingSystem)
@@ -119,6 +127,7 @@ def calculateTotalProfit():
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} seconds".format(duration.seconds))
         print("")
+        
     except Exception as e:
         print(Fore.RED + "Failed to calculate total profit in Python.")
         print(e)
