@@ -17,11 +17,13 @@ def checkOs():
         print(os.system('ver'))
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
+
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('sw_vers'))
         print(Style.RESET_ALL)
         operatingSystem = "macOS"
+
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('uname -r'))
@@ -38,10 +40,12 @@ def getFirstNumber(operatingSystem):
         firstNumber = int(input("Type first number and press \"Enter\" key (Example: 2): "))
 
         print("")
+
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         firstNumber = int(input("Type first number and press \"return\" key (Example: 2): "))
 
         print("")
+
     return firstNumber
 
 def getSecondNumber(operatingSystem):
@@ -49,10 +53,12 @@ def getSecondNumber(operatingSystem):
         secondNumber = int(input("Type second number and press \"Enter\" key (Example: 2): "))
 
         print("")
+
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         secondNumber = int(input("Type second number and press \"return\" key (Example: 2): "))
 
         print("")
+
     return secondNumber
 
 def checkParameters(firstNumber, secondNumber):
@@ -79,10 +85,12 @@ def checkParameters(firstNumber, secondNumber):
 
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         print("")
+
     else:
         print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+
         exit("")        
 
 def addFunction():
@@ -92,6 +100,7 @@ def addFunction():
     if len(sys.argv) > 2: 
         firstNumber  = int(sys.argv[1]) 
         secondNumber = int(sys.argv[2])
+        
     else: 
         firstNumber  = getFirstNumber(operatingSystem)
         secondNumber = getSecondNumber(operatingSystem)
@@ -114,6 +123,7 @@ def addFunction():
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
+
     except Exception as e: 
         print(Fore.RED + "Failed to add in Python.")
         print(e)
