@@ -43,6 +43,7 @@ def launchChrome():
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
+        
     except Exception as e: 
         print(Fore.RED + "Failed to launch Chrome.")
         print(e)

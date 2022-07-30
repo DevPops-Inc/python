@@ -13,11 +13,13 @@ def checkOs():
         print(os.system('ver'))
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
+
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('sw_vers'))
         print(Style.RESET_ALL)
         operatingSystem = "macOS"
+
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('uname -r'))
@@ -55,6 +57,7 @@ def checkCowsay():
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
                 print("")
+
             else: 
                 print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
                 
@@ -81,6 +84,7 @@ def checkCowsay():
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
                 print("")
+                
             else: 
                 print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
                 
@@ -91,6 +95,7 @@ def checkCowsay():
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
                 exit("")
+
     except Exception as e: 
         print(Fore.RED + "Failed to check Cowsay in Python.")
         print(e)

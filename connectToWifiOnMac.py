@@ -22,6 +22,9 @@ def checkOsForMac():
         print("")
     else: 
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
+
+        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+
         exit("")
 
 def getWifiSsid(): 
@@ -61,10 +64,12 @@ def checkParameters(wifiSsid, wifiPassword):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else: 
         print(Fore.RED + "One or more parameters are incorrect.", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+
         exit("")
 
 def connectToWifi(): 
@@ -74,6 +79,7 @@ def connectToWifi():
     if len(sys.argv) > 2:
         wifiSsid     = str(sys.argv[1])
         wifiPassword = str(sys.argv[2])
+
     else: 
         wifiSsid     = getWifiSsid()
         wifiPassword = getWifiPassword()
@@ -96,6 +102,7 @@ def connectToWifi():
         print("Finished connecting to WiFi at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+        
     except Exception as e: 
         print(Fore.RED + "Failed to connect to WiFi.")
         print(e)

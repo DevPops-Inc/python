@@ -17,17 +17,20 @@ def checkOs():
         print(os.system('ver'))
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
+
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('sw_vers'))
         print(Style.RESET_ALL)
         operatingSystem = "macOS"
+
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows or macOS." + Style.RESET_ALL)
 
         print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         exit("")
+
     print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     print("")
@@ -80,6 +83,7 @@ def runMacMaintenance():
     if answer == "1": 
         os.system('diskutil verifyVolume "Macintosh HD"')
         os.system('diskutil repairVolume "Macintosh HD"')
+
     elif answer == "2": 
         os.system('diskutil verifyVolume MacOS')
         os.system('diskutil repairVolume MacOS')
@@ -110,6 +114,7 @@ def computerMaintenance():
             print(e)
             print(traceback.print_stack)
             exit("" + Style.RESET_ALL)
+            
     elif operatingSystem == "macOS":
         try: 
             runMacMaintenance()

@@ -19,6 +19,7 @@ def checkOsForMac():
         print(Style.RESET_ALL + "Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else: 
         print(Fore.RED + "Sorry but this script only works on Mac" + Style.RESET_ALL)
 
@@ -58,6 +59,7 @@ def checkParameters(hdd):
         print("Finished checking parameters at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
@@ -89,6 +91,7 @@ def runMacMaintenance():
         if hdd == "Macintosh HD": 
             os.system('diskutil verifyVolume "Macintosh HD"')
             os.system('diskutil repairVolume "Macintosh HD"')
+
         elif hdd == "MacOS": 
             os.system('diskutil verifyVolume MacOS')
             os.system('diskutil repairVolume MacOS')
@@ -106,6 +109,7 @@ def runMacMaintenance():
         print("Please save your documents and close applications.")
         str(input("Press any key to restart Mac."))
         os.system('reboot')
+        
     except Exception as e: 
         print(Fore.RED + "Failed to run Mac maintenance.")
         print(e)
