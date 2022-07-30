@@ -17,11 +17,13 @@ def checkOs():
         print(os.system('ver'))
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
+
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('sw_vers'))
         print(Style.RESET_ALL)
         operatingSystem = "macOS"
+
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('uname -r'))
@@ -36,10 +38,12 @@ def getLastName(operatingSystem):
         lastName = str(input("Please type your last name and press \"Enter\" key (Example: Phan): "))
 
         print("")
+
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         lastName = str(input("Please type your last name and press \"return\" key (Example: Phan): "))
 
         print("")
+
     return lastName
     
 def checkParameters(lastName): 
@@ -62,6 +66,7 @@ def checkParameters(lastName):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else: 
         print(Fore.RED + "One or more parameters are incorrect" + Style.RESET_ALL)
 
@@ -97,6 +102,7 @@ def countCharactersInLastName():
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
+        
     except Exception as e: 
         print(Fore.RED + "Failed to count characters in last name.")
         print(e)

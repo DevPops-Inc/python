@@ -18,11 +18,13 @@ def checkOs():
         print(os.system('ver'))
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
+
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('sw_vers'))
         print(Style.RESET_ALL)
         operatingSystem = "macOS"
+
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('uname -r'))
@@ -39,10 +41,12 @@ def getInputString(operatingSystem):
         inputString = str(input("Please type something you want the character count for and press \"Enter\" key (Example: ham sandwich): "))
 
         print("")
+
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         inputString = str(input("Please type something you want the character count for and press \"return\" key (Example: ham sandwich): "))
 
-        print("")        
+        print("")
+
     return inputString
 
 def checkParameters(inputString): 
@@ -65,6 +69,7 @@ def checkParameters(inputString):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
@@ -100,6 +105,7 @@ def countCharacters():
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0}".format(duration.seconds))
         print("")
+        
     except Exception as e: 
         print(Fore.RED + "Failed to count characters in string.")
         print(e)

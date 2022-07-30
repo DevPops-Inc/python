@@ -82,6 +82,7 @@ def getCalendarByYear():
 
     if len(sys.argv) >= 2: 
         year = int(sys.argv[1])
+
     else: 
         year = getYear(operatingSystem)
 
@@ -105,6 +106,7 @@ def getCalendarByYear():
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
+        
     except Exception as e: 
         print(Fore.RED + "Failed to get calendar by year.")
         print(e)
