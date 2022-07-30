@@ -19,6 +19,7 @@ def checkOsForWindows():
         print(Style.RESET_ALL + "Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 
@@ -60,6 +61,7 @@ def runWindowsMaintenance():
         print("Please save your work and close applications.")
         str(input("Press any key to continue."))
         os.system('shutdown /r /t 0')
+        
     except Exception as e: 
         print(Fore.RED + "Failed to run maintenance on Windows.")
         print(e)

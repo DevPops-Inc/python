@@ -21,6 +21,7 @@ def checkOsForWindows():
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else: 
         print(Fore.RED + "Sorry but this script only runs Windows." + Style.RESET_ALL)
 
@@ -50,6 +51,7 @@ def checkDiskAndRestartWindows():
         print("Please save your documents and close applications.")
         str(input("Press any key to restart Windows."))
         os.system('shutdown /r /t 0')
+        
     except Exception as e: 
         print(Fore.RED + "Failed to check disk and restart Windows.")
         print(e)

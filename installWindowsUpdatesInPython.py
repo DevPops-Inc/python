@@ -20,6 +20,7 @@ def checkOsForWindows():
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 
@@ -52,6 +53,7 @@ def installWindowsUpdates():
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
+        
     except Exception as e:
         print(Fore.RED + "Failed to install Windows updates.")
         print(e)
