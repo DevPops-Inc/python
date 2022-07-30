@@ -44,6 +44,7 @@ def bouncingBall():
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} seconds".format(duration.seconds))
         print("")
+        
     except Exception as e:
         print(Fore.RED + "Failed to run bouncing ball animation.")
         print(e)

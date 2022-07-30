@@ -21,6 +21,7 @@ def checkOsForWindows():
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else: 
         print(Fore.RED + "Sorry but this script only runs Windows." + Style.RESET_ALL)
 
@@ -46,6 +47,7 @@ def checkDiskOnWindows():
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0}".format(duration.seconds))
         print("")
+        
     except Exception as e: 
         print(Fore.RED + "Failed to check disk on Windows.")
         print(e)
