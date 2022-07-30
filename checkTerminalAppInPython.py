@@ -17,11 +17,13 @@ def checkOs():
         print(os.system('ver'))
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
+
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('sw_vers'))
         print(Style.RESET_ALL)
         operatingSystem = "macOS"
+
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('uname -r'))
@@ -38,10 +40,12 @@ def getTerminalApp(operatingSystem):
         terminalApp = str(input("Please type the terminal application you wish to check and press \"Enter\" key (Example: terraform): "))
 
         print("")
+
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         terminalApp = str(input("Please type the terminal application you wish to check and press \"return\" key (Example: terraform): "))
 
         print("")
+
     return terminalApp
 
 def checkParameters(terminalApp):
@@ -64,6 +68,7 @@ def checkParameters(terminalApp):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else: 
         print(Fore.RED + "One or more parameters are incorrect" + Style.RESET_ALL)
 
@@ -77,6 +82,7 @@ def checkTerminalApp():
 
     if len(sys.argv) >= 2: 
         terminalApp = str(sys.argv[1])
+
     else: 
         terminalApp = getTerminalApp(operatingSystem)
 
@@ -108,6 +114,7 @@ def checkTerminalApp():
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
                 print("")
+
             else: 
                 print(Fore.RED + "{0} is not installed.".format(terminalApp) + Style.RESET_ALL)
                 
@@ -138,6 +145,7 @@ def checkTerminalApp():
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
                 print("")
+
             else: 
                 print(Fore.RED + "{0} is not installed.".format(terminalApp) + Style.RESET_ALL)
                 
@@ -148,6 +156,7 @@ def checkTerminalApp():
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
                 exit("")
+                
     except Exception as e: 
         print(Fore.RED + "Failed to check {0} in Python.".format(terminalApp))
         print(e)

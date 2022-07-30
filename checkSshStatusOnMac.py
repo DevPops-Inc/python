@@ -18,6 +18,7 @@ def checkOsForMac():
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else:
         print(Fore.RED + "Sorry but this script only runs on macOS." + Style.RESET_ALL)
 
@@ -44,6 +45,7 @@ def checkSshStatus():
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0}".format(duration.seconds))
         print("")
+        
     except Exception as e: 
         print(Fore.RED + "Failed to check SSH status.")
         print(e)

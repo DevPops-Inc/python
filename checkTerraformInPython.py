@@ -15,11 +15,13 @@ def checkOs():
         print(os.system('ver'))
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
+
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('sw_vers'))
         print(Style.RESET_ALL)
         operatingSystem = "macOS"
+
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('uname -r'))
@@ -49,7 +51,7 @@ def checkTerraform():
             if checkTerraformOnMacOrLinux == 0:
                 print(Fore.GREEN + "Terraform is installed."+ Style.RESET_ALL)
                 os.system('terraform --version')
-                print(Fore.GREEN + "Successfully checked Terraform." + Style.RESET_ALL)
+                print(Fore.GREEN + "Successfully checked terraform." + Style.RESET_ALL)
 
                 finishedDateTime = datetime.now()
 
@@ -58,6 +60,7 @@ def checkTerraform():
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
                 print("")
+
             else: 
                 print(Fore.RED + "Terraform is not installed." + Style.RESET_ALL)
                 
@@ -76,7 +79,7 @@ def checkTerraform():
             if checkTerraformOnWindows == 0:
                 print(Fore.GREEN + "Terraform is installed."+ Style.RESET_ALL)
                 os.system('terraform --version')
-                print(Fore.GREEN + "Successfully checked Terraform." + Style.RESET_ALL)
+                print(Fore.GREEN + "Successfully checked terraform." + Style.RESET_ALL)
 
                 finishedDateTime = datetime.now()
 
@@ -85,6 +88,7 @@ def checkTerraform():
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
                 print("")
+
             else: 
                 print(Fore.RED + "Terraform is not installed." + Style.RESET_ALL)
                 
@@ -95,6 +99,7 @@ def checkTerraform():
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
                 exit("")
+                
     except Exception as e: 
         print(Fore.RED + "Failed to check Terraform in Python.")
         print(e)
