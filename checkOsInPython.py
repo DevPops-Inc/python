@@ -1,6 +1,6 @@
 #!/bin/python 
 
-# check OS
+# check OS in Python
 
 import colorama, os, sys
 from colorama import Fore, Style
