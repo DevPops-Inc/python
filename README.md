@@ -35,10 +35,10 @@
 •	![image](https://user-images.githubusercontent.com/66754143/182042340-aa69ebe8-fde4-48e2-99bb-ee640afa0729.jpeg)
 
 
-•	Type **cd “< location of Python script >”** and press “Enter” key to change directory to the location of the Python script.  
+•	Type `cd “< location of Python script >”` and press “Enter” key to change directory to the location of the Python script.  
 •	<img width="264" alt="image" src="https://user-images.githubusercontent.com/66754143/182042345-51af6806-5f12-4f60-86a0-6d832285a43e.png">
 
 
-•	Type **python3 < Python script >** and press “Enter” key to run Python script as administrator.  
+•	Type `python3 < Python script >` and press “Enter” key to run Python script as administrator.  
 •	<img width="514" alt="image" src="https://user-images.githubusercontent.com/66754143/182042356-7f3db0bc-21bf-4a7d-a25b-2f6f5160ffa2.png">
 
