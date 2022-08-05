@@ -17,11 +17,13 @@ def checkOs():
         print(os.system('ver'))
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
+
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('sw_vers'))
         print(Style.RESET_ALL)
         operatingSystem = "macOS"
+
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         print(os.system('uname -r'))
@@ -39,10 +41,12 @@ def getCoinFlips(operatingSystem):
         coinFlip = int(input("Please type the number of coin flips you would like and press \"Enter\" key (Example: 5): "))
 
         print("")
+
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         coinFlip = int(input("Please type the number of coin flips you would like and press \"return\" key (Example: 5): "))
 
         print("")
+
     return coinFlip
 
 def checkParameters(coinFlip): 
@@ -65,6 +69,7 @@ def checkParameters(coinFlip):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
+
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
@@ -78,8 +83,11 @@ def countHeadsOrTailsInCoinFlips():
 
     if len(sys.argv) >= 2: 
         coinFlip = int(sys.argv[1])
+
     else: 
         coinFlip = getCoinFlips(operatingSystem)
+
+    checkParameters(coinFlip)
 
     try: 
         startDateTime = datetime.now()
@@ -105,6 +113,7 @@ def countHeadsOrTailsInCoinFlips():
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
+        
     except Exception as e: 
         print(Fore.RED + "Failed to count heads and tails in coin flips.")
         print(e)
