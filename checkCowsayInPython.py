@@ -1,5 +1,7 @@
 #!/bin/python
 
+# check Cowsay in Python
+
 import colorama, os, sys, subprocess, traceback
 from colorama import Fore, Style
 from datetime import datetime
