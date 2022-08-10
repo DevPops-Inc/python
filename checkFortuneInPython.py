@@ -55,7 +55,6 @@ def checkFortune():
                 print("Your fortune is: " + Fore.BLUE)
                 os.system('fortune')
                 print("")
-                
                 print(Fore.GREEN + "Successfully checked Fortune." + Style.RESET_ALL)
 
                 finishedDateTime = datetime.now()
