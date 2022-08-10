@@ -51,9 +51,11 @@ def checkFortune():
             if checkFortuneOnMacOrLinux == 0:
                 print(Fore.GREEN + "Fortune is installed."+ Style.RESET_ALL)
                 print("")
+
                 print("Your fortune is: " + Fore.BLUE)
                 os.system('fortune')
                 print("")
+                
                 print(Fore.GREEN + "Successfully checked Fortune." + Style.RESET_ALL)
 
                 finishedDateTime = datetime.now()
