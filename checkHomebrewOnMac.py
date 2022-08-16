@@ -46,7 +46,7 @@ def checkHomebrew():
 
             finishedDateTime = datetime.now()
 
-            print("Finished checking Hombrew at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking Homebrew at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
             duration = finishedDateTime - startDateTime
             print("Total execution time: {0} second(s)".format(duration.seconds))
