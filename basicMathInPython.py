@@ -5,12 +5,10 @@
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
-from minimath import *
 colorama.init()
 
 def checkOs():
-    print("Started checking operating system at",
-          datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "win32":
         print(Fore.GREEN + "Operating System: ")
@@ -30,8 +28,7 @@ def checkOs():
         print(Style.RESET_ALL)
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at",
-          datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     print("")
     return operatingSystem
@@ -119,15 +116,27 @@ def basicMath():
         print("Started basic math at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
  
         if choice == '1': 
+            def timestwo(x): 
+                return x * 2
+
             print(Fore.BLUE + "{0} times two equals: {1}".format(num1, timestwo(num1)) + Style.RESET_ALL)
 
         elif choice == '2': 
+            def timesthree(x):
+                return x * 3
+
             print(Fore.BLUE + "{0} times three equals: {1}".format(num1, timesthree(num1)) + Style.RESET_ALL) 
 
         elif choice == '3': 
+            def square(x):
+                return x * x 
+
             print(Fore.BLUE + "{0} squared equals: {1}".format(num1, square(num1)) + Style.RESET_ALL)
 
         elif choice == '4': 
+            def power(x, y): 
+                return x ** y 
+                
             if operatingSystem == "Windows":
                 num2 = int(input("Please type the second number and press \"Enter\" key (Example: 2): "))
 
