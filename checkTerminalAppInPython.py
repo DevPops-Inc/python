@@ -9,8 +9,9 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-"))
+    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ")
@@ -34,6 +35,7 @@ def checkOs():
 
     print("")
     return operatingSystem
+
 
 def getTerminalApp(operatingSystem):
     if operatingSystem == "Windows": 
@@ -75,6 +77,7 @@ def checkParameters(terminalApp):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         exit("")
+
 
 def checkTerminalApp(): 
     print("\nCheck terminal application in Python.\n")
@@ -162,5 +165,6 @@ def checkTerminalApp():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 checkTerminalApp()

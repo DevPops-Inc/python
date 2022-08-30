@@ -7,8 +7,9 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-"))
+    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ")
@@ -32,6 +33,7 @@ def checkOs():
 
     print("")
     return operatingSystem
+
 
 def checkSteamLocomotive(): 
     print("\nCheck Steam Locomotive in Python.\n")
@@ -109,5 +111,6 @@ def checkSteamLocomotive():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 checkSteamLocomotive()

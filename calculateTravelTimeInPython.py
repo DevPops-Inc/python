@@ -2,10 +2,13 @@
 
 # calculate travel time
 
+# you can run this script with: python3 calculateTravelTimeInPython.py < rate > < distance >
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
+
 
 def checkOs():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -33,6 +36,7 @@ def checkOs():
     print("")
     return operatingSystem
 
+
 def getRate(operatingSystem):
     if operatingSystem == "Windows": 
         rate = float(input("Please type the rate (miles per hour) and press \"Enter\" key (Example: 45): "))
@@ -46,6 +50,7 @@ def getRate(operatingSystem):
 
     return rate 
 
+
 def getDistance(operatingSystem):
     if operatingSystem == "Windows": 
         distance = float(input("Please type the distance (miles) and press \"Enter\" key (Example: 100): "))
@@ -55,6 +60,7 @@ def getDistance(operatingSystem):
 
     print("")
     return distance
+
 
 def checkParameters(rate, distance): 
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -88,6 +94,7 @@ def checkParameters(rate, distance):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         exit("")
+
 
 def calculateTravelTime(): 
     print("\nCalculate travel time in Python!\n")
@@ -124,5 +131,6 @@ def calculateTravelTime():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 calculateTravelTime()

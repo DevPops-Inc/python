@@ -9,6 +9,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs(): 
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -35,6 +36,7 @@ def checkOs():
     print("")
     return operatingSystem
 
+
 def getTitleString(operatingSystem):
     if operatingSystem == "Windows": 
         titleString = str(input("Please type the string you would like to capitalize the first word of and press \"Enter\" key (Example: problem exists between keyboard and chair): "))
@@ -47,6 +49,7 @@ def getTitleString(operatingSystem):
         print("")
 
     return titleString
+
 
 def checkParameters(titleString):
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -76,7 +79,8 @@ def checkParameters(titleString):
 
         exit("")
 
-def capitalizeFirstWordInString():
+
+def capsFirstWordInString():
     print("\nLet's capitalize the first word in a string in Python!\n")
     operatingSystem = checkOs()
 
@@ -111,4 +115,5 @@ def capitalizeFirstWordInString():
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
 
-capitalizeFirstWordInString()
+
+capsFirstWordInString()
