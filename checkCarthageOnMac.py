@@ -7,8 +7,9 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOsForMac():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-"))
+    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
@@ -25,6 +26,7 @@ def checkOsForMac():
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         exit("")
+
 
 def checkCarthage(): 
     print("\nCheck carthage on Mac.\n")
@@ -68,5 +70,6 @@ def checkCarthage():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 checkCarthage()

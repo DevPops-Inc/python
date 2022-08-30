@@ -7,6 +7,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-"))
 
@@ -32,6 +33,7 @@ def checkOs():
 
     print("")
     return operatingSystem
+
 
 def checkTerraform(): 
     print("\nCheck Terraform in Python.\n")
@@ -105,5 +107,6 @@ def checkTerraform():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 checkTerraform()

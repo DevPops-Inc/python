@@ -7,6 +7,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs(): 
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -32,5 +33,6 @@ def checkOs():
 
     print("")
     return operatingSystem
+
 
 operatingSystem = checkOs()
