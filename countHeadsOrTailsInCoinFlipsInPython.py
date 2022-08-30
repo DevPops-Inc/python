@@ -9,6 +9,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -35,6 +36,7 @@ def checkOs():
     print("")
 
     return operatingSystem
+
     
 def getCoinFlips(operatingSystem):
     if operatingSystem == "Windows": 
@@ -48,6 +50,7 @@ def getCoinFlips(operatingSystem):
         print("")
 
     return coinFlip
+
 
 def checkParameters(coinFlip): 
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -76,6 +79,7 @@ def checkParameters(coinFlip):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         exit("")
+
     
 def countHeadsOrTailsInCoinFlips(): 
     print("\nLet's count heads or tails in coin flips!\n")
@@ -119,5 +123,6 @@ def countHeadsOrTailsInCoinFlips():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 countHeadsOrTailsInCoinFlips()

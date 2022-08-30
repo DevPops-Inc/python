@@ -9,6 +9,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOsForMac():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -27,17 +28,20 @@ def checkOsForMac():
 
         exit("")
 
+
 def getWifiSsid(): 
     wifiSsid = str(input("Please type the SSID of the Wi-Fi network you wish to connect to and press \"return\" key (Example: Starbucks): "))
 
     print("")
     return wifiSsid
 
+
 def getWifiPassword(): 
     wifiPassword = getpass.getpass("Please type the password for the Wi-Fi network you wish to connect to and press \"return\" key (Example: Password123): ")
 
     print("")
     return wifiPassword
+
 
 def checkParameters(wifiSsid, wifiPassword): 
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -71,6 +75,7 @@ def checkParameters(wifiSsid, wifiPassword):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         exit("")
+
 
 def connectToWifi(): 
     print("Connect to Wi-Fi on Mac.\n")
@@ -108,5 +113,6 @@ def connectToWifi():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+    
         
 connectToWifi()

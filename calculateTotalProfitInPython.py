@@ -9,6 +9,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs(): 
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -34,6 +35,7 @@ def checkOs():
 
     print("")
     return operatingSystem
+
 
 def getTotalSale(operatingSystem): 
     if operatingSystem == "Windows": 
@@ -61,6 +63,7 @@ def getProfitMargin(operatingSystem):
         print("")
 
     return profitMargin
+
         
 def checkParameters(totalSale, profitMargin): 
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -94,6 +97,7 @@ def checkParameters(totalSale, profitMargin):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         exit("")
+
 
 def calculateTotalProfit(): 
     print("\nCalcuate total profit in Python.\n\n")
@@ -133,5 +137,6 @@ def calculateTotalProfit():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 calculateTotalProfit()

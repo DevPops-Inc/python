@@ -10,6 +10,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs(): 
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -36,6 +37,7 @@ def checkOs():
     print("")
     return operatingSystem
 
+
 def getInputString(operatingSystem): 
     if operatingSystem == "Windows": 
         inputString = str(input("Please type something you want the character count for and press \"Enter\" key (Example: ham sandwich): "))
@@ -48,6 +50,7 @@ def getInputString(operatingSystem):
         print("")
 
     return inputString
+
 
 def checkParameters(inputString): 
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -76,6 +79,7 @@ def checkParameters(inputString):
         print("Finished checking parameters at", datetime.now().strftime("Y-%m-%d %H:%M %p"))
 
         exit("")
+
 
 def countCharacters(): 
     print("\nCount characters in input string.\n")
@@ -111,5 +115,6 @@ def countCharacters():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 countCharacters()

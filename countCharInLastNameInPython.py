@@ -8,6 +8,8 @@ import traceback
 import colorama, os, sys
 from colorama import Fore, Style
 from datetime import datetime
+colorama.init()
+
 
 def checkOs():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -33,6 +35,7 @@ def checkOs():
     print("")
     return operatingSystem
 
+
 def getLastName(operatingSystem): 
     if operatingSystem == "Windows": 
         lastName = str(input("Please type your last name and press \"Enter\" key (Example: Phan): "))
@@ -45,6 +48,7 @@ def getLastName(operatingSystem):
         print("")
 
     return lastName
+
     
 def checkParameters(lastName): 
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -73,6 +77,7 @@ def checkParameters(lastName):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         exit("")
+
 
 def countCharactersInLastName(): 
     print("\nCount characters in last name in Python.\n")
@@ -108,5 +113,6 @@ def countCharactersInLastName():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 countCharactersInLastName()
