@@ -8,6 +8,7 @@ from datetime import datetime
 from tkinter import * 
 colorama.init()
 
+
 def bouncingBall():
     gui = Tk()
     gui.geometry("800x600")
@@ -50,5 +51,6 @@ def bouncingBall():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 bouncingBall()

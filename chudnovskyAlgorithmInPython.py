@@ -10,6 +10,7 @@ from datetime import datetime
 from decimal import Decimal, getcontext
 colorama.init()
 
+
 def checkOs(): 
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -36,6 +37,7 @@ def checkOs():
     print("")
     return operatingSystem
 
+
 def getNumberPlaces(operatingSystem):
     if operatingSystem == "Windows": 
         numberPlaces = int(input("Please enter the number of places to calculate Pi to and press \"Enter\" key (Example: 3): "))
@@ -48,6 +50,7 @@ def getNumberPlaces(operatingSystem):
         print("")
 
     return numberPlaces
+
 
 def checkParameters(numberPlaces): 
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -75,6 +78,7 @@ def checkParameters(numberPlaces):
         print("Finished checking parameters at", datetime().strftime("%Y-%m-%d %H:%M %p"))
 
         exit("")
+
 
 def calculatePi():
     print("\nLet's calculate the value of pi using Chudnovsky's Algorithm.\n")
@@ -126,5 +130,6 @@ def calculatePi():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 calculatePi()

@@ -7,6 +7,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -33,6 +34,7 @@ def checkOs():
     print("")
     return operatingSystem
 
+
 def getChoice(operatingSystem):
     print("Select operations: ")
     print("1. Times by two")
@@ -52,6 +54,7 @@ def getChoice(operatingSystem):
         print("")
 
     return choice
+
 
 def getNum1(operatingSystem):
     if operatingSystem == "Windows":
@@ -96,6 +99,7 @@ def checkParameters(choice, num1):
 
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         exit("")
+
 
 def basicMath():
     print("\nLet's perform basic math in Python.\n")
@@ -164,5 +168,6 @@ def basicMath():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 basicMath() 
