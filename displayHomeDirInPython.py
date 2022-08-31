@@ -7,6 +7,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs(): 
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -33,6 +34,7 @@ def checkOs():
     print("")
     return operatingSystem
 
+
 def displayHomeDir(): 
     print("\nDisplay directory directory.\n")
     operatingSystem = checkOs()
@@ -58,5 +60,6 @@ def displayHomeDir():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 displayHomeDir()

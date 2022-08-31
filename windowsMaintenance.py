@@ -9,6 +9,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOsForWindows():
     print("Started checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -67,5 +68,6 @@ def runWindowsMaintenance():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 runWindowsMaintenance()

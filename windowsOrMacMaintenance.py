@@ -9,6 +9,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs():
     print("Started checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -36,6 +37,7 @@ def checkOs():
     print("")
     return operatingSystem
     
+
 def runWindowsMaintenance():
     startDateTime = datetime.now()
     
@@ -65,6 +67,7 @@ def runWindowsMaintenance():
     print("Please save your work and close applications.")
     str(input("Press any key to continue."))
     os.system('shutdown /r /t 0')
+
 
 def runMacMaintenance():
     startDateTime = datetime.now()
@@ -102,6 +105,7 @@ def runMacMaintenance():
     str(input("Press any key to restart Mac."))
     os.system('reboot')
 
+
 def computerMaintenance():
     print("\nRun computer maintenance.\n")
     operatingSystem = checkOs()
@@ -123,5 +127,6 @@ def computerMaintenance():
             print(e)
             print(traceback.print_stack)
             exit("" + Style.RESET_ALL)
+
 
 computerMaintenance()
