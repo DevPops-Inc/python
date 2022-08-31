@@ -9,6 +9,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs(): 
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -35,6 +36,7 @@ def checkOs():
     print("")
     return operatingSystem
 
+
 def getName(operatingSystem): 
     if operatingSystem == "Windows": 
         name = str(input("Please type your name and press \"Enter\" key (Example: Vic): "))
@@ -45,6 +47,7 @@ def getName(operatingSystem):
     print(Fore.BLUE + "Hello, {0}.".format(name) + Style.RESET_ALL)
     print("")
     return name
+
 
 def checkParameters(name): 
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -72,6 +75,7 @@ def checkParameters(name):
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         exit("")
+
 
 def displayFirstLetterInName(): 
     print("Display first letter in name in Python.")
@@ -108,5 +112,6 @@ def displayFirstLetterInName():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 displayFirstLetterInName()

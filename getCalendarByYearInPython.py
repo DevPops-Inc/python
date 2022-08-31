@@ -9,6 +9,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -35,6 +36,7 @@ def checkOs():
     print("")
     return operatingSystem
 
+
 def getYear(operatingSystem): 
     if operatingSystem == "Windows":
         year = int(input("Please type the year you want a calendar for and press \"Enter\" key (Example: 1999): "))
@@ -47,6 +49,7 @@ def getYear(operatingSystem):
         print("")
     
     return year
+
 
 def checkParameters(year): 
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -75,6 +78,7 @@ def checkParameters(year):
         print("Finished checking parameters at", datetime.now().strftime("%y-%m-%d %H:%M %p"))
 
         exit("")
+
 
 def getCalendarByYear(): 
     print("\Let's get a calendar by year in Python!\n")
@@ -112,5 +116,6 @@ def getCalendarByYear():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 getCalendarByYear()

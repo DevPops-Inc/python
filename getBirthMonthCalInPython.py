@@ -9,6 +9,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOs():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -35,6 +36,7 @@ def checkOs():
     print("")
     return operatingSystem
 
+
 def getYear(operatingSystem): 
     if operatingSystem == "Windows":
         year = int(input("Please type the year you want a calendar for and press \"Enter\" key (Example: 1999): "))
@@ -48,6 +50,7 @@ def getYear(operatingSystem):
     
     return year
 
+
 def getMonth(operatingSystem): 
     if operatingSystem == "Windows":
         month = int(input("Please type the month you want a calendar for and press \"Enter\" key (Example: 12): "))
@@ -60,6 +63,7 @@ def getMonth(operatingSystem):
         print("")
     
     return month
+
 
 def checkParameters(year, month): 
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -93,6 +97,7 @@ def checkParameters(year, month):
         print("Finished checking parameters at", datetime.now().strftime("%y-%m-%d %H:%M %p"))
 
         exit("")
+
 
 def getBirthMonthCal(): 
     print("\Let's get birthday month calendar in Python!\n")
@@ -133,5 +138,6 @@ def getBirthMonthCal():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+        
 
 getBirthMonthCal()

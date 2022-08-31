@@ -9,6 +9,7 @@ from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
+
 def checkOsForWindows():
     print("Start checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -26,6 +27,7 @@ def checkOsForWindows():
 
         exit("")
 
+
 def getAnswer():
     os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"')
     print("Do you want to defrag the HDD (not recommended for SSD drives)?")
@@ -33,6 +35,7 @@ def getAnswer():
     
     print("")
     return answer
+
 
 def checkParameters(answer):
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -57,6 +60,7 @@ def checkParameters(answer):
 
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         print("")
+
 
 def defragHardDrive():
     print("\nDefrag Hard Drive on Windows.\n")
@@ -90,5 +94,6 @@ def defragHardDrive():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 defragHardDrive()
