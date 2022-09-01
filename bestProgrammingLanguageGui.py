@@ -13,19 +13,19 @@ def checkOs():
 
     if sys.platform == "win32":
         print(Fore.GREEN + "Operating System: Windows")
-        print(os.system('ver'))
+        os.system('ver')
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
 
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
-        print(os.system('sw_vers'))
+        os.system('sw_vers')
         print(Style.RESET_ALL)
         operatingSystem = "macOS"
 
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
-        print(os.system('uname -r'))
+        os.system('uname -r')
         print(Style.RESET_ALL)
         operatingSystem = "Linux"
     
