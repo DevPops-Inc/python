@@ -13,7 +13,7 @@ def checkOsForLinux():
 
     if sys.platform == "linux":
         print(Fore.GREEN + "Operating System: ")
-        print(os.system('uname -r'))
+        os.system('uname -r')
         print(Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
