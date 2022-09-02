@@ -8,26 +8,26 @@ from datetime import datetime
 colorama.init()
 
 
-def checkOsForMac():
+def checkOsForMacOrLinux():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
         print(Style.RESET_ALL)
-        
-    elif sys.platfrom == "linux": 
+
+    elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         os.system('uname -r')
         print(Style.RESET_ALL)
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
-        
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print(Fore.RED + "Sorry but this only runs on Mac or Linux." + Style.RESET_ALL)
+
+        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p)"))
 
         exit("")
-
+    
     print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     print("")
@@ -35,7 +35,7 @@ def checkOsForMac():
 
 def checkHtop(): 
     print("\nCheck htop on Mac.\n")
-    checkOsForMac()
+    checkOsForMacOrLinux()
 
     try:
         startDateTime = datetime.now()
