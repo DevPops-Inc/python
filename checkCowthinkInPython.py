@@ -52,7 +52,7 @@ def checkCowthink():
 
             if checkCowthinkOnMacOrLinux == 0:
                 os.system('cowthink "Cowthink is installed"')
-                print(Fore.GREEN + "Successfully checked cowthink." + Style.RESET_ALL)
+                print(Fore.GREEN + "Successfully checked Cowthink." + Style.RESET_ALL)
 
                 finishedDateTime = datetime.now()
 
@@ -79,7 +79,7 @@ def checkCowthink():
             
             if checkCowthinkOnWindows == 0:
                 os.system('cowthink "Cowthink is installed"')
-                print(Fore.GREEN + "Successfully checked cowthink." + Style.RESET_ALL)
+                print(Fore.GREEN + "Successfully checked Cowthink." + Style.RESET_ALL)
 
                 finishedDateTime = datetime.now()
 
