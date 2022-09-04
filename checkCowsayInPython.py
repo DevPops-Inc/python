@@ -52,7 +52,7 @@ def checkCowsay():
 
             if checkCowsayOnMacOrLinux == 0:
                 os.system('cowsay "Cowsay is installed"')
-                print(Fore.GREEN + "Successfully checked cowsay." + Style.RESET_ALL)
+                print(Fore.GREEN + "Successfully checked Cowsay." + Style.RESET_ALL)
 
                 finishedDateTime = datetime.now()
 
@@ -79,7 +79,7 @@ def checkCowsay():
             
             if checkCowsayOnWindows == 0:
                 os.system('cowsay "Cowsay is installed"')
-                print(Fore.GREEN + "Successfully checked cowsay." + Style.RESET_ALL)
+                print(Fore.GREEN + "Successfully checked Cowsay." + Style.RESET_ALL)
 
                 finishedDateTime = datetime.now()
 
