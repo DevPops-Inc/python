@@ -1,11 +1,12 @@
 #!/bin/python
 
-# get current day of week
+# get current day of week in Python
 
 import colorama, os, sys, time, traceback
 from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
+
 
 def checkOs(): 
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -49,6 +50,8 @@ def getCurrentDayOfWeek():
 
         print("Finished getting current day of the week at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
+        duration = finishedDateTime - startDateTime
+        print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
         
     except Exception as e: 
