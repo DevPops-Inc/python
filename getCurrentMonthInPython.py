@@ -1,6 +1,6 @@
 #!/bin/python
 
-# get current day of week in Python
+# get current month in Python
 
 import colorama, os, sys, time, traceback
 from colorama import Fore, Style
@@ -17,48 +17,46 @@ def checkOs():
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
 
-    elif sys.platform == "darwin": 
+    if sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
         print(Style.RESET_ALL)
         operatingSystem = "macOS"
 
-    elif sys.platform == "linux": 
+    if sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
-        os.system('sw_vers')
+        os.system('uname -r')
         print(Style.RESET_ALL)
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
     print("")
     return operatingSystem
+    
 
-
-def getCurrentDayOfWeek(): 
-    print("\nGet current day of the week in Python.\n")
+def getCurrentMonthInPython():
+    print("\nGet current month in Python.\n")
     checkOs()
 
     try: 
         startDateTime = datetime.now()
+        print("Started getting current month at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+
+        print(Fore.BLUE + "The current month is: {0}.".format(time.strftime("%B")))
+        print(Fore.GREEN + "Successfully got current month." + Style.RESET_ALL)
         
-        print("Started getting current day of the week at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
-
-        print(Fore.BLUE + "The current day of the week is: {0}.".format(time.strftime('%A')))
-        print(Fore.GREEN + "Successfully got the current day of the week." + Style.RESET_ALL)
-
         finishedDateTime = datetime.now()
-
-        print("Finished getting current day of the week at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished getting current month at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
-        
+
     except Exception as e: 
-        print(Fore.RED + "Failed to get current day of the week.")
+        print(Fore.RED + "Failed to get current month.")
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
 
 
-getCurrentDayOfWeek()
+getCurrentMonthInPython()
