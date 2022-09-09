@@ -2,6 +2,8 @@
 
 # Cowsay message in Python
  
+# you can run this script: python3 cowsayMessageInPython.py < message > 
+
 import colorama, os, subprocess, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -116,7 +118,13 @@ def cowsayMessage():
 	
 	operatingSystem = checkOs()
 	checkCowsay(operatingSystem)
-	cowMessage = getCowMessage(operatingSystem)
+
+	if len(sys.argv) >= 2: 
+		cowMessage = str(sys.argv[1])
+
+	else: 
+		cowMessage = getCowMessage(operatingSystem)
+		
 	checkParameters(cowMessage)
 
 	try: 
