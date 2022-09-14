@@ -8,31 +8,33 @@ from datetime import datetime
 from tkinter import * 
 colorama.init()
 
+
 def checkOs():
     print("Started checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "win32":
-        print(Fore.GREEN + "Operating System: Windows")
+        print(Fore.GREEN + "Operating System: ", end="")
         os.system('ver')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "Windows"
 
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "macOS"
 
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         os.system('uname -r')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
     
     print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     print("")
     return operatingSystem
+
 
 def bestProgrammingLanguage():
     print("\nBest programming language GUI.\n")
@@ -82,5 +84,6 @@ def bestProgrammingLanguage():
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
+
 
 bestProgrammingLanguage()
