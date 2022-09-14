@@ -1,6 +1,6 @@
 #!/bin/python
 
-# bouncing ball animation
+# bouncing ball animation in Python
 
 import colorama, os, sys, time, traceback
 from colorama import Fore, Style
@@ -9,7 +9,37 @@ from tkinter import *
 colorama.init()
 
 
+def checkOs(): 
+    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+
+    if sys.platform == "win32": 
+        print(Fore.GREEN + "Operating System: ", end="")
+        os.system('ver')
+        print(Style.RESET_ALL, end="")
+        operatingSystem = "Windows"
+
+    elif sys.platform == "darwin": 
+        print(Fore.GREEN + "Operating System: ")
+        os.system('sw_vers')
+        print(Style.RESET_ALL, end="")
+        operatingSystem = "macOS"
+
+    elif sys.platform == "linux": 
+        print(Fore.GREEN + "Operating System: ")
+        os.system('uname -r')
+        print(Style.RESET_ALL, end="")
+        operatingSystem = "Linux"
+
+    print("Finisehd checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+
+    print("")
+    return operatingSystem
+
+
 def bouncingBall():
+    print("\nBouncing ball anmiation in Python.\n")
+    checkOs()
+    
     gui = Tk()
     gui.geometry("800x600")
     gui.title("Pi Animation")
