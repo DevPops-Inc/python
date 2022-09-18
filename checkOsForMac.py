@@ -14,13 +14,13 @@ def checkOsForMac():
     if sys.platform == "darwin":
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
     else:
-        print(Fore.RED + "Sorry this script only runs on macOS." + Style.RESET_ALL )
+        print(Fore.RED + "Sorry this script only runs on macOS." + Style.RESET_ALL)
     
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
