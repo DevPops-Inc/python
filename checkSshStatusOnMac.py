@@ -14,7 +14,7 @@ def checkOsForMac():
     if sys.platform == "darwin":
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -44,7 +44,7 @@ def checkSshStatus():
         print("Finished checking SSSh at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
         duration = finishedDateTime - startDateTime
-        print("Total execution time: {0}".format(duration.seconds))
+        print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
         
     except Exception as e: 
