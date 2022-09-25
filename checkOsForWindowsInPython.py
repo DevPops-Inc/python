@@ -13,7 +13,7 @@ def checkOsForWindows():
 
     if sys.platform == "Windows":
         print(Fore.GREEN + "Operating System: ", end="")
-        print(os.system('ver'))
+        os.system('ver')
         print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
