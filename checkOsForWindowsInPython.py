@@ -12,9 +12,9 @@ def checkOsForWindows():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "Windows":
-        print(Fore.GREEN + "Operating System: ")
+        print(Fore.GREEN + "Operating System: ", end="")
         os.system('ver')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         
