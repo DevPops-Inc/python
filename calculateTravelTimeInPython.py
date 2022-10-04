@@ -13,8 +13,8 @@ colorama.init()
 def checkOs():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
-    if sys.platform == "win32", end="":
-        print(Fore.GREEN + "Operating System: ")
+    if sys.platform == "win32":
+        print(Fore.GREEN + "Operating System: ", end="")
         os.system('ver')
         print(Style.RESET_ALL, end="")
         operatingSystem = "Windows"
