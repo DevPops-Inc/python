@@ -12,21 +12,21 @@ def checkOs():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "win32": 
-        print(Fore.GREEN + "Operating System: ")
+        print(Fore.GREEN + "Operating System: ", end="")
         os.system('ver')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "Windows"
 
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "macOS"
 
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         os.system('uname -r')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -44,7 +44,7 @@ def checkCowthink():
         
         print("Started checking Cowthink at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
-        FNULL = open(os.devnull,'w')
+        FNULL = open(os.devnull, 'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
 
