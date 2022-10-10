@@ -14,12 +14,12 @@ def checkOsForMacOrLinux():
     if sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
 
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         os.system('uname -r')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
 
     else: 
         print(Fore.RED + "Sorry but this only runs on Mac or Linux." + Style.RESET_ALL)
@@ -42,7 +42,7 @@ def checkHtop():
         
         print("Started checking htop at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
-        FNULL = open(os.devnull,'w')
+        FNULL = open(os.devnull, 'w')
 
         checkAnsibleOnMacOrLinux = subprocess.call(['which', 'htop'], stdout=FNULL) 
 
