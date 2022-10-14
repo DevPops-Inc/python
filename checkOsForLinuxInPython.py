@@ -14,7 +14,7 @@ def checkOsForLinux():
     if sys.platform == "linux":
         print(Fore.GREEN + "Operating System: ")
         os.system('uname -r')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         
