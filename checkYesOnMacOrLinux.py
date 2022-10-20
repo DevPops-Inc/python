@@ -14,12 +14,12 @@ def checkOsForMac():
     if sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         
     elif sys.platfrom == "linux": 
         print(Fore.GREEN + "Operating System: ")
         os.system('uname -r')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, enc="")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
@@ -42,7 +42,7 @@ def checkYes():
         
         print("Started checking yes at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
-        FNULL = open(os.devnull,'w')
+        FNULL = open(os.devnull, 'w')
 
         checkAnsibleOnMacOrLinux = subprocess.call(['which', 'yes'], stdout=FNULL) 
 
