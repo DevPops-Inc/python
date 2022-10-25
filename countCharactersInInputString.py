@@ -15,21 +15,21 @@ def checkOs():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "win32": 
-        print(Fore.GREEN + "Operating System")
+        print(Fore.GREEN + "Operating System", end="")
         os.system('ver')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "Windows"
 
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "macOS"
 
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         os.system('uname -r')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -98,7 +98,7 @@ def countCharacters():
         print("Started counting characters at", startDateTime.strftime("%Y-%M-%d %H:%M %p"))
 
         characterCount = len(inputString)
-        print(Fore.BLUE + "The string has {0} characters.".format(characterCount))
+        print(Fore.BLUE + "The string \"{0}\" has {1} characters.".format(inputString, characterCount))
         
         print(Fore.GREEN + "Successfully counted characters in input string." + Style.RESET_ALL)
 
@@ -107,7 +107,7 @@ def countCharacters():
         print("Finished counting characters at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
         duration = finishedDateTime - startDateTime
-        print("Total execution time: {0}".format(duration.seconds))
+        print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
         
     except Exception as e: 
