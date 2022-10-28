@@ -14,21 +14,21 @@ def checkOs():
 	print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 	
 	if sys.platform == "win32": 
-		print(Fore.GREEN + "Operating System: ")
+		print(Fore.GREEN + "Operating System: ", end="")
 		os.system('ver')
-		print(Style.RESET_ALL)
+		print(Style.RESET_ALL, end="")
 		operatingSystem = "Windows"
 		
 	elif sys.platform == "darwin": 
 		print(Fore.GREEN + "Operating System: ")
 		os.system('sw_vers')
-		print(Style.RESET_ALL)
+		print(Style.RESET_ALL, end="")
 		operatingSystem = "macOS"
 		
 	elif sys.platfrom == "linux": 
 		print(Fore.GREEN + "Operating System: ")
 		os.system(uname -r)
-		print(Style.RESET_ALL)
+		print(Style.RESET_ALL, end="")
 		operatingSystem = "Linux"
 		
 	print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -75,12 +75,12 @@ def checkCowsay(operatingSystem):
 	
 def getCowMessage(operatingSystem): 
 	if operatingSystem == "Windows": 
-		cowMessage = str(input("Please type what you like the cow to say and press \"Enter\" key (Example: Moo!)\n"))
+		cowMessage = str(input("Please type what you like the cow to say and press \"Enter\" key (Example: Moo!): \n"))
 		
 		print("")
 		
 	elif operatingSystem == "macOS" or operatingSystem == "Linux": 
-		cowMessage = str(input("Please type what you like the cow to say and press \"return\" key (Example: Moo!)\n"))
+		cowMessage = str(input("Please type what you like the cow to say and press \"return\" key (Example: Moo!): \n"))
 		
 		print("")
 		
