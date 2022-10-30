@@ -14,10 +14,11 @@ def checkOsForWindows():
     print("Start checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "win32": 
-        print(Fore.GREEN + "Operating System: ")
+        print(Fore.GREEN + "Operating System: ", end="")
         os.system('ver')
-
-        print(Style.RESET_ALL + "Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print(Style.RESET_ALL, end="")
+        
+        print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
     else: 
@@ -29,8 +30,8 @@ def checkOsForWindows():
 
 
 def getAnswer():
-    os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"')
-    print("Do you want to defrag the HDD (not recommended for SSD drives)?")
+    os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"') 
+    print("Do you want to defrag the HDD (not recommended for SSD drives)?") # TODO: iterate over objects and get HDD or SSD
     answer = str(input("Please press \"Y\" or \"N\" and press \"Enter\" key: "))
     
     print("")
