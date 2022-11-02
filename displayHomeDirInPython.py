@@ -5,6 +5,7 @@
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
+from pathlib import Path
 colorama.init()
 
 
@@ -12,21 +13,21 @@ def checkOs():
     print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "win32": 
-        print(Fore.GREEN + "Operating System: ")
+        print(Fore.GREEN + "Operating System: ", end="")
         os.system('ver')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "Windows"
 
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "macOS"
 
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         os.system('uname -r')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -43,7 +44,7 @@ def displayHomeDir():
         startDateTime = datetime.now()
         print("Started displaying home directory at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
-        homeDir=os.getcwd()
+        homeDir=Path.home()
         print(Fore.BLUE + "Your home directory is: {0}".format(homeDir))
         print(Fore.GREEN + "Successfully displayed home directory." + Style.RESET_ALL)
 
