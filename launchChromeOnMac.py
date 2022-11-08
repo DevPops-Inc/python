@@ -14,7 +14,7 @@ def checkOsForMac():
     if sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
@@ -35,7 +35,7 @@ def launchChrome():
         startDateTime = datetime.now()
         print("Started launching Chrome at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
-        browser=os.system('open -a "Google Chrome"')
+        os.system('open -a "Google Chrome"')
         print(Fore.GREEN + "Successfully launched Chrome." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
