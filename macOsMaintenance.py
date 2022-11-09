@@ -16,20 +16,19 @@ def checkOsForMac():
     if sys.platform == "darwin":
         print(Fore.GREEN + "Operating System:")
         os.system('sw_vers')
+        print(Style.RESET_ALL, end="")
         
-        print(Style.RESET_ALL + "Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
-
+        print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only works on Mac" + Style.RESET_ALL)
 
         print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
-
         exit("")
 
 
-def getHardDrive():
+def getHardDrive(): # figure out how to iterate to get HDD
     os.system('diskutil list')
 
     answer = str(input("Please type 1 if your hard drive is \"Macintosh HD\" or 2 if it's \"MacOS\" and press \"return\" key: "))
