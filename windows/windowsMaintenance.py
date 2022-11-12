@@ -14,7 +14,7 @@ def checkOsForWindows():
     print("Started checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "win32": 
-        print(Fore.GREEN + "Operating System: ")
+        print(Fore.GREEN + "Operating System: ", end="")
         os.system('ver')
         
         print(Style.RESET_ALL + "Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
@@ -43,7 +43,7 @@ def runWindowsMaintenance():
         for job in maintenance: 
             os.system(job)
 
-        os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"')
+        os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"') # TODO: iterate to get HDD vs SDD
         print("Do you want to defrag the HDD (not recommended for SSD drives)?")
         answer = str(input("Please press \"Y\" or \"N\" and press \"Enter\" key: "))
         if answer == "Y" or answer == "y":
