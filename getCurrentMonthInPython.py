@@ -17,13 +17,13 @@ def checkOs():
         print(Style.RESET_ALL)
         operatingSystem = "Windows"
 
-    if sys.platform == "darwin": 
+    elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
         print(Style.RESET_ALL, end="")
         operatingSystem = "macOS"
 
-    if sys.platform == "linux": 
+    elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         os.system('uname -r')
         print(Style.RESET_ALL, end="")
