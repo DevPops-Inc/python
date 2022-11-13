@@ -14,26 +14,24 @@ def checkOs():
     print("Started checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     if sys.platform == "win32": 
-        print(Fore.GREEN + "Operating System: ")
+        print(Fore.GREEN + "Operating System: ", end="")
         os.system('ver')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "Windows"
 
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
-        print(Style.RESET_ALL)
+        print(Style.RESET_ALL, end="")
         operatingSystem = "macOS"
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows or macOS." + Style.RESET_ALL)
 
         print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
-
         exit("")
 
     print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
-
     print("")
     return operatingSystem
     
@@ -48,9 +46,11 @@ def runWindowsMaintenance():
     for job in maintenance: 
         os.system(job)
 
-    os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"')
+    os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"') # TODO: iterate to get HDD vs SDD
     print("Do you want to defrag the HDD (not recommended for SSD drives)?")
+    
     answer = str(input("Please press \"Y\" or \"N\" and press \"Enter\" key: "))
+
     if answer == "Y" or answer == "y":
         os.system('defrag c: /u')
 
@@ -81,7 +81,7 @@ def runMacMaintenance():
 
     os.system('diskutil list')
 
-    answer = str(input("Please type 1 if your hard drive is \"Macintosh HD\" or 2 if it's \"MacOS\" and press \"return\" key: "))
+    answer = str(input("Please type 1 if your hard drive is \"Macintosh HD\" or 2 if it's \"MacOS\" and press \"return\" key: ")) # TODO: iterate to get disk name
     
     if answer == "1": 
         os.system('diskutil verifyVolume "Macintosh HD"')
