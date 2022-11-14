@@ -76,7 +76,7 @@ def bestProgrammingLanguage():
         print("Finished best programming language GUI at", finishedDatetime.strftime("%Y-%m-%d %H:%M %p"))
 
         duration = finishedDatetime - startDateTime
-        print("Total execution time: {0} seconds".format(duration.seconds))
+        print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
         
     except Exception as e:

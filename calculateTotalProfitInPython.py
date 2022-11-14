@@ -129,7 +129,7 @@ def calculateTotalProfit():
         print("Finished calculated total profit at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
         duration = finishedDateTime - startDateTime
-        print("Total execution time: {0} seconds".format(duration.seconds))
+        print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
         
     except Exception as e:
