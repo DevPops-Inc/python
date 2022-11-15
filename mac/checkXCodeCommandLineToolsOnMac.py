@@ -37,7 +37,7 @@ def checkXCodeCommandLineTools():
         
         print("Started checking XCode command line tools at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
-        FNULL = open(os.devnull, 'w')
+        FNULL = open(os.devnull,  'w')
 
         checkAnsibleOnMacOrLinux = subprocess.call(['which', 'xcode-select'], stdout=FNULL) 
 

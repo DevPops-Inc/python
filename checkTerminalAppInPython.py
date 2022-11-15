@@ -97,7 +97,7 @@ def checkTerminalApp():
         
         print("Started checking {0} at {1}".format(terminalApp, startDateTime.strftime("%Y-%m-%d %H:%M %p")))
 
-        FNULL = open(os.devnull,'w')
+        FNULL = open(os.devnull, 'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
 
