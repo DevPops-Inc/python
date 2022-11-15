@@ -42,7 +42,7 @@ def checkToilet():
         
         print("Started checking TOIlet at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
-        FNULL = open(os.devnull, 'w')
+        FNULL = open(os.devnull,  'w')
 
         checkAnsibleOnMacOrLinux = subprocess.call(['which', 'toilet'], stdout=FNULL) 
 

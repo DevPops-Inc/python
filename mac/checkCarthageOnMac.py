@@ -37,7 +37,7 @@ def checkCarthage():
         
         print("Started checking carthage at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
-        FNULL = open(os.devnull,'w')
+        FNULL = open(os.devnull, 'w')
 
         checkAnsibleOnMacOrLinux = subprocess.call(['which', 'brew'], stdout=FNULL) 
 

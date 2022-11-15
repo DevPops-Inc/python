@@ -38,7 +38,7 @@ def checkOs():
 
 def checkCowsay(operatingSystem):
 	print("Started checking Cowsay at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
-	FNULL = open(os.devnull, 'w')
+	FNULL = open(os.devnull,  'w')
 	
 	if operatingSystem == "Windows": 
 	
