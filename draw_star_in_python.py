@@ -35,15 +35,84 @@ def checkOs():
     return operatingSystem
 
 
+def getBorderColor(operatingSystem): 
+    if operatingSystem == "Windows": 
+        borderColor = str(input("Please type the border color of the star and press the \"Enter\" key (Example: orange): "))
+
+        print("")
+
+    else: 
+        borderColor = str(input("Please type the border color of the star and press the \"return\" key (Example: orange): "))
+
+        print("")
+
+    return borderColor
+
+
+def getInsideColor(operatingSystem): 
+    if operatingSystem == "Windows": 
+        insideColor = str(input("Please type the inside color of the star and press the \"Enter\" key (Example: yellow): "))
+
+        print("")
+
+    else: 
+        insideColor = str(input("Please type the inside color of the star and press the \"return\" key (Example: yellow): "))
+
+        print("")
+
+    return insideColor
+
+
+def checkParameters(borderColor, insideColor): 
+    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    valid = "true"
+
+    print("Parameters: ")
+    print("------------------------------------")
+    print("borderColor: {0}".format(borderColor))
+    print("insideColor: {0}".format(insideColor))
+    print("------------------------------------")
+
+    if borderColor == None: 
+        print(Fore.RED + "borderColor is not set." + Style.RESET_ALL)
+        valid = "false"
+
+    if insideColor == None: 
+        print(Fore.RED + "insideColor is not set." + Style.RESET_ALL)
+        valid = "false"
+
+    if valid == "true": 
+        print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
+
+        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("")
+
+    else: 
+        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
+
+        print("Finished checking parameters at", datetime().strftime("%Y-%m-%d %H:%M %p"))
+        exit("")
+
+
 def drawStar(): 
     print("\nLet's draw a star in Python!\n")
-    checkOs()
+    operatingSystem = checkOs()
+
+    if len(sys.argv) > 2: 
+        borderColor = str(sys.argv[1])
+        insideColor = str(sys.argv[2])
+
+    else: 
+        borderColor = getBorderColor(operatingSystem)
+        insideColor = getInsideColor(operatingSystem)
+
+    checkParameters(borderColor, insideColor)
 
     try: 
         startDateTime = datetime.now()
         print("Started drawing star at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
 
-        color('orange', 'yellow')
+        color(borderColor, insideColor)
 
         begin_fill()
         while True:
@@ -54,7 +123,7 @@ def drawStar():
         end_fill()
         done()
 
-        print(Fore.GREEN + "Successfully drew star in Python.")
+        print(Fore.GREEN + "Successfully drew star in Python." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
         print("Finished drawing star at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
