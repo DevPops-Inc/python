@@ -93,7 +93,7 @@ def checkFourLetterWord():
         wordLength = len(fourLetterWord)
 
         if wordLength == 4:
-            print(Fore.GREEN + "{0} is a four letter world.  Well done!".format(fourLetterWord))
+            print(Fore.GREEN + "{0} is a four letter world.  Well done!".format(fourLetterWord.capitalize()))
             print("" + Style.RESET_ALL)
         else:
             print(Fore.RED + "Sorry but {0} is not a four letter word.".format(fourLetterWord))
