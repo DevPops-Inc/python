@@ -2,6 +2,8 @@
 
 # check four letter word in Python
 
+# you can run this script with: python3 checkFourLetterWordInPython.py < four letter word >
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -78,7 +80,7 @@ def checkFourLetterWord():
     print("\nLet's check a four letter word in Python!\n")
     operatingSystem = checkOs()
 
-    if len(sys.argv) > 2: 
+    if len(sys.argv) >= 2: 
         fourLetterWord = str(sys.argv[1])
 
     else: 
