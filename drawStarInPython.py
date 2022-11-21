@@ -2,6 +2,8 @@
 
 # draw a star with turtle
 
+# you can run this script with: python3 drawStarInPython.py < border color > < inside color >
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -98,7 +100,7 @@ def drawStar():
     print("\nLet's draw a star in Python!\n")
     operatingSystem = checkOs()
 
-    if len(sys.argv) > 2: 
+    if len(sys.argv) >= 2: 
         borderColor = str(sys.argv[1])
         insideColor = str(sys.argv[2])
 
