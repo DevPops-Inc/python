@@ -45,7 +45,7 @@ def checkDocker():
         print(Fore.GREEN + "Docker is not installed." + Style.RESET_ALL)
 
         print("Finished checking Docker at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
-        print("")
+        exit("")
 
 
 def getDockerProcessId(): 
