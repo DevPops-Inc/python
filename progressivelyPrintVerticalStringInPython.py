@@ -2,6 +2,8 @@
 
 # progressively print vertical string 
 
+# you can run this script with: python3 progressivelyPrintVerticalStringInPython.py '< vertical string >'
+
 import colorama, os, sys, time, traceback
 from colorama import Fore, Style
 from datetime import datetime
