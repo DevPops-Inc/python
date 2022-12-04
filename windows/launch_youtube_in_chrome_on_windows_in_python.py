@@ -2,11 +2,75 @@
 
 # launch YouTube in Chrome on Windows 
 
-# import OS module 
-import os
+import colorama, os, sys, traceback
+from colorama import Fore, Style
+from datetime import datetime
+colorama.init()
 
-# prompt user response
-str(input("\nLaunch YouTube in Chrome on Windows.\nPress any key to continue or press Ctrl and C keys to quit.\n"))
 
-# launch YouTube in Chrome
-os.system('start chrome "http://youtube.com"')
+def checkOsForWindows(): 
+    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+
+    if sys.platform == "win32": 
+        print(Fore.GREEN + "Operating System:", end="")
+        os.system('ver')
+        print(Style.RESET_ALL, end="")
+
+        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+
+        print("")
+
+    else: 
+        print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
+
+        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+
+        exit("")
+
+
+def checkChrome(): 
+    print("Started checking Chrome at", datetime.now().strftime("%Y-%m-d %H:%M %p"))
+
+    winPrograms = os.popen('PowerShell "Get-ItemProperty HKLM:\\Software\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\* | ForEach-Object {$_.DisplayName}"').read()
+
+    if "Google Chrome" in winPrograms: 
+        print(Fore.GREEN + "Chrome is installed." + Style.RESET_ALL)
+
+        print("Finished checking Chrome at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("")
+
+    else: 
+        print(Fore.RED + "Google Chrome is not installed." + Style.RESET_ALL)
+
+        print("Finished checking Chrome at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        exit("")
+
+
+def launchYouTubeInChrome(): 
+    print("\nLaunch YouTube in Chrome on Windows.\n")
+    
+    checkOsForWindows()
+    checkChrome()
+
+    try: 
+        startDateTime = datetime.now()
+        print("Started launching YouTube at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+
+        os.system('start chrome "http://youtube.com"')
+        print(Fore.GREEN + "Successfully launched YouTube in Chrome." + Style.RESET_ALL)
+
+        finishedDateTime = datetime.now()
+        print("Finished launching YouTube at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+
+        duration = finishedDateTime - startDateTime
+        print("Total execution time: {0} second(s)".format(duration.seconds))
+        print("")
+
+    except Exception as e: 
+        print(Fore.RED + "Failed to launch YouTube in Chrome.")
+        print(e)
+        print(traceback.print_stack)
+        exit("" + Style.RESET_ALL)
+
+
+launchYouTubeInChrome()        
