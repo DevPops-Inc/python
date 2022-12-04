@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System:", end="")
@@ -31,30 +31,27 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
     return operatingSystem
 
 
 def getFourLetterWord(operatingSystem): 
-    if operatingSystem == "Window": 
-        fourLetterWord = str(input("Please type a four-letter word and press the \"Enter\" key (Example: code): "))
-
-        print("")
+    if operatingSystem == "Windows": 
+        fourLetterWord = str(input("Please type a four letter word and press the \"Enter\" key (Example: code): "))
 
     else: 
-        fourLetterWord = str(input("Please type a four-letter word and press the \"return\" key (Example: code): "))
-
-        print("")
+        fourLetterWord = str(input("Please type a four letter word and press the \"return\" key (Example: code): "))
         
+    print("")    
     return fourLetterWord
 
 
 def checkParameters(fourLetterWord): 
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
-    print("Parameters:")
+    print("Parameter(s):")
     print("-----------------------------------------")
     print("fourLetteWord: {0}".format(fourLetterWord))
     print("-----------------------------------------")
@@ -64,15 +61,15 @@ def checkParameters(fourLetterWord):
         valid = "false"
 
     if valid == "true": 
-        print(Fore.GREEN + "All parameters checks passed." + Style.RESET_ALL)
+        print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
@@ -90,28 +87,26 @@ def checkFourLetterWord():
 
     try: 
         startDateTime = datetime.now()
-        print("Started checking four letter word at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started checking four letter word at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         wordLength = len(fourLetterWord)
 
         if wordLength == 4:
-            print(Fore.GREEN + "{0} is a four letter world.  Well done!".format(fourLetterWord.capitalize()))
-            print("" + Style.RESET_ALL)
+            print(Fore.BLUE + "\"{0}\" is a four letter word.".format(fourLetterWord.capitalize()) + Style.RESET_ALL)
         else:
-            print(Fore.RED + "Sorry but {0} is not a four letter word.".format(fourLetterWord))
-            print("" + Style.RESET_ALL)
+            print(Fore.RED + "\"{0}\" is not a four letter word.".format(fourLetterWord.capitalize()) + Style.RESET_ALL)
 
         print(Fore.GREEN + "Successfully checked four letter word." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        print("Finished checking four letter word at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking four letter word at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
 
     except Exception as e: 
-        print(Fore.RED + "Failed to check four letter word")
+        print(Fore.RED + "Failed to check four letter word.")
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
