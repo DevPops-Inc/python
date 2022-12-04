@@ -2,7 +2,7 @@
 
 # capitalize first word in string in Python
 
-# you can run this script with: python3 capsFirstWordInStringInPython.py < string > 
+# you can run this script with: python3 capsFirstWordInStringInPython.py '< string >'
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
@@ -39,21 +39,17 @@ def checkOs():
 
 def getTitleString(operatingSystem):
     if operatingSystem == "Windows": 
-        titleString = str(input("Please type the string you would like to capitalize the first word of and press \"Enter\" key (Example: problem exists between keyboard and chair): "))
-
-        print("")
+        titleString = str(input("Please type the string you would like to capitalize the first word of and press \"Enter\" key (Example: python rocks!): "))
     
     elif operatingSystem == "macOS" or operatingSystem == "Linux":
-        titleString = str(input("Please type the string you would like to capitalize the first word of and press \"return\" key (Example: problem exists between keyboard and chair): "))
+        titleString = str(input("Please type the string you would like to capitalize the first word of and press \"return\" key (Example: python rocks!): "))
 
-        print("")
-
+    print("")
     return titleString
 
 
 def checkParameters(titleString):
     print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
-
     valid = "true"
 
     print("Parameters:")
@@ -69,14 +65,12 @@ def checkParameters(titleString):
         print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
-        
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
-
         exit("")
 
 
