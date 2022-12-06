@@ -12,7 +12,7 @@ colorama.init()
 
 
 def checkOs():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ", end="")
@@ -51,7 +51,7 @@ def getLastName(operatingSystem):
 
     
 def checkParameters(lastName): 
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     valid = "true"
 
@@ -67,14 +67,14 @@ def checkParameters(lastName):
     if valid == "true": 
         print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
         
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect" + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         exit("")
 
@@ -93,7 +93,7 @@ def countCharactersInLastName():
     try: 
         startDateTime = datetime.now()
         
-        print("Started counting characters in last name at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started counting characters in last name at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         count = len(lastName)
         print(Fore.BLUE + "{0} has {1} characters in it.".format(lastName, count))
@@ -102,7 +102,7 @@ def countCharactersInLastName():
 
         finishedDateTime = datetime.now()
 
-        print("Finished counting characters in last name at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished counting characters in last name at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

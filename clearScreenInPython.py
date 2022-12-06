@@ -9,7 +9,7 @@ colorama.init()
 
 
 def checkOs(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32":
         print(Fore.GREEN + "Operating System: ", end="")
@@ -42,7 +42,7 @@ def clearScreen():
     try: 
         startDateTime = datetime.now()
         
-        print("Started clearing screen at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started clearing screen at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if operatingSystem == "Windows": 
             os.system('cls')
@@ -52,7 +52,7 @@ def clearScreen():
 
         finishedDateTime = datetime.now()
 
-        print("Finished clearing screen at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished clearing screen at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
 

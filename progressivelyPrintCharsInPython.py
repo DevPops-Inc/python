@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System:", end="")
@@ -31,7 +31,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
     return operatingSystem
 
@@ -48,7 +48,7 @@ def getInputString(operatingSystem):
 
 
 def checkParameters(inputString): 
-    print("Started checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
     print("Parameter(s):")
@@ -59,13 +59,13 @@ def checkParameters(inputString):
     if valid == "true": 
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
         
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
@@ -83,7 +83,7 @@ def progressivelyPrintChars():
 
     try: 
         startDateTime = datetime.now()
-        print("Started progressively printing chars at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started progressively printing chars at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         print(Fore.BLUE, end="")
 
@@ -97,7 +97,7 @@ def progressivelyPrintChars():
         
         finishedDateTime = datetime.now()
         
-        print("Finished progressively printing chars at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished progressively printing chars at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

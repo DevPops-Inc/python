@@ -63,7 +63,7 @@ def getSecondYear(operatingSystem):
 
 
 def checkParameters(firstYear, secondYear): 
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
     print("Parameters: ")
@@ -83,7 +83,7 @@ def checkParameters(firstYear, secondYear):
     if valid == "true": 
         print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
@@ -109,7 +109,7 @@ def leapYearCounter():
 
     try: 
         startDateTime = datetime.now()
-        print("Started counting leap years at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started counting leap years at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         leapYears = calendar.leapdays(firstYear, secondYear)
         
@@ -118,7 +118,7 @@ def leapYearCounter():
         print(Fore.GREEN + "Successfully counted number of leap years." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        print("Finished counting leap years at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished counting leap years at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

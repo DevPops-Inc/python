@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32":
         print(Fore.GREEN + "Operating System: ", end="")
@@ -31,7 +31,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
     
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
     return operatingSystem
@@ -66,7 +66,7 @@ def getSecondNumber(operatingSystem):
 
 
 def checkParameters(firstNumber, secondNumber):
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     valid = "true"
 
@@ -87,13 +87,13 @@ def checkParameters(firstNumber, secondNumber):
     if valid == "true":
         print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else:
         print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         exit("")        
 
@@ -114,7 +114,7 @@ def addFunction():
 
     try: 
         startDateTime = datetime.now()
-        print("Started adding at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started adding at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
         
         result = firstNumber + secondNumber
         
@@ -123,7 +123,7 @@ def addFunction():
         print(Fore.GREEN + "Successfully added in Python" + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        print("Finished adding at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished adding at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
         
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

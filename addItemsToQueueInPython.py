@@ -10,7 +10,7 @@ colorama.init()
 
 
 def checkOs(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ", end="")
@@ -30,7 +30,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
     
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
     return operatingSystem
 
@@ -41,7 +41,7 @@ def addItemsToQueue():
 
     try: 
         startDateTime = datetime.now()
-        print("Started adding items to queue at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started adding items to queue at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         queue = deque()
   
@@ -78,7 +78,7 @@ def addItemsToQueue():
         print(Fore.GREEN + "Successfully added items to queue." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        print("Finished adding items to queue at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished adding items to queue at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

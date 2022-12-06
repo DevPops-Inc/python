@@ -10,7 +10,7 @@ colorama.init()
 
 
 def checkOs(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ", end="")
@@ -30,7 +30,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finisehd checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finisehd checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
     return operatingSystem
@@ -54,7 +54,7 @@ def bouncingBall():
     try:
         startDateTime = datetime.now()
 
-        print("Started bouncing ball animation at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started bouncing ball animation at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         while True: 
             canvas.move(ball1,xa,ya)
@@ -70,7 +70,7 @@ def bouncingBall():
 
         finishedDateTime = datetime.now()
 
-        print("Finished bouncing ball animation at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished bouncing ball animation at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

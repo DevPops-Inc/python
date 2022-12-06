@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOS():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ", end="")
@@ -31,7 +31,7 @@ def checkOS():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
     return operatingSystem
 
@@ -63,7 +63,7 @@ def getMonth(operatingSystem):
 
 
 def checkParameters(year, month): 
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
     print("Parameters:")
@@ -83,13 +83,13 @@ def checkParameters(year, month):
     if valid == "true": 
         print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "One ore more parameters are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
@@ -109,7 +109,7 @@ def countDaysOfMonth():
 
     try: 
         startDateTime = datetime.now()
-        print("Started counting days in a month at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started counting days in a month at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         cal = calendar.TextCalendar(calendar.SUNDAY)
         
@@ -128,7 +128,7 @@ def countDaysOfMonth():
         print(Fore.GREEN + "Successfully counted days in a month," + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        print("Finished counting day in a month at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished counting day in a month at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

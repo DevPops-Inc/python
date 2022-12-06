@@ -10,7 +10,7 @@ colorama.init()
 
 
 def checkOs():
-    print("Started checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32":
         print(Fore.GREEN + "Operating System: ", end="")
@@ -30,7 +30,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
     
-    print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
     return operatingSystem
@@ -55,7 +55,7 @@ def bestProgrammingLanguage():
     try:
         startDateTime = datetime.now()
         
-        print("Started best programming launch GUI at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started best programming launch GUI at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         Label(root, root.title("Options"), text="""What is the best programming language?""", justify = LEFT, padx = 20).pack()
 
@@ -73,7 +73,7 @@ def bestProgrammingLanguage():
 
         finishedDatetime = datetime.now()
 
-        print("Finished best programming language GUI at", finishedDatetime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished best programming language GUI at", finishedDatetime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDatetime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
