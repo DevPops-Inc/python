@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System:", end="")
@@ -31,7 +31,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
     return operatingSystem
 
@@ -51,7 +51,7 @@ def getVerticalString(operatingSystem):
 
 
 def checkParameters(verticalString): 
-    print("Started checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
     print("Parameter(s):")
@@ -66,13 +66,13 @@ def checkParameters(verticalString):
     if valid == "true": 
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
-        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
@@ -91,7 +91,7 @@ def progressivelyPrintVerticalString():
     try: 
         startDateTime = datetime.now()
 
-        print("Started progressively printing {0} at {1}".format(verticalString, startDateTime.strftime("%Y-%m-%d %H:%M %p")))
+        print("Started progressively printing {0} at {1}".format(verticalString, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
         for char in verticalString: 
             print(Fore.BLUE + char)
@@ -101,7 +101,7 @@ def progressivelyPrintVerticalString():
 
         finishedDateTime = datetime.now()
 
-        print("Finished progressively printing {0} at {1}".format(verticalString, finishedDateTime.strftime("%Y-%m-%d %H:%M %p")))
+        print("Finished progressively printing {0} at {1}".format(verticalString, finishedDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

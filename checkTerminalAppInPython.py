@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ", end="")
@@ -31,7 +31,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
     return operatingSystem
@@ -52,7 +52,7 @@ def getTerminalApp(operatingSystem):
 
 
 def checkParameters(terminalApp):
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     valid = "true"
 
@@ -68,14 +68,14 @@ def checkParameters(terminalApp):
     if valid == "true": 
         print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect" + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         exit("")
 
@@ -95,7 +95,7 @@ def checkTerminalApp():
     try:
         startDateTime = datetime.now()
         
-        print("Started checking {0} at {1}".format(terminalApp, startDateTime.strftime("%Y-%m-%d %H:%M %p")))
+        print("Started checking {0} at {1}".format(terminalApp, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
         FNULL = open(os.devnull, 'w')
 
@@ -113,7 +113,7 @@ def checkTerminalApp():
 
                 finishedDateTime = datetime.now()
 
-                print("Finished checking {0} at".format(terminalApp), finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                print("Finished checking {0} at".format(terminalApp), finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -124,7 +124,7 @@ def checkTerminalApp():
                 
                 finishedDateTime = datetime.now()
 
-                print("Finished checking {0} at".format(terminalApp), finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                print("Finished checking {0} at".format(terminalApp), finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -144,7 +144,7 @@ def checkTerminalApp():
 
                 finishedDateTime = datetime.now()
 
-                print("Finished checking {0} at".format(terminalApp), finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                print("Finished checking {0} at".format(terminalApp), finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -155,7 +155,7 @@ def checkTerminalApp():
                 
                 finishedDateTime = datetime.now()
 
-                print("Finished checking {0} at".format(terminalApp), finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                print("Finished checking {0} at".format(terminalApp), finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))

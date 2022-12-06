@@ -9,7 +9,7 @@ colorama.init()
 
 
 def checkOs():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ", end="")
@@ -29,13 +29,13 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
     return operatingSystem
 
 def checkFortune(operatingSystem): 
-    print("Started checking Fortune at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking Fortune at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     FNULL = open(os.devnull,  'w')
 
@@ -46,13 +46,13 @@ def checkFortune(operatingSystem):
         if checkFortuneOnWindows == 0: 
             print(Fore.GREEN + "Fortune in installed" + Style.RESET_ALL)
 
-            print("Finished checking Fortune at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking Fortune at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
             print("")
         
         else: 
             print(Fore.RED + "Fortune is not installed" + Style.RESET_ALL)
 
-            print("Finished checking Fortune at", datetime.now().strfime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking Fortune at", datetime.now().strfime("%m-%d-%Y %I:%M %p"))
             exit("")
 
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
@@ -62,7 +62,7 @@ def checkFortune(operatingSystem):
         if checkFortuneOnMacOrLinux == 0: 
             print(Fore.GREEN + "Fortune is installed" + Style.RESET_ALL)
 
-            print("Finished checking Fortune at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking Fortune at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
             print("")
 
         else: 
@@ -73,7 +73,7 @@ def checkFortune(operatingSystem):
 
 
 def checkCowsay(operatingSystem):
-    print("Started checking Cowsay at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking Cowsay at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     FNULL = open(os.devnull,  'w')
     
@@ -84,13 +84,13 @@ def checkCowsay(operatingSystem):
         if checkCowsayOnWindows == 0: 
             print(Fore.GREEN + "Cowsay is installed." + Style.RESET_ALL)
 
-            print("Finished checking Cowsay at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking Cowsay at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
             print("")
 
         else: 
             print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
 
-            print("Finished checking Cowsay at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking Cowsay at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
             exit("")
 
     if operatingSystem == "macOS" or operatingSystem == "Linux": 
@@ -100,13 +100,13 @@ def checkCowsay(operatingSystem):
         if checkCowsayOnMacOrLinux == 0: 
             print(Fore.GREEN + "Cowsay is installed." + Style.RESET_ALL)
 
-            print("Finished checking Cowsay at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking Cowsay at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
             print("")
 
         else: 
             print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
 
-            print("Finished checking Cowsay at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking Cowsay at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
             exit("")
 
 
@@ -119,13 +119,13 @@ def cowTellsFortune():
 
     try: 
         startDateTime = datetime.now()
-        print("Cow started telling fortune at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Cow started telling fortune at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         os.system('fortune | cowsay')
         print(Fore.GREEN + "Cowsay successfully told fortune." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        print("Cow finished telling fortune at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Cow finished telling fortune at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

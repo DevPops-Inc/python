@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32":
         print(Fore.GREEN + "Operating System: ", end="")
@@ -31,7 +31,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
     return operatingSystem
@@ -63,7 +63,7 @@ def getDistance(operatingSystem):
 
 
 def checkParameters(rate, distance): 
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     valid = "true"
 
@@ -84,14 +84,14 @@ def checkParameters(rate, distance):
     if valid == "true": 
         print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
 
     else: 
         print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         exit("")
 
@@ -113,14 +113,14 @@ def calculateTravelTime():
     try: 
         startDateTime = datetime.now()
         
-        print("Started calculating travel time at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started calculating travel time at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         print(Fore.BLUE + "Travel time: {0} hours ".format(distance / rate))
         print(Fore.GREEN + "Successfully calcuated travel time." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
 
-        print("Finished calculating travel time at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p")) 
+        print("Finished calculating travel time at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p")) 
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

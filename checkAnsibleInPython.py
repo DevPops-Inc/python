@@ -29,7 +29,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
     return operatingSystem
@@ -42,7 +42,7 @@ def checkAnsible():
     try:
         startDateTime = datetime.now()
         
-        print("Started checking Ansible at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started checking Ansible at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull, 'w')
 
@@ -57,7 +57,7 @@ def checkAnsible():
 
                 finishedDateTime = datetime.now()
 
-                print("Finished checking Ansible at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                print("Finished checking Ansible at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -68,7 +68,7 @@ def checkAnsible():
                 
                 finishedDateTime = datetime.now()
 
-                print("Finished checking Ansible at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                print("Finished checking Ansible at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -85,7 +85,7 @@ def checkAnsible():
 
                 finishedDateTime = datetime.now()
 
-                print("Finished checking Ansible at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                print("Finished checking Ansible at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -96,7 +96,7 @@ def checkAnsible():
                 
                 finishedDateTime = datetime.now()
 
-                print("Finished checking Ansible at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+                print("Finished checking Ansible at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
                 duration = finishedDateTime - startDateTime
                 print("Total execution time: {0} second(s)".format(duration.seconds))

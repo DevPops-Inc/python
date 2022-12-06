@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32":
         print(Fore.GREEN + "Operating System: ", end="")
@@ -31,7 +31,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
     return operatingSystem
@@ -50,7 +50,7 @@ def getName(operatingSystem):
 
 
 def checkParameters(name): 
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
     print("Parameters:")
@@ -65,14 +65,14 @@ def checkParameters(name):
     if valid == "true": 
         print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         
         print("")
     
     else: 
         print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         exit("")
 
@@ -92,7 +92,7 @@ def displayFirstLetterInName():
     try: 
         startDateTime = datetime.now()
 
-        print("Started displaying first letter in name at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started displaying first letter in name at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         lname=list(name)
         print(Fore.BLUE + "The first letter of your name is {0}.".format(*lname))
@@ -101,7 +101,7 @@ def displayFirstLetterInName():
 
         finishedDateTime = datetime.now()
         
-        print("Finished displaying first letter in name at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished displaying first letter in name at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

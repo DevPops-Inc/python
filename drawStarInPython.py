@@ -12,7 +12,7 @@ colorama.init()
 
 
 def checkOs(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     
     if sys.platform == "win32":
         print(Fore.GREEN + "Operating System: ", end="")
@@ -32,7 +32,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
     return operatingSystem
 
@@ -66,7 +66,7 @@ def getInsideColor(operatingSystem):
 
 
 def checkParameters(borderColor, insideColor): 
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
     print("Parameters: ")
@@ -86,13 +86,13 @@ def checkParameters(borderColor, insideColor):
     if valid == "true": 
         print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
@@ -112,7 +112,7 @@ def drawStar():
 
     try: 
         startDateTime = datetime.now()
-        print("Started drawing star at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started drawing star at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         color(borderColor, insideColor)
 
@@ -128,7 +128,7 @@ def drawStar():
         print(Fore.GREEN + "Successfully drew star in Python." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        print("Finished drawing star at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished drawing star at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

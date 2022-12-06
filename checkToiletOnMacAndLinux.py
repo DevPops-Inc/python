@@ -9,7 +9,7 @@ colorama.init()
 
 
 def checkOsForMacOrLinux():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
@@ -24,11 +24,11 @@ def checkOsForMacOrLinux():
     else: 
         print(Fore.RED + "Sorry but this only runs on Mac or Linux." + Style.RESET_ALL)
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p)"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p)"))
 
         exit("")
     
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
 
@@ -40,7 +40,7 @@ def checkToilet():
     try:
         startDateTime = datetime.now()
         
-        print("Started checking TOIlet at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started checking TOIlet at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
 
@@ -53,7 +53,7 @@ def checkToilet():
 
             finishedDateTime = datetime.now()
 
-            print("Finished checking TOIlet at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking TOIlet at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
             duration = finishedDateTime - startDateTime
             print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -64,7 +64,7 @@ def checkToilet():
             
             finishedDateTime = datetime.now()
 
-            print("Finished checking TOIlet at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking TOIlet at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
             duration = finishedDateTime - startDateTime
             print("Total execution time: {0} second(s)".format(duration.seconds))

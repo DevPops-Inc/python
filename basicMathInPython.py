@@ -9,7 +9,7 @@ colorama.init()
 
 
 def checkOs():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32":
         print(Fore.GREEN + "Operating System: ", end="")
@@ -29,7 +29,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
     return operatingSystem
@@ -71,7 +71,7 @@ def getNum1(operatingSystem):
 
 
 def checkParameters(choice, num1):
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
     print("Parameters:")
@@ -91,13 +91,13 @@ def checkParameters(choice, num1):
     if valid == "true":
         print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else:
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
@@ -117,7 +117,7 @@ def basicMath():
 
     try:
         startDateTime = datetime.now()
-        print("Started basic math at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started basic math at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
  
         if choice == '1': 
             def timestwo(x): 
@@ -157,7 +157,7 @@ def basicMath():
             print(Fore.RED + "Invalid input" + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        print("Finished basic math at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished basic math at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

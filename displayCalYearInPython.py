@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs(): 
-	print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+	print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	
 	if sys.platform == "win32":
 		print(Fore.GREEN + "Operating System: ", end="")
@@ -31,7 +31,7 @@ def checkOs():
 		print(Style.RESET_ALL, end="")
 		operatingSystem = "Linux"
 		
-	print("Finished checking operaring system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+	print("Finished checking operaring system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	print("")
 	return operatingSystem
 	
@@ -51,7 +51,7 @@ def getCalendarYear(operatingSystem):
 	
 	
 def checkParameters(calendarYear): 
-	print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+	print("Started checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	valid = "true"
 	
 	print("Parameters: ")
@@ -66,13 +66,13 @@ def checkParameters(calendarYear):
 	if valid == "true": 
 		print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 		
-		print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		print("")
 		
 	else: 
 		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 		
-		print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		exit("")
 	
 
@@ -90,7 +90,7 @@ def displayYear():
 	
 	try: 
 		startDateTime = datetime.now()
-		print("Started displaying calendar year at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+		print("Started displaying calendar year at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		print("")
 		calendar.prcal(calendarYear)
@@ -99,7 +99,7 @@ def displayYear():
 		print(Fore.GREEN + "Successfully displayed {0} calendar year.".format(calendarYear) + Style.RESET_ALL)
 		
 		finishedDateTime = datetime.now()
-		print("Finished displaying calendar year at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished displaying calendar year at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		duration = finishedDateTime - startDateTime
 		print("Total execution time: {0} second(s)".format(duration.seconds))

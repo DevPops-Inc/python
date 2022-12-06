@@ -9,7 +9,7 @@ colorama.init()
 
 
 def checkOs(): 
-	print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+	print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	
 	if sys.platform == "win32": 
 		print(Fore.GREEN + "Operating System: ", end="")
@@ -29,7 +29,7 @@ def checkOs():
 		print(Style.RESET_ALL, end="")
 		operatingSystem = "Linux"
 		
-	print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+	print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	print("")
 	return operatingSystem
 
@@ -40,7 +40,7 @@ def listHorrorCreatures():
 	
 	try: 
 		startDateTime = datetime.now()
-		print("Started listing horror creatures at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+		print("Started listing horror creatures at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 			
 		horrorCreatures = ["Vampire", "Werewolf", "Witch", "Zombie"]
 
@@ -62,7 +62,7 @@ def listHorrorCreatures():
 		print(Fore.GREEN + "Successfully listed horror creatures." + Style.RESET_ALL)
 		
 		finishedDateTime = datetime.now()
-		print("Finished listing horror creatures at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished listing horror creatures at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		duration = finishedDateTime - startDateTime
 		print("Total execution time: {0} second(s)".format(duration.seconds))

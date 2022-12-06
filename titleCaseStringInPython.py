@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System:", end="")
@@ -31,7 +31,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
     return operatingSystem
 
@@ -48,7 +48,7 @@ def getTitleString(operatingSystem):
 
 
 def checkParameters(titleString): 
-    print("Started checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
     print("Parameter(s):")
@@ -59,13 +59,13 @@ def checkParameters(titleString):
     if valid == "true": 
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
-        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "One or more parameter checks passed." + Style.RESET_ALL)
 
-        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
@@ -84,7 +84,7 @@ def titleCaseString():
     try: 
         startDateTime = datetime.now()
         
-        print("Started title casing \"{0}\" at {1}".format(titleString, startDateTime.strftime("%Y-%m-%d %H:%M %p")))
+        print("Started title casing \"{0}\" at {1}".format(titleString, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
         print(Fore.BLUE + "\"{0}\" is now \"{1}\"".format(titleString, titleString.title()))
 
@@ -92,7 +92,7 @@ def titleCaseString():
 
         finishedDateTime = datetime.now()
 
-        print("Finished title casing \"{0}\" at {1}".format(titleString.title(), finishedDateTime.strftime("%Y-%m-%d %H:%M %p")))
+        print("Finished title casing \"{0}\" at {1}".format(titleString.title(), finishedDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

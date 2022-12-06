@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ", end="")
@@ -31,7 +31,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
 
@@ -53,7 +53,7 @@ def getCoinFlips(operatingSystem):
 
 
 def checkParameters(coinFlip): 
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     valid = "true"
 
@@ -69,14 +69,14 @@ def checkParameters(coinFlip):
     if valid == "true": 
         print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         exit("")
 
@@ -96,7 +96,7 @@ def countHeadsOrTailsInCoinFlips():
     try: 
         startDateTime = datetime.now()
 
-        print("Started counting heads and tails in coin flips at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started counting heads and tails in coin flips at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         output={"Heads":0, "Tails":0}
         coin=list(output.keys())
@@ -112,7 +112,7 @@ def countHeadsOrTailsInCoinFlips():
 
         finishedDateTime = datetime.now()
 
-        print("Finished counting heads and tails in coin flips at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished counting heads and tails in coin flips at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

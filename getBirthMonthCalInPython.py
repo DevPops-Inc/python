@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ", end="")
@@ -31,7 +31,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
 
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
     return operatingSystem
@@ -66,7 +66,7 @@ def getMonth(operatingSystem):
 
 
 def checkParameters(year, month): 
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     
     valid = "true"
 
@@ -116,7 +116,7 @@ def getBirthMonthCal():
     try: 
         startDateTime = datetime.now()
 
-        print("Started getting birthday month calendar at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started getting birthday month calendar at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
         birthday=calendar.TextCalendar(calendar.SUNDAY)
@@ -127,7 +127,7 @@ def getBirthMonthCal():
 
         finishedDateTime = datetime.now()
 
-        print("Finished getting birthday month calendar at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished getting birthday month calendar at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

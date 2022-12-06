@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32":
         print(Fore.GREEN + "Operating System: ", end="")
@@ -31,7 +31,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
     
-    print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     print("")
     return operatingSystem
@@ -72,7 +72,7 @@ def getColor2(operatingSystem):
 
 	
 def checkParameters(color1, color2): 
-	print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+	print("Started checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	valid = "true"
 	
 	print("Parameters: ")
@@ -92,13 +92,13 @@ def checkParameters(color1, color2):
 	if valid == "true":
 		print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
 		
-		print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		print("")
 		
 	else: 
 		print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
 		
-		print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		exit("")
 	
 
@@ -118,7 +118,7 @@ def mixPrimaryColors():
 	
 	try: 
 		startDateTime = datetime.now()
-		print("Started mixing colors at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+		print("Started mixing colors at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		purple = '\033[35m'
 		orange = '\033[33m'
@@ -140,7 +140,7 @@ def mixPrimaryColors():
 			print("")
 		
 		finishedDateTime = datetime.now()
-		print("Finished mixing colors at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished mixing colors at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		duration = finishedDateTime - startDateTime
 		print("Total execution time: {0} second(s)".format(duration.seconds))
