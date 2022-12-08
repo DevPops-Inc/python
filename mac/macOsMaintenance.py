@@ -43,10 +43,10 @@ def getHardDrive(): # figure out how to iterate to get HDD
 
 
 def checkParameters(hdd):
-    print("Started checking parameters at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameter(s) at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
     valid = "true"
 
-    print("Parameters:")
+    print("Parameter(s):")
     print("--------------------")
     print("hdd: {0}".format(hdd))
     print("--------------------")
@@ -56,16 +56,16 @@ def checkParameters(hdd):
         valid = "false"
 
     if valid == "true":
-        print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
+        print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
-        print("Finished checking parameters at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameters at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         exit("")
 
