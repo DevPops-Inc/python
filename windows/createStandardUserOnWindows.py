@@ -12,20 +12,20 @@ colorama.init()
 
 
 def checkOsForWindows(): 
-	print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+	print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	
 	if sys.platform == "win32": 
 		print("Operating System: ", end="")
 		os.system('ver')
 		print(Style.RESET_ALL, end="")
 		
-		print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		print("")
 		
 	else: 
 		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 		
-		print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		exit("")
 		
 
@@ -44,7 +44,7 @@ def getStandardUserPassword():
 
 
 def checkParameters(standardUser, standardUserPassword): 
-	print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+	print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	valid = "true"
 	
 	print("Parameters")
@@ -62,15 +62,15 @@ def checkParameters(standardUser, standardUserPassword):
 		valid = "false"
 		
 	if valid == "true": 
-		print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
+		print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 		
-		print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		print("")
 		
 	else: 
 		print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
 		
-		print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		exit("")
 		
 		
@@ -90,7 +90,7 @@ def createStandardUser():
 	
 	try: 
 		startDateTime = datetime.now()
-		print("Started creating standard user at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+		print("Started creating standard user at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		createstandardUser = "net user /add {0} {1}".format(standardUser, standardUserPassword)
 

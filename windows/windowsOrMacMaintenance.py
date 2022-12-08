@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOs():
-    print("Started checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ", end="")
@@ -28,10 +28,10 @@ def checkOs():
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows or macOS." + Style.RESET_ALL)
 
-        print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
-    print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished checking operating system at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
     return operatingSystem
     
@@ -39,7 +39,7 @@ def checkOs():
 def runWindowsMaintenance():
     startDateTime = datetime.now()
     
-    print("Started running Windows maintenance at ", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+    print("Started running Windows maintenance at ", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
     maintenance = ['echo y | chkdsk /f/r c:', 'SFC /scannow', 'Dism /Online /Cleanup-Image /ScanHealth']
 
@@ -58,7 +58,7 @@ def runWindowsMaintenance():
 
     finishedDateTime = datetime.now()
 
-    print("Finished running Windows maintenance at ", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished running Windows maintenance at ", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
     duration = finishedDateTime - startDateTime 
     print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -72,7 +72,7 @@ def runWindowsMaintenance():
 def runMacMaintenance():
     startDateTime = datetime.now()
     
-    print("Started running Mac maintenance at ", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+    print("Started running Mac maintenance at ", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
     maintenance = ['sudo mdutil -i on /', 'softwareupdate --install --all']
 
@@ -95,7 +95,7 @@ def runMacMaintenance():
 
     finishedDateTime = datetime.now()
 
-    print("Finished running Mac maintenance at ", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished running Mac maintenance at ", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
     duration = finishedDateTime - startDateTime
     print("Total execution time: {0} second(s)".format(duration.seconds))

@@ -12,20 +12,20 @@ colorama.init()
 
 
 def checkOsForWindows(): 
-	print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+	print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	
 	if sys.platform == "win32": 
 		print(Fore.GREEN + "Operating System: ", end="")
 		os.system('ver')
 		print(Style.RESET_ALL, end="")
 		
-		print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		print("")
 		
 	else: 
 		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 		
-		print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		exit("")
 
 		
@@ -41,10 +41,10 @@ def getLocalAdminPassword():
 
 
 def checkParameters(localAdmin, localAdminPassword): 
-	print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+	print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	valid = "true"
 
-	print("Parameters:")
+	print("Parameter(s):")
 	print("------------------------------------------")
 	print("localAdmin        : {0}".format(localAdmin))
 	print("localAdminPassword: {0}".format("***"))
@@ -59,15 +59,15 @@ def checkParameters(localAdmin, localAdminPassword):
 		valid = "false"
 
 	if valid == "true": 
-		print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
+		print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
-		print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		print("")
 
 	else: 
 		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
-		print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		exit("")
 
 
@@ -87,7 +87,7 @@ def createLocalAdmin():
 
 	try: 
 		startDateTime = datetime.now()
-		print("Started creating local admin at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+		print("Started creating local admin at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
 		createLocalAdmin = "net user /add {0} {1}".format(localAdmin, localAdminPassword)
 		addLocalAdmintoAdminGroup = "net localgroup administrators {0} /add".format(localAdmin)
@@ -101,7 +101,7 @@ def createLocalAdmin():
 		print(Fore.GREEN + "Successfully created local admin." + Style.RESET_ALL)
 
 		finishedDateTime = datetime.now()
-		print("Finished creating local admin at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+		print("Finished creating local admin at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
 		duration = finishedDateTime - startDateTime
 		print("Total execution time: {0} second(s)".format(duration.seconds))
