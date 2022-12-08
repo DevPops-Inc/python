@@ -9,20 +9,20 @@ colorama.init()
 
 
 def checkOsForWindows(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ", end="")
         os.system('ver')
         print(Style.RESET_ALL, end="")
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
@@ -32,13 +32,13 @@ def getLocalAdminPwExpPolicy():
 
     try: 
         startDateTime = datetime.now()
-        print("Started getting local admin password expiration policy at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Started getting local admin password expiration policy at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         os.system('net user administrator | findstr /C:expires')
         print(Fore.GREEN + "Successfuly got local admin expiration policy." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        print("Finished getting local admin password expiration policy at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished getting local admin password expiration policy at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

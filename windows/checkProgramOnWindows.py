@@ -11,20 +11,20 @@ colorama.init()
 
 
 def checkOsForWindows(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System:", end="")
         os.system('ver')
         print(Style.RESET_ALL, end="")
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
         
 
@@ -36,10 +36,10 @@ def getProgam():
 
 
 def checkParameters(program): 
-    print("Started checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
-    print("Parameters:")
+    print("Parameter(s):")
     print("----------------------------")
     print("program: {0}".format(program))
     print("----------------------------")
@@ -51,14 +51,14 @@ def checkParameters(program):
     if valid == "true": 
         print(Fore.GREEN + "All parameter check(s) passsed." + Style.RESET_ALL)
 
-        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         exit("")
 
@@ -78,7 +78,7 @@ def checkProgram():
     try: 
         startDateTime = datetime.now()
         
-        print("Started checking {0} at {1}".format(program, startDateTime.strftime("%Y-%m-%d %H:%M %p")))
+        print("Started checking {0} at {1}".format(program, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
         winPrograms = os.popen('PowerShell "Get-ItemProperty HKLM:\\Software\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\* | ForEach-Object {$_.DisplayName}"').read()
 
@@ -92,7 +92,7 @@ def checkProgram():
     
             finishedDateTime = datetime.now()
 
-            print("Finished checking {0} at {1}".format(program, finishedDateTime.strftime("%Y-%m-%d %H:%M %p")))
+            print("Finished checking {0} at {1}".format(program, finishedDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
             duration = finishedDateTime - startDateTime
             print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -103,7 +103,7 @@ def checkProgram():
 
             finishedDateTime = datetime.now()
             
-            print("Finished checking {0} at {1}".format(program, finishedDateTime.strftime("%Y-%m-%d %H:%M %p")))
+            print("Finished checking {0} at {1}".format(program, finishedDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
             duration = finishedDateTime - startDateTime
             print("Total execution time: {0} second(s)".format(duration.seconds))

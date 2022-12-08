@@ -44,11 +44,11 @@ def getWifiPassword():
 
 
 def checkParameters(wifiSsid, wifiPassword): 
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
     valid = "true"
 
-    print("Parameters:")
+    print("Parameter(s):")
     print("--------------------------------------")
     print("wifiSsid    : {0}".format(wifiSsid))
     print("wifiPassword: {0}".format("***"))
@@ -65,14 +65,14 @@ def checkParameters(wifiSsid, wifiPassword):
     if valid == "true":
         print(Fore.GREEN + "All parameter checks password." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect.", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
 
         exit("")
 

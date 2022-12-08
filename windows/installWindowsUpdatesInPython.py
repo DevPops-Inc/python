@@ -11,21 +11,21 @@ colorama.init()
 
 
 def checkOsForWindows(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System: ", end="")
         os.system('ver')
         print(Style.RESET_ALL, end="")
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         exit("")
 
@@ -37,7 +37,7 @@ def installWindowsUpdates():
     try:
         startDateTime = datetime.now()
         
-        print("Started installing Windows updates at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started installing Windows updates at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         print(Fore.BLUE + "Please save your work and close your applications since the computer will restart after updates are installed.")
         
@@ -50,7 +50,7 @@ def installWindowsUpdates():
 
         finishedDateTime = datetime.now()
 
-        print("Finished installing Windows updates at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished installing Windows updates at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

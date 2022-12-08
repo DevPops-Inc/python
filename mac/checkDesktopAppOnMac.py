@@ -11,7 +11,7 @@ colorama.init()
 
 
 def checkOsForMac():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%%m-%d-%Y I:%M %p"))
 
     if sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
@@ -35,10 +35,10 @@ def getDesktopApp():
         
 
 def checkParameters(desktopApp): 
-    print("Started checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
     valid = "true"
 
-    print("Parameters: ")
+    print("Parameter(s): ")
     print("----------------------------------")
     print("desktopApp: {0}".format(desktopApp))
     print("----------------------------------")
@@ -48,15 +48,15 @@ def checkParameters(desktopApp):
         valid = "false"
 
     if valid == "true": 
-        print(Fore.GREEN + "All parameter checks passed." + Style.RESET_ALL)
+        print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameters at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
         exit("")
 
 

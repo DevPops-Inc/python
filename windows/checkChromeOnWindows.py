@@ -9,20 +9,20 @@ colorama.init()
 
 
 def checkOsForWindows(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System:", end="")
         os.system('ver')
         print(Style.RESET_ALL, end="")
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
@@ -32,7 +32,7 @@ def checkChrome():
 
     try: 
         startDateTime = datetime.now()
-        print("Started checking Chrome at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started checking Chrome at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         winPrograms = os.popen('PowerShell "Get-ItemProperty HKLM:\\Software\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\* | ForEach-Object {$_.DisplayName}"').read()
 
@@ -43,7 +43,7 @@ def checkChrome():
             print(Fore.GREEN + "Chrome is installed." + Style.RESET_ALL)
 
             finishedDateTime = datetime.now()
-            print("Finished checking Chrome at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking Chrome at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
             duration = finishedDateTime - startDateTime
             print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -53,7 +53,7 @@ def checkChrome():
             print(Fore.RED + "Google Chrome is not installed." + Style.RESET_ALL)
 
             finishedDateTime = datetime.now()
-            print("Finished checking Chrome at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking Chrome at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
             duration = finishedDateTime - startDateTime
             print("Total execution time: {0} second(s)".format(duration.seconds))
