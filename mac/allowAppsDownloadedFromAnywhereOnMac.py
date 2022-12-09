@@ -9,20 +9,20 @@ colorama.init()
 
 
 def checkOsForMac(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "darwin":
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
         print(Style.RESET_ALL, end="") 
         
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
     else:
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         
         exit("")
 
@@ -34,7 +34,7 @@ def allowAppsDownloadedFromAnywhere():
     try:
         startDateTime = datetime.now()
         
-        print("Started allowing apps downloaded from anywhere at", startDateTime.strftime("%Y-%m-%d %H:%M %p")) 
+        print("Started allowing apps downloaded from anywhere at", startDateTime.strftime("%m-%d-%Y %I:%M %p")) 
         
         os.system('sudo spctl --master-disable')
 
@@ -62,7 +62,7 @@ def allowAppsDownloadedFromAnywhere():
 
         finishedDateTime = datetime.now()
         
-        print("Finished allowing apps downloaded from anywhere at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished allowing apps downloaded from anywhere at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

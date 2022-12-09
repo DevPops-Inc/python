@@ -29,7 +29,7 @@ def checkOsForWindows():
 
 
 def checkChrome(): 
-    print("Started checking Chrome at", datetime.now().strftime("%Y-%m-d %H:%M %p"))
+    print("Started checking Chrome at", datetime.now().strftime("%m-%d-%Y %I:%M %p))
 
     winPrograms = os.popen('PowerShell "Get-ItemProperty HKLM:\\Software\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\* | ForEach-Object {$_.DisplayName}"').read()
 
