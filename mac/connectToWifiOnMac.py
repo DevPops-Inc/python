@@ -11,20 +11,20 @@ colorama.init()
 
 
 def checkOsForMac():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
         print(Style.RESET_ALL, end="")
         
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
     else: 
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         exit("")
 
@@ -44,7 +44,7 @@ def getWifiPassword():
 
 
 def checkParameters(wifiSsid, wifiPassword): 
-    print("Started checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     valid = "true"
 
@@ -65,14 +65,14 @@ def checkParameters(wifiSsid, wifiPassword):
     if valid == "true":
         print(Fore.GREEN + "All parameter checks password." + Style.RESET_ALL)
 
-        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect.", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print(Fore.RED + "One or more parameters are incorrect.", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
-        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         exit("")
 
@@ -94,7 +94,7 @@ def connectToWifi():
     try: 
         startDateTime = datetime.now()
 
-        print("Started connecting to WiFi at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started connecting to WiFi at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
         
         connectToWifi = 'networksetup -setairportnetwork en0 {0} {1}'.format(wifiSsid, wifiPassword)
 
@@ -104,7 +104,7 @@ def connectToWifi():
 
         finishedDateTime = datetime.now()
 
-        print("Finished connecting to WiFi at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished connecting to WiFi at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
         

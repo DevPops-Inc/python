@@ -16,12 +16,12 @@ def checkOsForMac():
         os.system('sw_vers')
         print(Style.RESET_ALL, end="")
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
     else: 
         print(Fore.RED + "Sorry this script only runs on macOS." + Style.RESET_ALL)
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
@@ -31,13 +31,13 @@ def launchChrome():
 
     try: 
         startDateTime = datetime.now()
-        print("Started launching Chrome at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started launching Chrome at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         browser=os.system('open -a "Google Chrome"')
         print(Fore.GREEN + "Successfully launched Chrome." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        print("Finished launching Chrome at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished launching Chrome at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

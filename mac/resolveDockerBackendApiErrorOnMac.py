@@ -11,25 +11,25 @@ colorama.init()
 
 
 def checkOsForMac(): 
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
         print(Style.RESET_ALL, end="")
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
 
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
         
 def checkDocker(): 
-    print("Started checking Docker at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking Docker at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     FNULL = open(os.devnull, 'w')
     checkDockerOnMac = subprocess.call(['which', 'docker'], stdout=FNULL)
@@ -38,13 +38,13 @@ def checkDocker():
         print(Fore.GREEN + "Docker is installed." + Style.RESET_ALL)
         os.system('docker --version')
 
-        print("Finished checking Docker at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking Docker at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.GREEN + "Docker is not installed." + Style.RESET_ALL)
 
-        print("Finished checking Docker at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking Docker at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
@@ -63,7 +63,7 @@ def getDockerProcessId():
 
 
 def checkParameters(processId): 
-    print("Started checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
     print("Parameter(s): ")
@@ -78,25 +78,25 @@ def checkParameters(processId):
     if valid == "true": 
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
-        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
         
-        print("Finished checking parameter(s) at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
 def stopAndRestartDocker(processId): 
-    print("Started stopping and restarting Docker at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started stopping and restarting Docker at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     stopDocker = "kill {0}".format(processId)
     os.system(stopDocker)
     os.system('open -a Docker.app')
     print(Fore.GREEN + "Successsfully stopped and restarted Docker." + Style.RESET_ALL)
 
-    print("Finished stopping and restarting Docker at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Finished stopping and restarting Docker at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
 
 
@@ -117,14 +117,14 @@ def resolveDockerBackendApiError():
     try: 
         startDateTime = datetime.now()
         
-        print("Started resolving Docker backend API error at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started resolving Docker backend API error at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         stopAndRestartDocker(processId)
         print(Fore.GREEN + "Successfully resolved Docker backend API error." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
 
-        print("Finished resolving Docker backend API error at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished resolving Docker backend API error at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

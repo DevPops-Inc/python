@@ -11,20 +11,20 @@ colorama.init()
 
 
 def checkOsForMac():
-    print("Started checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "darwin":
         print(Fore.GREEN + "Operating System:")
         os.system('sw_vers')
         print(Style.RESET_ALL, end="")
         
-        print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only works on Mac" + Style.RESET_ALL)
 
-        print("Finished checking operating system at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
@@ -43,7 +43,7 @@ def getHardDrive(): # figure out how to iterate to get HDD
 
 
 def checkParameters(hdd):
-    print("Started checking parameter(s) at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking parameter(s) at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
     print("Parameter(s):")
@@ -58,14 +58,14 @@ def checkParameters(hdd):
     if valid == "true":
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
-        print("Finished checking parameter(s) at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
-        print("Finished checking parameter(s) at ", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking parameter(s) at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         exit("")
 
@@ -85,7 +85,7 @@ def runMacMaintenance():
     try: 
         startDateTime = datetime.now()
         
-        print("Started running Mac maintenance at ", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started running Mac maintenance at ", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         maintenance = ['sudo mdutil -i on /', 'softwareupdate --install --all']
 
@@ -104,7 +104,7 @@ def runMacMaintenance():
 
         finishedDateTime = datetime.now()
 
-        print("Finished running Mac maintenance at ", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished running Mac maintenance at ", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))

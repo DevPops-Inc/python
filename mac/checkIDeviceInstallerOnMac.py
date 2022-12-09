@@ -9,21 +9,21 @@ colorama.init()
 
 
 def checkOsForMac():
-    print("Started checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+    print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
         print(Style.RESET_ALL, end="")
         
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
         
-        print("Finished checking operating system at", datetime.now().strftime("%Y-%m-%d %H:%M %p"))
+        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         exit("")
 
@@ -35,7 +35,7 @@ def checkIDeviceInstaller():
     try:
         startDateTime = datetime.now()
         
-        print("Started checking ideviceinstaller at", startDateTime.strftime("%Y-%m-%d %H:%M %p"))
+        print("Started checking ideviceinstaller at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull, 'w')
 
@@ -48,7 +48,7 @@ def checkIDeviceInstaller():
 
             finishedDateTime = datetime.now()
 
-            print("Finished checking Hombrew at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking Hombrew at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
             duration = finishedDateTime - startDateTime
             print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -59,7 +59,7 @@ def checkIDeviceInstaller():
             
             finishedDateTime = datetime.now()
 
-            print("Finished checking ideviceinstaller at", finishedDateTime.strftime("%Y-%m-%d %H:%M %p"))
+            print("Finished checking ideviceinstaller at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
             duration = finishedDateTime - startDateTime
             print("Total execution time: {0} second(s)".format(duration.seconds))
