@@ -32,11 +32,13 @@ def checkOsForWindows():
 def getLocalAdmin(): 
 	localAdmin = str(input("Please type the local admin username you wish to create and press the \"Enter\" key (Example: local.admin): "))
 
+	print("")
 	return localAdmin
 
 def getLocalAdminPassword(): 
 	localAdminPassword = getpass.getpass("Please the password you wish to create for this local admin and press the \"Enter\" key (Example: Password123): ")
 
+	print("")
 	return localAdminPassword
 
 
@@ -91,6 +93,7 @@ def createLocalAdmin():
 
 		createLocalAdmin = "net user /add {0} {1}".format(localAdmin, localAdminPassword)
 		addLocalAdmintoAdminGroup = "net localgroup administrators {0} /add".format(localAdmin)
+		
 		neverExpireLocalAdminPassword = "WMIC USERACCOUNT WHERE Name={0} SET PasswordExpires=FALSE".format(localAdmin)
 
 		localAdminCreation = [createLocalAdmin, addLocalAdmintoAdminGroup, neverExpireLocalAdminPassword, 'net user']
