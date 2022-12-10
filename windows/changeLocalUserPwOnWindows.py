@@ -2,7 +2,7 @@
 
 # change local user password on Windows 
 
-# you can run this script with changeLocalUserPasswordOnWindows.py < local user > < new password >
+# you can run this script with changeLocalUserPwOnWindows.py < local user > < new password >
 
 import colorama, getpass, os, sys, traceback
 from colorama import Fore, Style
