@@ -47,7 +47,7 @@ def checkParameters(standardUser, standardUserPassword):
 	print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	valid = "true"
 	
-	print("Parameters")
+	print("Parameter(s):")
 	print("----------------------------------------------")
 	print("standardUser        : {0}".format(standardUser))
 	print("standardUserPassword: {0}".format("***"))
