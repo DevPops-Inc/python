@@ -15,7 +15,7 @@ def checkOsForWindows():
 	print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	
 	if sys.platform == "win32": 
-		print("Operating System: ", end="")
+		print(Fore.GREEN + "Operating System: ", end="")
 		os.system('ver')
 		print(Style.RESET_ALL, end="")
 		
@@ -90,27 +90,31 @@ def createStandardUser():
 	
 	try: 
 		startDateTime = datetime.now()
-		print("Started creating standard user at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
+
+		print("Started creating {0} at {1}".format(standardUser,startDateTime.strftime("%m-%d-%Y %I:%M %p")))
 		
 		createstandardUser = "net user /add {0} {1}".format(standardUser, standardUserPassword)
 
-		neverExpireStandardUserPassword = "WMIC USERACCOUNT WHERE Name= {0} SET PasswordExpires=FALSE".format(standardUser)
+		neverExpireStandardUserPassword = "WMIC USERACCOUNT WHERE Name='{0}' SET PasswordExpires=FALSE".format(standardUser)
 
 		standardUserCreation = [createstandardUser, neverExpireStandardUserPassword, 'net user']
 
 		for create in standardUserCreation: 
-			os.system(create)
+			if os.system(create) != 0: 
+				raise Exception("Attempt threw an error!")
 			
-		print(Fore.GREEN + "Successfully created standard user: {0}".format(standardUser)+ Style.RESET_ALL)
+		print(Fore.GREEN + "Successfully created {0}".format(standardUser)+ Style.RESET_ALL)
 		
 		finishedDateTime = datetime.now()
+
+		print("Finished creating {0} at {1}".format(standardUser, finishedDateTime.strftime("%m-%d-%Y %I:%M %p")))
 		
 		duration = finishedDateTime - startDateTime
 		print("Total execution time: {0} second(s)".format(duration.seconds))
 		print("")
 		
 	except Exception as e: 
-		print(Fore.Red)
+		print(Fore.RED + "Failed to create {0}".format(standardUser))
 		print(e)
 		print(traceback.print_stack)
 		exit("" + Style.RESET_ALL)
