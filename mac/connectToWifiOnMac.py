@@ -19,13 +19,11 @@ def checkOsForMac():
         print(Style.RESET_ALL, end="")
         
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         print("")
     else: 
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
 
@@ -45,7 +43,6 @@ def getWifiPassword():
 
 def checkParameters(wifiSsid, wifiPassword): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     valid = "true"
 
     print("Parameter(s):")
@@ -63,22 +60,20 @@ def checkParameters(wifiSsid, wifiPassword):
         valid = "false"
 
     if valid == "true":
-        print(Fore.GREEN + "All parameter checks password." + Style.RESET_ALL)
+        print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect.", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
 
 def connectToWifi(): 
-    print("Connect to Wi-Fi on Mac.\n")
+    print("\nConnect to Wi-Fi on Mac.\n")
     checkOsForMac()
 
     if len(sys.argv) > 2:
@@ -94,22 +89,25 @@ def connectToWifi():
     try: 
         startDateTime = datetime.now()
 
-        print("Started connecting to WiFi at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Started connecting to {0} at {1}".format(wifiSsid, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
         
-        connectToWifi = 'networksetup -setairportnetwork en0 {0} {1}'.format(wifiSsid, wifiPassword)
+        connectToWifi = "networksetup -setairportnetwork en0 {0} {1}".format(wifiSsid, wifiPassword)
 
-        os.system(connectToWifi)
+        if os.system(connectToWifi) != 0: # TODO: figure out exception handling
+            raise Exception("Attempt threw an error!")
 
-        print(Fore.GREEN + "Successfully connected to WiFi." + Style.RESET_ALL)
+        print(Fore.GREEN + "Successfully connected to {0}".format(wifiSsid) + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
 
-        print("Finished connecting to WiFi at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Finished connecting to {0} at {1}".format(wifiSsid, finishedDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
+        duration = finishedDateTime - startDateTime
+        print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
         
     except Exception as e: 
-        print(Fore.RED + "Failed to connect to WiFi.")
+        print(Fore.RED + "Failed to connect to {0}".format(wifiSsid))
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
