@@ -119,7 +119,9 @@ def resolveDockerBackendApiError():
         
         print("Started resolving Docker backend API error at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        stopAndRestartDocker(processId)
+        if stopAndRestartDocker(processId) != 0: 
+            raise Exception("Attempt threw an error!")
+            
         print(Fore.GREEN + "Successfully resolved Docker backend API error." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
