@@ -39,13 +39,15 @@ def installWindowsUpdates():
         
         print("Started installing Windows updates at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        print(Fore.BLUE + "Please save your work and close your applications since the computer will restart after updates are installed.")
-        
-        windowsUpates = ['Powershell "Install-Module PSWindowsUpdate -Force"', 'PowerShell "Get-WindowsUpdate -AcceptAll -Install -AutoReboot"'] 
+        windowsUpates = ['Powershell "Install-Module PSWindowsUpdate -Force"', 'PowerShell "Get-WindowsUpdate -AcceptAll -Install"'] 
 
         for update in windowsUpates:
             if os.system(update) != 0: 
                 raise Exception("Attempt threw an error!")
+
+        print(Fore.BLUE + "Please save your work and close applications.")
+        input("Press any key to restart computer.")
+        os.system('shutdown /r /t 0')
 
         print(Fore.GREEN + "Successfully installed Windows updates." + Style.RESET_ALL)
 
