@@ -44,7 +44,8 @@ def installWindowsUpdates():
         windowsUpates = ['Powershell "Install-Module PSWindowsUpdate -Force"', 'PowerShell "Get-WindowsUpdate -AcceptAll -Install -AutoReboot"'] 
 
         for update in windowsUpates:
-            os.system(update)
+            if os.system(update) != 0: 
+                raise Exception("Attempt threw an error!")
 
         print(Fore.GREEN + "Successfully installed Windows updates." + Style.RESET_ALL)
 
