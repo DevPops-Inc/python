@@ -4,7 +4,6 @@
 
 # run this script as administrator
 
-from inspect import trace
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -47,7 +46,7 @@ def checkDiskOnWindows():
         print("Finished checking disk on Windows at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
-        print("Total execution time: {0}".format(duration.seconds))
+        print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
         
     except Exception as e: 
