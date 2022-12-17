@@ -36,7 +36,7 @@ def defragHardDrive():
         print("Started checking hard drive at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         diskType = os.popen('PowerShell "Get-PhysicalDisk').read()
-        print(diskType)
+        print(diskType, end="")
 
         if "HDD" in diskType: 
             print(Fore.GREEN + "Successfully defragged hard drive ." + Style.RESET_ALL)
