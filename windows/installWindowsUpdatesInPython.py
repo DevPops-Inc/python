@@ -45,9 +45,7 @@ def installWindowsUpdates():
             if os.system(update) != 0: 
                 raise Exception("Attempt threw an error!")
 
-        print(Fore.BLUE + "Please save your work and close applications.")
-        input("Press any key to restart computer.")
-        os.system('shutdown /r /t 0')
+
 
         print(Fore.GREEN + "Successfully installed Windows updates." + Style.RESET_ALL)
 
@@ -59,6 +57,10 @@ def installWindowsUpdates():
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
         
+        print(Fore.BLUE + "Please save your work and close applications.")
+        input("Press any key to restart computer.")
+        os.system('shutdown /r /t 0')
+
     except Exception as e:
         print(Fore.RED + "Failed to install Windows updates.")
         print(e)
