@@ -94,12 +94,13 @@ def createLocalAdmin():
 		createLocalAdmin = "net user /add {0} {1}".format(localAdmin, localAdminPassword)
 		addLocalAdmintoAdminGroup = "net localgroup administrators {0} /add".format(localAdmin)
 		
-		neverExpireLocalAdminPassword = "WMIC USERACCOUNT WHERE Name={0} SET PasswordExpires=FALSE".format(localAdmin)
+		neverExpireLocalAdminPassword = "WMIC USERACCOUNT WHERE Name='{0}' SET PasswordExpires=FALSE".format(localAdmin)
 
 		localAdminCreation = [createLocalAdmin, addLocalAdmintoAdminGroup, neverExpireLocalAdminPassword, 'net user']
 
 		for create in localAdminCreation: 
-			os.system(create)
+			if os.system(create) != 0:
+				raise Exception("Attempt threw an error!")
 
 		print(Fore.GREEN + "Successfully created local admin." + Style.RESET_ALL)
 
