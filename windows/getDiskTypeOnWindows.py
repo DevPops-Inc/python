@@ -37,12 +37,12 @@ def getDiskType():
         print("Started getting disk type at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         diskType = os.popen('PowerShell "Get-PhysicalDisk').read()
-        print(diskType)
+        print(diskType, end="")
 
         if "SSD" in diskType: 
             print(Fore.BLUE + "Disk type is SSD.")
             
-        else: 
+        elif "HDD" in diskType: 
             print(Fore.BLUE + "Disk type is HDD.")
 
         print(Fore.GREEN + "Successfully got disk type." + Style.RESET_ALL)
