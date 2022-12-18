@@ -41,13 +41,15 @@ def runWinMaintenance():
         maintenance = ['echo y | chkdsk /f/r c:', 'SFC /scannow', 'Dism /Online /Cleanup-Image /ScanHealth']
 
         for job in maintenance: 
-            os.system(job)
+            if os.system(job) != 0: 
+                raise Exception("Attempt threw an error!")
 
         diskType = os.popen('PowerShell "Get-PhysicalDisk').read()
         print(diskType)
 
         if "HDD" in diskType: 
-            os.system('defrag c: /u')
+            if os.system('defrag c: /u') != 0: 
+                raise Exception("Attempt threw an error!")
             
         print(Fore.GREEN + "Successfully ran maintenance on Windows." + Style.RESET_ALL)
 
