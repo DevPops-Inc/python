@@ -38,7 +38,9 @@ def runWinMaintenance():
         
         print("Started running Windows maintenance at ", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        maintenance = ['echo y | chkdsk /f/r c:', 'SFC /scannow', 'Dism /Online /Cleanup-Image /ScanHealth']
+        os.system('echo y | chkdsk /f/r c:')
+        
+        maintenance = ['SFC /scannow', 'Dism /Online /Cleanup-Image /ScanHealth']
 
         for job in maintenance: 
             if os.system(job) != 0: 
