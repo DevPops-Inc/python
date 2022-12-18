@@ -56,7 +56,9 @@ def launchChrome():
         startDateTime = datetime.now()
         print("Started launching Chrome at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        os.system('start chrome')
+        if os.system('start chrome') != 0:
+            raise Exception("Attempt threw an error!")
+            
         print(Fore.GREEN + "Successfully launched Chrome." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
