@@ -29,7 +29,7 @@ def checkOsForWindows():
 
 
 def checkChrome(): 
-    print("Started checking Chrome at", datetime.now().strftime("%m-%d-%Y %I:%M %p))
+    print("Started checking Chrome at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     winPrograms = os.popen('PowerShell "Get-ItemProperty HKLM:\\Software\Wow6432Node\\Microsoft\\Windows\\CurrentVersion\\Uninstall\* | ForEach-Object {$_.DisplayName}"').read()
 
@@ -56,7 +56,9 @@ def launchChrome():
         startDateTime = datetime.now()
         print("Started launching Chrome at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        os.system('start chrome')
+        if os.system('start chrome') != 0:
+            raise Exception("Attempt threw an error!")
+            
         print(Fore.GREEN + "Successfully launched Chrome." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
