@@ -34,7 +34,9 @@ def resolveMissingNetworkDrives():
         startDateTime = datetime.now()
         print("Started resolving missing network drives at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        os.system('GPUpdate /target:user /force')
+        if os.system('GPUpdate /target:user /force') != 0: 
+            raise Exception("Attempt threw an error!")
+
         print(Fore.GREEN + "Successfully resolved missing network drives." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
@@ -45,8 +47,6 @@ def resolveMissingNetworkDrives():
         print("")
 
         print("Please save your documents and close applications.")
-        print("")
-        
         str(input("Press any key to restart computer."))
         os.system('shutdown /r /t 0')
 
