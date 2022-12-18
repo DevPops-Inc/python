@@ -56,7 +56,9 @@ def launchYouTubeInChrome():
         startDateTime = datetime.now()
         print("Started launching YouTube at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        os.system('start chrome "http://youtube.com"')
+        if os.system('start chrome "http://youtube.com"') != 0: 
+            raise Exception("Attempt threw an error!")
+            
         print(Fore.GREEN + "Successfully launched YouTube in Chrome." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
