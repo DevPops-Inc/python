@@ -2,7 +2,7 @@
 
 # calculate the value of pi with Chudnovsky Algorithm
 
-# you can run this script with: python3 chudnovskyAlgorithmInPython.py < number of decimal places >
+# you can run this script with: python3 chudnovskyAlgorithmInPython.py < number places >
 
 import colorama, math, os, sys, traceback
 from colorama import Fore, Style
