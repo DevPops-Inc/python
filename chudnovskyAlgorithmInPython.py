@@ -2,7 +2,7 @@
 
 # calculate the value of pi with Chudnovsky Algorithm
 
-# you can run this script with: python3 chudnovskyAlgorithmInPython.py < number of decimal places >
+# you can run this script with: python3 chudnovskyAlgorithmInPython.py < number places >
 
 import colorama, math, os, sys, traceback
 from colorama import Fore, Style
@@ -42,13 +42,10 @@ def getNumberPlaces(operatingSystem):
     if operatingSystem == "Windows": 
         numberPlaces = int(input("Please enter the number of places to calculate Pi to and press \"Enter\" key (Example: 3): "))
 
-        print("")
-
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         numberPlaces = int(input("Please enter the number of places to calculate Pi to and press \"return\" key (Example: 3): "))
 
-        print("")
-
+    print("")
     return numberPlaces
 
 
