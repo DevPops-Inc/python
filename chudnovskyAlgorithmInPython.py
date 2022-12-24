@@ -42,13 +42,10 @@ def getNumberPlaces(operatingSystem):
     if operatingSystem == "Windows": 
         numberPlaces = int(input("Please enter the number of places to calculate Pi to and press \"Enter\" key (Example: 3): "))
 
-        print("")
-
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         numberPlaces = int(input("Please enter the number of places to calculate Pi to and press \"return\" key (Example: 3): "))
 
-        print("")
-
+    print("")
     return numberPlaces
 
 
