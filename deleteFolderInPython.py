@@ -1,6 +1,6 @@
 #!/bin/python
 
-# delete folder on in Python
+# delete folder in Python
 
 # you can run this script with: python3 deleteFolderInPython.py '< path to folder >' '< folder name >'
 
@@ -41,7 +41,7 @@ def getPathToFolder(operatingSystem):
         pathToFolder = str(input("Please type the path to the folder you wish to delete and press the \"Enter\" key (Example: C:\\Users\\%USERNAME%\\Desktop): "))
 
     else: 
-        pathToFolder = str(input("Please type the path to the directory you wish to delete and press the \"return\" key (Example: /Users/$USER/Desktop): "))
+        pathToFolder = str(input("Please type the path to the folder you wish to delete and press the \"return\" key (Example: /Users/$USER/Desktop): "))
 
     pathToFolder = os.path.expandvars(pathToFolder)
     print("")
@@ -107,22 +107,23 @@ def deleteFolder():
     try: 
         startDateTime = datetime.now()
         
-        print("Started deleting {0} at {1}".format(folderName, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
+        print("Started deleting {0} folder at {1}".format(folderName, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
         deletePath="{0}/{1}".format(pathToFolder, folderName)
         os.rmdir(deletePath)
-        print(Fore.GREEN + "Successfully deleted {0}.".format(folderName) + Style.RESET_ALL)
+
+        print(Fore.GREEN + "Successfully deleted {0} folder.".format(folderName) + Style.RESET_ALL)
 
         finishDateTime = datetime.now()
 
-        print("Finished deleting {0} at {1}".format(folderName, finishDateTime.strftime("%m-%d-%Y %I:%M %p")))
+        print("Finished deleting {0} folder at {1}".format(folderName, finishDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
         duration = finishDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
 
     except Exception as e:
-        print(Fore.RED + "Failed to delete {0}.".format(folderName))
+        print(Fore.RED + "Failed to delete {0} folder.".format(folderName))
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
