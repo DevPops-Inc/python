@@ -41,7 +41,7 @@ def getPathToFolder(operatingSystem):
         pathToFolder = str(input("Please type the path to the folder you wish to delete and press the \"Enter\" key (Example: C:\\Users\\%USERNAME%\\Desktop): "))
 
     else: 
-        pathToFolder = str(input("Please type the path to the directory you wish to delete and press the \"return\" key (Example: /Users/$USER/Desktop): "))
+        pathToFolder = str(input("Please type the path to the folder you wish to delete and press the \"return\" key (Example: /Users/$USER/Desktop): "))
 
     pathToFolder = os.path.expandvars(pathToFolder)
     print("")
