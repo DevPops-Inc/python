@@ -1,6 +1,6 @@
 #!/bin/python
 
-# delete folder on in Python
+# delete folder in Python
 
 # you can run this script with: python3 deleteFolderInPython.py '< path to folder >' '< folder name >'
 
