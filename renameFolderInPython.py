@@ -107,7 +107,7 @@ def checkParameters(pathToFolder, folderName, newFolderName):
 
 
 def renameFolder(): 
-    print("\Rename folder in Python.\n")
+    print("\nRename folder in Python.\n")
     operatingSystem = checkOs()
 
     if len(sys.argv) >= 2: 
