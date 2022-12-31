@@ -4,6 +4,8 @@
 
 # you can run this script with: python3 renameFolderInPython.py "< path to folder >" "< folder name >" "< new folder name >"
 
+# haven't successfully tested this script on Windows yet 
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
