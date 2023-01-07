@@ -14,7 +14,7 @@ def checkOsForWindows():
 	print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %H:%M %p"))
 
 	if sys.platform == "win32": 
-		print(Fore.GREEN + "Operating System: ") # can't correctly suppress new line in Python 3.11
+		print(Fore.GREEN + "Operating System:", end=""); sys.stdout.flush()
 		os.system('ver')
 		print(Style.RESET_ALL, end="")
 

@@ -11,8 +11,8 @@ colorama.init()
 def checkOsForWindows(): 
 	print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	
-	if sys.platform == "win32": # Windows logging looks weird in Python 3.11
-		print(Fore.GREEN + "Operating System:", end="")
+	if sys.platform == "win32": 
+		print(Fore.GREEN + "Operating System:", end=""); sys.stdout.flush()
 		os.system('ver')
 		print(Style.RESET_ALL, end="")
 		
