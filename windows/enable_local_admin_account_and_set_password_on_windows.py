@@ -63,16 +63,16 @@ def enableLocalAdminAndSetPw():
 	print("\nEnable local admin and set passsword on Windows.\n")
 	checkOsForWindows()
 	
-	try: 
+	try:
 		startDateTime = datetime.now()
 		print("Started enabling local admin and setting password at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		setLocalAdminPassword = "net user administrator {0}".format(localAdminPassword)
 
 		enableLocalAdmin = ['net user administrator /active:yes', setLocalAdminPassword, "WMIC USERACCOUNT WHERE Name='administrator' SET PasswordExpires=FALSE", 'net user administrator | findstr /C:expires']
-		
+	
 		for enable in enableLocalAdmin:
-    		if os.system(enable) != 0: 
+			if os.system(enable) != 0: 
 				raise Exception("Attempt threw an error!")
 				
 		finishedDateTime = datetime.now()
