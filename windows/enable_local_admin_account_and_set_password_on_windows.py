@@ -64,6 +64,14 @@ def checkParameters(localAdminPw):
 def enableLocalAdminAndSetPw(): 
 	print("\nEnable local admin and set passsword on Windows.\n")
 	checkOsForWindows()
+
+	if len(sys.argv) >= 2: 
+		localAdminPw = str(sys.argv[1])
+
+	else: 
+		localAdminPw = getLocalAdminPw()
+
+	
 	
 	try:
 		startDateTime = datetime.now()
