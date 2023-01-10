@@ -31,7 +31,7 @@ def checkOsForWindows():
 		
 		
 def getLocalAdminPw(): 
-	localAdminPw = getpass.getpass("Please type the password for the local admin account and press the \"Enter\" key (Example: Password123): "))
+	localAdminPw = getpass.getpass("Please type the password for the local admin account and press the \"Enter\" key (Example: Password123): ")
 	
 	print("")
 	return localAdminPw
