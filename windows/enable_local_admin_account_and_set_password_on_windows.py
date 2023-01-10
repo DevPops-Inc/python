@@ -2,6 +2,8 @@
 
 # enable local admin account and set password on Windows
 
+# you can run this script with: python3 enableLocalAdminAndSetPwOnWindows.py < local admin password > 
+
 import colorama, getpass, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
