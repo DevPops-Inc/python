@@ -4,6 +4,8 @@
 
 # you can run this script with: python3 enableLocalAdminAndSetPwOnWindows.py < local admin password > 
 
+# haven't successfully tested this script on Windows yet since all of the test passwords I've tried don't meet the minimum security requirements of my OS
+
 import colorama, getpass, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
