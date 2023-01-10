@@ -77,7 +77,7 @@ def enableLocalAdminAndSetPw():
 		startDateTime = datetime.now()
 		print("Started enabling local admin and setting password at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
-		setLocalAdminPassword = "net user administrator {0}".format(localAdminPassword)
+		setLocalAdminPassword = "net user administrator {0}".format(localAdminPw)
 
 		enableLocalAdmin = ['net user administrator /active:yes', setLocalAdminPassword, "WMIC USERACCOUNT WHERE Name='administrator' SET PasswordExpires=FALSE", 'net user administrator | findstr /C:expires']
 	
