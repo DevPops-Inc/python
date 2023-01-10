@@ -71,7 +71,7 @@ def enableLocalAdminAndSetPw():
 	else: 
 		localAdminPw = getLocalAdminPw()
 
-	
+	checkParameters(localAdminPw)
 	
 	try:
 		startDateTime = datetime.now()
