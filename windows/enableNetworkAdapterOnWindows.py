@@ -1,11 +1,11 @@
 #!/bin/python 
 
-# disable network adapter on Windows 
+# enable network adapter on Windows
 
-# you can run this script with: python3 disableNetworkAdapterOnWindows.py < network adapter >
+# you can run this script with: python3 enableNetworkAdapaterOnWindows.py < network adapter >
 
-import colorama, os, sys, traceback  
-from colorama import Fore, Style 
+import colorama, os, sys, time, traceback
+from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
 
@@ -33,7 +33,7 @@ def checkOsForWindows():
 def getNetworkAdapter(): 
 	os.system('netsh interface show interface')
 
-	networkAdapter = str(input("Please type the interface name of the network adapter you wish to disable and press the \"Enter\" key (Example: Wi-Fi): "))
+	networkAdapter = str(input("Please type the interface name of the network adapter you wish to enable and press the \"Enter\" key (Example: Wi-Fi): "))
 	
 	print("")
 	return networkAdapter
@@ -41,6 +41,7 @@ def getNetworkAdapter():
 
 def checkParameters(networkAdapter): 
 	print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 	valid = "true"
 	
 	print("Parameter(s):")
@@ -61,13 +62,13 @@ def checkParameters(networkAdapter):
 	else: 
 		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 		
-		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p")) 
+		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
 		exit("")
 		
 
-def disableNetworkAdapter(): 
-	print("\nDisable network adapter on Windows.\n")
+def enableNetworkAdapter(): 
+	print("\nEnable network adapter on Windows.\n")
 	checkOsForWindows()
 	
 	if len(sys.argv) >= 2:
@@ -81,29 +82,30 @@ def disableNetworkAdapter():
 	try: 
 		startDateTime = datetime.now()
 		
-		print("Started disabling {0} at {1}".format(networkAdapter, startDateTime.strftime("%m-%d-%Y %I:%M: %p")))
+		print("Started enabling {0} at {1}".format(networkAdapter, startDateTime.strftime("%m-%d-%Y %I:%M: %p")))
 
-		disableNetworkAdapter = "netsh interface set interface {0} disable".format(networkAdapter)
+		enableNetworkAdapter = "netsh interface set interface {0} enable".format(networkAdapter)
 		
-		if os.system(disableNetworkAdapter) != 0: 
+		if os.system(enableNetworkAdapter) != 0: 
 			raise Exception("Attempt threw an error!")
 
+		time.sleep(5)
 		os.system('netsh interface show interface')
-		
-		print(Fore.GREEN + "Successfully disabled {0}.".format(networkAdapter) + Style.RESET_ALL)		
+
+		print(Fore.GREEN + "Successfully enabled {0}.".format(networkAdapter) + Style.RESET_ALL)		
 
 		finishedDateTime = datetime.now()
-		print("Finished disabling {0} at {1}".format(networkAdapter, finishedDateTime))
+		print("Finished enabling {0} at {1}".format(networkAdapter, finishedDateTime))
 
 		duration = finishedDateTime - startDateTime
 		print("Total execution time: {0} second(s)".format(duration.seconds))
 		print("")
 
 	except Exception as e: 
-		print(Fore.RED + "Failed to disable {0}.".format(networkAdapter))
+		print(Fore.RED + "Failed to enable {0}.".format(networkAdapter))
 		print(e)
 		print(traceback.print_stack)
 		exit("" + Style.RESET_ALL)
 
 
-disableNetworkAdapter()
+enableNetworkAdapter()
