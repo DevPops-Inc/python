@@ -4,7 +4,7 @@
 
 # you can run this script with: python3 enableNetworkAdapaterOnWindows.py < network adapter >
 
-import colorama, os, sys, ,time, traceback
+import colorama, os, sys, time, traceback
 from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
