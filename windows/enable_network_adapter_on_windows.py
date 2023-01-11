@@ -89,7 +89,7 @@ def enableNetworkAdapter():
 		if os.system(enableNetworkAdapter) != 0: 
 			raise Exception("Attempt threw an error!")
 
-		time.sleep(3)
+		time.sleep(5)
 		os.system('netsh interface show interface')
 
 		print(Fore.GREEN + "Successfully enabled {0}.".format(networkAdapter) + Style.RESET_ALL)		
