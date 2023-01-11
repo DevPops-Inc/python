@@ -41,6 +41,7 @@ def getNetworkAdapter():
 
 def checkParameters(networkAdapter): 
 	print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 	valid = "true"
 	
 	print("Parameter(s):")
@@ -62,6 +63,7 @@ def checkParameters(networkAdapter):
 		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 		
 		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+		
 		exit("")
 		
 
