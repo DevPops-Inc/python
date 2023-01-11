@@ -4,7 +4,7 @@
 
 # you can run this script with: python3 enableNetworkAdapaterOnWindows.py < network adapter >
 
-import colorama, os, sys, traceback
+import colorama, os, sys, ,time, traceback
 from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
@@ -89,8 +89,9 @@ def enableNetworkAdapter():
 		if os.system(enableNetworkAdapter) != 0: 
 			raise Exception("Attempt threw an error!")
 
+		time.sleep(3)
 		os.system('netsh interface show interface')
-		
+
 		print(Fore.GREEN + "Successfully enabled {0}.".format(networkAdapter) + Style.RESET_ALL)		
 
 		finishedDateTime = datetime.now()
