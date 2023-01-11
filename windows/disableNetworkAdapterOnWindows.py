@@ -61,7 +61,8 @@ def checkParameters(networkAdapter):
 	else: 
 		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 		
-		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p")) 
+
 		exit("")
 		
 
@@ -88,6 +89,7 @@ def disableNetworkAdapter():
 			raise Exception("Attempt threw an error!")
 
 		os.system('netsh interface show interface')
+		
 		print(Fore.GREEN + "Successfully disabled {0}.".format(networkAdapter) + Style.RESET_ALL)		
 
 		finishedDateTime = datetime.now()
