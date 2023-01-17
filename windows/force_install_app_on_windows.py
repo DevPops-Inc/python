@@ -15,7 +15,7 @@ def checkOsForWindows():
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System:", end=""); sys.stdout.flush()
-        os.version('ver')
+        os.system('ver')
         print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
@@ -34,7 +34,6 @@ def getInstallerLocation():
     installerLocation = str(input("Please type the location of the installler and press the \"Enter\" key (Example: C:\\Users\\%USERNAME%\\Downloads): "))
 
     installerLocation = os.path.expandvars(installerLocation)
-    os.listdir(installerLocation)
     print("")
     return installerLocation
 
@@ -96,8 +95,10 @@ def forceInstallApp():
         
         print("Started force installing application at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        os.chdir(installerLocation)
-        forceInstall = "{0} -i GUI".format(installerName)
+        #os.chdir(installerLocation)
+        #os.listdir(installerLocation)
+        installerName = installerLocation + "\\" + installerName
+        forceInstall = "start '{0}'".format(installerName) # original command was {0} -i GUI
         
         if os.system(forceInstall) != 0: 
             raise Exception("Attempt threw an error!")
@@ -106,7 +107,7 @@ def forceInstallApp():
 
         finishedDateTime = datetime.now()
 
-        print("Finished force installing application at", finishedDateTime.strtime("%m-%d-%Y %I:%M %p"))
+        print("Finished force installing application at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
