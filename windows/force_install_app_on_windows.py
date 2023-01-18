@@ -1,12 +1,13 @@
 #!/bin/python
 
-# force install application on Windows
+# run exe file
 
-# you can run this script with: python3 forceInstallAppOnWindows.py "< installer location >" "< installer name >"
+# you can run this script with: python3 runExeFile.py "< .exe file location >" "< .exe filename >"
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
 from datetime import datetime
+from pathlib import PureWindowsPath
 colorama.init()
 
 
@@ -30,36 +31,36 @@ def checkOsForWindows():
         exit("")
 
 
-def getInstallerLocation(): 
-    installerLocation = str(input("Please type the location of the installler and press the \"Enter\" key (Example: C:\\Users\\%USERNAME%\\Downloads): "))
+def getExeFileLocation(): 
+    exeFileLocation = str(input("Please type the location of the .exe file you want to run and press the \"Enter\" key (Example: C:\\Users\\%USERNAME%\\Downloads): "))
 
-    installerLocation = os.path.expandvars(installerLocation)
+    exeFileLocation = os.path.expandvars(exeFileLocation)
     print("")
-    return installerLocation
+    return exeFileLocation
 
 
-def getInstallerName(): 
-    installerName = str(input("Please type the installer name and press the \"Enter\" key (Example: Docker Desktop Installer.exe): "))
+def getExeFileName(): 
+    exeFilename = str(input("Please type the filename of the .exe and press the \"Enter\" key (Example: Docker Desktop Installer.exe): "))
 
     print("")
-    return installerName
+    return exeFilename
 
 
-def checkParameters(installerLocation, installerName): 
+def checkParameters(exeFileLocation, exeFilename): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = "true"
 
     print("Parameter(s):")
     print("------------------------------------------------")
-    print("installerLocation: {0}".format(installerLocation))
-    print("installerName    : {0}".format(installerName))
+    print("exeFileLocation: {0}".format(exeFileLocation))
+    print("exeFilename    : {0}".format(exeFilename))
     print("------------------------------------------------")
 
-    if installerLocation == None: 
-        print(Fore.RED + "installerLocation is not set." + Style.RESET_ALL)
+    if exeFileLocation == None: 
+        print(Fore.RED + "exeFileLocation is not set." + Style.RESET_ALL)
         valid = "false"
 
-    if installerName == None: 
+    if exeFilename == None: 
         print(Fore.RED + "installName is not set." + Style.RESET_ALL)
         valid = "false"
 
@@ -76,48 +77,46 @@ def checkParameters(installerLocation, installerName):
         exit("")
 
 
-def forceInstallApp(): 
-    print("\nForce install application on Windows.\n")
+def runExeFile(): 
+    print("\nRun .exe file.\n")
     checkOsForWindows()
 
     if len(sys.argv) >= 2: 
-        installerLocation = str(sys.argv[1])
-        installerName     = str(sys.argv[2])
+        exeFileLocation = str(sys.argv[1])
+        exeFilename     = str(sys.argv[2])
 
     else: 
-        installerLocation = getInstallerLocation()
-        installerName     = getInstallerName()
+        exeFileLocation = getExeFileLocation()
+        exeFilename     = getExeFileName()
 
-    checkParameters(installerLocation, installerName)
+    checkParameters(exeFileLocation, exeFilename)
 
     try: 
         startDateTime = datetime.now()
         
-        print("Started force installing application at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Started running .exe file at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        #os.chdir(installerLocation)
-        #os.listdir(installerLocation)
-        installerName = installerLocation + "\\" + installerName
-        forceInstall = "start '{0}'".format(installerName) # original command was {0} -i GUI
+        exeFilename = PureWindowsPath(exeFileLocation, exeFilename)
+        runExe = '"{0}"'.format(exeFilename) 
         
-        if os.system(forceInstall) != 0: 
+        if os.system(runExe) != 0: 
             raise Exception("Attempt threw an error!")
 
-        print(Fore.GREEN + "Successfully force installed application." + Style.RESET_ALL)
+        print(Fore.GREEN + "Successfully ran .exe file." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
 
-        print("Finished force installing application at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Finished running .exe file at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
 
     except Exception as e: 
-        print(Fore.RED + "Failed to force install application.")
+        print(Fore.RED + "Failed to run .exe file.")
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
 
 
-forceInstallApp()
+runExeFile()
