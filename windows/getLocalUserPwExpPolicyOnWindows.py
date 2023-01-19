@@ -76,26 +76,27 @@ def getLocalUserPwExpPolicy():
     try:
         startDateTime = datetime.now()
         
-        print("Started getting local user password expiration policy at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Started getting \"{0}\" password expiration policy at {1}".format(localUser, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
         pwExpPolicy = 'net user "{0}" | findstr /C:expires'.format(localUser)
-        print(Fore.BLUE, end="")
+        print(Fore.BLUE, end=""); sys.stdout.flush()
 
         if os.system(pwExpPolicy) != 0:
             raise Exception("Attempt threw an error!")
         
-        print(Fore.GREEN + "Successfully got local user password expiration policy." + Style.RESET_ALL)
+        print(Fore.GREEN + "Successfully got \"{0}\" password expiration policy.".format(localUser) + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
 
-        print("Finshed getting local user password expiration policy at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Finshed getting \"{0}\" password expiration policy at {1}".format(localUser, finishedDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
 
     except Exception as e: 
-        print(Fore.RED + "Failed to get local user password expiration policy.")
+        print(Fore.RED + "Failed to get \"{0}\" password expiration policy.".format(localUser))
+
         print(e)
         print(traceback.print_stack)
         exit("" + Style.RESET_ALL)
