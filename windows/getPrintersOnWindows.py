@@ -36,11 +36,15 @@ def getPrinter():
         startDateTime = datetime.now()
         print("Started getting printers at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        getPrinters = ['wmic printer get name /value', 'cmd /k']
+        # getPrinters = ['wmic printer get name /value', 'cmd /k']
+        # print(Fore.BLUE)
 
-        for printer in getPrinters:
-            if os.system(printer) != 0: 
-                raise Exception("Attempt threw an error!")
+        # for printer in getPrinters:
+        #     if os.system(printer) != 0: 
+        #         raise Exception("Attempt threw an error!")
+
+        os.system('wmic printer get name /value')
+        print(Fore.GREEN + "Successfully got printers." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
         print("Finished getting printers at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
