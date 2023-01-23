@@ -36,8 +36,12 @@ def getRam():
         startDateTime = datetime.now()
         print("Started getting RAM at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
+        print(Fore.BLUE)
+
         if os.system('wmic MEMORYCHIP get BankLabel,DeviceLocator,Capacity,Tag') != 0: 
             raise Exception("Attempt threw an error!")
+        
+        print(Fore.GREEN + "Successfully got RAM." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
         print("Finished getting RAM at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
