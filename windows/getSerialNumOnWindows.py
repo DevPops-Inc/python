@@ -36,7 +36,7 @@ def getSerialNumber():
         startDateTime = datetime.now()
         print("Started getting serial number at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        print(Fore.BLUE + "Serial number: ", end=""); sys.stdout.flush()
+        print(Fore.BLUE)
 
         if os.system('WMIC BIOS GET SERIALNUMBER') != 0: 
             raise Exception("Attempt threw an error!")
