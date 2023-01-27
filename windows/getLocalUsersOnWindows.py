@@ -42,7 +42,7 @@ def getLocalUsers():
         print(Fore.GREEN + "Successfully got local users." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        pritn("Finished getting local users at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Finished getting local users at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
