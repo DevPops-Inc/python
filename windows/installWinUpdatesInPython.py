@@ -45,8 +45,6 @@ def installWindowsUpdates():
             if os.system(update) != 0: 
                 raise Exception("Attempt threw an error!")
 
-
-
         print(Fore.GREEN + "Successfully installed Windows updates." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
