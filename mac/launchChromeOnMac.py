@@ -17,17 +17,39 @@ def checkOsForMac():
         print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
     else: 
         print(Fore.RED + "Sorry this script only runs on macOS." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+        
+        exit("")
+
+
+def checkChrome(): 
+    print("Started checking Chrome at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
+    chromeInApps = os.system('open -Ra "Google Chrome.app"')
+
+    if chromeInApps == 0:
+        print(Fore.GREEN + "Chrome is installed." + Style.RESET_ALL)
+
+        print("Finished checking Chrome at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+        print("")
+
+    else: 
+        print(Fore.RED + "Chrome is not installed." + Style.RESET_ALL)
+
+        print("Finished checking Chrome at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
 def launchChrome(): 
     print("\nLaunch Chrome on Mac\n")
-    operatingSystem = checkOsForMac()
+    
+    checkOsForMac()
+    checkChrome()
 
     try: 
         startDateTime = datetime.now()
