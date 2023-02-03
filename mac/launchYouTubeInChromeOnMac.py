@@ -2,7 +2,7 @@
 
 # launch YouTube in Chrome on Mac
 
-import colorama, os, sys, subprocess, traceback
+import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
@@ -54,8 +54,11 @@ def launchYouTubeInChrome():
         startDateTime = datetime.now()
         print("Started launching YouTube in Chrome at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        youTubeInChrome = str(os.system('open -a "Google Chrome.app" http://youtube.com'))
-        os.system(youTubeInChrome)
+        youTubeInChrome = 'open -a "Google Chrome.app" http://youtube.com'
+
+        if os.system(youTubeInChrome) != 0:
+            raise Exception("Attempt threw an error!")
+
         print(Fore.GREEN + "Successfully launched YouTube in Chrome." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
