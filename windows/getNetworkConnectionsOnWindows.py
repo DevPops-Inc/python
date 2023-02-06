@@ -29,7 +29,7 @@ def checkOsForWindows():
 
 
 def getNetworkConnections(): 
-    str(input("\nGet network connections on Windows.\n"))
+    print("\nGet network connections on Windows.\n")
     checkOsForWindows()
 
     try: 
