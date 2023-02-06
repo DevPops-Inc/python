@@ -40,6 +40,7 @@ def getNetworkConnections():
         if os.system('ipconfig /all') != 0: 
             raise Exception("Attempt threw an error!")
 
+        print("")
         print(Fore.GREEN + "Successfully got network connections." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
