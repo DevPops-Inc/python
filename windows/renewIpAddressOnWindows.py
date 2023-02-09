@@ -34,7 +34,7 @@ def renewIpAddress():
 
     try: 
         startDateTime = datetime.now()
-        print("Started renewing IP address at", startDateTime.strftime("%m-%-d-%Y %I:%M %p"))
+        print("Started renewing IP address at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if os.system('ipconfig /renew') != 0: 
             raise Exception("Attempt threw an error!")
