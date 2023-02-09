@@ -42,7 +42,7 @@ def renewIpAddress():
         print(Fore.GREEN + "Successfully renewed IP address." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        print("Finished renewing IP address at", finishedDateTime.strtime("%m-%d-%Y %I:%M %p"))
+        print("Finished renewing IP address at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
