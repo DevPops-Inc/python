@@ -2,6 +2,8 @@
 
 # resolve missing network drives on Windows 
 
+# haven't tested this script on a domain PC yet 
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
