@@ -2,6 +2,8 @@
 
 # resolve missing network drives on Windows 
 
+# haven't tested this script on a domain PC yet 
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -17,13 +19,15 @@ def checkOsForWindows():
         print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        print("")
+
+        exit("")
 
 
 def resolveMissingNetworkDrives(): 
@@ -43,17 +47,18 @@ def resolveMissingNetworkDrives():
         print("Finished resolving missing network drives at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
-        print("Total execution time: {0} second(s)")
+        print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
 
-        print("Please save your documents and close applications.")
+        print(Fore.BLUE + "Please save your documents and close applications.")
         str(input("Press any key to restart computer."))
+        print(Style.RESET_ALL)
         os.system('shutdown /r /t 0')
 
-    except Exception as e: 
+    except Exception: 
         print(Fore.RED + "Failed to resolve missing network drives.")
-        print(e)
-        print(traceback.print_stack)
+        traceback.print_exc()
         exit("" + Style.RESET_ALL)
+
 
 resolveMissingNetworkDrives()
