@@ -48,10 +48,10 @@ def getWiFiProfiles():
 
         print("")
 
-    except Exception as e: 
+    except Exception: 
         print(Fore.RED + "Failed to get Wi-Fi profiles.")
-        print(e)
-        print(traceback.print_stack)
+        
+        traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
 

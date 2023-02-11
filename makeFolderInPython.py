@@ -123,8 +123,8 @@ def makeFolder():
 
     except Exception as e:
         print(Fore.RED + "Failed to make {0}.".format(folderName))
-        print(e)
-        print(traceback.print_stack)
+        
+        traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
 

@@ -50,10 +50,10 @@ def winQuickFix():
         input("Press any key to continue.")
         os.system('shutdown /r /t 0')
 
-    except Exception as e: 
+    except Exception: 
         print(Fore.RED + "Failed to perform Windows quick fix.")
-        print(e)
-        print(traceback.print_stack)
+        
+        traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
 

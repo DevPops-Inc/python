@@ -81,8 +81,8 @@ def bestProgrammingLanguage():
         
     except Exception as e:
         print(Fore.RED + "Failed to run best programming language GUI.")
-        print(e)
-        print(traceback.print_stack)
+        
+        traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
 

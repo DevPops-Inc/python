@@ -128,8 +128,8 @@ def calculateTravelTime():
         
     except Exception as e:
         print(Fore.RED + "Failed to calculate travel time" + Style.RESET_ALL)
-        print(e)
-        print(traceback.print_stack)
+        
+        traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
 

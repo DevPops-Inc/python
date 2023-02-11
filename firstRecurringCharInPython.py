@@ -111,10 +111,10 @@ def firstRecurringChar():
         print("Total execution timne: {0} second(s)".format(duration.seconds))
         print("")
 
-    except Exception as e: 
+    except Exception: 
         print(Fore.RED + "Failed to find first recurring character.")
-        print(e)
-        print(traceback.print_stack)
+        
+        traceback.print_exc()
 
 
 firstRecurringChar()

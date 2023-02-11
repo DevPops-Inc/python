@@ -54,10 +54,10 @@ def checkDiskAndRestartWindows():
         str(input("Press any key to restart Windows."))
         os.system('shutdown /r /t 0')
         
-    except Exception as e: 
+    except Exception: 
         print(Fore.RED + "Failed to check disk and restart Windows.")
-        print(e)
-        print(traceback.print_stack)
+        
+        traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
 

@@ -82,10 +82,10 @@ def checkChromeOnWinOrMac():
                 print("Finished checking Chrome at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
                 exit("")  
 
-    except Exception as e: 
+    except Exception: 
         print(Fore.RED + "Failed to check Chrome on Windows or Mac.")
-        print(e)
-        print(traceback.print_stack)
+        
+        traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
 

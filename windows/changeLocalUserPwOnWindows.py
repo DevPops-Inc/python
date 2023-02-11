@@ -114,8 +114,8 @@ def changeLocalUserPassword():
 
     except Exception as e:
         print(Fore.RED + "Failed to change password for {0}".format(localUser))
-        print(e)
-        print(traceback.print_stack)
+        
+        traceback.print_exc()
         exit("" + Style.RESET_ALL)
 		
 		

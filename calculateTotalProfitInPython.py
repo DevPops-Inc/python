@@ -134,8 +134,8 @@ def calculateTotalProfit():
         
     except Exception as e:
         print(Fore.RED + "Failed to calculate total profit in Python.")
-        print(e)
-        print(traceback.print_stack)
+        
+        traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
 
