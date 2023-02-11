@@ -68,9 +68,9 @@ def allowAppsDownloadedFromAnywhere():
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
 
-    except Exception as e: 
+    except Exception: 
         print(Fore.RED + "Failed to allow apps downloaded from anywhere.")
-        print(e)
+        
         print(traceback.print_stack())
         print(Style.RESET_ALL)
         exit("")

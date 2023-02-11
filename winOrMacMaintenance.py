@@ -113,19 +113,19 @@ def computerMaintenance():
     if operatingSystem == "Windows": 
         try: 
             runWindowsMaintenance()
-        except Exception as e: 
+        except Exception: 
             print(Fore.RED + "Failed to run Windows maintenance.")
-            print(e)
-            print(traceback.print_stack)
+            
+            traceback.print_exc()
             exit("" + Style.RESET_ALL)
             
     elif operatingSystem == "macOS":
         try: 
             runMacMaintenance()
-        except Exception as e: 
+        except Exception: 
             print(Fore.RED + "Failed to run Mac maintenance.")
-            print(e)
-            print(traceback.print_stack)
+            
+            traceback.print_exc()
             exit("" + Style.RESET_ALL)
 
 

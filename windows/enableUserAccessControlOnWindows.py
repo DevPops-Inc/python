@@ -57,10 +57,10 @@ def enableUserAccessControl():
 		input("Press any key to restart the computer:" + Style.RESET_ALL)
 		os.system('shutdown /r /t 0')
 
-	except Exception as e: 
+	except Exception: 
 		print(Fore.RED + "Failed to enable User Access Control.")
-		print(e)
-		print(traceback.print_stack)
+		
+		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
 
