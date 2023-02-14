@@ -2,6 +2,8 @@
 
 # restart printer spooler on Windows
 
+# run this script as admin
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
 from datetime import datetime 
@@ -17,7 +19,7 @@ def checkOsForWindows():
 		print(Style.RESET_ALL, end="")
 		
 		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-		
+
 		print("")
 		
 	else: 
