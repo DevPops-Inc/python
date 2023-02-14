@@ -9,20 +9,22 @@ colorama.init()
 
 
 def checkOsForWindows(): 
-	print("Started checking operating system at", datetime.now("%m-%d-%Y %I:%M %p"))
+	print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	
 	if sys.platform == "win32": 
 		print(Fore.GREEN + "Operating System:", end=""); sys.stdout.flush()
 		os.system('ver')
 		print(Style.RESET_ALL, end="")
 		
-		print("Finished checking operating system at", datetime.now("%m-%d-%Y %I:%M %p"))
+		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+		
 		print("")
 		
 	else: 
 		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 		
-		print("Finished checking operating system at", datetime.now("%m-%d-%Y %I:%M %p"))
+		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 		exit("")
 		
 		
