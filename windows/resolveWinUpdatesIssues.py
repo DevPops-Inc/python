@@ -48,7 +48,7 @@ def resolveWinUpdates():
 
         finisheDateTime = datetime.now()
         
-        print("Finished resolving Window updates issues at", finisheDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Finished resolving Windows updates issues at", finisheDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finisheDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
