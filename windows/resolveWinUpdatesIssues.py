@@ -44,7 +44,7 @@ def resolveWinUpdates():
         if os.system('echo y | del "SoftwareDistribution"') != 0:
             raise Exception("Attempt threw an error!")
 
-        print(Fore.GREEN + "Successfully resolved Windows updates issues.")
+        print(Fore.GREEN + "Successfully resolved Windows updates issues." + Style.RESET_ALL)
 
         finisheDateTime = datetime.now()
         
