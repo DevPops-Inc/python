@@ -41,13 +41,10 @@ def getFirstNumber(operatingSystem):
     if operatingSystem == "Windows":
         firstNumber = int(input("Type first number and press \"Enter\" key (Example: 2): "))
 
-        print("")
-
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         firstNumber = int(input("Type first number and press \"return\" key (Example: 2): "))
 
-        print("")
-
+    print("")
     return firstNumber
 
 
@@ -55,19 +52,15 @@ def getSecondNumber(operatingSystem):
     if operatingSystem == "Windows":
         secondNumber = int(input("Type second number and press \"Enter\" key (Example: 2): "))
 
-        print("")
-
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         secondNumber = int(input("Type second number and press \"return\" key (Example: 2): "))
 
-        print("")
-
+    print("")
     return secondNumber
 
 
 def checkParameters(firstNumber, secondNumber):
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     valid = "true"
 
     print("Parameter(s):")
@@ -94,7 +87,6 @@ def checkParameters(firstNumber, secondNumber):
         print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")        
 
 
@@ -117,10 +109,8 @@ def addFunction():
         print("Started adding at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
         
         result = firstNumber + secondNumber
-        
         print(Fore.BLUE + "{0} + {1} = {2}".format(firstNumber, secondNumber, result))
-        
-        print(Fore.GREEN + "Successfully added in Python" + Style.RESET_ALL)
+        print(Fore.GREEN + "Successfully added in Python." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
         print("Finished adding at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
