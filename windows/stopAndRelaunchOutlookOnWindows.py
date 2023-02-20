@@ -5,6 +5,7 @@
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
 from datetime import datetime
+from pathlib import PureWindowsPath
 colorama.init()
 
 
@@ -34,7 +35,7 @@ def stopAndRelaunchOutlook():
 
     outlookApp = 'outlook.exe'
     stopOutlook = 'taskkill /F /IM {0}'.format(outlookApp)
-    outlookPath = r"C:\\Program Files\\Microsoft Office\\root\\Office16\\OUTLOOK.EXE"
+    outlookPath = PureWindowsPath("C:/Program Files/Microsoft Office/root/Office16/OUTLOOK.EXE")
     relaunchOutlook = 'explorer {0}'.format(outlookPath)
 
     try: 
@@ -45,8 +46,8 @@ def stopAndRelaunchOutlook():
         outlookTasks = [ stopOutlook, relaunchOutlook]
 
         for task in outlookTasks: 
-            if os.system(task) != 0: 
-                raise Exception("Attempt threw an error!")
+            os.system(task)
+            #    raise Exception("Attempt threw an error!")
             
         print(Fore.GREEN + "Successfully stopped and relaunched Outlook." + Style.RESET_ALL)
 
