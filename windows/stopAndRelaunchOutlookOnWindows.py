@@ -44,7 +44,7 @@ def stopAndRelaunchOutlook():
 
         outlookTasks = [ stopOutlook, relaunchOutlook]
 
-        for tasks in outlookTasks: 
+        for task in outlookTasks: 
             if os.system(task) != 0: 
                 raise Exception("Attempt threw an error!")
             
