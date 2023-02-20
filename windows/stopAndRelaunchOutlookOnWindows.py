@@ -43,6 +43,9 @@ def stopAndRelaunchOutlook():
         
         print("Started stopping and relauching Outlook at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
+        if os.path.exists(outlookPath) == False: 
+            raise Exception("OUTLOOK.EXE path is not valid.")
+
         outlookTasks = [ stopOutlook, relaunchOutlook]
 
         for task in outlookTasks: 
