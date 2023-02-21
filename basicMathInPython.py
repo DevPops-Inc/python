@@ -30,7 +30,6 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
     return operatingSystem
 
@@ -46,13 +45,10 @@ def getChoice(operatingSystem):
     if operatingSystem == "Windows":
         choice = str(input("Please type your choice and press \"Enter\" key (Example: 1): "))
 
-        print("")
-
     elif operatingSystem == "macOS" or operatingSystem == "Linux":
         choice = str(input("Please type your choice and press \"return\" key (Example: 1): "))
 
-        print("")
-
+    print("")
     return choice
 
 
@@ -60,13 +56,10 @@ def getNum1(operatingSystem):
     if operatingSystem == "Windows":
         num1 = int(input("Please type a number and press the \"Enter\" key (Example: 2): "))
 
-        print("")
-
     elif operatingSystem == "macOS" or operatingSystem == "Linux":
         num1 = int(input("Please type a number and press the \"return\" key (Example: 2): "))
 
-        print("")
-
+    print("")
     return num1
 
 
@@ -165,7 +158,6 @@ def basicMath():
 
     except Exception as e:
         print(Fore.RED + "Failed to perform basic math in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
