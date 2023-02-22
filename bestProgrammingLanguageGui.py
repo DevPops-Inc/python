@@ -40,10 +40,10 @@ def bestProgrammingLanguage():
     operatingSystem = checkOs()
 
     if operatingSystem == "Windows":
-        input("Press any key to continue or press the \"Ctrl\" and \"C\" keys to quit:")
+        input("Press any key to continue or press the \"Ctrl\" and \"C\" keys to quit: ")
 
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
-        input("Press any key to continue or press the \"control\" and \"C\" keys to quit:")
+        input("Press any key to continue or press the \"control\" and \"C\" keys to quit: ")
 
     print("")
     root = Tk()
