@@ -42,13 +42,21 @@ def checkOutlook():
         if os.path.exists(outlookPath) == True: 
             print(Fore.GREEN + "Outlook is installed." + Style.RESET_ALL)
 
-            print("Finished checking Outlook at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+            finishedDateTime = datetime.now()
+            print("Finished checking Outlook at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+
+            duration = finishedDateTime - startDateTime
+            print("Total execution time: {0} second(s)".format(duration.seconds))
             print("")
 
         else: 
             print(Fore.RED + "Outlook is not installed." + Style.RESET_ALL)
 
-            print("Finished checking Outlook at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+            finishedDateTime = datetime.now()
+            print("Finished checking Outlook at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+
+            duration = finishedDateTime - startDateTime
+            print("Total execution time: {0} second(s)".format(duration.seconds))
             exit("")
 
     except Exception: 
