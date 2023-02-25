@@ -88,15 +88,15 @@ def stopAndRelaunchOutlook():
             outlookApp = 'outlook.exe'
             stopOutlook = 'taskkill /F /IM {0}'.format(outlookApp)
             outlookPath = PureWindowsPath("C:/Program Files/Microsoft Office/root/Office16/OUTLOOK.EXE")
-            relaunchOutlook = 'explorer {0}'.format(outlookPath)
+            launchOutlook = 'explorer {0}'.format(outlookPath)
 
-            outlookTasks = [ stopOutlook, time.sleep(5), relaunchOutlook]
+            if os.system(stopOutlook) == 0: 
+                print(Fore.BLUE + "Stopped Outlook and relaunching in 5 seconds.")
+                time.sleep(5)
 
-            for task in outlookTasks: 
-                os.system(task)
+            os.system(launchOutlook)
 
         elif operatingSystem == "macOS": 
-
             stopOutlook = 'pkill "Microsoft Outlook"'
             launchOutlook = 'open -a "Microsoft Outlook.app"'
 
