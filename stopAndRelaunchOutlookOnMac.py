@@ -1,20 +1,19 @@
 #!/bin/python
 
-# stop and relaunch Outlook on Windows 
+# stop and relaunch Outlook on Mac 
 
 import colorama, os, sys, time, traceback
 from colorama import Fore, Style 
 from datetime import datetime
-from pathlib import PureWindowsPath
 colorama.init()
 
 
-def checkOsForWindows(): 
+def checkOsForMac(): 
     print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
-    if sys.platform == "win32": 
-        print(Fore.GREEN + "Operating System:", end=""); sys.stdout.flush()
-        os.system('ver')
+    if sys.platform == "darwin": 
+        print(Fore.GREEN + "Operating System:")
+        os.system('sw_vers')
         print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
@@ -22,7 +21,7 @@ def checkOsForWindows():
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
+        print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
@@ -32,9 +31,9 @@ def checkOsForWindows():
 def checkOutlook(): 
     print("Started checking Outlook at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
-    outlookPath = PureWindowsPath("C:/Program Files/Microsoft Office/root/Office16/OUTLOOK.EXE")
+    bashOutlookCheck = "open -Ra 'Microsoft Outlook.app'"
 
-    if os.path.exists(outlookPath) == True: 
+    if os.system(bashOutlookCheck) == 0: 
         print(Fore.GREEN + "Outlook is installed." + Style.RESET_ALL)
 
         print("Finished checking Outlook at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
@@ -48,15 +47,13 @@ def checkOutlook():
 
 
 def stopAndRelaunchOutlook(): 
-    print("\nStop and relaunch Outlook on Windows.\n")
+    print("\nStop and relaunch Outlook on Mac.\n")
     
-    checkOsForWindows()
+    checkOsForMac()
     checkOutlook()
 
-    outlookApp = 'outlook.exe'
-    stopOutlook = 'taskkill /F /IM {0}'.format(outlookApp)
-    outlookPath = PureWindowsPath("C:/Program Files/Microsoft Office/root/Office16/OUTLOOK.EXE")
-    launchOutlook = 'explorer {0}'.format(outlookPath)
+    stopOutlook = 'pkill "Microsoft Outlook"'
+    launchOutlook = 'open -a "Microsoft Outlook.app"'
 
     try: 
         startDateTime = datetime.now()
@@ -64,10 +61,11 @@ def stopAndRelaunchOutlook():
         print("Started stopping and relauching Outlook at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if os.system(stopOutlook) == 0: 
-                print(Fore.BLUE + "Stopped Outlook and relaunching in 5 seconds.")
-                time.sleep(5)
+            print(Fore.BLUE + "Stopped Outlook and relaunching in 5 seconds.")
+            time.sleep(5)
 
-        os.system(launchOutlook)
+        if os.system(launchOutlook) != 0:
+            raise Exception("Couldn't relaunch Outlook!")
             
         print(Fore.GREEN + "Successfully stopped and relaunched Outlook." + Style.RESET_ALL)
 
