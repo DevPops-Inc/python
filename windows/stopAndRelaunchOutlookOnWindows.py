@@ -29,9 +29,29 @@ def checkOsForWindows():
         exit("")
 
 
+def checkOutlook(): 
+    print("Started checking Outlook at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
+    outlookPath = PureWindowsPath("C:/Program Files/Microsoft Office/root/Office16/OUTLOOK.EXE")
+
+    if os.path.exists(outlookPath) == True: 
+        print(Fore.GREEN + "Outlook is installed." + Style.RESET_ALL)
+
+        print("Finished checking Outlook at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+        print("")
+
+    else: 
+        print(Fore.RED + "Outlook is not installed." + Style.RESET_ALL)
+
+        print("Finished checking Outlook at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+        exit("")
+
+
 def stopAndRelaunchOutlook(): 
     print("\nStop and relaunch Outlook on Windows.\n")
+    
     checkOsForWindows()
+    checkOutlook()
 
     outlookApp = 'outlook.exe'
     stopOutlook = 'taskkill /F /IM {0}'.format(outlookApp)
@@ -42,9 +62,6 @@ def stopAndRelaunchOutlook():
         startDateTime = datetime.now()
         
         print("Started stopping and relauching Outlook at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-        if os.path.exists(outlookPath) == False: 
-            raise Exception("OUTLOOK.EXE path is not valid.")
 
         outlookTasks = [ stopOutlook, relaunchOutlook]
 
