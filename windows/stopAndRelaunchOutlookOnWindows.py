@@ -2,7 +2,7 @@
 
 # stop and relaunch Outlook on Windows 
 
-import colorama, os, sys, traceback
+import colorama, os, sys, time, traceback
 from colorama import Fore, Style 
 from datetime import datetime
 from pathlib import PureWindowsPath
@@ -56,17 +56,18 @@ def stopAndRelaunchOutlook():
     outlookApp = 'outlook.exe'
     stopOutlook = 'taskkill /F /IM {0}'.format(outlookApp)
     outlookPath = PureWindowsPath("C:/Program Files/Microsoft Office/root/Office16/OUTLOOK.EXE")
-    relaunchOutlook = 'explorer {0}'.format(outlookPath)
+    launchOutlook = 'explorer {0}'.format(outlookPath)
 
     try: 
         startDateTime = datetime.now()
         
         print("Started stopping and relauching Outlook at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        outlookTasks = [ stopOutlook, relaunchOutlook]
+        if os.system(stopOutlook) == 0: 
+                print(Fore.BLUE + "Stopped Outlook and relaunching in 5 seconds.")
+                time.sleep(5)
 
-        for task in outlookTasks: 
-            os.system(task)
+        os.system(launchOutlook)
             
         print(Fore.GREEN + "Successfully stopped and relaunched Outlook." + Style.RESET_ALL)
 
