@@ -74,7 +74,7 @@ def getNewFolderName(operatingSystem):
 
 def checkParameters(pathToFolder, folderName, newFolderName): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-    valid = "true"
+    valid = True
 
     print("Parameter(s):")
     print("----------------------------------------")
@@ -85,17 +85,17 @@ def checkParameters(pathToFolder, folderName, newFolderName):
 
     if pathToFolder == None: 
         print(Fore.RED + "pathToFolder is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
     if folderName == None: 
         print(Fore.RED + "folderName is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
     if newFolderName == None:
         print(Fore.RED + "newFolderName is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
-    if valid == "true": 
+    if valid == True: 
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))

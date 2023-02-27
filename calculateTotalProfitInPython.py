@@ -68,7 +68,7 @@ def getProfitMargin(operatingSystem):
 def checkParameters(totalSale, profitMargin): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
-    valid = "true"
+    valid = True
 
     print("Parameter(s):")
     print("--------------------------------------")
@@ -78,13 +78,13 @@ def checkParameters(totalSale, profitMargin):
 
     if totalSale == None: 
         print(Fore.RED + "totalSale is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
     if profitMargin == None: 
         print(Fore.RED + "profitMargin is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
-    if valid == "true": 
+    if valid == True: 
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))

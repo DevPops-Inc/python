@@ -71,7 +71,7 @@ def getNumRandomNum(operatingSystem):
 
 def checkParameters(beginNumRange, endNumRange, numRandomNum): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-    valid = "true"
+    valid = True
 
     print("Parameter(s):")
     print("----------------------------------------")
@@ -82,17 +82,17 @@ def checkParameters(beginNumRange, endNumRange, numRandomNum):
 
     if beginNumRange == None: 
         print(Fore.RED + "beginNumRange is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
     if endNumRange == None: 
         print(Fore.RED + "endNumRange is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
     if numRandomNum == None: 
         print(Fore.RED + "numRandomNum is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
-    if valid == "true": 
+    if valid == True: 
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
