@@ -65,7 +65,7 @@ def getNum1(operatingSystem):
 
 def checkParameters(choice, num1):
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-    valid = "true"
+    valid = True
 
     print("Parameter(s):")
     print("--------------------------")
@@ -75,13 +75,13 @@ def checkParameters(choice, num1):
 
     if choice == None:
         print(Fore.RED + "choice is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
     if num1 == None:
         print(Fore.RED + "num1 is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
-    if valid == "true":
+    if valid == True:
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))

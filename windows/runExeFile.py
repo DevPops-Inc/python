@@ -48,7 +48,7 @@ def getExeFileName():
 
 def checkParameters(exeFileLocation, exeFilename): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-    valid = "true"
+    valid = True
 
     print("Parameter(s):")
     print("------------------------------------------------")
@@ -58,13 +58,13 @@ def checkParameters(exeFileLocation, exeFilename):
 
     if exeFileLocation == None: 
         print(Fore.RED + "exeFileLocation is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
     if exeFilename == None: 
         print(Fore.RED + "installName is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
-    if valid == "true": 
+    if valid == True: 
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))

@@ -54,7 +54,7 @@ def getYear(operatingSystem):
 def checkParameters(year): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     
-    valid = "true"
+    valid = True
 
     print("Parameter(s):")
     print("----------------------")
@@ -63,9 +63,9 @@ def checkParameters(year):
 
     if year == None: 
         print(Fore.RED + "year is not set." + Style.RESET_ALL)
-        valid = "false"
+        valid = False
 
-    if valid == "true": 
+    if valid == True: 
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
