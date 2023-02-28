@@ -32,7 +32,6 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
     return operatingSystem
 
@@ -41,13 +40,10 @@ def getTotalSale(operatingSystem):
     if operatingSystem == "Windows": 
         totalSale = float(input("Please type the total sale amount and press \"Enter\" key (Example: 100): "))
 
-        print("")
-
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         totalSale = float(input("Please type the total sale amount and press \"return\" key (Example: 100): "))
 
-        print("")
-
+    print("")
     return totalSale
 
 
@@ -55,19 +51,15 @@ def getProfitMargin(operatingSystem):
     if operatingSystem == "Windows": 
         profitMargin = float(input("Please type the profit margin and press \"Enter\" key (Example: 20): "))
 
-        print("")
-
     if operatingSystem == "macOS" or operatingSystem == "Linux": 
         profitMargin = float(input("Please type the profit margin and press \"Enter\" key (Example: 20): "))
 
-        print("")
-
+    print("")
     return profitMargin
 
         
 def checkParameters(totalSale, profitMargin): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     valid = True
 
     print("Parameter(s):")
@@ -88,14 +80,12 @@ def checkParameters(totalSale, profitMargin):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         print("")
 
     else: 
         print(Fore.RED + "One or more parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
 
@@ -115,7 +105,6 @@ def calculateTotalProfit():
 
     try: 
         startDateTime = datetime.now()
-        
         print("Started calculating total profit at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
         
         totalProfit = totalSale * (profitMargin/100)
@@ -125,7 +114,6 @@ def calculateTotalProfit():
         print(Fore.GREEN + "Successfully calculated total profit." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-
         print("Finished calculated total profit at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
@@ -134,7 +122,6 @@ def calculateTotalProfit():
         
     except Exception as e:
         print(Fore.RED + "Failed to calculate total profit in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
