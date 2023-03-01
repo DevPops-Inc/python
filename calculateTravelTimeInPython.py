@@ -40,13 +40,10 @@ def getRate(operatingSystem):
     if operatingSystem == "Windows": 
         rate = float(input("Please type the rate (miles per hour) and press \"Enter\" key (Example: 45): "))
 
-        print("")
-
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         rate = float(input("Please type the rate (miles per hour) and press \"return\" key (Example: 45): "))
 
-        print("")
-
+    print("")
     return rate 
 
 
