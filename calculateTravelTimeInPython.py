@@ -105,7 +105,6 @@ def calculateTravelTime():
 
     try: 
         startDateTime = datetime.now()
-        
         print("Started calculating travel time at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         print(Fore.BLUE + "Travel time: {0} hours ".format(distance / rate))
@@ -121,7 +120,6 @@ def calculateTravelTime():
         
     except Exception as e:
         print(Fore.RED + "Failed to calculate travel time" + Style.RESET_ALL)
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
