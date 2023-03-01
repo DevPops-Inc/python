@@ -32,7 +32,6 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
     return operatingSystem
 
@@ -41,13 +40,10 @@ def getRate(operatingSystem):
     if operatingSystem == "Windows": 
         rate = float(input("Please type the rate (miles per hour) and press \"Enter\" key (Example: 45): "))
 
-        print("")
-
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         rate = float(input("Please type the rate (miles per hour) and press \"return\" key (Example: 45): "))
 
-        print("")
-
+    print("")
     return rate 
 
 
@@ -64,7 +60,6 @@ def getDistance(operatingSystem):
 
 def checkParameters(rate, distance): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     valid = True
 
     print("Parameter(s):")
@@ -85,14 +80,12 @@ def checkParameters(rate, distance):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         print("")
 
     else: 
         print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
 
@@ -112,10 +105,11 @@ def calculateTravelTime():
 
     try: 
         startDateTime = datetime.now()
-        
         print("Started calculating travel time at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        print(Fore.BLUE + "Travel time: {0} hours ".format(distance / rate))
+        travelTime = distance / rate
+        roundedTravelTime = round(travelTime, 2)
+        print(Fore.BLUE + "Travel time: {0} hours ".format(roundedTravelTime))
         print(Fore.GREEN + "Successfully calcuated travel time." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
@@ -128,7 +122,6 @@ def calculateTravelTime():
         
     except Exception as e:
         print(Fore.RED + "Failed to calculate travel time" + Style.RESET_ALL)
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
