@@ -32,7 +32,6 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
     return operatingSystem
 
@@ -105,7 +104,6 @@ def capsFirstWordInString():
 
     except Exception as e:
         print(Fore.RED + "Failed to capitalize first word in string.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
