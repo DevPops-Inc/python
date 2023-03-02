@@ -104,7 +104,6 @@ def capsFirstWordInString():
 
     except Exception as e:
         print(Fore.RED + "Failed to capitalize first word in string.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
