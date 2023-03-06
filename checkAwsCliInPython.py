@@ -40,13 +40,11 @@ def checkAwsCli():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking AWS CLI at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull, 'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkAwsCliOnMacOrLinux = subprocess.call(['which', 'aws'], stdout=FNULL) 
 
             if checkAwsCliOnMacOrLinux == 0:
@@ -74,7 +72,6 @@ def checkAwsCli():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkAwsCliOnWindows = subprocess.call(['where', 'aws'], stdout=FNULL)
 
             if checkAwsCliOnWindows == 0:
@@ -103,7 +100,6 @@ def checkAwsCli():
                 
     except Exception: 
         print(Fore.RED + "Failed to check AWS CLI in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
