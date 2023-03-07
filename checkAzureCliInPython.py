@@ -40,13 +40,11 @@ def checkAzureCli():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking Azure CLI at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull, 'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkAzureCliOnMacOrLinux = subprocess.call(['which', 'az'], stdout=FNULL) 
 
             if checkAzureCliOnMacOrLinux == 0:
@@ -74,7 +72,6 @@ def checkAzureCli():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkAzureCliOnWindows = subprocess.call(['where', 'az'], stdout=FNULL)
 
             if checkAzureCliOnWindows == 0:
@@ -103,7 +100,6 @@ def checkAzureCli():
                 
     except Exception: 
         print(Fore.RED + "Failed to check Azure CLI in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
