@@ -25,10 +25,12 @@ def checkOsForWinOrMac():
 
     if operatingSystem == "Windows" or operatingSystem == "macOS": 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
 
     else: 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         exit("")
 
     return operatingSystem
@@ -61,8 +63,6 @@ def checkChromeOnWinOrMac():
                 print("Finished checking Chrome at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
                 exit("")
 
-
-    
         elif operatingSystem == "macOS":
             chromeInApps = os.system('open -Ra "Google Chrome.app"')
 
@@ -84,7 +84,6 @@ def checkChromeOnWinOrMac():
 
     except Exception: 
         print(Fore.RED + "Failed to check Chrome on Windows or Mac.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
