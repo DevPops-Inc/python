@@ -52,7 +52,7 @@ def checkCmatrix():
                 print("")
 
                 print("Do you want to run cmatrix now?" + Fore.BLUE)
-                answer = str(input("Please press the \"Y\" or \"N\" and the \"return\" key: "))
+                answer = str(input("Please press \"Y\" or \"N\" and the \"return\" key: "))
 
                 if answer == "Y":
                     print("Press the \"control\" and \"C\" keys when you're ready to quit cmatrix." + Style.RESET_ALL)
@@ -89,7 +89,7 @@ def checkCmatrix():
                 print("")
 
                 print("Do you want to run cmatrix now?" + Fore.BLUE)
-                answer = str(input("Please press the \"Y\" or \"N\" and the \"Enter\" key: "))
+                answer = str(input("Please press \"Y\" or \"N\" and the \"Enter\" key: "))
 
                 if answer == "Y":
                     print("Press the \"Ctrl\" and \"C\" keys when you're ready to quit cmatrix." + Style.RESET_ALL)
