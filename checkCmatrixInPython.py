@@ -40,13 +40,11 @@ def checkCmatrix():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking cmatrix at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull, 'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkCmatrixOnMacOrLinux = subprocess.call(['which', 'cmatrix'], stdout=FNULL) 
 
             if checkCmatrixOnMacOrLinux == 0:
@@ -84,7 +82,6 @@ def checkCmatrix():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkCmatrixOnWindows = subprocess.call(['where', 'cmatrix'], stdout=FNULL)
 
             if checkCmatrixOnWindows == 0:
@@ -123,7 +120,6 @@ def checkCmatrix():
                 
     except Exception: 
         print(Fore.RED + "Failed to check cmatrix in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
