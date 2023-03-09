@@ -57,7 +57,7 @@ def checkCmatrix():
                 if answer == "Y":
                     print("Press the \"control\" and \"C\" keys when you're ready to quit cmatrix." + Style.RESET_ALL)
 
-                    time.sleep(3)
+                    time.sleep(5)
                     os.system('cmatrix')
 
                 print(Fore.GREEN + "Successfully checked cmatrix." + Style.RESET_ALL)
@@ -94,7 +94,7 @@ def checkCmatrix():
                 if answer == "Y":
                     print("Press the \"Ctrl\" and \"C\" keys when you're ready to quit cmatrix." + Style.RESET_ALL)
 
-                    time.sleep(3)
+                    time.sleep(5)
                     os.system('cmatrix')
 
                 print(Fore.GREEN + "Successfully checked cmatrix." + Style.RESET_ALL)
