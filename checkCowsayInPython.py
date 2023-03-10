@@ -40,13 +40,11 @@ def checkCowsay():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking Cowsay at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull, 'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkCowsayOnMacOrLinux = subprocess.call(['which', 'cowsay'], stdout=FNULL)
 
             if checkCowsayOnMacOrLinux == 0:
@@ -73,7 +71,6 @@ def checkCowsay():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkCowsayOnWindows = subprocess.call(['where', 'cowsay'], stdout=FNULL) 
             
             if checkCowsayOnWindows == 0:
@@ -101,7 +98,6 @@ def checkCowsay():
 
     except Exception: 
         print(Fore.RED + "Failed to check Cowsay in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
