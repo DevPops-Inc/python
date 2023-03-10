@@ -30,7 +30,6 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
     return operatingSystem
 
@@ -41,7 +40,6 @@ def checkCowthink():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking Cowthink at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
@@ -74,7 +72,6 @@ def checkCowthink():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkCowthinkOnWindows = subprocess.call(['where', 'cowthink'], stdout=FNULL) 
             
             if checkCowthinkOnWindows == 0:
@@ -102,7 +99,6 @@ def checkCowthink():
 
     except Exception: 
         print(Fore.RED + "Failed to check Cowthink in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
