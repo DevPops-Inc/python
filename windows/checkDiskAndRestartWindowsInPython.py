@@ -56,7 +56,6 @@ def checkDiskAndRestartWindows():
         
     except Exception: 
         print(Fore.RED + "Failed to check disk and restart Windows.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
