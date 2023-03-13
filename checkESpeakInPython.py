@@ -40,13 +40,11 @@ def checkESpeak():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking eSpeak at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkESpeakOnMacOrLinux = subprocess.call(['which', 'espeak'], stdout=FNULL) 
 
             if checkESpeakOnMacOrLinux == 0:
@@ -74,7 +72,6 @@ def checkESpeak():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkESpeakOnWindows = subprocess.call(['where', 'espeak'], stdout=FNULL)
 
             if checkESpeakOnWindows == 0:
@@ -103,7 +100,6 @@ def checkESpeak():
                 
     except Exception: 
         print(Fore.RED + "Failed to check eSpeak in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
