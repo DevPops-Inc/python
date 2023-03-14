@@ -40,13 +40,11 @@ def checkFortune():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking Fortune at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkFortuneOnMacOrLinux = subprocess.call(['which', 'fortune'], stdout=FNULL) 
 
             if checkFortuneOnMacOrLinux == 0:
@@ -78,7 +76,6 @@ def checkFortune():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkFortuneOnWindows = subprocess.call(['where', 'fortune'], stdout=FNULL)
 
             if checkFortuneOnWindows == 0:
@@ -110,7 +107,6 @@ def checkFortune():
                 
     except Exception: 
         print(Fore.RED + "Failed to check Fortune in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
