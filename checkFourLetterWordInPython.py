@@ -87,6 +87,7 @@ def checkFourLetterWord():
 
     try: 
         startDateTime = datetime.now()
+
         print("Started checking four letter word at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         wordLength = len(fourLetterWord)
@@ -99,6 +100,7 @@ def checkFourLetterWord():
         print(Fore.GREEN + "Successfully checked four letter word." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
+
         print("Finished checking four letter word at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
@@ -107,7 +109,6 @@ def checkFourLetterWord():
 
     except Exception: 
         print(Fore.RED + "Failed to check four letter word.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
