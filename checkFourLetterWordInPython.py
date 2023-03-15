@@ -94,6 +94,7 @@ def checkFourLetterWord():
 
         if wordLength == 4:
             print(Fore.BLUE + "\"{0}\" is a four letter word.".format(fourLetterWord.capitalize()) + Style.RESET_ALL)
+            
         else:
             print(Fore.RED + "\"{0}\" is not a four letter word.".format(fourLetterWord.capitalize()) + Style.RESET_ALL)
 
