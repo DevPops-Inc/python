@@ -29,7 +29,6 @@ def checkOsForMacOrLinux():
         exit("")
     
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
 
 
@@ -39,7 +38,6 @@ def checkHtop():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking htop at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
@@ -72,7 +70,6 @@ def checkHtop():
         
     except Exception: 
         print(Fore.RED + "Failed to check htop.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
