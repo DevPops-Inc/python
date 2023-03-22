@@ -90,10 +90,14 @@ def splitStringOnSpaces():
         
         print("Started splitting string on spaces at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        splitStringOnSpaces=stringWithSpaces.split(" ")
-        print(Fore.BLUE, end="")
-        print(splitStringOnSpaces)
-        print(Fore.GREEN + "Successfully split string on spaces." + Style.RESET_ALL)
+        if " " in stringWithSpaces: 
+            splitStringWithSpaces=stringWithSpaces.split(" ")
+            print(Fore.BLUE, end="")
+            print(splitStringWithSpaces)
+            print(Fore.GREEN + "Successfully split string on spaces." + Style.RESET_ALL)
+
+        else: 
+            raise Exception("There are no spaces in this string.")
 
         finishedDateTime = datetime.now()
 
