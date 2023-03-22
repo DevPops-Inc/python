@@ -1,12 +1,12 @@
-#!/bin/python
+#!/bin/python 
 
-# split string on spaces in Python
+# split string on commas in Python 
 
-# you can run this script with: python3 splitStringOnSpacesInPython.py "< string with spaces >"
+# you can run this script with: python3 splitStringOnCommasInPython.py "< string with commas >"
 
-import colorama, os, sys, traceback 
+import colorama, os, sys, traceback
 from colorama import Fore, Style 
-from datetime import datetime 
+from datetime import datetime
 colorama.init()
 
 
@@ -16,7 +16,7 @@ def checkOs():
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System:", end=""); sys.stdout.flush()
         os.system('ver')
-        print(Style.RESET, end="")
+        print(Style.RESET_ALL, end="")
         operatingSystem = "Windows"
 
     elif sys.platform == "darwin": 
@@ -36,81 +36,81 @@ def checkOs():
     return operatingSystem
 
 
-def getStringWithSpaces(operatingSystem): 
+def getStringWithCommas(operatingSystem): 
     if sys.platform == "Windows": 
-        stringWithSpaces = str(input("Please type a string with spaces and press the \"Enter\" key (Example: string with spaces): "))
+        stringWithCommas = str(input("Please type a string with commas and press the \"Enter\" (Example: string, with, commas): "))
 
     else: 
-        stringWithSpaces = str(input("Please type a string with spaces and press the \"return\" key (Example: string with spaces): "))
-
+        stringWithCommas = str(input("Please type a string with commas and press the \"return\" (Example: string, with, commas): "))
+    
     print("")
-    return stringWithSpaces
+    return stringWithCommas
 
 
-def checkParameters(stringWithSpaces): 
+def checkParameters(stringWithCommas): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     valid = True 
 
     print("Parameter(s):")
     print("----------------------------------------------")
-    print("stringWithSpaces: {0}".format(stringWithSpaces))
+    print("stringWithCommas: {0}".format(stringWithCommas))
     print("----------------------------------------------")
 
-    if stringWithSpaces == None: 
-        print(Fore.RED + "stringWithSpaces is not set." + Style.RESET_ALL)
+    if stringWithCommas == None: 
+        print(Fore.RED + "stringWithCommas is not set." + Style.RESET_ALL)
         valid = False 
 
     if valid == True: 
-        print(Fore.GREEN + "All parameter check(s) passsed." + Style.RESET_ALL)
+        print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
+        print(Fore.RED + "One or more parameter check(s) are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
         exit("")
 
 
-def splitStringOnSpaces(): 
-    print("\nSplit string on spaces in Python.\n")
+def splitStringOnCommas(): 
+    print("\nSplit string on commas in Python.\n")
     operatingSystem = checkOs()
 
     if len(sys.argv) >= 2: 
-        stringWithSpaces = str(sys.argv[1])
+        stringWithCommas = str(sys.argv[1])
 
     else: 
-        stringWithSpaces = getStringWithSpaces(operatingSystem)
+        stringWithCommas = getStringWithCommas(operatingSystem)
 
-    checkParameters(stringWithSpaces)
+    checkParameters(stringWithCommas)
 
     try: 
         startDateTime = datetime.now()
         
-        print("Started splitting string on spaces at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Started splitting string on commas at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        if " " in stringWithSpaces: 
-            splitStringWithSpaces=stringWithSpaces.split(" ")
+        if "," in stringWithCommas: 
+            splitStringWithCommas=stringWithCommas.split(",")
             print(Fore.BLUE, end="")
-            print(splitStringWithSpaces)
-            print(Fore.GREEN + "Successfully split string on spaces." + Style.RESET_ALL)
+            print(splitStringWithCommas)
+            print(Fore.GREEN + "Successfully split string on commas." + Style.RESET_ALL)
 
         else: 
-            raise Exception("There are no spaces in this string.")
+            raise Exception("There are no commas in this string.")
 
         finishedDateTime = datetime.now()
 
-        print("Finished splitting string on spaces at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Finished splitting string on commas at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
 
     except Exception: 
-        print(Fore.RED + "Failed to split string on spaces.")
+        print(Fore.RED + "Failed to split string on commas.")
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
 
-splitStringOnSpaces()
+splitStringOnCommas()
