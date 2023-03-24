@@ -30,7 +30,6 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
     return operatingSystem
 
@@ -41,13 +40,11 @@ def checkKotlin():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking Kotlin at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkKotlinOnMacOrLinux = subprocess.call(['which', 'kotlin'], stdout=FNULL) 
 
             if checkKotlinOnMacOrLinux == 0:
@@ -75,7 +72,6 @@ def checkKotlin():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkKotlinOnWindows = subprocess.call(['where', 'kotlin'], stdout=FNULL)
 
             if checkKotlinOnWindows == 0:
@@ -104,7 +100,6 @@ def checkKotlin():
                 
     except Exception: 
         print(Fore.RED + "Failed to check Kotlin in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
