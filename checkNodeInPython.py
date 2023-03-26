@@ -40,13 +40,11 @@ def checkNode():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking Node at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkNodeOnMacOrLinux = subprocess.call(['which', 'node'], stdout=FNULL) 
 
             if checkNodeOnMacOrLinux == 0:
@@ -74,7 +72,6 @@ def checkNode():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkNodeOnWindows = subprocess.call(['where', 'node'], stdout=FNULL)
 
             if checkNodeOnWindows == 0:
@@ -103,7 +100,6 @@ def checkNode():
                 
     except Exception: 
         print(Fore.RED + "Failed to check Node in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
