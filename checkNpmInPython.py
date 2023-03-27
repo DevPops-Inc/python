@@ -30,7 +30,6 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
     return operatingSystem
 
@@ -41,13 +40,11 @@ def checkNpm():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking NPM at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkNpmOnMacOrLinux = subprocess.call(['which', 'npm'], stdout=FNULL) 
 
             if checkNpmOnMacOrLinux == 0:
@@ -75,7 +72,6 @@ def checkNpm():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkNpmOnWindows = subprocess.call(['where', 'npm'], stdout=FNULL)
 
             if checkNpmOnWindows == 0:
@@ -104,7 +100,6 @@ def checkNpm():
                 
     except Exception: 
         print(Fore.RED + "Failed to check NPM in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
