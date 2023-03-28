@@ -2,6 +2,8 @@
 
 # systems file check on Windows 
 
+# run this script as admin
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
 from datetime import datetime 
