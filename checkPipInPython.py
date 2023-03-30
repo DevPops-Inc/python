@@ -30,7 +30,6 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
     return operatingSystem
 
@@ -41,13 +40,11 @@ def checkPip():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking PIP at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkPipOnMacOrLinux = subprocess.call(['which', 'pip'], stdout=FNULL) 
 
             if checkPipOnMacOrLinux == 0:
@@ -75,7 +72,6 @@ def checkPip():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkPipOnWindows = subprocess.call(['where', 'pip'], stdout=FNULL)
 
             if checkPipOnWindows == 0:
@@ -104,7 +100,6 @@ def checkPip():
                 
     except Exception: 
         print(Fore.RED + "Failed to check PIP in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
