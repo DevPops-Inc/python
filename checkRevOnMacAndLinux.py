@@ -38,7 +38,6 @@ def checkRev():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking rev at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
@@ -71,7 +70,6 @@ def checkRev():
         
     except Exception: 
         print(Fore.RED + "Failed to check rev.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
