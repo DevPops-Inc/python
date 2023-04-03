@@ -39,10 +39,10 @@ def checkOs():
     
 def getFirstNumber(operatingSystem):
     if operatingSystem == "Windows":
-        firstNumber = int(input("Type first number and press \"Enter\" key (Example: 2): "))
+        firstNumber = int(input("Type first number and press the \"Enter\" key (Example: 2): "))
 
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
-        firstNumber = int(input("Type first number and press \"return\" key (Example: 2): "))
+        firstNumber = int(input("Type first number and press the \"return\" key (Example: 2): "))
 
     print("")
     return firstNumber
@@ -50,10 +50,10 @@ def getFirstNumber(operatingSystem):
 
 def getSecondNumber(operatingSystem):
     if operatingSystem == "Windows":
-        secondNumber = int(input("Type second number and press \"Enter\" key (Example: 2): "))
+        secondNumber = int(input("Type second number and press the \"Enter\" key (Example: 2): "))
 
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
-        secondNumber = int(input("Type second number and press \"return\" key (Example: 2): "))
+        secondNumber = int(input("Type second number and press the \"return\" key (Example: 2): "))
 
     print("")
     return secondNumber
