@@ -68,11 +68,11 @@ def checkParameters(totalSale, profitMargin):
     print("profitMargin: {0}".format(profitMargin))
     print("--------------------------------------")
 
-    if totalSale == None: 
+    if totalSale == None or totalSale == "": 
         print(Fore.RED + "totalSale is not set." + Style.RESET_ALL)
         valid = False
 
-    if profitMargin == None: 
+    if profitMargin == None or profitMargin == "": 
         print(Fore.RED + "profitMargin is not set." + Style.RESET_ALL)
         valid = False
 
