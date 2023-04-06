@@ -68,11 +68,11 @@ def checkParameters(rate, distance):
     print("distance: {0}".format(distance))
     print("------------------------------")
 
-    if rate == None: 
+    if rate == None or rate == "": 
         print(Fore.RED + "rate is not set." + Style.RESET_ALL)
         valid = False
 
-    if distance == None: 
+    if distance == None or distance == "": 
         print(Fore.RED + "distance is not set." + Style.RESET_ALL)
         valid = False
 
