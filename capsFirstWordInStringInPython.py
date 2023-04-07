@@ -2,7 +2,7 @@
 
 # capitalize first word in string in Python
 
-# you can run this script with: python3 capsFirstWordInStringInPython.py "< string >""
+# you can run this script with: python3 capsFirstWordInStringInPython.py "< string >"
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
