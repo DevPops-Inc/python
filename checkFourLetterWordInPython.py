@@ -56,7 +56,7 @@ def checkParameters(fourLetterWord):
     print("fourLetteWord: {0}".format(fourLetterWord))
     print("-----------------------------------------")
 
-    if fourLetterWord == None: 
+    if fourLetterWord == None or fourLetterWord == "": 
         print(Fore.RED + "fourLetterWord is not set." + Style.RESET_ALL)
         valid = False
 
