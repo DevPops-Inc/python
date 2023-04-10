@@ -2,7 +2,7 @@
 
 # check four letter word in Python
 
-# you can run this script with: python3 checkFourLetterWordInPython.py < four letter word >
+# you can run this script with: python3 checkFourLetterWordInPython.py "< four letter word >""
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style
