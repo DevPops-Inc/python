@@ -2,6 +2,8 @@
 
 # view connected servers on Windows 
 
+# haven't tested this script on a domain computer yet
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
 from datetime import datetime
@@ -36,6 +38,8 @@ def viewConnectedServers():
         startDateTime = datetime.now()
         
         print("Started viewing connected servers at", startDateTime.strftime("%m-%d-%Y %I:%M %p")) 
+
+        os.system('net view')
 
         if os.system('net view') != 0: 
             raise Exception("An error occurred when attempting to view connected servers.")
