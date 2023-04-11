@@ -1,6 +1,6 @@
 #!/bin/python
 
-# view all connected servers on Windows 
+# view connected servers on Windows 
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
