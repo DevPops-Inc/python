@@ -29,29 +29,29 @@ def checkOsForWindows():
 
 
 def viewConnectedServers(): 
-    print("View all connected servers on Windows.\n")
+    print("View connected servers on Windows.\n")
     checkOsForWindows()
 
     try: 
         startDateTime = datetime.now()
         
-        print("Started viewing all connected servers at", startDateTime.strftime("%m-%d-%Y %I:%M %p")) 
+        print("Started viewing connected servers at", startDateTime.strftime("%m-%d-%Y %I:%M %p")) 
 
         if os.system('net view') != 0: 
-            raise Exception("An error occurred when trying to view connected servers.")
+            raise Exception("An error occurred when attempting to view connected servers.")
         
-        print(Fore.GREEN + "Successfully viewed all connect servers." + Style.RESET_ALL)
+        print(Fore.GREEN + "Successfully viewed connect servers." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
 
-        print("Finished viewing all connected servers at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Finished viewing connected servers at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime 
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
 
     except Exception: 
-        print(Fore.RED + "Failed to view all connected servers.")
+        print(Fore.RED + "Failed to view connected servers.")
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
