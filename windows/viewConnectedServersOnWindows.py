@@ -28,7 +28,7 @@ def checkOsForWindows():
         exit("")
 
 
-def viewAllConnectedServers(): 
+def viewConnectedServers(): 
     print("View all connected servers on Windows.\n")
     checkOsForWindows()
 
@@ -56,4 +56,4 @@ def viewAllConnectedServers():
         exit("" + Style.RESET_ALL)
 
 
-viewAllConnectedServers()
+viewConnectedServers()
