@@ -46,7 +46,6 @@ def checkSteamLocomotive():
         FNULL = open(os.devnull,  'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkSteamLocomotiveOnMacOrLinux = subprocess.call(['which', 'sl'], stdout=FNULL) 
 
             if checkSteamLocomotiveOnMacOrLinux == 0:
@@ -76,7 +75,6 @@ def checkSteamLocomotive():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkSteamLocomotiveOnWindows = subprocess.call(['where', 'sl'], stdout=FNULL)
 
             if checkSteamLocomotiveOnWindows == 0:
@@ -107,7 +105,6 @@ def checkSteamLocomotive():
                 
     except Exception: 
         print(Fore.RED + "Failed to check Steam Locomotive in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
