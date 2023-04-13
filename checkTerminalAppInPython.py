@@ -40,13 +40,11 @@ def getTerminalApp(operatingSystem):
     if operatingSystem == "Windows": 
         terminalApp = str(input("Please type the terminal application you wish to check and press \"Enter\" key (Example: terraform): "))
 
-        print("")
 
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         terminalApp = str(input("Please type the terminal application you wish to check and press \"return\" key (Example: terraform): "))
 
-        print("")
-
+    print("")
     return terminalApp
 
 
