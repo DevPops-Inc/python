@@ -94,7 +94,6 @@ def checkTerminalApp():
         FNULL = open(os.devnull, 'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkTerminalAppOnMacOrLinux = subprocess.call(['which', terminalApp], stdout=FNULL) 
 
             if checkTerminalAppOnMacOrLinux == 0:
@@ -125,7 +124,6 @@ def checkTerminalApp():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkTerminalAppOnWindows = subprocess.call(['where', terminalApp], stdout=FNULL)
 
             if checkTerminalAppOnWindows == 0:
@@ -157,7 +155,6 @@ def checkTerminalApp():
                 
     except Exception: 
         print(Fore.RED + "Failed to check {0} in Python.".format(terminalApp))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
