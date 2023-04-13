@@ -57,7 +57,7 @@ def checkParameters(terminalApp):
     print("terminalApp: {0}".format(terminalApp))
     print("------------------------------------")
 
-    if terminalApp == None: 
+    if terminalApp == None or terminalApp == "": 
         print(Fore.RED + "terminalApp is not set." + Style.RESET_ALL)
         valid = False
 
