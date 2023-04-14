@@ -40,13 +40,11 @@ def checkTerraform():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking Terraform at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull, 'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkTerraformOnMacOrLinux = subprocess.call(['which', 'terraform'], stdout=FNULL) 
 
             if checkTerraformOnMacOrLinux == 0:
@@ -74,7 +72,6 @@ def checkTerraform():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkTerraformOnWindows = subprocess.call(['where', 'terraform'], stdout=FNULL)
 
             if checkTerraformOnWindows == 0:
@@ -103,7 +100,6 @@ def checkTerraform():
                 
     except Exception: 
         print(Fore.RED + "Failed to check Terraform in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
