@@ -38,7 +38,6 @@ def checkToilet():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking TOIlet at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
@@ -71,7 +70,6 @@ def checkToilet():
         
     except Exception: 
         print(Fore.RED + "Failed to check TOIlet.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
