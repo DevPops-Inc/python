@@ -38,7 +38,6 @@ def checkYes():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking yes at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
@@ -61,7 +60,6 @@ def checkYes():
             print(Fore.RED + "yes is not installed." + Style.RESET_ALL)
             
             finishedDateTime = datetime.now()
-
             print("Finished checking yes at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
             duration = finishedDateTime - startDateTime
@@ -70,7 +68,6 @@ def checkYes():
         
     except Exception: 
         print(Fore.RED + "Failed to check yes.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
