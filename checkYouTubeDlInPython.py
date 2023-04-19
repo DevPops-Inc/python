@@ -40,13 +40,11 @@ def checkYouTubeDl():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking youtube-dl at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
-
             checkYouTubeDlOnMacOrLinux = subprocess.call(['which', 'youtube-dl'], stdout=FNULL) 
 
             if checkYouTubeDlOnMacOrLinux == 0:
@@ -74,7 +72,6 @@ def checkYouTubeDl():
                 exit("")
 
         elif operatingSystem == "Windows": 
-            
             checkYouTubeDlOnWindows = subprocess.call(['where', 'youtube-dl'], stdout=FNULL)
 
             if checkYouTubeDlOnWindows == 0:
@@ -103,7 +100,6 @@ def checkYouTubeDl():
                 
     except Exception: 
         print(Fore.RED + "Failed to check youtube-dl in Python.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
