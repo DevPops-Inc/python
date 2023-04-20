@@ -4,6 +4,8 @@
 
 # you can run this script with: python3 chudnovskyAlgorithmInPython.py < number places >
 
+# this works on Python 3.7 but I haven't figured out how to get it to work on Python 3.8 and up
+
 import colorama, math, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -33,47 +35,44 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
     return operatingSystem
 
 
-def getNumberPlaces(operatingSystem):
+def getNumPlaces(operatingSystem):
     if operatingSystem == "Windows": 
-        numberPlaces = int(input("Please enter the number of places to calculate Pi to and press \"Enter\" key (Example: 3): "))
+        numPlaces = int(input("Please enter the number of places to calculate Pi to and press \"Enter\" key (Example: 3): "))
 
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
-        numberPlaces = int(input("Please enter the number of places to calculate Pi to and press \"return\" key (Example: 3): "))
+        numPlaces = int(input("Please enter the number of places to calculate Pi to and press \"return\" key (Example: 3): "))
 
     print("")
-    return numberPlaces
+    return numPlaces
 
 
-def checkParameters(numberPlaces): 
+def checkParameters(numPlaces): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     valid = True
 
     print("Parameter(s):")
-    print("--------------------------------------")
-    print("numberPlaces: {0}".format(numberPlaces))
-    print("--------------------------------------")
+    print("--------------------------------")
+    print("numPlaces: {0}".format(numPlaces))
+    print("--------------------------------")
 
-    if numberPlaces == None: 
-        print(Fore.RED + "numberPlaces is not set." + Style.RESET_ALL)
+    if numPlaces == None or numPlaces == "": 
+        print(Fore.RED + "numPlaces is not set." + Style.RESET_ALL)
         valid = False
 
     if valid == True: 
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         print("")
     else: 
         print(Fore.RED + "One or more paramater checks are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
 
@@ -82,19 +81,18 @@ def calculatePi():
     operatingSystem = checkOs()
 
     if len(sys.argv) >= 2: 
-        numberPlaces = int(sys.argv[1])
+        numPlaces = int(sys.argv[1])
 
     else: 
-        numberPlaces = getNumberPlaces(operatingSystem)
+        numPlaces = getNumPlaces(operatingSystem)
 
-    checkParameters(numberPlaces)
+    checkParameters(numPlaces)
 
     try: 
         startDateTime = datetime.now()
-
         print("Started calculating pi at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        getcontext().prec = numberPlaces 
+        getcontext().prec = numPlaces 
         
         def calc(n):
             t = Decimal(0)
@@ -115,7 +113,6 @@ def calculatePi():
         print(Fore.BLUE + "The value of pi is: {0}".format(calc(1)) + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        
         print("Finished calculating pi at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
@@ -124,7 +121,6 @@ def calculatePi():
 
     except Exception: 
         print(Fore.RED + "Failed to calculate pi.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
