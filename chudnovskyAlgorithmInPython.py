@@ -37,7 +37,7 @@ def checkOs():
     return operatingSystem
 
 
-def getNumberPlaces(operatingSystem):
+def getNumPlaces(operatingSystem):
     if operatingSystem == "Windows": 
         numberPlaces = int(input("Please enter the number of places to calculate Pi to and press \"Enter\" key (Example: 3): "))
 
@@ -82,7 +82,7 @@ def calculatePi():
         numberPlaces = int(sys.argv[1])
 
     else: 
-        numberPlaces = getNumberPlaces(operatingSystem)
+        numberPlaces = getNumPlaces(operatingSystem)
 
     checkParameters(numberPlaces)
 
