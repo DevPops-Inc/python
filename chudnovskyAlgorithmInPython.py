@@ -4,6 +4,8 @@
 
 # you can run this script with: python3 chudnovskyAlgorithmInPython.py < number places >
 
+# this works on Python 3.7 but I haven't figured out how to get it to work on Python 3.8 and up
+
 import colorama, math, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
