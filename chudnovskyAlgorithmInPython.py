@@ -58,7 +58,7 @@ def checkParameters(numberPlaces):
     print("numberPlaces: {0}".format(numberPlaces))
     print("--------------------------------------")
 
-    if numberPlaces == None: 
+    if numberPlaces == None or numberPlaces == "": 
         print(Fore.RED + "numberPlaces is not set." + Style.RESET_ALL)
         valid = False
 
