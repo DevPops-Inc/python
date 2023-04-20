@@ -88,7 +88,6 @@ def calculatePi():
 
     try: 
         startDateTime = datetime.now()
-
         print("Started calculating pi at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         getcontext().prec = numberPlaces 
@@ -112,7 +111,6 @@ def calculatePi():
         print(Fore.BLUE + "The value of pi is: {0}".format(calc(1)) + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        
         print("Finished calculating pi at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
@@ -121,7 +119,6 @@ def calculatePi():
 
     except Exception: 
         print(Fore.RED + "Failed to calculate pi.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
