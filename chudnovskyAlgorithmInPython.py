@@ -39,27 +39,27 @@ def checkOs():
 
 def getNumPlaces(operatingSystem):
     if operatingSystem == "Windows": 
-        numberPlaces = int(input("Please enter the number of places to calculate Pi to and press \"Enter\" key (Example: 3): "))
+        numPlaces = int(input("Please enter the number of places to calculate Pi to and press \"Enter\" key (Example: 3): "))
 
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
-        numberPlaces = int(input("Please enter the number of places to calculate Pi to and press \"return\" key (Example: 3): "))
+        numPlaces = int(input("Please enter the number of places to calculate Pi to and press \"return\" key (Example: 3): "))
 
     print("")
-    return numberPlaces
+    return numPlaces
 
 
-def checkParameters(numberPlaces): 
+def checkParameters(numPlaces): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     valid = True
 
     print("Parameter(s):")
-    print("--------------------------------------")
-    print("numberPlaces: {0}".format(numberPlaces))
-    print("--------------------------------------")
+    print("--------------------------------")
+    print("numPlaces: {0}".format(numPlaces))
+    print("--------------------------------")
 
-    if numberPlaces == None or numberPlaces == "": 
-        print(Fore.RED + "numberPlaces is not set." + Style.RESET_ALL)
+    if numPlaces == None or numPlaces == "": 
+        print(Fore.RED + "numPlaces is not set." + Style.RESET_ALL)
         valid = False
 
     if valid == True: 
@@ -79,18 +79,18 @@ def calculatePi():
     operatingSystem = checkOs()
 
     if len(sys.argv) >= 2: 
-        numberPlaces = int(sys.argv[1])
+        numPlaces = int(sys.argv[1])
 
     else: 
-        numberPlaces = getNumPlaces(operatingSystem)
+        numPlaces = getNumPlaces(operatingSystem)
 
-    checkParameters(numberPlaces)
+    checkParameters(numPlaces)
 
     try: 
         startDateTime = datetime.now()
         print("Started calculating pi at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        getcontext().prec = numberPlaces 
+        getcontext().prec = numPlaces 
         
         def calc(n):
             t = Decimal(0)
