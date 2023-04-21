@@ -30,7 +30,6 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now())
-
     print("")
     return operatingSystem
 
@@ -41,7 +40,6 @@ def clearScreen():
 
     try: 
         startDateTime = datetime.now()
-        
         print("Started clearing screen at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if operatingSystem == "Windows": 
@@ -51,17 +49,14 @@ def clearScreen():
             os.system('clear')
 
         finishedDateTime = datetime.now()
-
         print("Finished clearing screen at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
-
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
         
     except Exception: 
         print(Fore.RED + "Failed to clear screen.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
