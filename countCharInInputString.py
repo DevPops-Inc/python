@@ -56,7 +56,7 @@ def checkParameters(inputString):
     print("inputString: {0}".format(inputString))
     print("------------------------------------")
 
-    if inputString == None: 
+    if inputString == None or inputString == "": 
         print(Fore.RED + "inputString is not set." + Style.RESET_ALL)
         valid = False
 
@@ -102,7 +102,6 @@ def countCharacters():
         
     except Exception: 
         print(Fore.RED + "Failed to count characters in string.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
