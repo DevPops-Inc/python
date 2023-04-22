@@ -56,7 +56,7 @@ def checkParameters(inputString):
     print("inputString: {0}".format(inputString))
     print("------------------------------------")
 
-    if inputString == None: 
+    if inputString == None or inputString == "": 
         print(Fore.RED + "inputString is not set." + Style.RESET_ALL)
         valid = False
 
