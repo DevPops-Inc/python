@@ -102,7 +102,6 @@ def countCharacters():
         
     except Exception: 
         print(Fore.RED + "Failed to count characters in string.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
