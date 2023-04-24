@@ -4,8 +4,7 @@
 
 # you can run this script with: python3 countCharLastNameInPython.py < last name > 
 
-import traceback
-import colorama, os, sys
+import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
@@ -40,19 +39,15 @@ def getLastName(operatingSystem):
     if operatingSystem == "Windows": 
         lastName = str(input("Please type your last name and press \"Enter\" key (Example: Phan): "))
 
-        print("")
-
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         lastName = str(input("Please type your last name and press \"return\" key (Example: Phan): "))
 
-        print("")
-
+    print("")
     return lastName
 
     
 def checkParameters(lastName): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     valid = True
 
     print("Parameter(s):")
@@ -60,7 +55,7 @@ def checkParameters(lastName):
     print("lastName: {0}".format(lastName))
     print("------------------------------")
 
-    if lastName == None: 
+    if lastName == None or lastName == "": 
         print(Fore.RED + "lastName is not set." + Style.RESET_ALL)
         valid = False
     
@@ -68,14 +63,12 @@ def checkParameters(lastName):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
         
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect" + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
 
@@ -92,12 +85,10 @@ def countCharactersInLastName():
 
     try: 
         startDateTime = datetime.now()
-        
         print("Started counting characters in last name at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         count = len(lastName)
-        print(Fore.BLUE + "{0} has {1} characters in it.".format(lastName, count))
-        
+        print(Fore.BLUE + "\"{0}\" has {1} characters in it.".format(lastName, count))
         print(Fore.GREEN + "Successfully counted characters in last name." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
@@ -110,7 +101,6 @@ def countCharactersInLastName():
         
     except Exception: 
         print(Fore.RED + "Failed to count characters in last name.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
