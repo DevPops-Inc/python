@@ -85,12 +85,10 @@ def countCharactersInLastName():
 
     try: 
         startDateTime = datetime.now()
-        
         print("Started counting characters in last name at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         count = len(lastName)
-        print(Fore.BLUE + "{0} has {1} characters in it.".format(lastName, count))
-        
+        print(Fore.BLUE + "\"{0}\" has {1} characters in it.".format(lastName, count))
         print(Fore.GREEN + "Successfully counted characters in last name." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
@@ -103,7 +101,6 @@ def countCharactersInLastName():
         
     except Exception: 
         print(Fore.RED + "Failed to count characters in last name.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
