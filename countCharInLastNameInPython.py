@@ -4,8 +4,7 @@
 
 # you can run this script with: python3 countCharLastNameInPython.py < last name > 
 
-import traceback
-import colorama, os, sys
+import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
