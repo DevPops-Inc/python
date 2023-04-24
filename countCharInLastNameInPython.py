@@ -39,13 +39,10 @@ def getLastName(operatingSystem):
     if operatingSystem == "Windows": 
         lastName = str(input("Please type your last name and press \"Enter\" key (Example: Phan): "))
 
-        print("")
-
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         lastName = str(input("Please type your last name and press \"return\" key (Example: Phan): "))
 
-        print("")
-
+    print("")
     return lastName
 
     
