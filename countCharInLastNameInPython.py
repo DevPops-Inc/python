@@ -48,7 +48,6 @@ def getLastName(operatingSystem):
     
 def checkParameters(lastName): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     valid = True
 
     print("Parameter(s):")
@@ -56,7 +55,7 @@ def checkParameters(lastName):
     print("lastName: {0}".format(lastName))
     print("------------------------------")
 
-    if lastName == None: 
+    if lastName == None or lastName == "": 
         print(Fore.RED + "lastName is not set." + Style.RESET_ALL)
         valid = False
     
