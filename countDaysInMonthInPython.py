@@ -51,13 +51,10 @@ def getMonth(operatingSystem):
     if operatingSystem == "Windows": 
         month = int(input("Please type the number of the month and press the \"Enter\" key (Example for March: 3): "))
 
-        print("")
-
     else: 
         month = int(input("Please type the number of the month and press the \"Enter\" key (Example for March: 3): "))
 
-        print("")
-
+    print("")
     return month
 
 
