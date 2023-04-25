@@ -120,7 +120,6 @@ def countDaysOfMonth():
                 print(days)
 
         print("days in {0} {1}.".format(calendar.month_name[month], year))
-
         print(Fore.GREEN + "Successfully counted days in a month," + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
@@ -132,7 +131,6 @@ def countDaysOfMonth():
 
     except Exception: 
         print(Fore.RED + "Failed to count days in a month.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
