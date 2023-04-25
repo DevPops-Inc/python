@@ -39,12 +39,11 @@ def checkOS():
 def getYear(operatingSystem): 
     if operatingSystem == "Windows": 
         year = int(input("Please type the year and press the \"Enter\" key (Example: 2020): "))
-        print("")
 
     else: 
         year = int(input("Please type the year and press the \"return\" key (Example: 2020): "))
-        print("")
 
+    print("")
     return year
 
 
