@@ -68,11 +68,11 @@ def checkParameters(year, month):
     print("month: {0}".format(month))
     print("------------------------")
 
-    if year == None: 
+    if year == None or year == "": 
         print(Fore.RED + "year is not set." + Style.RESET_ALL)
         valid = False
 
-    if month == None: 
+    if month == None or month == "": 
         print(Fore.RED + "month is not set." + Style.RESET_ALL)
         valid = False
 
