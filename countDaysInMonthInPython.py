@@ -39,12 +39,11 @@ def checkOS():
 def getYear(operatingSystem): 
     if operatingSystem == "Windows": 
         year = int(input("Please type the year and press the \"Enter\" key (Example: 2020): "))
-        print("")
 
     else: 
         year = int(input("Please type the year and press the \"return\" key (Example: 2020): "))
-        print("")
 
+    print("")
     return year
 
 
@@ -52,13 +51,10 @@ def getMonth(operatingSystem):
     if operatingSystem == "Windows": 
         month = int(input("Please type the number of the month and press the \"Enter\" key (Example for March: 3): "))
 
-        print("")
-
     else: 
         month = int(input("Please type the number of the month and press the \"Enter\" key (Example for March: 3): "))
 
-        print("")
-
+    print("")
     return month
 
 
@@ -72,11 +68,11 @@ def checkParameters(year, month):
     print("month: {0}".format(month))
     print("------------------------")
 
-    if year == None: 
+    if year == None or year == "": 
         print(Fore.RED + "year is not set." + Style.RESET_ALL)
         valid = False
 
-    if month == None: 
+    if month == None or month == "": 
         print(Fore.RED + "month is not set." + Style.RESET_ALL)
         valid = False
 
@@ -124,7 +120,6 @@ def countDaysOfMonth():
                 print(days)
 
         print("days in {0} {1}.".format(calendar.month_name[month], year))
-
         print(Fore.GREEN + "Successfully counted days in a month," + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
@@ -136,7 +131,6 @@ def countDaysOfMonth():
 
     except Exception: 
         print(Fore.RED + "Failed to count days in a month.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
