@@ -35,7 +35,7 @@ def checkOs():
     return operatingSystem
 
 
-def getCountDownNumber(operatingSystem): 
+def getCountdownNumber(operatingSystem): 
     if operatingSystem == "Windows": 
         countdownNum = int(input("Please type the number you wish to countdown from and press the \"Enter\" key (Example: 5): "))
 
@@ -80,7 +80,7 @@ def countdown():
         countdownNum = int(sys.argv[1])
 
     else: 
-        countdownNum = getCountDownNumber(operatingSystem)
+        countdownNum = getCountdownNumber(operatingSystem)
 
     checkParameters(countdownNum)
 
