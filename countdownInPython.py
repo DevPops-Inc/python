@@ -55,7 +55,7 @@ def checkParameters(countdownNum):
     print("countdownNum: {0}".format(countdownNum))
     print("--------------------------------------")
 
-    if countdownNum == None: 
+    if countdownNum == None or countdownNum == "": 
         print(Fore.RED + "countdownNum is not set." + Style.RESET_ALL)
         valid = False 
 
