@@ -98,7 +98,7 @@ def countdown():
         else: 
             raise Exception("Sorry but can't countdown from zero or below.")
             
-        print(Fore.GREEN + "Successful countdown."+ Style.RESET_ALL)
+        print(Fore.GREEN + "Successfully counted down." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
         print("Finished counting down at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
