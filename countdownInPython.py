@@ -35,7 +35,7 @@ def checkOs():
     return operatingSystem
 
 
-def getCountDownNumber(operatingSystem): 
+def getCountdownNumber(operatingSystem): 
     if operatingSystem == "Windows": 
         countdownNum = int(input("Please type the number you wish to countdown from and press the \"Enter\" key (Example: 5): "))
 
@@ -55,7 +55,7 @@ def checkParameters(countdownNum):
     print("countdownNum: {0}".format(countdownNum))
     print("--------------------------------------")
 
-    if countdownNum == None: 
+    if countdownNum == None or countdownNum == "": 
         print(Fore.RED + "countdownNum is not set." + Style.RESET_ALL)
         valid = False 
 
@@ -80,7 +80,7 @@ def countdown():
         countdownNum = int(sys.argv[1])
 
     else: 
-        countdownNum = getCountDownNumber(operatingSystem)
+        countdownNum = getCountdownNumber(operatingSystem)
 
     checkParameters(countdownNum)
 
@@ -98,7 +98,7 @@ def countdown():
         else: 
             raise Exception("Sorry but can't countdown from zero or below.")
             
-        print(Fore.GREEN + "Successful countdown."+ Style.RESET_ALL)
+        print(Fore.GREEN + "Successfully counted down." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
         print("Finished counting down at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
