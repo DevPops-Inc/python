@@ -56,7 +56,7 @@ def checkParameters(coinFlip):
     print("coinFlip: {0}".format(coinFlip))
     print("------------------------------")
 
-    if coinFlip == None: 
+    if coinFlip == None or coinFlip == "": 
         print(Fore.RED + "coinFlip is not set." + Style.RESET_ALL)
         valid = False
     
