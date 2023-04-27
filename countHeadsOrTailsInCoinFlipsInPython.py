@@ -96,11 +96,10 @@ def countHeadsOrTailsInCoinFlips():
         for i in range(coinFlip):
             output[random.choice(coin)]+=1
 
-        print("The results of the coin flips are:")
-        print(Fore.BLUE)
+        print("The results of the coin flips are:" + Fore.BLUE)
         print("Heads:", output["Heads"])
         print("Tails:", output["Tails"])
-        print(Style.RESET_ALL)
+        print(Fore.GREEN + "Successfully counted heads and tails in coin flip." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
 
