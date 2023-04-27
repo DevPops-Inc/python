@@ -40,13 +40,10 @@ def getCoinFlips(operatingSystem):
     if operatingSystem == "Windows": 
         coinFlip = int(input("Please type the number of coin flips you would like and press \"Enter\" key (Example: 5): "))
 
-        print("")
-
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         coinFlip = int(input("Please type the number of coin flips you would like and press \"return\" key (Example: 5): "))
 
-        print("")
-
+    print("")
     return coinFlip
 
 
