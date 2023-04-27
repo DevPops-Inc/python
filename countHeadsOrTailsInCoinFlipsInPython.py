@@ -90,8 +90,8 @@ def countHeadsOrTailsInCoinFlips():
 
         print("Started counting heads and tails in coin flips at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        output={"Heads":0, "Tails":0}
-        coin=list(output.keys())
+        output = {"Heads":0, "Tails":0}
+        coin   = list(output.keys())
 
         for i in range(coinFlip):
             output[random.choice(coin)]+=1
@@ -112,7 +112,6 @@ def countHeadsOrTailsInCoinFlips():
         
     except Exception: 
         print(Fore.RED + "Failed to count heads and tails in coin flips.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
