@@ -122,7 +122,6 @@ def leapYearCounter():
 
     except Exception: 
         print(Fore.RED + "Failed to count leap years.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
