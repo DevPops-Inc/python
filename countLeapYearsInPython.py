@@ -68,11 +68,11 @@ def checkParameters(firstYear, secondYear):
     print("secondYear: {0}".format(secondYear))
     print("----------------------------------")
 
-    if firstYear == None: 
+    if firstYear == None or firstYear == "": 
         print(Fore.RED + "firsYear is not set." + Style.RESET_ALL)
         valid = False
 
-    if secondYear == None: 
+    if secondYear == None or secondYear == "": 
         print(Fore.RED + "secondYear is not set." + Style.RESET_ALL)
         valid = False
 
