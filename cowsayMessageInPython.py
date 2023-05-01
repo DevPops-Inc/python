@@ -4,6 +4,8 @@
  
 # you can run this script: python3 cowsayMessageInPython.py '< message >'
 
+# haven't figured out to get script to work with strings containing single quotes
+
 import colorama, os, subprocess, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
