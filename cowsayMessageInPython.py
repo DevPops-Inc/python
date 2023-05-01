@@ -4,6 +4,8 @@
  
 # you can run this script: python3 cowsayMessageInPython.py '< message >'
 
+# haven't figured out to get script to work with strings containing single quotes
+
 import colorama, os, subprocess, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -91,7 +93,7 @@ def checkParameters(cowMessage):
 	print("cowMessage: {0}".format(cowMessage))
 	print("----------------------------------")
 	
-	if cowMessage == None: 
+	if cowMessage == None or cowMessage == "": 
 		print(Fore.RED + "cowMessage is not set.")
 		valid = False
 		
@@ -139,7 +141,6 @@ def cowsayMessage():
 
 	except Exception: 
 		print(Fore.RED + "Cow failed to say message.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
