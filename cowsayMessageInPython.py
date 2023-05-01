@@ -91,7 +91,7 @@ def checkParameters(cowMessage):
 	print("cowMessage: {0}".format(cowMessage))
 	print("----------------------------------")
 	
-	if cowMessage == None: 
+	if cowMessage == None or cowMessage == "": 
 		print(Fore.RED + "cowMessage is not set.")
 		valid = False
 		
