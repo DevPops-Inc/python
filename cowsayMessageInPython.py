@@ -139,7 +139,6 @@ def cowsayMessage():
 
 	except Exception: 
 		print(Fore.RED + "Cow failed to say message.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
