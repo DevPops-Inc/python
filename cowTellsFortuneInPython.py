@@ -79,7 +79,6 @@ def checkCowsay(operatingSystem):
     FNULL = open(os.devnull,  'w')
     
     if operatingSystem == "Windows": 
-
         checkCowsayOnWindows = subprocess.call(['where', 'cowsay'], stdout=FNULL)
 
         if checkCowsayOnWindows == 0: 
@@ -95,7 +94,6 @@ def checkCowsay(operatingSystem):
             exit("")
 
     if operatingSystem == "macOS" or operatingSystem == "Linux": 
-
         checkCowsayOnMacOrLinux = subprocess.call(['which', 'cowsay'], stdout=FNULL)
 
         if checkCowsayOnMacOrLinux == 0: 
