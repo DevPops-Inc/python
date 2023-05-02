@@ -34,6 +34,7 @@ def checkOs():
     print("")
     return operatingSystem
 
+
 def checkFortune(operatingSystem): 
     print("Started checking Fortune at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
@@ -78,7 +79,6 @@ def checkCowsay(operatingSystem):
     FNULL = open(os.devnull,  'w')
     
     if operatingSystem == "Windows": 
-
         checkCowsayOnWindows = subprocess.call(['where', 'cowsay'], stdout=FNULL)
 
         if checkCowsayOnWindows == 0: 
@@ -94,7 +94,6 @@ def checkCowsay(operatingSystem):
             exit("")
 
     if operatingSystem == "macOS" or operatingSystem == "Linux": 
-
         checkCowsayOnMacOrLinux = subprocess.call(['which', 'cowsay'], stdout=FNULL)
 
         if checkCowsayOnMacOrLinux == 0: 
@@ -133,7 +132,6 @@ def cowTellsFortune():
 
     except Exception: 
         print(Fore.RED + "Cow failed to tell fortune." + Style.RESET_ALL)
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
