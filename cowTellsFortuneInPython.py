@@ -132,7 +132,6 @@ def cowTellsFortune():
 
     except Exception: 
         print(Fore.RED + "Cow failed to tell fortune." + Style.RESET_ALL)
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
