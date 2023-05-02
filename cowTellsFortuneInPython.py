@@ -34,6 +34,7 @@ def checkOs():
     print("")
     return operatingSystem
 
+
 def checkFortune(operatingSystem): 
     print("Started checking Fortune at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
