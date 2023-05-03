@@ -100,7 +100,6 @@ def createBubblesort():
 
     except Exception: 
         print(Fore.RED + "Failed to create bubblesort.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
