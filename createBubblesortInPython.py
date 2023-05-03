@@ -2,7 +2,7 @@
 
 # create bubblesort in Python
 
-import colorama, os, sys, traceback
+import colorama, os, sys, time, traceback
 from colorama import Fore, Style 
 from datetime import datetime
 colorama.init()
@@ -41,6 +41,7 @@ def bubbleSort(dataset):
                 temp = dataset[j]
                 dataset[j] = dataset[j+1]
                 dataset[j+1] = temp
+        time.sleep(.25)
         print(dataset)
 
 
@@ -100,7 +101,6 @@ def createBubblesort():
 
     except Exception: 
         print(Fore.RED + "Failed to create bubblesort.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
