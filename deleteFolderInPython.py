@@ -124,7 +124,6 @@ def deleteFolder():
 
     except Exception as e:
         print(Fore.RED + "Failed to delete {0} folder.".format(folderName))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
