@@ -39,14 +39,11 @@ def checkOs():
 def getCalendarYear(operatingSystem): 
 	if operatingSystem == "Windows": 
 		calendarYear = int(input("Please type the year calendar year you wish to display and press the \"Enter\" key (Example: 1999): "))
-		
-		print("")
 	
 	elif operatingSystem == "macOS" or operatingSystem == "Linux": 
 		calendarYear = int(input("Please type the year calendar year you wish to display and press the \"return\" key (Example: 1999): "))
 		
-		print("")
-		
+	print("")	
 	return calendarYear
 	
 	
@@ -59,7 +56,7 @@ def checkParameters(calendarYear):
 	print("calendarYear: {0}".format(calendarYear))
 	print("--------------------------------------")
 	
-	if calendarYear == None: 
+	if calendarYear == None or calendarYear =="": 
 		print(Fore.RED + "calendarYear is not set." + Style.RESET_ALL)
 		valid = False
 		
@@ -107,7 +104,6 @@ def displayYear():
 		
 	except Exception as e:
 		print(Fore.RED + "Failed to display calendar year.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 		
