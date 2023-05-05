@@ -56,7 +56,7 @@ def checkParameters(calendarYear):
 	print("calendarYear: {0}".format(calendarYear))
 	print("--------------------------------------")
 	
-	if calendarYear == None: 
+	if calendarYear == None or calendarYear =="": 
 		print(Fore.RED + "calendarYear is not set." + Style.RESET_ALL)
 		valid = False
 		
