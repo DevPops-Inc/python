@@ -2,7 +2,7 @@
 
 # display first letter in name 
 
-# you can run this script with: python3 displayFirstLetterInNameInPython.py < name > 
+# you can run this script with: python3 displayFirstLetterInNameInPython.py '< fullname >'
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style
