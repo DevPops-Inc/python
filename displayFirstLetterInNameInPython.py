@@ -38,10 +38,10 @@ def checkOs():
 
 def getName(operatingSystem): 
     if operatingSystem == "Windows": 
-        name = str(input("Please type your name and press \"Enter\" key (Example: Vic): "))
+        name = str(input("Please type your name and press \"Enter\" key (Example: Vic Phan): "))
 
-    elif operatingSystem == "macOS" or operatingSystem == "Linux": 
-        name = str(input("Please type your name and press \"return\" key (Example: Vic): "))
+    else: 
+        name = str(input("Please type your name and press \"return\" key (Example: Vic Phan): "))
 
     print(Fore.BLUE + "Hello, {0}.".format(name) + Style.RESET_ALL)
     print("")
