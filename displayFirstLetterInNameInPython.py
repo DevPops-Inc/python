@@ -88,12 +88,10 @@ def displayFirstLetterInName():
 
     try: 
         startDateTime = datetime.now()
-
         print("Started displaying first letter in name at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         lname=list(name)
         print(Fore.BLUE + "The first letter of your name is {0}.".format(*lname))
-        
         print(Fore.GREEN + "Successfully displayed the first letter of name." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
