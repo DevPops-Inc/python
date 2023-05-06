@@ -104,7 +104,6 @@ def displayFirstLetterInName():
 
     except Exception: 
         print(Fore.RED + "Failed to display first letter in name.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
