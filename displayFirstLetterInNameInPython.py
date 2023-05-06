@@ -2,7 +2,7 @@
 
 # display first letter in name 
 
-# you can run this script with: python3 displayFirstLetterInNameInPython.py < name > 
+# you can run this script with: python3 displayFirstLetterInNameInPython.py '< fullname >'
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style
@@ -32,17 +32,16 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
     return operatingSystem
 
 
 def getName(operatingSystem): 
     if operatingSystem == "Windows": 
-        name = str(input("Please type your name and press \"Enter\" key (Example: Vic): "))
+        name = str(input("Please type your name and press \"Enter\" key (Example: Vic Phan): "))
 
-    elif operatingSystem == "macOS" or operatingSystem == "Linux": 
-        name = str(input("Please type your name and press \"return\" key (Example: Vic): "))
+    else: 
+        name = str(input("Please type your name and press \"return\" key (Example: Vic Phan): "))
 
     print(Fore.BLUE + "Hello, {0}.".format(name) + Style.RESET_ALL)
     print("")
@@ -58,7 +57,7 @@ def checkParameters(name):
     print("name: {0}".format(name))
     print("----------------------")
 
-    if name == None: 
+    if name == None or name == "": 
         print(Fore.RED + "name is not set." + Style.RESET_ALL)
         valid = False
     
@@ -66,14 +65,12 @@ def checkParameters(name):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        
         print("")
     
     else: 
         print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
 
@@ -91,12 +88,10 @@ def displayFirstLetterInName():
 
     try: 
         startDateTime = datetime.now()
-
         print("Started displaying first letter in name at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         lname=list(name)
-        print(Fore.BLUE + "The first letter of your name is {0}.".format(*lname))
-        
+        print(Fore.BLUE + "The first letter of your name is \"{0}\".".format(*lname))
         print(Fore.GREEN + "Successfully displayed the first letter of name." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
@@ -109,7 +104,6 @@ def displayFirstLetterInName():
 
     except Exception: 
         print(Fore.RED + "Failed to display first letter in name.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
