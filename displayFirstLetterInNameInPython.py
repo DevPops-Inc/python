@@ -57,7 +57,7 @@ def checkParameters(name):
     print("name: {0}".format(name))
     print("----------------------")
 
-    if name == None: 
+    if name == None or name == "": 
         print(Fore.RED + "name is not set." + Style.RESET_ALL)
         valid = False
     
