@@ -32,12 +32,11 @@ def checkOs():
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
-    return operatingSystem
 
 
 def displayHomeDir(): 
     print("\nDisplay directory directory.\n")
-    operatingSystem = checkOs()
+    checkOs()
 
     try: 
         startDateTime = datetime.now()
