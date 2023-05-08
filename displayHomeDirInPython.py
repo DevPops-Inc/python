@@ -55,7 +55,6 @@ def displayHomeDir():
     
     except Exception: 
         print(Fore.RED + "Failed to display home directory.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
