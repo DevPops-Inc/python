@@ -47,7 +47,6 @@ def displayHomeDir():
         print(Fore.GREEN + "Successfully displayed home directory." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        
         print("Finished displaying home directory at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
