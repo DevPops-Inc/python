@@ -51,7 +51,6 @@ def drawCircle():
 
     except Exception: 
         print(Fore.RED + "Failed to draw circle.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
