@@ -2,6 +2,8 @@
 
 # draw circle in Python
 
+# this doesn't work on Python 3.9+
+
 import colorama, os, sys, traceback, turtle
 from colorama import Fore, Style
 from datetime import datetime
