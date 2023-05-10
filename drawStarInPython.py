@@ -130,7 +130,6 @@ def drawStar():
 
     except Exception: 
         print(Fore.RED + "Failed to draw star.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
