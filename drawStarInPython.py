@@ -41,13 +41,10 @@ def getBorderColor(operatingSystem):
     if operatingSystem == "Windows": 
         borderColor = str(input("Please type the border color of the star and press the \"Enter\" key (Example: orange): "))
 
-        print("")
-
     else: 
         borderColor = str(input("Please type the border color of the star and press the \"return\" key (Example: orange): "))
 
-        print("")
-
+    print("")
     return borderColor
 
 
@@ -55,13 +52,10 @@ def getInsideColor(operatingSystem):
     if operatingSystem == "Windows": 
         insideColor = str(input("Please type the inside color of the star and press the \"Enter\" key (Example: yellow): "))
 
-        print("")
-
     else: 
         insideColor = str(input("Please type the inside color of the star and press the \"return\" key (Example: yellow): "))
 
-        print("")
-
+    print("")
     return insideColor
 
 
