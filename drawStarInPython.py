@@ -69,11 +69,11 @@ def checkParameters(borderColor, insideColor):
     print("insideColor: {0}".format(insideColor))
     print("------------------------------------")
 
-    if borderColor == None: 
+    if borderColor == None or borderColor == "": 
         print(Fore.RED + "borderColor is not set." + Style.RESET_ALL)
         valid = False
 
-    if insideColor == None: 
+    if insideColor == None or insideColor == "": 
         print(Fore.RED + "insideColor is not set." + Style.RESET_ALL)
         valid = False
 
