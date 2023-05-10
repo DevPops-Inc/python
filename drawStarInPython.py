@@ -4,6 +4,8 @@
 
 # you can run this script with: python3 drawStarInPython.py < border color > < inside color >
 
+# haven't figured out how to get this to work on Python 3.9+
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
