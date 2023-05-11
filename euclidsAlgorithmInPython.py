@@ -133,7 +133,6 @@ def euclidsAlgorithm():
 
     except Exception: 
         print(Fore.RED + "Failed to find greatest common divisor.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
