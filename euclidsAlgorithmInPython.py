@@ -68,11 +68,11 @@ def checkParameters(firstNumber, secondNumber):
     print("secondNumber: {0}".format(secondNumber))
     print("--------------------------------------")
 
-    if firstNumber == None: 
+    if firstNumber == None or firstNumber == "": 
         print(Fore.RED + "firstNumber is not set." + Style.RESET_ALL)
         valid = False
 
-    if secondNumber == None: 
+    if secondNumber == None or secondNumber == "": 
         print(Fore.RED + "secondNumber is not set." + Style.RESET_ALL)
         valid = False
 
@@ -115,7 +115,6 @@ def euclidsAlgorithm():
 
     try: 
         startDateTime = datetime.now()
-        
         print("Started finding greatest common divisor at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         lowestCommonDenomiator = greatestCommonDivisor(firstNumber, secondNumber)
@@ -134,7 +133,6 @@ def euclidsAlgorithm():
 
     except Exception: 
         print(Fore.RED + "Failed to find greatest common divisor.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
