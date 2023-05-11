@@ -115,7 +115,6 @@ def euclidsAlgorithm():
 
     try: 
         startDateTime = datetime.now()
-        
         print("Started finding greatest common divisor at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         lowestCommonDenomiator = greatestCommonDivisor(firstNumber, secondNumber)
