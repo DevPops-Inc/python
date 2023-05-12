@@ -4,6 +4,8 @@
 
 # you can run this script with: python3 fallingBallInPython.py < background color > < fill color > 
 
+# haven't figured out how to get this to work on Python 3.9+ 
+
 import colorama, os, sys, time, traceback
 from colorama import Fore, Style
 from datetime import datetime
