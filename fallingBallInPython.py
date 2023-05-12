@@ -136,7 +136,6 @@ def fallingBall():
 
     except Exception: 
         print(Fore.RED + "Falling ball failed.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
