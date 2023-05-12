@@ -69,7 +69,7 @@ def checkParameters(backgroundColor, fillColor):
     print("fillColor      : {0}".format(fillColor))
     print("--------------------------------------------")
 
-    if backgroundColor == None: 
+    if backgroundColor == None or backgroundColor == "": 
         print(Fore.RED + "backgroundColor is not set." + Style.RESET_ALL)
         valid = False
 
