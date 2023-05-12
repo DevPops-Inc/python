@@ -4,6 +4,8 @@
 
 # you can run this script with: python3 fallingBallInPython.py < background color > < fill color > 
 
+# haven't figured out how to get this to work on Python 3.9+ 
+
 import colorama, os, sys, time, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -69,7 +71,7 @@ def checkParameters(backgroundColor, fillColor):
     print("fillColor      : {0}".format(fillColor))
     print("--------------------------------------------")
 
-    if backgroundColor == None: 
+    if backgroundColor == None or backgroundColor == "": 
         print(Fore.RED + "backgroundColor is not set." + Style.RESET_ALL)
         valid = False
 
@@ -136,7 +138,6 @@ def fallingBall():
 
     except Exception: 
         print(Fore.RED + "Falling ball failed.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
