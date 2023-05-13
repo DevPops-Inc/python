@@ -2,7 +2,7 @@
 
 # first recurring character in Python 
 
-# you can run this script with: python3 firstRecurringCharInPython.py "< random string >""
+# you can run this script with: python3 firstRecurringCharInPython.py "< random string >"
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
@@ -56,7 +56,7 @@ def checkParameters(randomString):
     print("randomString: {0}".format(randomString))
     print("--------------------------------------")
 
-    if randomString == None: 
+    if randomString == None or randomString == "": 
         print(Fore.RED + "randomString is not set." + Style.RESET_ALL)
         valid = False
 
@@ -113,8 +113,8 @@ def firstRecurringChar():
 
     except Exception: 
         print(Fore.RED + "Failed to find first recurring character.")
-        
         traceback.print_exc()
+        exit("" + Style.RESET_ALL)
 
 
 firstRecurringChar()
