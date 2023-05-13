@@ -2,7 +2,7 @@
 
 # first recurring character in Python 
 
-# you can run this script with: python3 firstRecurringCharInPython.py "< random string >""
+# you can run this script with: python3 firstRecurringCharInPython.py "< random string >"
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
