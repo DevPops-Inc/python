@@ -113,8 +113,8 @@ def firstRecurringChar():
 
     except Exception: 
         print(Fore.RED + "Failed to find first recurring character.")
-        
         traceback.print_exc()
+        exit("" + Style.RESET_ALLs)
 
 
 firstRecurringChar()
