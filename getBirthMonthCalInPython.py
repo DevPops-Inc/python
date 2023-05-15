@@ -32,7 +32,6 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
     return operatingSystem
 
@@ -40,34 +39,27 @@ def checkOs():
 def getYear(operatingSystem): 
     if operatingSystem == "Windows":
         year = int(input("Please type the year you want a calendar for and press \"Enter\" key (Example: 1999): "))
-
-        print("")
         
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         year = int(input("Please type the year you want a calendar for and press \"return\" key (Example: 1999): "))
 
-        print("")
-    
+    print("")
     return year
 
 
 def getMonth(operatingSystem): 
     if operatingSystem == "Windows":
         month = int(input("Please type the month you want a calendar for and press \"Enter\" key (Example: 12): "))
-
-        print("")
         
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         month = int(input("Please type the month you want a calendar for and press \"return\" key (Example: 12): "))
 
-        print("")
-    
+    print("")
     return month
 
 
 def checkParameters(year, month): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-    
     valid = True
 
     print("Parameter(s):")
@@ -76,11 +68,11 @@ def checkParameters(year, month):
     print("month: {0}".format(month))
     print("------------------------")
 
-    if year == None: 
+    if year == None or year == "": 
         print(Fore.RED + "year is not set." + Style.RESET_ALL)
         valid = False
 
-    if month == None: 
+    if month == None or year == "": 
         print(Fore.RED + "month is not set." + Style.RESET_ALL)
         valid = False
 
@@ -88,14 +80,12 @@ def checkParameters(year, month):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
 
@@ -135,7 +125,6 @@ def getBirthMonthCal():
         
     except Exception: 
         print(Fore.RED + "Failed to get birth month calendar by year.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
