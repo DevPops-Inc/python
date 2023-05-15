@@ -125,7 +125,6 @@ def getBirthMonthCal():
         
     except Exception: 
         print(Fore.RED + "Failed to get birth month calendar by year.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
