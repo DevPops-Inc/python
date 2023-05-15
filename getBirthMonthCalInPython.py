@@ -60,7 +60,6 @@ def getMonth(operatingSystem):
 
 def checkParameters(year, month): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-    
     valid = True
 
     print("Parameter(s):")
@@ -81,14 +80,12 @@ def checkParameters(year, month):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
 
