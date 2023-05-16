@@ -104,7 +104,6 @@ def getCalendarByYear():
         
     except Exception: 
         print(Fore.RED + "Failed to get calendar by year.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
