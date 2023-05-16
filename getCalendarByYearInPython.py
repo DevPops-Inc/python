@@ -2,7 +2,7 @@
 
 # get calendar by year in Python
 
-# you can run this script with: python3 getCalendarByYearInPython.py < year >
+# you can run this script with: python3 getCalByYearInPython.py < year >
 
 import calendar, colorama, os, sys, traceback
 from colorama import Fore, Style
