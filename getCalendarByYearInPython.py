@@ -39,14 +39,11 @@ def checkOs():
 def getYear(operatingSystem): 
     if operatingSystem == "Windows":
         year = int(input("Please type the year you want a calendar for and press \"Enter\" key (Example: 1999): "))
-
-        print("")
         
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         year = int(input("Please type the year you want a calendar for and press \"return\" key (Example: 1999): "))
 
-        print("")
-    
+    print("")
     return year
 
 
