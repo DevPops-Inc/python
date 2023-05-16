@@ -87,7 +87,6 @@ def getCalendarByYear():
 
     try: 
         startDateTime = datetime.now()
-
         print("Started getting calendar by year at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
@@ -97,7 +96,6 @@ def getCalendarByYear():
         print(Fore.GREEN + "Successfully got calendar by year" + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-
         print("Finished getting calendar by year at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
