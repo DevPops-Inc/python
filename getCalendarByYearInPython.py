@@ -56,7 +56,7 @@ def checkParameters(year):
     print("year: {0}".format(year))
     print("----------------------")
 
-    if year == None: 
+    if year == None or year == "": 
         print(Fore.RED + "year is not set." + Style.RESET_ALL)
         valid = False
 
