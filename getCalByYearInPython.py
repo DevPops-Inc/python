@@ -2,7 +2,7 @@
 
 # get calendar by year in Python
 
-# you can run this script with: python3 getCalendarByYearInPython.py < year >
+# you can run this script with: python3 getCalByYearInPython.py < year >
 
 import calendar, colorama, os, sys, traceback
 from colorama import Fore, Style
@@ -32,7 +32,6 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
     print("")
     return operatingSystem
 
@@ -40,20 +39,16 @@ def checkOs():
 def getYear(operatingSystem): 
     if operatingSystem == "Windows":
         year = int(input("Please type the year you want a calendar for and press \"Enter\" key (Example: 1999): "))
-
-        print("")
         
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         year = int(input("Please type the year you want a calendar for and press \"return\" key (Example: 1999): "))
 
-        print("")
-    
+    print("")
     return year
 
 
 def checkParameters(year): 
     print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-    
     valid = True
 
     print("Parameter(s):")
@@ -61,7 +56,7 @@ def checkParameters(year):
     print("year: {0}".format(year))
     print("----------------------")
 
-    if year == None: 
+    if year == None or year == "": 
         print(Fore.RED + "year is not set." + Style.RESET_ALL)
         valid = False
 
@@ -69,14 +64,12 @@ def checkParameters(year):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
 
@@ -94,7 +87,6 @@ def getCalendarByYear():
 
     try: 
         startDateTime = datetime.now()
-
         print("Started getting calendar by year at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
@@ -104,7 +96,6 @@ def getCalendarByYear():
         print(Fore.GREEN + "Successfully got calendar by year" + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-
         print("Finished getting calendar by year at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
@@ -113,7 +104,6 @@ def getCalendarByYear():
         
     except Exception: 
         print(Fore.RED + "Failed to get calendar by year.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
