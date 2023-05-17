@@ -50,7 +50,6 @@ def getComputerName():
 
 	except Exception: 
 		print(Fore.RED + "Failed to get computer name.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
