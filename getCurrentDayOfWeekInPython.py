@@ -15,23 +15,19 @@ def checkOs():
         print(Fore.GREEN + "Operating System:", end=""); sys.stdout.flush()
         os.system('ver')
         print(Style.RESET_ALL, end="")
-        operatingSystem = "Windows"
 
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
         print(Style.RESET_ALL, end="")
-        operatingSystem = "macOS"
 
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
         print(Style.RESET_ALL, end="")
-        operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
-    return operatingSystem
 
 
 def getCurrentDayOfWeek(): 
@@ -42,7 +38,6 @@ def getCurrentDayOfWeek():
         startDateTime = datetime.now()
         
         print("Started getting current day of the week at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
         print(Fore.BLUE + "The current day of the week is: {0}.".format(time.strftime('%A')))
         print(Fore.GREEN + "Successfully got the current day of the week." + Style.RESET_ALL)
 
@@ -56,7 +51,6 @@ def getCurrentDayOfWeek():
         
     except Exception: 
         print(Fore.RED + "Failed to get current day of the week.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
