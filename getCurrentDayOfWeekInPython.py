@@ -38,7 +38,6 @@ def getCurrentDayOfWeek():
         startDateTime = datetime.now()
         
         print("Started getting current day of the week at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
         print(Fore.BLUE + "The current day of the week is: {0}.".format(time.strftime('%A')))
         print(Fore.GREEN + "Successfully got the current day of the week." + Style.RESET_ALL)
 
@@ -52,7 +51,7 @@ def getCurrentDayOfWeek():
         
     except Exception: 
         print(Fore.RED + "Failed to get current day of the week.")
-        
+
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
