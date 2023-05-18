@@ -51,7 +51,6 @@ def getCurrentDayOfWeek():
         
     except Exception: 
         print(Fore.RED + "Failed to get current day of the week.")
-
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
