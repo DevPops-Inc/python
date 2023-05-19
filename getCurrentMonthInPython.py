@@ -15,23 +15,19 @@ def checkOs():
         print(Fore.GREEN + "Operating System:", end=""); sys.stdout.flush()
         os.system('ver')
         print(Style.RESET_ALL)
-        operatingSystem = "Windows"
 
     elif sys.platform == "darwin": 
         print(Fore.GREEN + "Operating System: ")
         os.system('sw_vers')
         print(Style.RESET_ALL, end="")
-        operatingSystem = "macOS"
 
     elif sys.platform == "linux": 
         print(Fore.GREEN + "Operating System: ")
         os.system('uname -r')
         print(Style.RESET_ALL, end="")
-        operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
-    return operatingSystem
     
 
 def getCurrentMonthInPython():
@@ -54,7 +50,6 @@ def getCurrentMonthInPython():
 
     except Exception: 
         print(Fore.RED + "Failed to get current month.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
