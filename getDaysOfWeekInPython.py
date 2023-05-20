@@ -55,7 +55,6 @@ def getDaysOfWeek():
 
     except Exception: 
         print(Fore.RED + "Failed to get days of the week.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
