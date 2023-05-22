@@ -50,7 +50,6 @@ def getLocalTime():
 
     except Exception: 
         print(Fore.RED + "Failed to get local time.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
