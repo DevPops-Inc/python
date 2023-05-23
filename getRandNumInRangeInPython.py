@@ -105,7 +105,7 @@ def checkParameters(beginNumRange, endNumRange, numRandomNum):
         exit("")
 
 
-def getRandomNumInRange(): 
+def getRandomNumsInRange(): 
     print("\nGet random numbers in range in Python.\n")
     operatingSystem = checkOs()
 
@@ -148,4 +148,4 @@ def getRandomNumInRange():
         exit("" + Style.RESET_ALL)
 
 
-getRandomNumInRange()
+getRandomNumsInRange()
