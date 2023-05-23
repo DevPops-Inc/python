@@ -144,7 +144,6 @@ def getRandomNumInRange():
 
     except Exception: 
         print(Fore.RED + "Failed to get random numbers in range.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
