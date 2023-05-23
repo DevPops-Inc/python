@@ -80,15 +80,15 @@ def checkParameters(beginNumRange, endNumRange, numRandomNum):
     print("numRandomNum : {0}".format(numRandomNum))
     print("----------------------------------------")
 
-    if beginNumRange == None: 
+    if beginNumRange == None or beginNumRange == "": 
         print(Fore.RED + "beginNumRange is not set." + Style.RESET_ALL)
         valid = False
 
-    if endNumRange == None: 
+    if endNumRange == None or endNumRange == "": 
         print(Fore.RED + "endNumRange is not set." + Style.RESET_ALL)
         valid = False
 
-    if numRandomNum == None: 
+    if numRandomNum == None or numRandomNum == "": 
         print(Fore.RED + "numRandomNum is not set." + Style.RESET_ALL)
         valid = False
 
