@@ -55,7 +55,6 @@ def helloWorldExercise():
 
 	except Exception: 
 		print(Fore.RED + "Failed to perform hello world exercise.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
