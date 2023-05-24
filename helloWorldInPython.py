@@ -41,10 +41,10 @@ def helloWorldExercise():
 		colors = dict(Fore.__dict__.items())
 
 		for color in colors.keys():
+			time.sleep(.25)
 			print(colors[color] + "Hello, World!")
-			time.sleep(.5)
-		
-		print(Fore.GREEN + "Successfully performed hellow world exercise." + Style.RESET_ALL)
+			
+		print(Fore.GREEN + "Successfully executed hello world exercise." + Style.RESET_ALL)
 		
 		finishedDateTime = datetime.now()
 		print("Finished hello world exercise at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
@@ -55,7 +55,6 @@ def helloWorldExercise():
 
 	except Exception: 
 		print(Fore.RED + "Failed to perform hello world exercise.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
