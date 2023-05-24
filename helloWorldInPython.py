@@ -44,7 +44,7 @@ def helloWorldExercise():
 			time.sleep(.5)
 			print(colors[color] + "Hello, World!")
 			
-		print(Fore.GREEN + "Successfully performed hellow world exercise." + Style.RESET_ALL)
+		print(Fore.GREEN + "Successfully executed hello world exercise." + Style.RESET_ALL)
 		
 		finishedDateTime = datetime.now()
 		print("Finished hello world exercise at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
