@@ -96,8 +96,7 @@ def launchChrome():
         print("")
         
     except Exception: 
-        print(Fore.RED + "Failed to launch Chrome.")
-        
+        print(Fore.RED + "Failed to launch Chrome.")        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
