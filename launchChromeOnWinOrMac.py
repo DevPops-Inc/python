@@ -82,11 +82,11 @@ def launchChrome():
 
         if operatingSystem == "Windows": 
             if os.system('start chrome') != 0:
-                raise Exception("Attempt threw an error!")
+                raise Exception("Unable to launch Chrome on Windows.")
 
         elif operatingSystem == "macOS": 
             if os.system('open -a "Google Chrome"') != 0: 
-                raise Exception("Attempt threw an error!")
+                raise Exception("Unable to launch Chrome on Mac.")
 
         finishedDateTime = datetime.now() 
         print("Finished launching Chrome at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
