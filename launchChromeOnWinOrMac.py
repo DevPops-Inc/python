@@ -25,14 +25,12 @@ def checkOsForWinOrMac():
 
     if operatingSystem == "Windows" or operatingSystem == "macOS": 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows or Mac." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
     return operatingSystem
@@ -84,11 +82,11 @@ def launchChrome():
 
         if operatingSystem == "Windows": 
             if os.system('start chrome') != 0:
-                raise Exception("Attempt threw an error!")
+                raise Exception("Unable to launch Chrome on Windows.")
 
         elif operatingSystem == "macOS": 
             if os.system('open -a "Google Chrome"') != 0: 
-                raise Exception("Attempt threw an error!")
+                raise Exception("Unable to launch Chrome on Mac.")
 
         finishedDateTime = datetime.now() 
         print("Finished launching Chrome at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
@@ -98,8 +96,7 @@ def launchChrome():
         print("")
         
     except Exception: 
-        print(Fore.RED + "Failed to launch Chrome.")
-        
+        print(Fore.RED + "Failed to launch Chrome.")        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
