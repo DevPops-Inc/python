@@ -25,14 +25,12 @@ def checkOsForWinOrMac():
 
     if operatingSystem == "Windows" or operatingSystem == "macOS": 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows or Mac." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
     return operatingSystem
