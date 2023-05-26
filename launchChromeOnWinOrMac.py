@@ -88,6 +88,8 @@ def launchChrome():
             if os.system('open -a "Google Chrome"') != 0: 
                 raise Exception("Unable to launch Chrome on Mac.")
 
+        print(Fore.GREEN + "Successfully launched Chrome." + Style.RESET_ALL)
+
         finishedDateTime = datetime.now() 
         print("Finished launching Chrome at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
