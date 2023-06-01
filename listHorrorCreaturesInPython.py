@@ -70,7 +70,6 @@ def listHorrorCreatures():
 		
 	except Exception: 
 		print(Fore.RED + "Failed to list horror creatures.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
