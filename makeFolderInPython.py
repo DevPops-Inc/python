@@ -7,6 +7,7 @@
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
 from datetime import datetime
+from pathlib import Path, PureWindowsPath
 colorama.init()
 
 
@@ -110,6 +111,16 @@ def makeFolder():
         print("Started making {0} at {1}".format(folderName, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
         makePath="{0}/{1}".format(pathToFolder, folderName)
+
+        if operatingSystem == "Windows": 
+            makePath = PureWindowsPath(makePath)
+            
+        else: 
+            makePath = Path(makePath)
+
+        if os.path.exists(makePath) == True: 
+            raise Exception("Folder already exists.")    
+
         os.mkdir(makePath)
         print(Fore.GREEN + "Successfully made {0}.".format(folderName) + Style.RESET_ALL)
 
@@ -123,7 +134,6 @@ def makeFolder():
 
     except Exception as e:
         print(Fore.RED + "Failed to make {0}.".format(folderName))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
