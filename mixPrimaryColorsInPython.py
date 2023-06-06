@@ -75,11 +75,11 @@ def checkParameters(color1, color2):
 	print("color2: {0}".format(color2))
 	print("--------------------------")
 	
-	if color1 == None: 
+	if color1 == None or color1 == "": 
 		print(Fore.RED + "color1 is not set." + Style.RESET_ALL)
 		valid = False
 		
-	if color2 == None: 
+	if color2 == None or color2 == "": 
 		print(Fore.RED + "color2 is not set." + Style.RESET_All)
 		valid = False
 		
