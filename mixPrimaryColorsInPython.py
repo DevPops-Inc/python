@@ -130,9 +130,10 @@ def mixPrimaryColors():
 			print("")
 
 		if color1 == color2:
-			print(Fore.RED + "Error: you didn't mix a new color!" + Style.RESET_ALL)
-			print("")
+			raise Exception("Error: you didn't mix a new color!")
 		
+		print(Fore.GREEN + "Successfully mixed colors." + Style.RESET_ALL)
+
 		finishedDateTime = datetime.now()
 		print("Finished mixing colors at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
