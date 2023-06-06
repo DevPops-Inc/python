@@ -46,28 +46,22 @@ def getColor1(operatingSystem):
 
 	if operatingSystem == "Windows": 
 		color1 = str(input("Please type the first color you want and press \"Enter\" key (Example: red): "))
-		
-		print("")
 	
 	elif operatingSystem == "macOS" or operatingSystem == "Linux":
 		color1 = str(input("Please type the first color you want and press \"return\" key (Example: red): "))
 		
-		print("")
-		
+	print("")	
 	return color1
 		
 	
 def getColor2(operatingSystem): 
 	if operatingSystem == "Windows": 
 		color2 = str(input("Please type the second color you want and press \"Enter\" key (Example: blue): "))
-		
-		print("")
 	
 	elif operatingSystem == "macOS" or operatingSystem == "Linux": 
 		color2 = str(input("Please type the second color you want and press \"return\" key (Example: blue): "))
 		
-		print("")
-		
+	print("")	
 	return color2
 
 	
