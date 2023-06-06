@@ -110,9 +110,12 @@ def mixPrimaryColors():
 	
 	checkParameters(color1, color2)
 	
-	try: 
+	try:
 		startDateTime = datetime.now()
-		print("Started mixing colors at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
+		print("Started mixing colors at", startDateTime.strftime("%m-%d-%Y %I:%M %p")) 
+
+		if color1 == color2:
+			raise Exception("You didn't mix a new color!")
 		
 		purple = '\033[35m'
 		orange = '\033[33m'
@@ -129,9 +132,11 @@ def mixPrimaryColors():
 			print(Fore.GREEN + "You just made green!" + Style.RESET_ALL)
 			print("")
 
-		if color1 == color2:
-			raise Exception("Error: you didn't mix a new color!")
-		
+		primaryColors = [ "red", "blue", "yellow" ]
+
+		if color1 != primaryColors or color2 != primaryColors:
+			raise Exception("You didn't choose a primary color!")
+				
 		print(Fore.GREEN + "Successfully mixed colors." + Style.RESET_ALL)
 
 		finishedDateTime = datetime.now()
