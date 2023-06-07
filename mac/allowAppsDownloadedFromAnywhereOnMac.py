@@ -70,10 +70,8 @@ def allowAppsDownloadedFromAnywhere():
 
     except Exception: 
         print(Fore.RED + "Failed to allow apps downloaded from anywhere.")
-        
         print(traceback.print_stack())
-        print(Style.RESET_ALL)
-        exit("")
+        exit("" + Style.RESET_ALL)
 
 
 allowAppsDownloadedFromAnywhere()
