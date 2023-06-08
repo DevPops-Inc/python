@@ -65,7 +65,6 @@ def checkCarthage():
         
     except Exception: 
         print(Fore.RED + "Failed to check carthage.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
