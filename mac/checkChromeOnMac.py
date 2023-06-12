@@ -17,11 +17,13 @@ def checkOsForMac():
         print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
     else: 
         print(Fore.RED + "Sorry this script only runs on macOS." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         exit("")
 
         
@@ -57,7 +59,6 @@ def checkChrome():
             
     except Exception: 
         print(Fore.RED + "Failed to check Chrome.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
