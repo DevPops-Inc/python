@@ -19,11 +19,13 @@ def checkOsForMac():
         print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
     else: 
         print(Fore.RED + "Sorry this script only runs on macOS." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         exit("")
 
         
@@ -43,7 +45,7 @@ def checkParameters(desktopApp):
     print("desktopApp: {0}".format(desktopApp))
     print("----------------------------------")
 
-    if desktopApp == None: 
+    if desktopApp == None or desktopApp == "": 
         print(Fore.RED + "desktopApp is not set." + Style.RESET_ALL)
         valid = False
 
@@ -103,7 +105,6 @@ def checkDesktopApp():
             
     except Exception: 
         print(Fore.RED + "Failed to check desktop application.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
