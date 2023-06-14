@@ -65,7 +65,6 @@ def checkDeviceConsole():
         
     except Exception: 
         print(Fore.RED + "Failed to check deviceconsole.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
