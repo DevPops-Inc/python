@@ -34,11 +34,9 @@ def checkDeviceConsole():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking deviceconsole at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
-
         checkAnsibleOnMacOrLinux = subprocess.call(['which', 'brew'], stdout=FNULL) 
 
         if checkAnsibleOnMacOrLinux == 0:
@@ -67,7 +65,6 @@ def checkDeviceConsole():
         
     except Exception: 
         print(Fore.RED + "Failed to check deviceconsole.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
