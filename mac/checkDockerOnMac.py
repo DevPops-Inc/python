@@ -37,7 +37,7 @@ def checkDocker():
         print("Started checking Docker at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull, 'w')
-        checkDockerOnMac = subprocess.call(['which', 'brew'], stdout=FNULL)
+        checkDockerOnMac = subprocess.call(['which', 'docker'], stdout=FNULL)
 
         if checkDockerOnMac == 0: 
             print(Fore.GREEN + "Docker is installed." + Style.RESET_ALL)
