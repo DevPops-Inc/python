@@ -17,12 +17,14 @@ def checkOsForMac():
         print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+        
         print("")
 
         
@@ -35,7 +37,7 @@ def checkDocker():
         print("Started checking Docker at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull, 'w')
-        checkDockerOnMac = subprocess.call(['which', 'brew'], stdout=FNULL)
+        checkDockerOnMac = subprocess.call(['which', 'docker'], stdout=FNULL)
 
         if checkDockerOnMac == 0: 
             print(Fore.GREEN + "Docker is installed." + Style.RESET_ALL)
@@ -55,7 +57,6 @@ def checkDocker():
 
     except Exception: 
         print(Fore.RED + "Failed to check Docker.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
