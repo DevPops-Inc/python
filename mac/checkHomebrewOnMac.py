@@ -34,11 +34,9 @@ def checkHomebrew():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking Homebrew at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull,  'w')
-
         checkAnsibleOnMacOrLinux = subprocess.call(['which', 'brew'], stdout=FNULL) 
 
         if checkAnsibleOnMacOrLinux == 0:
@@ -58,7 +56,6 @@ def checkHomebrew():
             print(Fore.RED + "Homebrew is not installed." + Style.RESET_ALL)
             
             finishedDateTime = datetime.now()
-
             print("Finished checking Homebrew at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
             duration = finishedDateTime - startDateTime
