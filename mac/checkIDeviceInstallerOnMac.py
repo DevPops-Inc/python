@@ -37,7 +37,7 @@ def checkIDeviceInstaller():
         print("Started checking ideviceinstaller at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull, 'w')
-        checkAnsibleOnMacOrLinux = subprocess.call(['which', 'brew'], stdout=FNULL) 
+        checkAnsibleOnMacOrLinux = subprocess.call(['which', 'ideviceinstaller'], stdout=FNULL) 
 
         if checkAnsibleOnMacOrLinux == 0:
             print(Fore.GREEN + "ideviceinstaller is installed."+ Style.RESET_ALL)
