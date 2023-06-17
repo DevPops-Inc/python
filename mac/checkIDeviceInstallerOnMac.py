@@ -65,7 +65,6 @@ def checkIDeviceInstaller():
         
     except Exception: 
         print(Fore.RED + "Failed to check ideviceinstaller.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
