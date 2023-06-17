@@ -45,7 +45,6 @@ def checkIDeviceInstaller():
             print(Fore.GREEN + "Successfully checked ideviceinstaller." + Style.RESET_ALL)
 
             finishedDateTime = datetime.now()
-
             print("Finished checking Hombrew at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
             duration = finishedDateTime - startDateTime
