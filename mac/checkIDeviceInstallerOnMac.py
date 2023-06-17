@@ -34,12 +34,10 @@ def checkIDeviceInstaller():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking ideviceinstaller at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull, 'w')
-
-        checkAnsibleOnMacOrLinux = subprocess.call(['which', 'brew'], stdout=FNULL) 
+        checkAnsibleOnMacOrLinux = subprocess.call(['which', 'ideviceinstaller'], stdout=FNULL) 
 
         if checkAnsibleOnMacOrLinux == 0:
             print(Fore.GREEN + "ideviceinstaller is installed."+ Style.RESET_ALL)
@@ -47,7 +45,6 @@ def checkIDeviceInstaller():
             print(Fore.GREEN + "Successfully checked ideviceinstaller." + Style.RESET_ALL)
 
             finishedDateTime = datetime.now()
-
             print("Finished checking Hombrew at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
             duration = finishedDateTime - startDateTime
@@ -67,7 +64,6 @@ def checkIDeviceInstaller():
         
     except Exception: 
         print(Fore.RED + "Failed to check ideviceinstaller.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
