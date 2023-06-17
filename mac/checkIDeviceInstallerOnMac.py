@@ -34,11 +34,9 @@ def checkIDeviceInstaller():
 
     try:
         startDateTime = datetime.now()
-        
         print("Started checking ideviceinstaller at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         FNULL = open(os.devnull, 'w')
-
         checkAnsibleOnMacOrLinux = subprocess.call(['which', 'brew'], stdout=FNULL) 
 
         if checkAnsibleOnMacOrLinux == 0:
