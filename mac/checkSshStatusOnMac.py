@@ -40,7 +40,6 @@ def checkSshStatus():
         print(Fore.GREEN + "Successfully checked SSH status." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        
         print("Finished checking SSSh at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
@@ -49,7 +48,6 @@ def checkSshStatus():
         
     except Exception: 
         print(Fore.RED + "Failed to check SSH status.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
