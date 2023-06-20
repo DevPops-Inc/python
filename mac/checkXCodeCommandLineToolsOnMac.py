@@ -67,7 +67,6 @@ def checkXCodeCommandLineTools():
         
     except Exception: 
         print(Fore.RED + "Failed to check XCode command line tools.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
