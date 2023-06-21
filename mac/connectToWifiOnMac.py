@@ -19,11 +19,13 @@ def checkOsForMac():
         print(Style.RESET_ALL, end="")
         
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
     else: 
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         exit("")
 
 
@@ -46,16 +48,16 @@ def checkParameters(wifiSsid, wifiPassword):
     valid = True
 
     print("Parameter(s):")
-    print("--------------------------------------")
+    print("----------------------------------")
     print("wifiSsid    : {0}".format(wifiSsid))
     print("wifiPassword: {0}".format("***"))
-    print("--------------------------------------")
+    print("----------------------------------")
 
-    if wifiSsid == None: 
+    if wifiSsid == None or wifiSsid == "": 
         print(Fore.RED + "wifiSsid is not set." + Style.RESET_ALL)
         valid = False
 
-    if wifiPassword == None:
+    if wifiPassword == None or wifiPassword == "":
         print(Fore.RED + "wifiPassword is not set." + Style.RESET_ALL)
         valid = False
 
@@ -93,8 +95,8 @@ def connectToWifi():
         
         connectToWifi = "networksetup -setairportnetwork en0 {0} {1}".format(wifiSsid, wifiPassword)
 
-        if os.system(connectToWifi) != 0: # TODO: figure out exception handling
-            raise Exception("Attempt threw an error!")
+        if os.system(connectToWifi) != 0: 
+            raise Exception("Couldn't connect to WiFi.")
 
         print(Fore.GREEN + "Successfully connected to {0}".format(wifiSsid) + Style.RESET_ALL)
 
@@ -108,7 +110,6 @@ def connectToWifi():
         
     except Exception: 
         print(Fore.RED + "Failed to connect to {0}".format(wifiSsid))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
     
