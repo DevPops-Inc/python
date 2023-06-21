@@ -111,7 +111,6 @@ def connectToWifi():
         
     except Exception: 
         print(Fore.RED + "Failed to connect to {0}".format(wifiSsid))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
     
