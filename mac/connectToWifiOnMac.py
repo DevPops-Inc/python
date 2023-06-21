@@ -25,7 +25,7 @@ def checkOsForMac():
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        
+
         exit("")
 
 
@@ -48,10 +48,10 @@ def checkParameters(wifiSsid, wifiPassword):
     valid = True
 
     print("Parameter(s):")
-    print("--------------------------------------")
+    print("----------------------------------")
     print("wifiSsid    : {0}".format(wifiSsid))
     print("wifiPassword: {0}".format("***"))
-    print("--------------------------------------")
+    print("----------------------------------")
 
     if wifiSsid == None: 
         print(Fore.RED + "wifiSsid is not set." + Style.RESET_ALL)
