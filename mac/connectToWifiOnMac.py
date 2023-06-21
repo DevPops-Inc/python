@@ -53,11 +53,11 @@ def checkParameters(wifiSsid, wifiPassword):
     print("wifiPassword: {0}".format("***"))
     print("----------------------------------")
 
-    if wifiSsid == None: 
+    if wifiSsid == None or wifiSsid == "": 
         print(Fore.RED + "wifiSsid is not set." + Style.RESET_ALL)
         valid = False
 
-    if wifiPassword == None:
+    if wifiPassword == None or wifiPassword == "":
         print(Fore.RED + "wifiPassword is not set." + Style.RESET_ALL)
         valid = False
 
