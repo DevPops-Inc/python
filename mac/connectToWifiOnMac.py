@@ -3,7 +3,6 @@
 # connect to Wi-Fi on Mac
 
 # you can run this script with: python3 connectToWifiOnMac.py < SSID > < password >
-# haven't tested this script yet
 
 import colorama, getpass, os, sys, traceback
 from colorama import Fore, Style
