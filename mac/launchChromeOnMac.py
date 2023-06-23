@@ -56,7 +56,7 @@ def launchChrome():
         print("Started launching Chrome at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if os.system('open -a "Google Chrome"') != 0: 
-            raise Exception("Attempt threw an error!")
+            raise Exception("Couldn't launch Chrome.")
 
         print(Fore.GREEN + "Successfully launched Chrome." + Style.RESET_ALL)
 
@@ -69,7 +69,6 @@ def launchChrome():
         
     except Exception: 
         print(Fore.RED + "Failed to launch Chrome.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
