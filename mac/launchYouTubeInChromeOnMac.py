@@ -73,7 +73,6 @@ def launchYouTubeInChrome():
 
     except Exception: 
         print(Fore.RED + "Failed to launch YouTube in Chrome.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
