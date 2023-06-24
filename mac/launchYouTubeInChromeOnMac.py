@@ -24,7 +24,7 @@ def checkOsForMac():
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        
+
         exit("")
 
 
@@ -59,7 +59,7 @@ def launchYouTubeInChrome():
         youTubeInChrome = 'open -a "Google Chrome.app" http://youtube.com'
 
         if os.system(youTubeInChrome) != 0:
-            raise Exception("Attempt threw an error!")
+            raise Exception("Couldn't launch YouTube in Chrome.")
 
         print(Fore.GREEN + "Successfully launched YouTube in Chrome." + Style.RESET_ALL)
 
