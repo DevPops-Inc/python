@@ -2,8 +2,6 @@
 
 # macOS maintenance 
 
-# you can run this script with: python3 macOsMaintenance.py < 1 for "Macintosh HD" or 2 for "MacOS" > 
-
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
