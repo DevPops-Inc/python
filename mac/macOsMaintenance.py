@@ -71,7 +71,6 @@ def runMacMaintenance():
         
     except Exception: 
         print(Fore.RED + "Failed to run Mac maintenance.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
