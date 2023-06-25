@@ -28,59 +28,9 @@ def checkOsForMac():
         exit("")
 
 
-def getHardDrive(): # figure out how to iterate to get HDD
-    os.system('diskutil list')
-
-    answer = str(input("Please type 1 if your hard drive is \"Macintosh HD\" or 2 if it's \"MacOS\" and press \"return\" key: "))
-    
-    if answer == "1": 
-        hdd = "Macintosh HD"
-    elif answer == "2": 
-        hdd = "MacOS"
-
-    print("")
-    return hdd
-
-
-def checkParameters(hdd):
-    print("Started checking parameter(s) at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-    valid = True
-
-    print("Parameter(s):")
-    print("--------------------")
-    print("hdd: {0}".format(hdd))
-    print("--------------------")
-
-    if hdd == None: 
-        print(Fore.RED + "hdd is not set." + Style.RESET_ALL)
-        valid = False
-
-    if valid == True:
-        print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        print("")
-
-    else: 
-        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at ", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
-
-    
 def runMacMaintenance():
     print("\nRun Mac maintenance.\n")
     checkOsForMac()
-
-    if len(sys.argv) > 2: 
-        hdd = str(sys.argv[1])
-
-    else: 
-        hdd = getHardDrive()
-
-    checkParameters(hdd)
 
     try: 
         startDateTime = datetime.now()
