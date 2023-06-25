@@ -87,18 +87,26 @@ def runMacMaintenance():
         
         print("Started running Mac maintenance at ", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        maintenance = ['sudo mdutil -i on /', 'softwareupdate --install --all']
+        checkMacOs = 'diskutil list | grep "MacOS"'
+        checkMacintoshHd = 'diskutil list | grep "Macintosh HD"'
 
-        for jobs in maintenance: 
-            os.system(jobs)
+        if os.system(checkMacOs) == 0: 
+            print(Fore.BLUE + "Disk name is MacOS.")
+            hdd = "MacOS"
 
-        if hdd == "Macintosh HD": 
-            os.system('diskutil verifyVolume "Macintosh HD"')
-            os.system('diskutil repairVolume "Macintosh HD"')
+        elif os.system(checkMacintoshHd) == 0: 
+            print(Fore.BLUE + "Disk name is Macintosh HD.")
+            hdd = "Macintosh HD"
 
-        elif hdd == "MacOS": 
-            os.system('diskutil verifyVolume MacOS')
-            os.system('diskutil repairVolume MacOS')
+        else: 
+            raise Exception("Disk name isn't MacOS or Macintosh HD.")
+        
+        verifyVolume = 'distutil verifyVolume "{0}"'.format(hdd)
+        
+        maintenance = ['sudo mdutil -i on /', 'softwareupdate --install --all', verifyVolume ]
+
+        # for jobs in maintenance: 
+        #     os.system(jobs)
 
         print(Fore.GREEN + "Successfully ran Mac maintenance." + Style.RESET_ALL)
 
@@ -112,7 +120,7 @@ def runMacMaintenance():
 
         print("Please save your documents and close applications.")
         str(input("Press any key to restart Mac."))
-        os.system('reboot')
+        #os.system('reboot')
         
     except Exception: 
         print(Fore.RED + "Failed to run Mac maintenance.")
