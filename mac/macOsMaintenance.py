@@ -32,7 +32,6 @@ def runMacMaintenance():
 
     try: 
         startDateTime = datetime.now()
-        
         print("Started running Mac maintenance at ", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         checkMacOs = 'diskutil list | grep "MacOS"'
