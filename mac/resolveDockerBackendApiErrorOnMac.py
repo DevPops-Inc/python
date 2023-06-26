@@ -19,12 +19,14 @@ def checkOsForMac():
         print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
 
         
@@ -48,7 +50,7 @@ def checkDocker():
         exit("")
 
 
-def getDockerProcessId(): 
+def getDockerProcessId(): # TODO: auto getting the PID
     print("Please press the \"control\" and \"C\" keys to return to the script after you find Docker's process ID.")
 
     print("")
@@ -71,7 +73,7 @@ def checkParameters(processId):
     print("processId: {0}".format(processId))
     print("--------------------------------")
 
-    if processId == None: 
+    if processId == None or processId == "": 
         print(Fore.RED + "processId is not set." + Style.RESET_ALL)
         valid = False
 
@@ -134,7 +136,6 @@ def resolveDockerBackendApiError():
 
     except Exception: 
         print(Fore.RED + "Failed to resolve Docker backend API error.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
