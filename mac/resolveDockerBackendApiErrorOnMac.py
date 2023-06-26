@@ -136,7 +136,6 @@ def resolveDockerBackendApiError():
 
     except Exception: 
         print(Fore.RED + "Failed to resolve Docker backend API error.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
