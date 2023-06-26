@@ -73,7 +73,7 @@ def checkParameters(processId):
     print("processId: {0}".format(processId))
     print("--------------------------------")
 
-    if processId == None: 
+    if processId == None or processId == "": 
         print(Fore.RED + "processId is not set." + Style.RESET_ALL)
         valid = False
 
