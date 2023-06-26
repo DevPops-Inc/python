@@ -26,7 +26,7 @@ def checkOsForMac():
         print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        
+
         print("")
 
         
@@ -50,7 +50,7 @@ def checkDocker():
         exit("")
 
 
-def getDockerProcessId(): 
+def getDockerProcessId(): # TODO: auto getting the PID
     print("Please press the \"control\" and \"C\" keys to return to the script after you find Docker's process ID.")
 
     print("")
