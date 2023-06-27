@@ -70,11 +70,11 @@ def checkParameters(pathToFolder, folderName):
     print("folderName  : {0}".format(folderName))
     print("--------------------------------------")
 
-    if pathToFolder == None: 
+    if pathToFolder == None or pathToFolder == "": 
         print(Fore.RED + "pathToFolder is not set." + Style.RESET_ALL)
         valid = False
 
-    if folderName == None: 
+    if folderName == None or folderName == "": 
         print(Fore.RED + "folderName is not set." + Style.RESET_ALL)
         valid = False
 
