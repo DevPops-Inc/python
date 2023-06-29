@@ -109,7 +109,6 @@ def progressivelyPrintChars():
 
     except Exception: 
         print(Fore.RED + "Failed to progressivey print chars.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
