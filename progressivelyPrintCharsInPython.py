@@ -56,6 +56,10 @@ def checkParameters(inputString):
     print("inputString: {0}".format(inputString))
     print("------------------------------------")
 
+    if inputString == True or inputString == "": 
+        print(Fore.RED + "inputString is not set." + Style.RESET_ALL)
+        valid = False 
+
     if valid == True: 
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
         
@@ -105,7 +109,6 @@ def progressivelyPrintChars():
 
     except Exception: 
         print(Fore.RED + "Failed to progressivey print chars.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
