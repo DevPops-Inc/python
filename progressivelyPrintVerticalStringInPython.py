@@ -40,13 +40,10 @@ def getVerticalString(operatingSystem):
     if operatingSystem == "Windows": 
         verticalString = str(input("Please type the string you would like to print vertically and press the \"Enter\" key (Example: Python is fun!): " ))  
 
-        print("")
-
     else: 
         verticalString = str(input("Please type the string you would like to print vertically and press the \"Enter\" key (Example: Python is fun!): " ))  
 
-        print("")
-
+    print("")
     return verticalString
 
 
