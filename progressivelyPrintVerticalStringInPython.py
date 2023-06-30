@@ -56,7 +56,7 @@ def checkParameters(verticalString):
     print("verticalString: {0}".format(verticalString))
     print("------------------------------------------")
 
-    if verticalString == None: 
+    if verticalString == None or verticalString == "": 
         print(Fore.RED + "Vertical string is not set." + Style.RESET_ALL)
         valid = False
 
