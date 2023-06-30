@@ -106,7 +106,6 @@ def progressivelyPrintVerticalString():
 
     except Exception: 
         print(Fore.RED + "Failed to progressively print {0}".format(verticalString))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
     
