@@ -40,13 +40,10 @@ def getVerticalString(operatingSystem):
     if operatingSystem == "Windows": 
         verticalString = str(input("Please type the string you would like to print vertically and press the \"Enter\" key (Example: Python is fun!): " ))  
 
-        print("")
-
     else: 
         verticalString = str(input("Please type the string you would like to print vertically and press the \"Enter\" key (Example: Python is fun!): " ))  
 
-        print("")
-
+    print("")
     return verticalString
 
 
@@ -59,7 +56,7 @@ def checkParameters(verticalString):
     print("verticalString: {0}".format(verticalString))
     print("------------------------------------------")
 
-    if verticalString == None: 
+    if verticalString == None or verticalString == "": 
         print(Fore.RED + "Vertical string is not set." + Style.RESET_ALL)
         valid = False
 
@@ -109,7 +106,6 @@ def progressivelyPrintVerticalString():
 
     except Exception: 
         print(Fore.RED + "Failed to progressively print {0}".format(verticalString))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
     
