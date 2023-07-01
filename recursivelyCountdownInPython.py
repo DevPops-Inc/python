@@ -101,7 +101,7 @@ def recursivelyCountdown():
 
     try:
         startDateTime = datetime.now()
-        print("Started recursively counting down at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Started recursively counting down at {0}".format(startDateTime.strftime("%m-%d-%Y %I:%M %p")), end="")
 
         countdown(countdownNum)
 
