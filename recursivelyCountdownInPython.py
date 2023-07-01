@@ -56,7 +56,7 @@ def checkParameters(countdownNum):
     print("countdownNum: {0}".format(countdownNum))
     print("--------------------------------------")
 
-    if countdownNum == None: 
+    if countdownNum == None or countdownNum == "": 
         print(Fore.RED + "countdownNum is not set." + Style.RESET_ALL)
         valid = False 
 
@@ -79,7 +79,6 @@ def countdown(countdownNum):
     
     elif (countdownNum == 0):
         print(Fore.GREEN)
-        print("Successful recursive countdown." + Style.RESET_ALL)
 
     else:
         print(Fore.BLUE)
@@ -102,10 +101,11 @@ def recursivelyCountdown():
 
     try:
         startDateTime = datetime.now()
-
-        print("Started recursively counting down at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Started recursively counting down at {0}".format(startDateTime.strftime("%m-%d-%Y %I:%M %p")), end="")
 
         countdown(countdownNum)
+
+        print(Fore.GREEN + "Successfully counted down from {0}.".format(countdownNum) + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
         
