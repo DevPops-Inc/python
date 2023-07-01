@@ -79,7 +79,6 @@ def countdown(countdownNum):
     
     elif (countdownNum == 0):
         print(Fore.GREEN)
-        print("Successful recursive countdown." + Style.RESET_ALL)
 
     else:
         print(Fore.BLUE)
@@ -105,6 +104,8 @@ def recursivelyCountdown():
         print("Started recursively counting down at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         countdown(countdownNum)
+
+        print(Fore.GREEN + "Successfully counted down from {0}.".format(countdownNum) + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
         
