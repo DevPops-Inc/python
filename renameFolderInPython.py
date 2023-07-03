@@ -145,7 +145,6 @@ def renameFolder():
 
     except Exception as e:
         print(Fore.RED + "Failed to rename \"{0}\" folder.".format(folderName))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
