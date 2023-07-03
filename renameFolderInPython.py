@@ -83,15 +83,15 @@ def checkParameters(pathToFolder, folderName, newFolderName):
     print("newFolderName: {0}".format(newFolderName))
     print("----------------------------------------")
 
-    if pathToFolder == None: 
+    if pathToFolder == None or pathToFolder == "": 
         print(Fore.RED + "pathToFolder is not set." + Style.RESET_ALL)
         valid = False
 
-    if folderName == None: 
+    if folderName == None or folderName == "": 
         print(Fore.RED + "folderName is not set." + Style.RESET_ALL)
         valid = False
 
-    if newFolderName == None:
+    if newFolderName == None or newFolderName == "":
         print(Fore.RED + "newFolderName is not set." + Style.RESET_ALL)
         valid = False
 
