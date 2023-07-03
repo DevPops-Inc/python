@@ -83,15 +83,15 @@ def checkParameters(pathToFolder, folderName, newFolderName):
     print("newFolderName: {0}".format(newFolderName))
     print("----------------------------------------")
 
-    if pathToFolder == None: 
+    if pathToFolder == None or pathToFolder == "": 
         print(Fore.RED + "pathToFolder is not set." + Style.RESET_ALL)
         valid = False
 
-    if folderName == None: 
+    if folderName == None or folderName == "": 
         print(Fore.RED + "folderName is not set." + Style.RESET_ALL)
         valid = False
 
-    if newFolderName == None:
+    if newFolderName == None or newFolderName == "":
         print(Fore.RED + "newFolderName is not set." + Style.RESET_ALL)
         valid = False
 
@@ -129,8 +129,8 @@ def renameFolder():
         
         print("Started renaming \"{0}\" folder at {1}".format(folderName, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
-        folderPath="{0}/{1}".format(pathToFolder, folderName)
-        newFolderNamePath="{0}/{1}".format(pathToFolder, newFolderName)
+        folderPath = "{0}/{1}".format(pathToFolder, folderName)
+        newFolderNamePath = "{0}/{1}".format(pathToFolder, newFolderName)
         os.rename(folderPath, newFolderNamePath)
 
         print(Fore.GREEN + "Successfully renamed \"{0}\" folder to \"{1}\" folder.".format(folderName, newFolderName) + Style.RESET_ALL)
@@ -145,7 +145,6 @@ def renameFolder():
 
     except Exception as e:
         print(Fore.RED + "Failed to rename \"{0}\" folder.".format(folderName))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
