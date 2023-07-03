@@ -129,8 +129,8 @@ def renameFolder():
         
         print("Started renaming \"{0}\" folder at {1}".format(folderName, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
 
-        folderPath="{0}/{1}".format(pathToFolder, folderName)
-        newFolderNamePath="{0}/{1}".format(pathToFolder, newFolderName)
+        folderPath = "{0}/{1}".format(pathToFolder, folderName)
+        newFolderNamePath = "{0}/{1}".format(pathToFolder, newFolderName)
         os.rename(folderPath, newFolderNamePath)
 
         print(Fore.GREEN + "Successfully renamed \"{0}\" folder to \"{1}\" folder.".format(folderName, newFolderName) + Style.RESET_ALL)
