@@ -56,7 +56,7 @@ def checkParameters(stringWithChars):
     print("stringWithChars: {0}".format(stringWithChars))
     print("--------------------------------------------")
 
-    if stringWithChars == None: 
+    if stringWithChars == None or stringWithChars == "": 
         print(Fore.RED + "stringWithChars is not set." + Style.RESET_ALL)
         valid = False 
 
