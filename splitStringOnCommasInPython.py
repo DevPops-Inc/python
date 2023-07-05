@@ -56,7 +56,7 @@ def checkParameters(stringWithCommas):
     print("stringWithCommas: {0}".format(stringWithCommas))
     print("----------------------------------------------")
 
-    if stringWithCommas == None: 
+    if stringWithCommas == None or stringWithCommas == "": 
         print(Fore.RED + "stringWithCommas is not set." + Style.RESET_ALL)
         valid = False 
 
