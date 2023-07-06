@@ -56,7 +56,7 @@ def checkParameters(stringWithSpaces):
     print("stringWithSpaces: {0}".format(stringWithSpaces))
     print("----------------------------------------------")
 
-    if stringWithSpaces == None: 
+    if stringWithSpaces == None or stringWithSpaces == "": 
         print(Fore.RED + "stringWithSpaces is not set." + Style.RESET_ALL)
         valid = False 
 
