@@ -56,6 +56,10 @@ def checkParameters(titleString):
     print("titleString: {0}".format(titleString))
     print("------------------------------------")
 
+    if titleString == None or titleString == "": 
+        print(Fore.RED + "titleString is not set." + Style.RESET_ALL)
+        valid = False 
+
     if valid == True: 
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
