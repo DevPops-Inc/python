@@ -104,7 +104,6 @@ def titleCaseString():
 
     except Exception: 
         print(Fore.RED + "Failed to title case \"{0}\"".format(titleString))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
