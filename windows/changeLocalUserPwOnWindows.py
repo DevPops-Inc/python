@@ -26,7 +26,7 @@ def checkOsForWindows():
         print(Fore.RED + "Sorry this script only works on Windows." + Style.RESET_ALL)
     
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        
+
         exit("")
 
 
@@ -54,11 +54,11 @@ def checkParameters(localUser, newPassword):
     print("newPassword: {0}".format("***"))
     print("----------------------------------")
 
-    if localUser == None: 
+    if localUser == None or localUser == "": 
         print(Fore.RED + "localUser is not set." + Style.RESET_ALL)
         valid = False
 
-    if newPassword == None: 
+    if newPassword == None or newPassword == "": 
         print(Fore.RED + "newPassword is not set." + Style.RESET_ALL)
         valid = False
 
