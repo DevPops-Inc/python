@@ -19,12 +19,14 @@ def checkOsForWindows():
         print(Style.RESET_ALL, end="")
         
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
 
     else:
         print(Fore.RED + "Sorry this script only works on Windows." + Style.RESET_ALL)
     
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         exit("")
 
 
@@ -52,11 +54,11 @@ def checkParameters(localUser, newPassword):
     print("newPassword: {0}".format("***"))
     print("----------------------------------")
 
-    if localUser == None: 
+    if localUser == None or localUser == "": 
         print(Fore.RED + "localUser is not set." + Style.RESET_ALL)
         valid = False
 
-    if newPassword == None: 
+    if newPassword == None or newPassword == "": 
         print(Fore.RED + "newPassword is not set." + Style.RESET_ALL)
         valid = False
 
@@ -95,9 +97,7 @@ def changeLocalUserPassword():
         getUserInfo = "net user {0}".format(localUser)
         
         if os.system(setPassword) != 0: 
-            print(Fore.RED + "Sorry but this attempt threw an error and can't continue.")  
-            
-            exit("Please read the error and try running this script again." + Style.RESET_ALL)
+            raise Exception("Cannot set password.")  
         
         print(Fore.BLUE, end="")
         os.system(getUserInfo)
@@ -114,7 +114,6 @@ def changeLocalUserPassword():
 
     except Exception as e:
         print(Fore.RED + "Failed to change password for {0}".format(localUser))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 		
