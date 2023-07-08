@@ -97,9 +97,7 @@ def changeLocalUserPassword():
         getUserInfo = "net user {0}".format(localUser)
         
         if os.system(setPassword) != 0: 
-            print(Fore.RED + "Sorry but this attempt threw an error and can't continue.")  
-            
-            exit("Please read the error and try running this script again." + Style.RESET_ALL)
+            raise Exception("Cannot set password.")  
         
         print(Fore.BLUE, end="")
         os.system(getUserInfo)
