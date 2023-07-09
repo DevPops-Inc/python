@@ -44,22 +44,15 @@ def checkChrome():
         if "Google Chrome" in winPrograms: 
             print(Fore.GREEN + "Chrome is installed." + Style.RESET_ALL)
 
-            finishedDateTime = datetime.now()
-            print("Finished checking Chrome at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            print("")
-
         else: 
             print(Fore.RED + "Google Chrome is not installed." + Style.RESET_ALL)
 
-            finishedDateTime = datetime.now()
-            print("Finished checking Chrome at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        finishedDateTime = datetime.now()
+        print("Finished checking Chrome at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            exit("")
+        duration = finishedDateTime - startDateTime
+        print("Total execution time: {0} second(s)".format(duration.seconds))
+        exit("")
 
     except Exception: 
         print(Fore.RED + "Failed to check Chrome.")
