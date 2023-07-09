@@ -17,12 +17,14 @@ def checkOsForWindows():
         print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         exit("")
 
 
@@ -42,26 +44,18 @@ def checkChrome():
         if "Google Chrome" in winPrograms: 
             print(Fore.GREEN + "Chrome is installed." + Style.RESET_ALL)
 
-            finishedDateTime = datetime.now()
-            print("Finished checking Chrome at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            print("")
-
         else: 
             print(Fore.RED + "Google Chrome is not installed." + Style.RESET_ALL)
 
-            finishedDateTime = datetime.now()
-            print("Finished checking Chrome at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        finishedDateTime = datetime.now()
+        print("Finished checking Chrome at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            exit("")
+        duration = finishedDateTime - startDateTime
+        print("Total execution time: {0} second(s)".format(duration.seconds))
+        exit("")
 
     except Exception: 
         print(Fore.RED + "Failed to check Chrome.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
