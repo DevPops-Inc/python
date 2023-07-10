@@ -38,7 +38,8 @@ def checkDiskOnWindows():
         startDateTime = datetime.now()
         print("Started checking disk on Windows at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        os.system('echo y | chkdsk /f/r c:')
+        if os.system('echo y | chkdsk /f/r c:') != 0: 
+            raise Exception("Couldn't initialize check disk.")
         
         print(Fore.GREEN + "Successfully initiated check disk on next start up." + Style.RESET_ALL)
 
