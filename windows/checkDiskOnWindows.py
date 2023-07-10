@@ -4,6 +4,8 @@
 
 # run this script as administrator
 
+# haven't tested this script yet
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -36,10 +38,12 @@ def checkDiskOnWindows():
 
     try: 
         startDateTime = datetime.now()
-
         print("Started checking disk on Windows at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        os.system('echo y | chkdsk /f/r c:')
+        if os.system('echo y | chkdsk /f/r c:') != 0: 
+            raise Exception("Couldn't initialize check disk.")
+        
+        print(Fore.GREEN + "Successfully initiated check disk on next start up." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
 
@@ -51,7 +55,6 @@ def checkDiskOnWindows():
         
     except Exception: 
         print(Fore.RED + "Failed to check disk on Windows.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
