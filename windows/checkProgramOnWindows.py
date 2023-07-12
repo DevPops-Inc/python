@@ -89,7 +89,7 @@ def checkProgram():
 
         if program in winPrograms or program in winPrograms2: 
             print(Fore.GREEN + "{0} is installed.".format(program) + Style.RESET_ALL)
-    
+            
             finishedDateTime = datetime.now()
 
             print("Finished checking {0} at {1}".format(program, finishedDateTime.strftime("%m-%d-%Y %I:%M %p")))
@@ -111,7 +111,6 @@ def checkProgram():
 
     except Exception: 
         print(Fore.RED + "Failed to check {0}.".format(program))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
