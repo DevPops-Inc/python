@@ -26,7 +26,7 @@ def checkOsForWindows():
         print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        
+
         exit("")
         
 
@@ -46,7 +46,7 @@ def checkParameters(program):
     print("program: {0}".format(program))
     print("----------------------------")
 
-    if program == None: 
+    if program == None or program == "": 
         print(Fore.RED + "program is noet set." + Style.RESET_ALL)
         valid = False
 
