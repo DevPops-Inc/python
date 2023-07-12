@@ -19,12 +19,14 @@ def checkOsForWindows():
         print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
 
     else: 
         print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         exit("")
         
 
@@ -44,7 +46,7 @@ def checkParameters(program):
     print("program: {0}".format(program))
     print("----------------------------")
 
-    if program == None: 
+    if program == None or program == "": 
         print(Fore.RED + "program is noet set." + Style.RESET_ALL)
         valid = False
 
@@ -52,14 +54,12 @@ def checkParameters(program):
         print(Fore.GREEN + "All parameter check(s) passsed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         print("")
 
     else: 
         print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
         exit("")
 
 
@@ -89,7 +89,7 @@ def checkProgram():
 
         if program in winPrograms or program in winPrograms2: 
             print(Fore.GREEN + "{0} is installed.".format(program) + Style.RESET_ALL)
-    
+            
             finishedDateTime = datetime.now()
 
             print("Finished checking {0} at {1}".format(program, finishedDateTime.strftime("%m-%d-%Y %I:%M %p")))
@@ -111,7 +111,6 @@ def checkProgram():
 
     except Exception: 
         print(Fore.RED + "Failed to check {0}.".format(program))
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
