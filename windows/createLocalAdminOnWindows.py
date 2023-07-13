@@ -27,7 +27,7 @@ def checkOsForWindows():
 		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 		
 		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-		
+
 		exit("")
 
 		
@@ -54,11 +54,11 @@ def checkParameters(localAdmin, localAdminPassword):
 	print("localAdminPassword: {0}".format("***"))
 	print("------------------------------------------")
 
-	if localAdmin == None: 
+	if localAdmin == None or localAdmin == "": 
 		print(Fore.RED + "localAdmin is not set." + Style.RESET_ALL)
 		valid = False
 
-	if localAdminPassword == None: 
+	if localAdminPassword == None or localAdminPassword == "": 
 		print(Fore.RED + "localAdminPassword is not set." + Style.RESET_ALL)
 		valid = False
 
