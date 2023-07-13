@@ -20,12 +20,14 @@ def checkOsForWindows():
 		print(Style.RESET_ALL, end="")
 		
 		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 		print("")
 		
 	else: 
 		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 		
 		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 		exit("")
 
 		
@@ -52,11 +54,11 @@ def checkParameters(localAdmin, localAdminPassword):
 	print("localAdminPassword: {0}".format("***"))
 	print("------------------------------------------")
 
-	if localAdmin == None: 
+	if localAdmin == None or localAdmin == "": 
 		print(Fore.RED + "localAdmin is not set." + Style.RESET_ALL)
 		valid = False
 
-	if localAdminPassword == None: 
+	if localAdminPassword == None or localAdminPassword == "": 
 		print(Fore.RED + "localAdminPassword is not set." + Style.RESET_ALL)
 		valid = False
 
@@ -70,6 +72,7 @@ def checkParameters(localAdmin, localAdminPassword):
 		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
 		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 		exit("")
 
 
@@ -100,7 +103,7 @@ def createLocalAdmin():
 
 		for create in localAdminCreation: 
 			if os.system(create) != 0:
-				raise Exception("Attempt threw an error!")
+				raise Exception("Couldn't create local admin.")
 
 		print(Fore.GREEN + "Successfully created local admin." + Style.RESET_ALL)
 
@@ -113,7 +116,6 @@ def createLocalAdmin():
 
 	except Exception: 
 		print(Fore.RED + "Failed to create local admin.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
