@@ -72,7 +72,7 @@ def checkParameters(localAdmin, localAdminPassword):
 		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 
 		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-		
+
 		exit("")
 
 
@@ -103,7 +103,7 @@ def createLocalAdmin():
 
 		for create in localAdminCreation: 
 			if os.system(create) != 0:
-				raise Exception("Attempt threw an error!")
+				raise Exception("Couldn't create local admin.")
 
 		print(Fore.GREEN + "Successfully created local admin." + Style.RESET_ALL)
 
