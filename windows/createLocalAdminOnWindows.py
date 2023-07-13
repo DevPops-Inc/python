@@ -116,7 +116,6 @@ def createLocalAdmin():
 
 	except Exception: 
 		print(Fore.RED + "Failed to create local admin.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
