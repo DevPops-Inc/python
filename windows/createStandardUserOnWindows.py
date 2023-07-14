@@ -3,6 +3,7 @@
 # create standard user on Windows
 
 # run this script as admin
+
 # you can run this script with: python3 createStandardUserOnWindows.py < standard user > < password > 
 
 import colorama, getpass, os, sys, traceback
@@ -20,12 +21,14 @@ def checkOsForWindows():
 		print(Style.RESET_ALL, end="")
 		
 		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 		print("")
 		
 	else: 
 		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 		
 		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 		exit("")
 		
 
@@ -53,11 +56,11 @@ def checkParameters(standardUser, standardUserPassword):
 	print("standardUserPassword: {0}".format("***"))
 	print("----------------------------------------------")
 	
-	if standardUser == None: 
+	if standardUser == None or standardUser == "": 
 		print(Fore.RED + "standardUser is not set." + Style.RESET_ALL)
 		valid = False
 		
-	if standardUserPassword == None: 
+	if standardUserPassword == None or standardUserPassword == "": 
 		print(Fore.RED + "standardUserPassword is not set." + Style.RESET_ALL)
 		valid = False
 		
@@ -101,7 +104,7 @@ def createStandardUser():
 
 		for create in standardUserCreation: 
 			if os.system(create) != 0: 
-				raise Exception("Attempt threw an error!")
+				raise Exception("Couldn't create standard user.")
 			
 		print(Fore.GREEN + "Successfully created {0}".format(standardUser)+ Style.RESET_ALL)
 		
@@ -115,7 +118,6 @@ def createStandardUser():
 		
 	except Exception: 
 		print(Fore.RED + "Failed to create {0}".format(standardUser))
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 		
