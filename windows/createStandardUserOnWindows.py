@@ -103,7 +103,7 @@ def createStandardUser():
 
 		for create in standardUserCreation: 
 			if os.system(create) != 0: 
-				raise Exception("Attempt threw an error!")
+				raise Exception("Couldn't create standard user.")
 			
 		print(Fore.GREEN + "Successfully created {0}".format(standardUser)+ Style.RESET_ALL)
 		
