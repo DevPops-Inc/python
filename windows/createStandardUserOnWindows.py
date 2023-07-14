@@ -117,7 +117,6 @@ def createStandardUser():
 		
 	except Exception: 
 		print(Fore.RED + "Failed to create {0}".format(standardUser))
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 		
