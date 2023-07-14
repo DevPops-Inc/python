@@ -3,6 +3,7 @@
 # create standard user on Windows
 
 # run this script as admin
+
 # you can run this script with: python3 createStandardUserOnWindows.py < standard user > < password > 
 
 import colorama, getpass, os, sys, traceback
