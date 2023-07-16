@@ -55,7 +55,6 @@ def defragHardDrive():
         print("")
     except Exception: 
         print(Fore.RED + "Failed to defrag hard drive.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
