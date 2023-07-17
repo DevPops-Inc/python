@@ -19,12 +19,14 @@ def checkOsForWindows():
 		print(Style.RESET_ALL, end="")
 		
 		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 		print("")
 		
 	else: 
 		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 		
 		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 		print("")
 		
 
@@ -46,7 +48,7 @@ def checkParameters(localUser):
 	print("localUser: {0}".format(localUser))
 	print("--------------------------------")
 
-	if localUser == None: 
+	if localUser == None or localUser == "": 
 		print(Fore.RED + "localUser is not set." + Style.RESET_ALL)
 		valid = False
 
@@ -83,7 +85,7 @@ def deleteLocalUser():
 		deleteUser = "net user {0} /delete".format(localUser)
 
 		if os.system(deleteUser) != 0: 
-			raise Exception("Attempt threw an error!")
+			raise Exception("Couldn't delete local user.")
 
 		print("The remaining users are:" + Fore.BLUE)
 		os.system('net user')
@@ -99,7 +101,6 @@ def deleteLocalUser():
 
 	except Exception: 
 		print(Fore.RED + "Failed to delete {0}".format(localUser))
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
