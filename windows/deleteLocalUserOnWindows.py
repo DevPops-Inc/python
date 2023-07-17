@@ -101,7 +101,6 @@ def deleteLocalUser():
 
 	except Exception: 
 		print(Fore.RED + "Failed to delete {0}".format(localUser))
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
