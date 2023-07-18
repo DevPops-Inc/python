@@ -49,7 +49,6 @@ def disableAdminPwExpir():
 		
 	except Exception as e:
 		print(Fore.RED + "Failed to disable admin password expiration.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 		
