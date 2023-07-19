@@ -48,7 +48,7 @@ def checkParameters(networkAdapter):
 	print("networkAdapter: {0}".format(networkAdapter))
 	print("------------------------------------------")
 	
-	if networkAdapter == None: 
+	if networkAdapter == None or networkAdapter == "": 
 		print(Fore.RED + "networkAdapter is not set." + Style.RESET_ALL)
 		valid = False
 		
