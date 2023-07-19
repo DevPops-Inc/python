@@ -48,7 +48,7 @@ def checkParameters(networkAdapter):
 	print("networkAdapter: {0}".format(networkAdapter))
 	print("------------------------------------------")
 	
-	if networkAdapter == None: 
+	if networkAdapter == None or networkAdapter == "": 
 		print(Fore.RED + "networkAdapter is not set." + Style.RESET_ALL)
 		valid = False
 		
@@ -62,7 +62,6 @@ def checkParameters(networkAdapter):
 		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 		
 		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p")) 
-
 		exit("")
 		
 
@@ -86,7 +85,7 @@ def disableNetworkAdapter():
 		disableNetworkAdapter = "netsh interface set interface {0} disable".format(networkAdapter)
 		
 		if os.system(disableNetworkAdapter) != 0: 
-			raise Exception("Attempt threw an error!")
+			raise Exception("Couldn't disable network adapter.")
 
 		os.system('netsh interface show interface')
 		
@@ -101,7 +100,6 @@ def disableNetworkAdapter():
 
 	except Exception: 
 		print(Fore.RED + "Failed to disable {0}.".format(networkAdapter))
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
