@@ -41,7 +41,7 @@ def disableUserAccessControl():
 
 		if os.system('reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 0 /f') != 0:
 		
-			raise Exception("Attempt threw an error!")
+			raise Exception("Couldn't disable User Access Control.")
 
 		print(Fore.GREEN + "Successfully disabled User Access Control." + Style.RESET_ALL)
 
@@ -59,7 +59,6 @@ def disableUserAccessControl():
 
 	except Exception: 
 		print(Fore.RED + "Failed to disable User Access Control.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
