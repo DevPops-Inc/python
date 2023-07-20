@@ -59,7 +59,6 @@ def disableUserAccessControl():
 
 	except Exception: 
 		print(Fore.RED + "Failed to disable User Access Control.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
