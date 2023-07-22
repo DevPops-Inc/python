@@ -88,10 +88,10 @@ def enableLocalAdminAndSetPw():
 	
 		for enable in enableLocalAdmin:
 			if os.system(enable) != 0: 
-				raise Exception("Attempt threw an error!")
+				raise Exception("Couldn't enable local admin.")
 				
 		finishedDateTime = datetime.now()
-		
+
 		print("Finished enabling local admin and setting password at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		duration = finishedDateTime - startDateTime
