@@ -48,7 +48,7 @@ def checkParameters(localAdminPw):
 	print("localAdminPw: {0}",format("***"))
 	print("-------------------------------")
 	
-	if localAdminPw == None: 
+	if localAdminPw == None or localAdminPw == "": 
 		print(Fore.RED + "localAdminPw is not set." + Style.RESET_ALL)
 		valid = False
 		
