@@ -100,7 +100,6 @@ def enableLocalAdminAndSetPw():
 		
 	except Exception: 
 		print(Fore.RED + "Failed to enable local admin and set password.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 		
