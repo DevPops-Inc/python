@@ -48,7 +48,7 @@ def checkParameters(localAdminPw):
 	print("localAdminPw: {0}",format("***"))
 	print("-------------------------------")
 	
-	if localAdminPw == None: 
+	if localAdminPw == None or localAdminPw == "": 
 		print(Fore.RED + "localAdminPw is not set." + Style.RESET_ALL)
 		valid = False
 		
@@ -79,6 +79,7 @@ def enableLocalAdminAndSetPw():
 	
 	try:
 		startDateTime = datetime.now()
+
 		print("Started enabling local admin and setting password at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		setLocalAdminPassword = "net user administrator {0}".format(localAdminPw)
@@ -87,9 +88,10 @@ def enableLocalAdminAndSetPw():
 	
 		for enable in enableLocalAdmin:
 			if os.system(enable) != 0: 
-				raise Exception("Attempt threw an error!")
+				raise Exception("Couldn't enable local admin.")
 				
 		finishedDateTime = datetime.now()
+
 		print("Finished enabling local admin and setting password at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		duration = finishedDateTime - startDateTime
@@ -98,7 +100,6 @@ def enableLocalAdminAndSetPw():
 		
 	except Exception: 
 		print(Fore.RED + "Failed to enable local admin and set password.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 		
