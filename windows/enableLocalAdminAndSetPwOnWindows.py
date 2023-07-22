@@ -79,6 +79,7 @@ def enableLocalAdminAndSetPw():
 	
 	try:
 		startDateTime = datetime.now()
+
 		print("Started enabling local admin and setting password at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		setLocalAdminPassword = "net user administrator {0}".format(localAdminPw)
@@ -90,6 +91,7 @@ def enableLocalAdminAndSetPw():
 				raise Exception("Attempt threw an error!")
 				
 		finishedDateTime = datetime.now()
+		
 		print("Finished enabling local admin and setting password at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		duration = finishedDateTime - startDateTime
