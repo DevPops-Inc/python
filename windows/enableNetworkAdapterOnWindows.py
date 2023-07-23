@@ -85,7 +85,7 @@ def enableNetworkAdapter():
 		enableNetworkAdapter = "netsh interface set interface {0} enable".format(networkAdapter)
 		
 		if os.system(enableNetworkAdapter) != 0: 
-			raise Exception("Attempt threw an error!")
+			raise Exception("Coudln't enable network adapter.")
 
 		time.sleep(5)
 		os.system('netsh interface show interface')
