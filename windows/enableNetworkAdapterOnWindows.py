@@ -41,7 +41,6 @@ def getNetworkAdapter():
 
 def checkParameters(networkAdapter): 
 	print("Started checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
 	valid = True
 	
 	print("Parameter(s):")
@@ -49,7 +48,7 @@ def checkParameters(networkAdapter):
 	print("networkAdapter: {0}".format(networkAdapter))
 	print("------------------------------------------")
 	
-	if networkAdapter == None: 
+	if networkAdapter == None or networkAdapter == "": 
 		print(Fore.RED + "networkAdapter is not set." + Style.RESET_ALL)
 		valid = False
 		
@@ -63,7 +62,6 @@ def checkParameters(networkAdapter):
 		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
 		
 		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
 		exit("")
 		
 
@@ -87,7 +85,7 @@ def enableNetworkAdapter():
 		enableNetworkAdapter = "netsh interface set interface {0} enable".format(networkAdapter)
 		
 		if os.system(enableNetworkAdapter) != 0: 
-			raise Exception("Attempt threw an error!")
+			raise Exception("Coudln't enable network adapter.")
 
 		time.sleep(5)
 		os.system('netsh interface show interface')
@@ -103,7 +101,6 @@ def enableNetworkAdapter():
 
 	except Exception: 
 		print(Fore.RED + "Failed to enable {0}.".format(networkAdapter))
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
