@@ -101,7 +101,6 @@ def enableNetworkAdapter():
 
 	except Exception: 
 		print(Fore.RED + "Failed to enable {0}.".format(networkAdapter))
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
