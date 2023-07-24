@@ -1,6 +1,6 @@
 #!/bin/python
 
-# enable UAC on Windows  
+# enable User Access Control on Windows  
 
 # run this script as admin
 
@@ -41,7 +41,7 @@ def enableUserAccessControl():
 
 		if os.system('reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f') != 0:
 		
-			raise Exception("Attempt threw an error!")
+			raise Exception("Couldn't enable User Access Control")
 
 		print(Fore.GREEN + "Successfully enabled User Access Control." + Style.RESET_ALL)
 
@@ -59,7 +59,6 @@ def enableUserAccessControl():
 
 	except Exception: 
 		print(Fore.RED + "Failed to enable User Access Control.")
-		
 		traceback.print_exc()
 		exit("" + Style.RESET_ALL)
 
