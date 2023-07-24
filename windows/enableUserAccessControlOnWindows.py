@@ -1,6 +1,6 @@
 #!/bin/python
 
-# enable UAC on Windows  
+# enable User Access Control on Windows  
 
 # run this script as admin
 
