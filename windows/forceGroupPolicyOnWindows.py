@@ -32,7 +32,7 @@ def forceGroupPolicy():
         print("Started forcing group policy at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
         
         if os.system('gpudate /force') != 0: 
-            raise Exception("Attempt threw an error!")
+            raise Exception("Couldn't force group policy.")
 
         print(Fore.GREEN + "Successfully forced group policy." + Style.RESET_ALL)
 
