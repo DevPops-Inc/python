@@ -45,7 +45,6 @@ def forceGroupPolicy():
 
     except Exception: 
         print(Fore.RED + "Failed to force group policy.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
