@@ -45,6 +45,9 @@ def getDiskType():
         elif "HDD" in diskType: 
             print(Fore.BLUE + "Disk type is HDD.")
 
+        else: 
+            raise Exception("Couldn't get disk type.")
+
         print(Fore.GREEN + "Successfully got disk type." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
