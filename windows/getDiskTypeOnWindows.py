@@ -60,7 +60,6 @@ def getDiskType():
 
     except Exception: 
         print(Fore.RED + "Failed to get disk type.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
