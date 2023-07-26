@@ -51,7 +51,6 @@ def getDiskType():
         print(Fore.GREEN + "Successfully got disk type." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        
         print("Finished getting disk type at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
