@@ -2,6 +2,8 @@
 
 # get hard drive info on Windows
 
+# haven't tested this script yet
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -36,7 +38,9 @@ def getHardDriveInfo():
         startDateTime = datetime.now()
         print("Started getting hard drive info at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"')
+        if os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"') != 0: 
+            raise Exception("Couldn't get hard drive info.")
+        
         print(Fore.GREEN + "Successfully got hard drive info." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
@@ -49,7 +53,6 @@ def getHardDriveInfo():
         
     except Exception: 
         print(Fore.RED + "Failed to get hard drive info.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
