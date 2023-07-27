@@ -53,7 +53,6 @@ def getHardDriveInfo():
         
     except Exception: 
         print(Fore.RED + "Failed to get hard drive info.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
         
