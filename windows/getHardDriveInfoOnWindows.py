@@ -2,6 +2,8 @@
 
 # get hard drive info on Windows
 
+# haven't tested this script yet
+
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
