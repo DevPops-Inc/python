@@ -36,7 +36,9 @@ def getHardDriveInfo():
         startDateTime = datetime.now()
         print("Started getting hard drive info at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"')
+        if os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"') != 0: 
+            raise Exception("Couldn't get hard drive info.")
+        
         print(Fore.GREEN + "Successfully got hard drive info." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
