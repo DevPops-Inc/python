@@ -39,7 +39,7 @@ def getLocalAdminExpirationPolicy():
 
         print(Fore.BLUE, end="")
         if os.system('net user administrator | findstr /C:expires') != 0:
-            raise Exception("Attempt threw an error!")
+            raise Exception("Couldn't get local admin password expiration policy.")
         
         print(Fore.GREEN + "Successfully got local admin password expiration policy." + Style.RESET_ALL)
 
