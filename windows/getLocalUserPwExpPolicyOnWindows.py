@@ -96,8 +96,6 @@ def getLocalUserPwExpPolicy():
 
     except Exception: 
         print(Fore.RED + "Failed to get \"{0}\" password expiration policy.".format(localUser))
-
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
