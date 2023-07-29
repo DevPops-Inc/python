@@ -46,7 +46,7 @@ def checkParameters(localUser):
     print("localUser: {0}".format(localUser))
     print("--------------------------------")
 
-    if localUser == None: 
+    if localUser == None or localUser == "": 
         print(Fore.RED + "localUser is not set.")
         valid = False
 
