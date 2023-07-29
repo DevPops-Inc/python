@@ -46,7 +46,7 @@ def checkParameters(localUser):
     print("localUser: {0}".format(localUser))
     print("--------------------------------")
 
-    if localUser == None: 
+    if localUser == None or localUser == "": 
         print(Fore.RED + "localUser is not set.")
         valid = False
 
@@ -82,7 +82,7 @@ def getLocalUserPwExpPolicy():
         print(Fore.BLUE, end=""); sys.stdout.flush()
 
         if os.system(pwExpPolicy) != 0:
-            raise Exception("Attempt threw an error!")
+            raise Exception("Couldn't get local user password expiration policy.")
         
         print(Fore.GREEN + "Successfully got \"{0}\" password expiration policy.".format(localUser) + Style.RESET_ALL)
 
@@ -96,8 +96,6 @@ def getLocalUserPwExpPolicy():
 
     except Exception: 
         print(Fore.RED + "Failed to get \"{0}\" password expiration policy.".format(localUser))
-
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
