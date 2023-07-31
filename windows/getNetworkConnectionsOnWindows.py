@@ -53,7 +53,6 @@ def getNetworkConnections():
 
     except Exception: 
         print("Failed to get network connections.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
