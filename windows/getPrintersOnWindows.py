@@ -52,7 +52,6 @@ def getPrinters():
 
     except Exception: 
         print(Fore.RED + "Failed to get printers.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
