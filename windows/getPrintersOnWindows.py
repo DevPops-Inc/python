@@ -28,7 +28,7 @@ def checkOsForWindows():
         exit("")
 
 
-def getPrinter(): 
+def getPrinters(): 
     print("\nGet printers on Windows.\n")
     checkOsForWindows()
 
@@ -57,5 +57,5 @@ def getPrinter():
         exit("" + Style.RESET_ALL)
 
 
-getPrinter()
+getPrinters()
     
