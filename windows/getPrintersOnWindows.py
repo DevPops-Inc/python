@@ -28,7 +28,7 @@ def checkOsForWindows():
         exit("")
 
 
-def getPrinter(): 
+def getPrinters(): 
     print("\nGet printers on Windows.\n")
     checkOsForWindows()
 
@@ -39,7 +39,7 @@ def getPrinter():
         print(Fore.BLUE)
 
         if os.system('wmic printer get name /value') != 0: 
-            raise Exception("Attempt threw an error!")
+            raise Exception("Couldn't get printers.")
 
         print(Fore.GREEN + "Successfully got printers." + Style.RESET_ALL)
 
@@ -52,10 +52,9 @@ def getPrinter():
 
     except Exception: 
         print(Fore.RED + "Failed to get printers.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
 
-getPrinter()
+getPrinters()
     
