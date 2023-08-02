@@ -35,9 +35,9 @@ def getPrograms():
         print("Started getting programs at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         getWinApps = 'Powershell "Get-ItemProperty HKLM:\\Software\\Wow6432Node\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Select-Object DisplayName | Format-Table -Autosize"'
-        
+
         if os.system(getWinApps) != 0:
-            raise Exception("Attempt threw error!")
+            raise Exception("Couldn't get programs.")
 
         print(Fore.GREEN + "Successfully got programs." + Style.RESET_ALL)
 
