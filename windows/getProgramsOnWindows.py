@@ -50,7 +50,6 @@ def getPrograms():
 
     except Exception: 
         print(Fore.RED + "Failed to get programs.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
