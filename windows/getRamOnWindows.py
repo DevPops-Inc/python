@@ -52,7 +52,6 @@ def getRam():
 
     except Exception: 
         print(Fore.RED + "Failed to get RAM." + Style.RESET_ALL)
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
