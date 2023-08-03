@@ -39,7 +39,7 @@ def getRam():
         print(Fore.BLUE)
 
         if os.system('wmic MEMORYCHIP get BankLabel,DeviceLocator,Capacity,Tag') != 0: 
-            raise Exception("Attempt threw an error!")
+            raise Exception("Error occurred getting RAM.")
         
         print(Fore.GREEN + "Successfully got RAM." + Style.RESET_ALL)
 
