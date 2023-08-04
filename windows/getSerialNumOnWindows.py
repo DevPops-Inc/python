@@ -52,8 +52,7 @@ def getSerialNumber():
         print("")
 
     except Exception: 
-        print(Fore.RED + "Failed to get serial number.")        
-        
+        print(Fore.RED + "Failed to get serial number.") 
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
