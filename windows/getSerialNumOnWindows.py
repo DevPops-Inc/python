@@ -39,7 +39,7 @@ def getSerialNumber():
         print(Fore.BLUE)
 
         if os.system('WMIC BIOS GET SERIALNUMBER') != 0: 
-            raise Exception("Attempt threw an error!")
+            raise Exception("Error occurred while getting serial number.")
 
         print(Fore.GREEN + "Successfully got serial number." + Style.RESET_ALL)
 
