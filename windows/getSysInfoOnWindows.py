@@ -52,7 +52,6 @@ def getSystemInfo():
 
     except Exception: 
         print(Fore.RED + "Failed to get system information.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
