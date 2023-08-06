@@ -38,7 +38,7 @@ def getWiFiProfiles():
         print("Started getting Wi-Fi profiles at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if os.system('netsh wlan show profiles') != 0: 
-            raise Exception("Attempt threw error!")
+            raise Exception("Error occurred while getting Wi-Fi profiles.")
             
         print(Fore.GREEN + "Successfully got Wi-Fi profiles." + Style.RESET_ALL)
 
