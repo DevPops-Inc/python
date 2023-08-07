@@ -43,7 +43,7 @@ def installWindowsUpdates():
 
         for update in windowsUpates:
             if os.system(update) != 0: 
-                raise Exception("Attempt threw an error!")
+                raise Exception("Error occurred while installing Windows updates.")
 
         print(Fore.GREEN + "Successfully installed Windows updates." + Style.RESET_ALL)
 
