@@ -35,7 +35,7 @@ def logOut():
         print("Started logging out at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if os.system('logoff') != 0: 
-            raise Exception("Attempt thew an error!")
+            raise Exception("Error occurred while logging off.")
 
         print(Fore.GREEN + "Successfully logged out." + Style.RESET_ALL)
 
@@ -48,7 +48,6 @@ def logOut():
 
     except Exception: 
         print(Fore.RED + "Failed to log out.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
