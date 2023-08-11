@@ -48,7 +48,6 @@ def logOut():
 
     except Exception: 
         print(Fore.RED + "Failed to log out.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
