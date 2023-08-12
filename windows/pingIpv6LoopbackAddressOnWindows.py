@@ -38,7 +38,7 @@ def pingLoopbackIpv6Address():
 		print("Started pinging loopback IPv6 address at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		if os.system('ping ::1') != 0: 
-			raise Exception("Attempt threw an error!")
+			raise Exception("Error occurred while pinging loopback IPv6 address.")
 			
 		print(Fore.GREEN + "Successfully pinged loopback IPv6 address." + Style.RESET_ALL)
 		
