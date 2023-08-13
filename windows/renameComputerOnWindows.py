@@ -59,11 +59,11 @@ def checkParameters(oldName, newName):
     print("nameName: {0}".format(newName))
     print("-----------------------------")
 
-    if oldName == None: 
+    if oldName == None or oldName == "": 
         print(Fore.RED + "oldName is not set." + Style.RESET_ALL)
         valid = False
 
-    if newName == None: 
+    if newName == None or newName == "": 
         print(Fore.RED + "newName is not set." + Style.RESET_ALL)
         valid = False
 
