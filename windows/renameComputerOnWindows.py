@@ -59,11 +59,11 @@ def checkParameters(oldName, newName):
     print("nameName: {0}".format(newName))
     print("-----------------------------")
 
-    if oldName == None: 
+    if oldName == None or oldName == "": 
         print(Fore.RED + "oldName is not set." + Style.RESET_ALL)
         valid = False
 
-    if newName == None: 
+    if newName == None or newName == "": 
         print(Fore.RED + "newName is not set." + Style.RESET_ALL)
         valid = False
 
@@ -103,7 +103,7 @@ def renameComputer():
         renameComputer = "WMIC computersystem where name='{0}' call rename '{1}'".format(oldName, newName) 
         
         if os.system(renameComputer) != 0: 
-            raise Exception("Attempt threw an error!")
+            raise Exception("Error occurred while renaming computer.")
         
         print(Fore.BLUE + "Your computer's current name is: \n")
         os.getenv('COMPUTERNAME') 
@@ -118,7 +118,6 @@ def renameComputer():
 
     except Exception: 
         print(Fore.RED + "Failed to rename computer.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
