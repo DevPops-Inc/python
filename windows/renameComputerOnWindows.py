@@ -118,7 +118,6 @@ def renameComputer():
 
     except Exception: 
         print(Fore.RED + "Failed to rename computer.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
