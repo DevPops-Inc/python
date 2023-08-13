@@ -103,7 +103,7 @@ def renameComputer():
         renameComputer = "WMIC computersystem where name='{0}' call rename '{1}'".format(oldName, newName) 
         
         if os.system(renameComputer) != 0: 
-            raise Exception("Attempt threw an error!")
+            raise Exception("Error occurred while renaming computer.")
         
         print(Fore.BLUE + "Your computer's current name is: \n")
         os.getenv('COMPUTERNAME') 
