@@ -39,7 +39,7 @@ def resolveMissingNetworkDrives():
         print("Started resolving missing network drives at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if os.system('GPUpdate /target:user /force') != 0: 
-            raise Exception("Attempt threw an error!")
+            raise Exception("Error occurred while resolving missing network drives.")
 
         print(Fore.GREEN + "Successfully resolved missing network drives." + Style.RESET_ALL)
 
