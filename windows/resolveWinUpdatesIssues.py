@@ -42,7 +42,7 @@ def resolveWinUpdates():
         os.chdir('/Windows')
         
         if os.system('echo y | del "SoftwareDistribution"') != 0:
-            raise Exception("Attempt threw an error!")
+            raise Exception("Error occurred while resolving Windows updates issues.")
 
         print(Fore.GREEN + "Successfully resolved Windows updates issues." + Style.RESET_ALL)
 
@@ -59,7 +59,7 @@ def resolveWinUpdates():
         print(Style.RESET_ALL)
         
         if os.system('shutdown /r /t 0') != 0:
-            raise Exception("Attempt threw an error!")
+            raise Exception("Error occurred while shutting down.")
 
     except Exception: 
         print(Fore.RED + "Failed to resolve Windows updates issues.")
