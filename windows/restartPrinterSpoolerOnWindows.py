@@ -42,7 +42,7 @@ def restartPrinterSpooler():
 
 		for printer in printerSpooler:
 			if os.system(printer) != 0: 
-				raise Exception("Attempt threw an error!")
+				raise Exception("Error occurred while restarting printer spooler.")
 			
 		print(Fore.GREEN + "Successfully restarted printer spooler." + Style.RESET_ALL)
 	
