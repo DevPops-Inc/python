@@ -50,7 +50,7 @@ def restartWin():
         print(Style.RESET_ALL)
 
         if os.system('shutdown /r /t 0') != 0: 
-            raise Exception("Attempt threw an error!")
+            raise Exception("Errorred occurred while restarting Windows.")
 
     except Exception: 
         print(Fore.RED + "Failed to restart Windows.")
