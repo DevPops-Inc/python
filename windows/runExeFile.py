@@ -100,7 +100,7 @@ def runExeFile():
         runExe = '"{0}"'.format(exeFilename) 
         
         if os.system(runExe) != 0: 
-            raise Exception("Attempt threw an error!")
+            raise Exception("Error occurred while running .exe file.")
 
         print(Fore.GREEN + "Successfully ran .exe file." + Style.RESET_ALL)
 
