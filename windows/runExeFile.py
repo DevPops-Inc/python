@@ -56,11 +56,11 @@ def checkParameters(exeFileLocation, exeFilename):
     print("exeFilename    : {0}".format(exeFilename))
     print("------------------------------------------------")
 
-    if exeFileLocation == None: 
+    if exeFileLocation == None or exeFileLocation == "": 
         print(Fore.RED + "exeFileLocation is not set." + Style.RESET_ALL)
         valid = False
 
-    if exeFilename == None: 
+    if exeFilename == None or exeFileLocation == "": 
         print(Fore.RED + "installName is not set." + Style.RESET_ALL)
         valid = False
 
@@ -100,7 +100,7 @@ def runExeFile():
         runExe = '"{0}"'.format(exeFilename) 
         
         if os.system(runExe) != 0: 
-            raise Exception("Attempt threw an error!")
+            raise Exception("Error occurred while running .exe file.")
 
         print(Fore.GREEN + "Successfully ran .exe file." + Style.RESET_ALL)
 
@@ -114,7 +114,6 @@ def runExeFile():
 
     except Exception: 
         print(Fore.RED + "Failed to run .exe file.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
