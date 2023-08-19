@@ -56,11 +56,11 @@ def checkParameters(exeFileLocation, exeFilename):
     print("exeFilename    : {0}".format(exeFilename))
     print("------------------------------------------------")
 
-    if exeFileLocation == None: 
+    if exeFileLocation == None or exeFileLocation == "": 
         print(Fore.RED + "exeFileLocation is not set." + Style.RESET_ALL)
         valid = False
 
-    if exeFilename == None: 
+    if exeFilename == None or exeFileLocation == "": 
         print(Fore.RED + "installName is not set." + Style.RESET_ALL)
         valid = False
 
