@@ -114,7 +114,6 @@ def runExeFile():
 
     except Exception: 
         print(Fore.RED + "Failed to run .exe file.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
