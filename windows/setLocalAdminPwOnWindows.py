@@ -85,7 +85,7 @@ def setLocalAdminPw():
         setAdminPw = 'net user administrator {0}'.format(adminPw)
 
         if os.system(setAdminPw) != 0: 
-            raise("Attempt threw an error!")
+            raise("Error occurred while setting local admin password.")
         
         print(Fore.GREEN + "Successfully set local admin password." + Style.RESET_ALL)
 
