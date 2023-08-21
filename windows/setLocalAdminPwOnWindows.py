@@ -102,4 +102,5 @@ def setLocalAdminPw():
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
+
 setLocalAdminPw()
