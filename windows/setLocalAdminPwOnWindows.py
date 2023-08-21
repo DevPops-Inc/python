@@ -48,7 +48,7 @@ def checkParameters(adminPw):
     print("adminPw: {0}".format("***"))
     print("--------------------------")
 
-    if adminPw == None: 
+    if adminPw == None or adminPw == "": 
         print(Fore.RED + "adminPw is not set." + Style.RESET_ALL)
         valid = False
 
@@ -85,7 +85,7 @@ def setLocalAdminPw():
         setAdminPw = 'net user administrator {0}'.format(adminPw)
 
         if os.system(setAdminPw) != 0: 
-            raise("Attempt threw an error!")
+            raise("Error occurred while setting local admin password.")
         
         print(Fore.GREEN + "Successfully set local admin password." + Style.RESET_ALL)
 
@@ -101,5 +101,6 @@ def setLocalAdminPw():
         print(Fore.RED + "Failed to set local admin password.")
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
+
 
 setLocalAdminPw()
