@@ -64,8 +64,10 @@ def stopAndRelaunchOutlook():
         print("Started stopping and relauching Outlook at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if os.system(stopOutlook) == 0: 
-                print(Fore.BLUE + "Stopped Outlook and relaunching in 5 seconds.")
-                time.sleep(5)
+            print(Fore.BLUE + "Stopped Outlook and relaunching in 5 seconds.")
+            time.sleep(5)
+        else:
+            raise Exception("Error occurred while stopping Outlook.")
 
         os.system(launchOutlook)
             
