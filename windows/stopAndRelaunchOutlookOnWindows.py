@@ -70,7 +70,6 @@ def stopAndRelaunchOutlook():
             raise Exception("Error occurred while stopping Outlook.")
 
         os.system(launchOutlook)
-            
         print(Fore.GREEN + "Successfully stopped and relaunched Outlook." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
