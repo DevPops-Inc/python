@@ -38,7 +38,9 @@ def systemsFileCheck():
         startDateTime = datetime.now()
         print("Started systems file check at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        os.system('SFC /scannow')
+        if os.system('SFC /scannow') != 0: 
+            raise Exception("Error occurred while starting systems file chedk.")
+        
         print(Fore.GREEN + "Successfully ran systems file check." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
