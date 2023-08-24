@@ -3,6 +3,7 @@
 # systems file check on Windows 
 
 # run this script as admin
+# haven't tested this script yet
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
