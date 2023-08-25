@@ -39,8 +39,6 @@ def viewConnectedServers():
         
         print("Started viewing connected servers at", startDateTime.strftime("%m-%d-%Y %I:%M %p")) 
 
-        os.system('net view')
-
         if os.system('net view') != 0: 
             raise Exception("An error occurred when attempting to view connected servers.")
         
