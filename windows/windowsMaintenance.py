@@ -44,14 +44,14 @@ def runWinMaintenance():
 
         for job in maintenance: 
             if os.system(job) != 0: 
-                raise Exception("Attempt threw an error!")
+                raise Exception("Error occurred while running Windows maintenance.")
 
         diskType = os.popen('PowerShell "Get-PhysicalDisk').read()
         print(diskType)
 
         if "HDD" in diskType: 
             if os.system('defrag c: /u') != 0: 
-                raise Exception("Attempt threw an error!")
+                raise Exception("Error occurred while defragging the disk.")
             
         print(Fore.GREEN + "Successfully ran maintenance on Windows." + Style.RESET_ALL)
 
@@ -65,7 +65,9 @@ def runWinMaintenance():
 
         print("Please save your work and close applications.")
         str(input("Press any key to continue."))
-        os.system('shutdown /r /t 0')
+        
+        if os.system('shutdown /r /t 0') != 0:
+            raise Exception("Error occurred while restarting computer.")
         
     except Exception: 
         print(Fore.RED + "Failed to run maintenance on Windows.")
