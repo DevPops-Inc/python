@@ -71,7 +71,6 @@ def runWinMaintenance():
         
     except Exception: 
         print(Fore.RED + "Failed to run maintenance on Windows.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
