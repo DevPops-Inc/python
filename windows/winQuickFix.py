@@ -56,7 +56,6 @@ def winQuickFix():
 
     except Exception: 
         print(Fore.RED + "Failed to perform Windows quick fix.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
