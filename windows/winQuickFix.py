@@ -36,7 +36,9 @@ def winQuickFix():
         startDateTime = datetime.now()
         print("Started Windows quick fix at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        os.system('echo y | chkdsk /f c:')
+        if os.system('echo y | chkdsk /f c:') != 0: 
+            raise Exception("Error occurred while performing Windows quick fix.")
+
         print(Fore.GREEN + "Successfully performed Windows quick fix." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
@@ -48,7 +50,9 @@ def winQuickFix():
 
         print("Please save your documents and close applications.")
         input("Press any key to continue.")
-        os.system('shutdown /r /t 0')
+        
+        if os.system('shutdown /r /t 0') != 0: 
+            raise Exception("Error occurred while restarting computer.")
 
     except Exception: 
         print(Fore.RED + "Failed to perform Windows quick fix.")
