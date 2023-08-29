@@ -105,7 +105,7 @@ def stopAndRelaunchOutlook():
                 time.sleep(5)
 
             if os.system(launchOutlook) != 0:
-                raise Exception("Couldn't relaunch Outlook!")
+                raise Exception("Error occurred while relaunching Outlook.")
             
         print(Fore.GREEN + "Successfully stopped and relaunched Outlook." + Style.RESET_ALL)
 
