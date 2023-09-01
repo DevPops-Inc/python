@@ -59,7 +59,7 @@ def launchYouTubeInChrome():
         youTubeInChrome = 'open -a "Google Chrome.app" http://youtube.com'
 
         if os.system(youTubeInChrome) != 0:
-            raise Exception("Couldn't launch YouTube in Chrome.")
+            raise Exception("Error occurred while launching YouTube in Chrome.")
 
         print(Fore.GREEN + "Successfully launched YouTube in Chrome." + Style.RESET_ALL)
 
