@@ -96,7 +96,7 @@ def connectToWifi():
         connectToWifi = "networksetup -setairportnetwork en0 {0} {1}".format(wifiSsid, wifiPassword)
 
         if os.system(connectToWifi) != 0: 
-            raise Exception("Couldn't connect to WiFi.")
+            raise Exception("Error occurred while connecting to WiFi.")
 
         print(Fore.GREEN + "Successfully connected to {0}".format(wifiSsid) + Style.RESET_ALL)
 
