@@ -37,7 +37,7 @@ def getPrograms():
         getWinApps = 'Powershell "Get-ItemProperty HKLM:\\Software\\Wow6432Node\Microsoft\\Windows\\CurrentVersion\\Uninstall\\* | Select-Object DisplayName | Format-Table -Autosize"'
 
         if os.system(getWinApps) != 0:
-            raise Exception("Couldn't get programs.")
+            raise Exception("Error occurred while getting programs.")
 
         print(Fore.GREEN + "Successfully got programs." + Style.RESET_ALL)
 
