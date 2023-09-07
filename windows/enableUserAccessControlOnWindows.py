@@ -41,7 +41,7 @@ def enableUserAccessControl():
 
 		if os.system('reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 1 /f') != 0:
 		
-			raise Exception("Couldn't enable User Access Control")
+			raise Exception("Error occurred while enabling User Access Control")
 
 		print(Fore.GREEN + "Successfully enabled User Access Control." + Style.RESET_ALL)
 
