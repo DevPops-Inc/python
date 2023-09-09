@@ -39,7 +39,7 @@ def getHardDriveInfo():
         print("Started getting hard drive info at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"') != 0: 
-            raise Exception("Couldn't get hard drive info.")
+            raise Exception("Error occurred while getting hard drive info.")
         
         print(Fore.GREEN + "Successfully got hard drive info." + Style.RESET_ALL)
 
