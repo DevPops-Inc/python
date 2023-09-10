@@ -32,15 +32,19 @@ def disableAdminPwExpir():
 	
 	try: 
 		startDateTime = datetime.now()
-		print("Started disabling admin password expiration at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
-		if os.system("WMIC USERACCOUNT WHERE Name='Administrator' SET PasswordExpires=FALSE") != 0:
-			raise Exception("Couldn't disable admin password expiration.")
+		print("Started disabling admin password expiration at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
+
+		setAdminNeverExp = "WMIC USERACCOUNT WHERE Name='Administrator' SET PasswordExpires=FALSE"
+		
+		if os.system(setAdminNeverExp) != 0:
+			raise Exception("Error occurred while disabling admin password expiration.")
 
 		os.system('net user Administrator')
 		print(Fore.GREEN + "Successfully disabled admin password expiration." + Style.RESET_ALL)
 		
 		finishedDateTime = datetime.now()
+		
 		print("Finished disabling admin password expiration at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		duration = finishedDateTime - startDateTime 
