@@ -37,7 +37,7 @@ def getLocalUsers():
         print("Started getting local users at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if os.system('net user') != 0: 
-            raise Exception("Couldn't get local users.")
+            raise Exception("Error occurred while getting local users.")
 
         print(Fore.GREEN + "Successfully got local users." + Style.RESET_ALL)
 
