@@ -41,7 +41,7 @@ def checkDiskAndRestartWindows():
         print("Started checking disk and restarting Windows at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if os.system('echo y | chkdsk /f/r c:') != 0: 
-            raise Exception("Couldn't initialize check disk.")
+            raise Exception("Error occurred while initializing check disk.")
 
         finishedDateTime = datetime.now()
 
@@ -53,7 +53,9 @@ def checkDiskAndRestartWindows():
 
         print("Please save your documents and close applications.")
         str(input("Press any key to restart Windows."))
-        os.system('shutdown /r /t 0')
+        
+        if os.system('shutdown /r /t 0') != 0: 
+            raise Exception("Error occurred while restarting computer.")
         
     except Exception: 
         print(Fore.RED + "Failed to check disk and restart Windows.")
