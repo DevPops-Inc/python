@@ -88,7 +88,7 @@ def enableLocalAdminAndSetPw():
 	
 		for enable in enableLocalAdmin:
 			if os.system(enable) != 0: 
-				raise Exception("Couldn't enable local admin.")
+				raise Exception("Error occurred while enabling local admin.")
 				
 		finishedDateTime = datetime.now()
 
