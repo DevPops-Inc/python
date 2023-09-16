@@ -82,13 +82,18 @@ def enableLocalAdminAndSetPw():
 
 		print("Started enabling local admin and setting password at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
-		setLocalAdminPassword = "net user administrator {0}".format(localAdminPw)
+		activateLocalAdmin = 'net user administrator /active:yes'
+		setLocalAdminPw = "net user administrator {0}".format(localAdminPw)
+		
+		setLocalAdminPwNeverExp = "WMIC USERACCOUNT WHERE Name='administrator' SET PasswordExpires=FALSE"
 
-		enableLocalAdmin = ['net user administrator /active:yes', setLocalAdminPassword, "WMIC USERACCOUNT WHERE Name='administrator' SET PasswordExpires=FALSE", 'net user administrator | findstr /C:expires']
+		getLocalAdminExpPolicy = 'net user administrator | findstr /C:expires'
+
+		enableLocalAdmin = [activateLocalAdmin, setLocalAdminPw, setLocalAdminPwNeverExp, getLocalAdminExpPolicy]
 	
 		for enable in enableLocalAdmin:
 			if os.system(enable) != 0: 
-				raise Exception("Couldn't enable local admin.")
+				raise Exception("Error occurred while enabling local admin.")
 				
 		finishedDateTime = datetime.now()
 
