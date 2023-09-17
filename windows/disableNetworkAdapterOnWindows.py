@@ -85,7 +85,7 @@ def disableNetworkAdapter():
 		disableNetworkAdapter = "netsh interface set interface {0} disable".format(networkAdapter)
 		
 		if os.system(disableNetworkAdapter) != 0: 
-			raise Exception("Couldn't disable network adapter.")
+			raise Exception("Error occurred while disabling network adapter.")
 
 		os.system('netsh interface show interface')
 		
