@@ -41,7 +41,7 @@ def disableUserAccessControl():
 
 		if os.system('reg.exe ADD HKLM\SOFTWARE\Microsoft\Windows\CurrentVersion\Policies\System /v EnableLUA /t REG_DWORD /d 0 /f') != 0:
 		
-			raise Exception("Couldn't disable User Access Control.")
+			raise Exception("Error occurred while disabling User Access Control.")
 
 		print(Fore.GREEN + "Successfully disabled User Access Control." + Style.RESET_ALL)
 
@@ -55,7 +55,9 @@ def disableUserAccessControl():
 
 		print(Fore.BLUE + "Please save your documents and close your application.")
 		input("Press any key to restart the computer:" + Style.RESET_ALL)
-		os.system('shutdown /r /t 0')
+
+		if os.system('shutdown /r /t 0') != 0: 
+			raise Exception("Error occurred while restarting computer.")
 
 	except Exception: 
 		print(Fore.RED + "Failed to disable User Access Control.")
