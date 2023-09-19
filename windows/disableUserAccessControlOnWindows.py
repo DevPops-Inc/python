@@ -55,7 +55,9 @@ def disableUserAccessControl():
 
 		print(Fore.BLUE + "Please save your documents and close your application.")
 		input("Press any key to restart the computer:" + Style.RESET_ALL)
-		os.system('shutdown /r /t 0')
+
+		if os.system('shutdown /r /t 0') != 0: 
+			raise Exception("Error occurred while restarting computer.")
 
 	except Exception: 
 		print(Fore.RED + "Failed to disable User Access Control.")
