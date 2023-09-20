@@ -42,7 +42,7 @@ def defragHardDrive():
             print(Fore.GREEN + "Successfully defragged hard drive ." + Style.RESET_ALL)
             
             if os.system('defrag c: /u') != 0:
-                raise Exception("Couldn't defrag hard drive.")
+                raise Exception("Error occurred while defraging hard drive.")
         else: 
             print(Fore.GREEN + "Hard drive doesn't need to be defragged." + Style.RESET_ALL)
 
