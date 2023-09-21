@@ -38,7 +38,7 @@ def getNetworkConnections():
         print("Started getting network connections at", startDateTime.strftime("%m-%d-%Y %I:M %p"))
 
         if os.system('ipconfig /all') != 0: 
-            raise Exception("Couldn't get network connections.")
+            raise Exception("Error occurred while getting network connections.")
 
         print("")
         print(Fore.GREEN + "Successfully got network connections." + Style.RESET_ALL)
