@@ -82,7 +82,7 @@ def getLocalUserPwExpPolicy():
         print(Fore.BLUE, end=""); sys.stdout.flush()
 
         if os.system(pwExpPolicy) != 0:
-            raise Exception("Couldn't get local user password expiration policy.")
+            raise Exception("Error occurred while getting local user password expiration policy.")
         
         print(Fore.GREEN + "Successfully got \"{0}\" password expiration policy.".format(localUser) + Style.RESET_ALL)
 
