@@ -39,7 +39,7 @@ def getPrinters():
         print(Fore.BLUE)
 
         if os.system('wmic printer get name /value') != 0: 
-            raise Exception("Couldn't get printers.")
+            raise Exception("Error occurred while getting printers.")
 
         print(Fore.GREEN + "Successfully got printers." + Style.RESET_ALL)
 
