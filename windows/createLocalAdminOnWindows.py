@@ -103,7 +103,7 @@ def createLocalAdmin():
 
 		for create in localAdminCreation: 
 			if os.system(create) != 0:
-				raise Exception("Couldn't create local admin.")
+				raise Exception("Error occurred while creating local admin.")
 
 		print(Fore.GREEN + "Successfully created local admin." + Style.RESET_ALL)
 
