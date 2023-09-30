@@ -85,7 +85,7 @@ def deleteLocalUser():
 		deleteUser = "net user {0} /delete".format(localUser)
 
 		if os.system(deleteUser) != 0: 
-			raise Exception("Couldn't delete local user.")
+			raise Exception("Error occurred while deleting local user.")
 
 		print("The remaining users are:" + Fore.BLUE)
 		os.system('net user')
