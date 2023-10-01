@@ -96,8 +96,6 @@ def runMacMaintenance():
         if os.system(jobs) != 0: 
             raise Exception("Error occurred while running Mac maintenance.")
 
-    os.system('diskutil list')
-
     print(Fore.GREEN + "Successfully ran Mac maintenance." + Style.RESET_ALL)
 
     finishedDateTime = datetime.now()
