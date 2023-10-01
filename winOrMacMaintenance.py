@@ -41,18 +41,20 @@ def runWindowsMaintenance():
     
     print("Started running Windows maintenance at ", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-    maintenance = ['echo y | chkdsk /f/r c:', 'SFC /scannow', 'Dism /Online /Cleanup-Image /ScanHealth']
+    os.system('echo y | chkdsk /f/r c:')
+        
+    maintenance = ['SFC /scannow', 'Dism /Online /Cleanup-Image /ScanHealth']
 
     for job in maintenance: 
-        os.system(job)
+        if os.system(job) != 0: 
+            raise Exception("Error occurred while running Windows maintenance.")
 
-    os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"') # TODO: iterate to get HDD vs SDD
-    print("Do you want to defrag the HDD (not recommended for SSD drives)?")
-    
-    answer = str(input("Please press \"Y\" or \"N\" and press \"Enter\" key: "))
+    diskType = os.popen('PowerShell "Get-PhysicalDisk').read()
+    print(diskType)
 
-    if answer == "Y" or answer == "y":
-        os.system('defrag c: /u')
+    if "HDD" in diskType: 
+        if os.system('defrag c: /u') != 0: 
+            raise Exception("Error occurred while defragging the disk.")
 
     print(Fore.GREEN + "Successfully ran maintenance on Windows." + Style.RESET_ALL)
 
