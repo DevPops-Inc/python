@@ -68,7 +68,9 @@ def runWindowsMaintenance():
     
     print("Please save your work and close applications.")
     str(input("Press any key to continue."))
-    os.system('shutdown /r /t 0')
+
+    if os.system('shutdown /r /t 0') != 0:
+            raise Exception("Error occurred while restarting computer.")
 
 
 def runMacMaintenance():
@@ -110,7 +112,9 @@ def runMacMaintenance():
 
     print("Please save your documents and close applications.")
     str(input("Press any key to restart Mac."))
-    os.system('reboot')
+    
+    if os.system('reboot') != 0: 
+        raise Exception("Error occurred while restarting computer.")
 
 
 def computerMaintenance():
