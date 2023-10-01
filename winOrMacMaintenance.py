@@ -93,7 +93,8 @@ def runMacMaintenance():
     maintenance = ['sudo mdutil -i on /', 'softwareupdate --install --all', verifyVolume ]
 
     for jobs in maintenance: 
-        os.system(jobs)
+        if os.system(jobs) != 0: 
+            raise Exception("Error occurred while running Mac maintenance.")
 
     os.system('diskutil list')
 
