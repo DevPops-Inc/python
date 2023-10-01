@@ -74,22 +74,28 @@ def runMacMaintenance():
     
     print("Started running Mac maintenance at ", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-    maintenance = ['sudo mdutil -i on /', 'softwareupdate --install --all']
+    checkMacOs = 'diskutil list | grep "MacOS"'
+    checkMacintoshHd = 'diskutil list | grep "Macintosh HD"'
+
+    if os.system(checkMacOs) == 0: 
+        print(Fore.BLUE + "Disk name is MacOS.")
+        hdd = "MacOS"
+
+    elif os.system(checkMacintoshHd) == 0: 
+        print(Fore.BLUE + "Disk name is Macintosh HD.")
+        hdd = "Macintosh HD"
+
+    else: 
+        raise Exception("Disk name isn't MacOS or Macintosh HD.")
+    
+    verifyVolume = 'distutil verifyVolume "{0}"'.format(hdd)
+    
+    maintenance = ['sudo mdutil -i on /', 'softwareupdate --install --all', verifyVolume ]
 
     for jobs in maintenance: 
         os.system(jobs)
 
     os.system('diskutil list')
-
-    answer = str(input("Please type 1 if your hard drive is \"Macintosh HD\" or 2 if it's \"MacOS\" and press \"return\" key: ")) # TODO: iterate to get disk name
-    
-    if answer == "1": 
-        os.system('diskutil verifyVolume "Macintosh HD"')
-        os.system('diskutil repairVolume "Macintosh HD"')
-
-    elif answer == "2": 
-        os.system('diskutil verifyVolume MacOS')
-        os.system('diskutil repairVolume MacOS')
 
     print(Fore.GREEN + "Successfully ran Mac maintenance." + Style.RESET_ALL)
 
