@@ -41,18 +41,20 @@ def runWindowsMaintenance():
     
     print("Started running Windows maintenance at ", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-    maintenance = ['echo y | chkdsk /f/r c:', 'SFC /scannow', 'Dism /Online /Cleanup-Image /ScanHealth']
+    os.system('echo y | chkdsk /f/r c:')
+        
+    maintenance = ['SFC /scannow', 'Dism /Online /Cleanup-Image /ScanHealth']
 
     for job in maintenance: 
-        os.system(job)
+        if os.system(job) != 0: 
+            raise Exception("Error occurred while running Windows maintenance.")
 
-    os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"') # TODO: iterate to get HDD vs SDD
-    print("Do you want to defrag the HDD (not recommended for SSD drives)?")
-    
-    answer = str(input("Please press \"Y\" or \"N\" and press \"Enter\" key: "))
+    diskType = os.popen('PowerShell "Get-PhysicalDisk').read()
+    print(diskType)
 
-    if answer == "Y" or answer == "y":
-        os.system('defrag c: /u')
+    if "HDD" in diskType: 
+        if os.system('defrag c: /u') != 0: 
+            raise Exception("Error occurred while defragging the disk.")
 
     print(Fore.GREEN + "Successfully ran maintenance on Windows." + Style.RESET_ALL)
 
@@ -66,7 +68,9 @@ def runWindowsMaintenance():
     
     print("Please save your work and close applications.")
     str(input("Press any key to continue."))
-    os.system('shutdown /r /t 0')
+
+    if os.system('shutdown /r /t 0') != 0:
+            raise Exception("Error occurred while restarting computer.")
 
 
 def runMacMaintenance():
@@ -74,22 +78,27 @@ def runMacMaintenance():
     
     print("Started running Mac maintenance at ", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-    maintenance = ['sudo mdutil -i on /', 'softwareupdate --install --all']
+    checkMacOs = 'diskutil list | grep "MacOS"'
+    checkMacintoshHd = 'diskutil list | grep "Macintosh HD"'
+
+    if os.system(checkMacOs) == 0: 
+        print(Fore.BLUE + "Disk name is MacOS.")
+        hdd = "MacOS"
+
+    elif os.system(checkMacintoshHd) == 0: 
+        print(Fore.BLUE + "Disk name is Macintosh HD.")
+        hdd = "Macintosh HD"
+
+    else: 
+        raise Exception("Disk name isn't MacOS or Macintosh HD.")
+    
+    verifyVolume = 'distutil verifyVolume "{0}"'.format(hdd)
+    
+    maintenance = ['sudo mdutil -i on /', 'softwareupdate --install --all', verifyVolume ]
 
     for jobs in maintenance: 
-        os.system(jobs)
-
-    os.system('diskutil list')
-
-    answer = str(input("Please type 1 if your hard drive is \"Macintosh HD\" or 2 if it's \"MacOS\" and press \"return\" key: ")) # TODO: iterate to get disk name
-    
-    if answer == "1": 
-        os.system('diskutil verifyVolume "Macintosh HD"')
-        os.system('diskutil repairVolume "Macintosh HD"')
-
-    elif answer == "2": 
-        os.system('diskutil verifyVolume MacOS')
-        os.system('diskutil repairVolume MacOS')
+        if os.system(jobs) != 0: 
+            raise Exception("Error occurred while running Mac maintenance.")
 
     print(Fore.GREEN + "Successfully ran Mac maintenance." + Style.RESET_ALL)
 
@@ -103,7 +112,9 @@ def runMacMaintenance():
 
     print("Please save your documents and close applications.")
     str(input("Press any key to restart Mac."))
-    os.system('reboot')
+    
+    if os.system('reboot') != 0: 
+        raise Exception("Error occurred while restarting computer.")
 
 
 def computerMaintenance():
