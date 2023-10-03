@@ -53,7 +53,8 @@ def runMacMaintenance():
         maintenance = ['sudo mdutil -i on /', 'softwareupdate --install --all', verifyVolume ]
 
         for jobs in maintenance: 
-            os.system(jobs)
+            if os.system(jobs) != 0: 
+                raise Exception("Error occurred while performing Mac mainteance.")
 
         print(Fore.GREEN + "Successfully ran Mac maintenance." + Style.RESET_ALL)
 
@@ -67,7 +68,9 @@ def runMacMaintenance():
 
         print("Please save your documents and close applications.")
         str(input("Press any key to restart Mac."))
-        os.system('reboot')
+
+        if os.system('reboot') != 0: 
+            raise Exception("Error occurred while restarting computer.")
         
     except Exception: 
         print(Fore.RED + "Failed to run Mac maintenance.")
