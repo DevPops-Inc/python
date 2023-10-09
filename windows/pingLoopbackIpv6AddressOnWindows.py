@@ -13,7 +13,6 @@ def checkOsForWindows():
 	
 	if sys.platform == "win32": 
 		print(Fore.GREEN + "Operating System:", end=""); sys.stdout.flush()
-		
 		os.system('ver')
 		print(Style.RESET_ALL, end="")
 			
