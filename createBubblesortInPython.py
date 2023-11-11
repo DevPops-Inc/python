@@ -83,19 +83,19 @@ def createBubblesort():
                     list.append(addItem)
                     addItemToListOnMacOrLinux(numList-1)
 
-            addItemToListOnMacOrLinux(numList)
+        addItemToListOnMacOrLinux(numList)
 
-            print(Fore.BLUE + "Here is your bubblesort:")
-            print(list)
-            bubbleSort(list)
-            print(Fore.GREEN + "Successfully created bubblesort." + Style.RESET_ALL)
+        print(Fore.BLUE + "Here is your bubblesort:")
+        print(list)
+        bubbleSort(list)
+        print(Fore.GREEN + "Successfully created bubblesort." + Style.RESET_ALL)
 
-            finishedDateTime = datetime.now()
-            print("Finished creating bubblesort at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        finishedDateTime = datetime.now()
+        print("Finished creating bubblesort at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            print("")
+        duration = finishedDateTime - startDateTime
+        print("Total execution time: {0} second(s)".format(duration.seconds))
+        print("")
 
     except Exception: 
         print(Fore.RED + "Failed to create bubblesort.")
