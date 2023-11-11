@@ -34,7 +34,7 @@ def checkOs():
     return operatingSystem
 
 
-def bubbleSort(dataset): 
+def bubbleSort(dataset): #TODO: figure out how to stop bubble sort once numbers are sorted
     for i in range(len(dataset) - 1, 0, -1):
         for j in range(i):
             if dataset[j] > dataset[j+1]:
@@ -65,7 +65,6 @@ def createBubblesort():
                     addItem = int(input("Please type a number you wish to add to the list and press the \"Enter\" key (Example: 25): "))
 
                     print("")
-
                     list.append(addItem)
                     addItemToListOnWin(numList-1)
 
@@ -81,23 +80,22 @@ def createBubblesort():
                     addItem = int(input("Please type a number you wish to add to the list and press the \"return\" key (Example: 25): "))
 
                     print("")
-
                     list.append(addItem)
                     addItemToListOnMacOrLinux(numList-1)
 
             addItemToListOnMacOrLinux(numList)
 
-            print(Fore.BLUE + "Here is your bubblesort:")
-            print(list)
-            bubbleSort(list)
-            print(Fore.GREEN + "Successfully created bubblesort." + Style.RESET_ALL)
+        print(Fore.BLUE + "Here is your bubblesort:")
+        print(list)
+        bubbleSort(list)
+        print(Fore.GREEN + "Successfully created bubblesort." + Style.RESET_ALL)
 
-            finishedDateTime = datetime.now()
-            print("Finished creating bubblesort at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        finishedDateTime = datetime.now()
+        print("Finished creating bubblesort at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            print("")
+        duration = finishedDateTime - startDateTime
+        print("Total execution time: {0} second(s)".format(duration.seconds))
+        print("")
 
     except Exception: 
         print(Fore.RED + "Failed to create bubblesort.")
