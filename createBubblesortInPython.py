@@ -65,7 +65,6 @@ def createBubblesort():
                     addItem = int(input("Please type a number you wish to add to the list and press the \"Enter\" key (Example: 25): "))
 
                     print("")
-
                     list.append(addItem)
                     addItemToListOnWin(numList-1)
 
@@ -81,7 +80,6 @@ def createBubblesort():
                     addItem = int(input("Please type a number you wish to add to the list and press the \"return\" key (Example: 25): "))
 
                     print("")
-
                     list.append(addItem)
                     addItemToListOnMacOrLinux(numList-1)
 
