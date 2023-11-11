@@ -34,7 +34,7 @@ def checkOs():
     return operatingSystem
 
 
-def bubbleSort(dataset): 
+def bubbleSort(dataset): #TODO: figure out how to stop bubble sort once numbers are sorted
     for i in range(len(dataset) - 1, 0, -1):
         for j in range(i):
             if dataset[j] > dataset[j+1]:
