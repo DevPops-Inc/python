@@ -83,7 +83,7 @@ def createBubblesort():
                     list.append(addItem)
                     addItemToListOnMacOrLinux(numList-1)
 
-        addItemToListOnMacOrLinux(numList)
+            addItemToListOnMacOrLinux(numList)
 
         print(Fore.BLUE + "Here is your bubblesort:")
         print(list)
