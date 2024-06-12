@@ -2,7 +2,7 @@
 
 # change local user password on Windows 
 
-# you can run this script with changeLocalUserPwOnWindows.py < local user > < new password >
+# you can run this script with changeLocalUserPwOnWin.py < local user > < new password >
 
 import colorama, getpass, os, sys, traceback
 from colorama import Fore, Style
@@ -23,11 +23,7 @@ def checkOsForWindows():
         print("")
 
     else:
-        print(Fore.RED + "Sorry this script only works on Windows." + Style.RESET_ALL)
-    
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry this script only runs on Windows.")
 
 
 def getLocalUser(): 
@@ -37,7 +33,7 @@ def getLocalUser():
 	return localUser
 
 
-def getnewPassword(): 
+def getNewPw(): 
     newPassword = getpass.getpass("Please type the new password and press \"Enter\" key (Example: Password123): ")
 
     print("")
@@ -66,15 +62,13 @@ def checkParameters(localUser, newPassword):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+        
         print("")
     else: 
-        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception("One or more parameters are incorrect.")
 
 
-def changeLocalUserPassword():
+def changeLocalUserPw():
     print("\nChange local user password on Windows.\n")
     checkOsForWindows()
 
@@ -84,7 +78,7 @@ def changeLocalUserPassword():
 
     else: 
         localUser   = getLocalUser()
-        newPassword = getnewPassword() 
+        newPassword = getNewPw() 
 
     checkParameters(localUser, newPassword)
     
@@ -118,4 +112,4 @@ def changeLocalUserPassword():
         exit("" + Style.RESET_ALL)
 		
 		
-changeLocalUserPassword()
+changeLocalUserPw()
