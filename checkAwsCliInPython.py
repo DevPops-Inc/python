@@ -30,6 +30,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -61,15 +62,7 @@ def checkAwsCli():
                 print("")
 
             else: 
-                print(Fore.RED + "AWS CLI is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking AWS CLI at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("AWS CLI is not installed.")
 
         elif operatingSystem == "Windows": 
             checkAwsCliOnWindows = subprocess.call(['where', 'aws'], stdout=FNULL)
@@ -88,15 +81,7 @@ def checkAwsCli():
                 print("")
 
             else: 
-                print(Fore.RED + "AWS CLI is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking AWS CLI at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("AWS CLI is not installed.")
                 
     except Exception: 
         print(Fore.RED + "Failed to check AWS CLI in Python.")
