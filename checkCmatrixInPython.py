@@ -30,6 +30,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -71,15 +72,7 @@ def checkCmatrix():
                 print("")
 
             else: 
-                print(Fore.RED + "cmatrix is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking cmatrix at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("cmatrix is not installed.")
 
         elif operatingSystem == "Windows": 
             checkCmatrixOnWindows = subprocess.call(['where', 'cmatrix'], stdout=FNULL)
@@ -108,15 +101,7 @@ def checkCmatrix():
                 print("")
 
             else: 
-                print(Fore.RED + "cmatrix is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking cmatrix at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("cmatrix is not installed.")
                 
     except Exception: 
         print(Fore.RED + "Failed to check cmatrix in Python.")
