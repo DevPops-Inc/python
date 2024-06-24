@@ -30,6 +30,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -60,15 +61,7 @@ def checkCowsay():
                 print("")
 
             else: 
-                print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking Cowsay at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("Cowsay is not installed.")
 
         elif operatingSystem == "Windows": 
             checkCowsayOnWindows = subprocess.call(['where', 'cowsay'], stdout=FNULL) 
@@ -86,16 +79,8 @@ def checkCowsay():
                 print("")
                 
             else: 
-                print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking Cowsay at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
-
+                raise Exception("Cowsay is not installed.")
+            
     except Exception: 
         print(Fore.RED + "Failed to check Cowsay in Python.")
         traceback.print_exc()
