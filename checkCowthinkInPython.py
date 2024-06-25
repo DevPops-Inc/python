@@ -30,6 +30,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -61,15 +62,7 @@ def checkCowthink():
                 print("")
 
             else: 
-                print(Fore.RED + "Cowthink is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking Cowthink at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("Cowthink is not installed.")
 
         elif operatingSystem == "Windows": 
             checkCowthinkOnWindows = subprocess.call(['where', 'cowthink'], stdout=FNULL) 
@@ -87,15 +80,7 @@ def checkCowthink():
                 print("")
                 
             else: 
-                print(Fore.RED + "Cowthink is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking Cowthink at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("Cowthink is not installed.")
 
     except Exception: 
         print(Fore.RED + "Failed to check Cowthink in Python.")
