@@ -3,7 +3,6 @@
 # check disk on Windows
 
 # run this script as administrator
-
 # haven't tested this script yet
 
 import colorama, os, sys, traceback
@@ -25,11 +24,7 @@ def checkOsForWindows():
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs Windows." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs Windows.")
 
 
 def checkDiskOnWindows():
