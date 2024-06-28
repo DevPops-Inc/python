@@ -30,6 +30,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -61,15 +62,7 @@ def checkESpeak():
                 print("")
 
             else: 
-                print(Fore.RED + "eSpeak is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking eSpeak at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("eSpeak is not installed.")
 
         elif operatingSystem == "Windows": 
             checkESpeakOnWindows = subprocess.call(['where', 'espeak'], stdout=FNULL)
@@ -88,16 +81,8 @@ def checkESpeak():
                 print("")
 
             else: 
-                print(Fore.RED + "eSpeak is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking eSpeak at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
-                
+                raise Exception("eSpeak is not installed.")
+            
     except Exception: 
         print(Fore.RED + "Failed to check eSpeak in Python.")
         traceback.print_exc()
