@@ -30,6 +30,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -65,15 +66,7 @@ def checkFortune():
                 print("")
 
             else: 
-                print(Fore.RED + "Fortune is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking Fortune at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("Fortune is not installed.")
 
         elif operatingSystem == "Windows": 
             checkFortuneOnWindows = subprocess.call(['where', 'fortune'], stdout=FNULL)
@@ -95,16 +88,8 @@ def checkFortune():
                 print("")
 
             else: 
-                print(Fore.RED + "Fortune is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking Fortune at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
-                
+                raise Exception("Fortune is not installed.")
+            
     except Exception: 
         print(Fore.RED + "Failed to check Fortune in Python.")
         traceback.print_exc()
