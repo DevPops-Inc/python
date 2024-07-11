@@ -50,14 +50,7 @@ def checkOutlook():
             print("")
 
         else: 
-            print(Fore.RED + "Outlook is not installed." + Style.RESET_ALL)
-
-            finishedDateTime = datetime.now()
-            print("Finished checking Outlook at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            exit("")
+            raise Exception("Outlook is not installed.")
 
     except Exception: 
         print(Fore.RED + "Failed to check Outlook.")
