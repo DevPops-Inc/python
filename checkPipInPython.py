@@ -30,6 +30,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -61,15 +62,7 @@ def checkPip():
                 print("")
 
             else: 
-                print(Fore.RED + "PIP is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking PIP at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception(Fore.RED + "PIP is not installed.")
 
         elif operatingSystem == "Windows": 
             checkPipOnWindows = subprocess.call(['where', 'pip'], stdout=FNULL)
@@ -88,15 +81,7 @@ def checkPip():
                 print("")
 
             else: 
-                print(Fore.RED + "PIP is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking PIP at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception(Fore.RED + "PIP is not installed.")
                 
     except Exception: 
         print(Fore.RED + "Failed to check PIP in Python.")
