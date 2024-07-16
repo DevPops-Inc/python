@@ -30,6 +30,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -64,15 +65,7 @@ def checkSteamLocomotive():
                 print("")
 
             else: 
-                print(Fore.RED + "Steam Locomotive is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking Steam Locomotive at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("Steam Locomotive is not installed.")
 
         elif operatingSystem == "Windows": 
             checkSteamLocomotiveOnWindows = subprocess.call(['where', 'sl'], stdout=FNULL)
@@ -93,15 +86,7 @@ def checkSteamLocomotive():
                 print("")
 
             else: 
-                print(Fore.RED + "Steam Locomotive is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking Steam Locomotive at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("Steam Locomotive is not installed.")
                 
     except Exception: 
         print(Fore.RED + "Failed to check Steam Locomotive in Python.")
