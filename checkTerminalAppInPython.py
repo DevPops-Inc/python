@@ -32,6 +32,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -40,16 +41,19 @@ def getTerminalApp(operatingSystem):
     if operatingSystem == "Windows": 
         terminalApp = str(input("Please type the terminal application you wish to check and press \"Enter\" key (Example: terraform): "))
 
+        print("")
 
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
         terminalApp = str(input("Please type the terminal application you wish to check and press \"return\" key (Example: terraform): "))
 
-    print("")
+        print("")
+
     return terminalApp
 
 
 def checkParameters(terminalApp):
     print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     valid = True
 
     print("Parameter(s):")
@@ -57,7 +61,7 @@ def checkParameters(terminalApp):
     print("terminalApp: {0}".format(terminalApp))
     print("------------------------------------")
 
-    if terminalApp == None or terminalApp == "": 
+    if terminalApp == None: 
         print(Fore.RED + "terminalApp is not set." + Style.RESET_ALL)
         valid = False
 
@@ -65,14 +69,12 @@ def checkParameters(terminalApp):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect" + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
-
+        raise Exception(Fore.RED + "One or more parameters are incorrect")
+    
 
 def checkTerminalApp(): 
     print("\nCheck terminal application in Python.\n")
@@ -94,6 +96,7 @@ def checkTerminalApp():
         FNULL = open(os.devnull, 'w')
 
         if operatingSystem == "macOS" or operatingSystem == "Linux":
+
             checkTerminalAppOnMacOrLinux = subprocess.call(['which', terminalApp], stdout=FNULL) 
 
             if checkTerminalAppOnMacOrLinux == 0:
@@ -113,17 +116,10 @@ def checkTerminalApp():
                 print("")
 
             else: 
-                print(Fore.RED + "{0} is not installed.".format(terminalApp) + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking {0} at".format(terminalApp), finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("{0} is not installed.".format(terminalApp))
 
         elif operatingSystem == "Windows": 
+            
             checkTerminalAppOnWindows = subprocess.call(['where', terminalApp], stdout=FNULL)
 
             if checkTerminalAppOnWindows == 0:
@@ -143,18 +139,11 @@ def checkTerminalApp():
                 print("")
 
             else: 
-                print(Fore.RED + "{0} is not installed.".format(terminalApp) + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking {0} at".format(terminalApp), finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("{0} is not installed.".format(terminalApp))
                 
     except Exception: 
         print(Fore.RED + "Failed to check {0} in Python.".format(terminalApp))
+        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
