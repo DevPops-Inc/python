@@ -30,6 +30,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -61,15 +62,7 @@ def checkTerraform():
                 print("")
 
             else: 
-                print(Fore.RED + "Terraform is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking Terraform at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("Terraform is not installed.")
 
         elif operatingSystem == "Windows": 
             checkTerraformOnWindows = subprocess.call(['where', 'terraform'], stdout=FNULL)
@@ -88,15 +81,7 @@ def checkTerraform():
                 print("")
 
             else: 
-                print(Fore.RED + "Terraform is not installed." + Style.RESET_ALL)
-                
-                finishedDateTime = datetime.now()
-
-                print("Finished checking Terraform at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-                duration = finishedDateTime - startDateTime
-                print("Total execution time: {0} second(s)".format(duration.seconds))
-                exit("")
+                raise Exception("Terraform is not installed.")
                 
     except Exception: 
         print(Fore.RED + "Failed to check Terraform in Python.")
