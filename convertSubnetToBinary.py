@@ -13,7 +13,7 @@ colorama.init()
 def checkOs(): 
 	print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	
-	if sys.platform == "Win32": 
+	if sys.platform == "win32": 
 		print(Fore.GREEN + "Operating System:", end=""); sys.stdout.flush()
 		os.system('ver')
 		print(Style.RESET_ALL, end="")
@@ -32,6 +32,7 @@ def checkOs():
 		operatingSystem = "Linux"
 		
 	print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 	print("")
 	return operatingSystem
 	
@@ -67,10 +68,7 @@ def checkParameters(subnet):
 		print("")
 		
 	else: 
-		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-		
-		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-		exit("")
+		raise Exception("One or more parameters are incorrect.")
 			
 			
 def convertSubnetToBinary(): 
