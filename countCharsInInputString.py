@@ -2,7 +2,7 @@
 
 # count characters in input string
 
-# you can run this script with: python3 countCharactersInInputString.py '< input string >'
+# you can run this script with: python3 countCharsInInputString.py '< input string >'
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style
@@ -71,7 +71,7 @@ def checkParameters(inputString):
         raise Exception("One or more parameters are incorrect.")
 
 
-def countCharacters(): 
+def countCharsInInputString(): 
     print("\nLet's count characters in an input string in Python.\n")
     operatingSystem = checkOs()
 
@@ -104,4 +104,4 @@ def countCharacters():
         exit("" + Style.RESET_ALL)
 
 
-countCharacters()
+countCharsInInputString()
