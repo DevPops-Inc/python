@@ -32,6 +32,7 @@ def checkOS():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -83,11 +84,7 @@ def checkParameters(year, month):
         print("")
 
     else: 
-        print(Fore.RED + "One ore more parameters are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
-
+        raise Exception("One ore more parameters are incorrect.")
 
 def countDaysOfMonth(): 
     print("\nLet's count the days in a month in Python!\n")
