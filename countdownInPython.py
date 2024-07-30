@@ -31,6 +31,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -66,10 +67,7 @@ def checkParameters(countdownNum):
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        print("")
+        raise Exception("One or more parameter checks are incorrect.")
 
 
 def countdown():
