@@ -2,7 +2,7 @@
 
 # count heads or tails in coin flips in Python
 
-# you can run this script with: python3 countHeadsOrTailsInCoinFlipsInPython.py < number of coin flips > 
+# you can run this script with: python3 countHeadsOrTailsInPython.py < number of coin flips > 
 
 import colorama, random, os, sys, traceback
 from colorama import Fore, Style
@@ -32,6 +32,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -67,13 +68,10 @@ def checkParameters(coinFlip):
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception("One or more parameters are incorrect.")
 
     
-def countHeadsOrTailsInCoinFlips(): 
+def countHeadsOrTails(): 
     print("\nLet's count heads or tails in coin flips!\n")
     operatingSystem = checkOs()
 
@@ -88,7 +86,7 @@ def countHeadsOrTailsInCoinFlips():
     try: 
         startDateTime = datetime.now()
 
-        print("Started counting heads and tails in coin flips at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Started counting heads and tails in {0} coin flip(s) at".format(coinFlip), startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         output = {"Heads":0, "Tails":0}
         coin   = list(output.keys())
@@ -99,11 +97,12 @@ def countHeadsOrTailsInCoinFlips():
         print("The results of the coin flips are:" + Fore.BLUE)
         print("Heads:", output["Heads"])
         print("Tails:", output["Tails"])
-        print(Fore.GREEN + "Successfully counted heads and tails in coin flip." + Style.RESET_ALL)
+
+        print(Fore.GREEN + "Successfully counted heads and tails in {0} coin flip(s).".format(coinFlip) + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
 
-        print("Finished counting heads and tails in coin flips at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+        print("Finished counting heads and tails in {0} coin flip(s) at".format(coinFlip), finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
@@ -115,4 +114,4 @@ def countHeadsOrTailsInCoinFlips():
         exit("" + Style.RESET_ALL)
 
 
-countHeadsOrTailsInCoinFlips()
+countHeadsOrTails()
