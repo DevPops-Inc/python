@@ -34,6 +34,7 @@ def checkOs():
 		operatingSystem = "Linux"
 		
 	print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 	print("")
 	return operatingSystem
 		
@@ -52,10 +53,7 @@ def checkCowsay(operatingSystem):
 			print("")
 			
 		else: 
-			print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
-
-			print("Finished checking Cowsay at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-			print("")
+			raise Exception("Cowsay is not installed.")
 			
 	else: 
 		checkCowsayOnMacOrLinux = subprocess.call(['which', 'cowsay'], stdout=FNULL)
@@ -67,10 +65,7 @@ def checkCowsay(operatingSystem):
 			print("")
 			
 		else: 
-			print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
-			
-			print("Finished checking Cowsay at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-			print("")
+			raise Exception("Cowsay is not installed.")
 			
 	
 def getCowMessage(operatingSystem): 
@@ -104,10 +99,7 @@ def checkParameters(cowMessage):
 		print("")
 		
 	else: 
-		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-		
-		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-		exit("" + Style.RESET_ALL)
+		raise Exception("One or more parameters are incorrect.")
 		
 
 def cowsayMessage(): 
