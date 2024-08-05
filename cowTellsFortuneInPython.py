@@ -51,10 +51,7 @@ def checkFortune(operatingSystem):
             print("")
         
         else: 
-            print(Fore.RED + "Fortune is not installed" + Style.RESET_ALL)
-
-            print("Finished checking Fortune at", datetime.now().strfime("%m-%d-%Y %I:%M %p"))
-            exit("")
+            raise Exception("Fortune is not installed")
 
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
 
@@ -67,10 +64,7 @@ def checkFortune(operatingSystem):
             print("")
 
         else: 
-            print(Fore.RED + "Fortuen is not installed." + Style.RESET_ALL)
-
-            print("Finished checking Fortune at", datetime.now().strftime("%Y"))
-            exit("")
+            raise Exception("Fortune is not installed")
 
 
 def checkCowsay(operatingSystem):
@@ -88,10 +82,7 @@ def checkCowsay(operatingSystem):
             print("")
 
         else: 
-            print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
-
-            print("Finished checking Cowsay at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-            exit("")
+            raise Exception("Cowsay is not installed.")
 
     if operatingSystem == "macOS" or operatingSystem == "Linux": 
         checkCowsayOnMacOrLinux = subprocess.call(['which', 'cowsay'], stdout=FNULL)
@@ -103,10 +94,7 @@ def checkCowsay(operatingSystem):
             print("")
 
         else: 
-            print(Fore.RED + "Cowsay is not installed." + Style.RESET_ALL)
-
-            print("Finished checking Cowsay at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-            exit("")
+            raise Exception("Cowsay is not installed.")
 
 
 def cowTellsFortune():
