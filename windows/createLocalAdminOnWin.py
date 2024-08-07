@@ -3,7 +3,8 @@
 # create local admin on Windows
 
 # run this script as admin
-# you can run this script with: python3 createLocalAdminOnWindows.py < local admin > < password > 
+
+# you can run this script with: python3 createLocalAdminOnWin.py < local admin > < password > 
 
 import colorama, getpass, os, sys, traceback 
 from colorama import Fore, Style
@@ -24,11 +25,7 @@ def checkOsForWindows():
 		print("")
 		
 	else: 
-		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-		
-		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-		exit("")
+		raise Exception("Sorry but this script only runs on Windows.")
 
 		
 def getLocalAdmin(): 
@@ -69,11 +66,7 @@ def checkParameters(localAdmin, localAdminPassword):
 		print("")
 
 	else: 
-		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-
-		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-		exit("")
+		raise Exception(Fore.RED + "One or more parameters are incorrect.")
 
 
 def createLocalAdmin(): 
