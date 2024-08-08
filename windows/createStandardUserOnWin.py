@@ -4,7 +4,7 @@
 
 # run this script as admin
 
-# you can run this script with: python3 createStandardUserOnWindows.py < standard user > < password > 
+# you can run this script with: python3 createStandardUserOnWin.py < standard user > < password > 
 
 import colorama, getpass, os, sys, traceback
 from colorama import Fore, Style 
@@ -25,11 +25,7 @@ def checkOsForWindows():
 		print("")
 		
 	else: 
-		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-		
-		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-		exit("")
+		raise Exception(Fore.RED + "Sorry but this script only runs on Windows.")
 		
 
 def getStandardUser(): 
@@ -71,10 +67,7 @@ def checkParameters(standardUser, standardUserPassword):
 		print("")
 		
 	else: 
-		print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
-		
-		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-		exit("")
+		raise Exception("One or more parameter checks are incorrect.")
 		
 		
 def createStandardUser(): 
