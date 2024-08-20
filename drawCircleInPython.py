@@ -2,8 +2,6 @@
 
 # draw circle in Python
 
-# this doesn't work on Python 3.9+
-
 import colorama, os, sys, traceback, turtle
 from colorama import Fore, Style
 from datetime import datetime
@@ -29,6 +27,7 @@ def checkOs():
         print(Style.RESET_ALL, end="")
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
 
 
