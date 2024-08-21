@@ -32,6 +32,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finisehd checking operating system at", datetime.now().strftime("%m-%d-%Y %H:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -83,10 +84,7 @@ def checkParameters(borderColor, fillColor):
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception("One or more parameters are incorrect.")
 
 
 def drawSquare(): 
@@ -127,7 +125,6 @@ def drawSquare():
 
     except Exception: 
         print(Fore.RED + "Failed to draw square.")
-        
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
