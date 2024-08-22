@@ -4,8 +4,6 @@
 
 # you can run this script with: python3 drawStarInPython.py < border color > < inside color >
 
-# haven't figured out how to get this to work on Python 3.9+
-
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -35,6 +33,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -86,10 +85,7 @@ def checkParameters(borderColor, insideColor):
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception(Fore.RED + "One or more parameters are incorrect.")
 
 
 def drawStar(): 
