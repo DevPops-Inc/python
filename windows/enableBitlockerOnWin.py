@@ -1,6 +1,6 @@
 #!/bin/python
 
-# enable BitLocker on WindowsError
+# enable BitLocker on Windows
 
 # haven't tested this on a Windows PC yet
 
@@ -21,13 +21,8 @@ def checkOsForWindows():
 		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 		
 		print("")
-		
 	else: 
-		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-		
-		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-		exit("")		
+		raise Exception("Sorry but this script only runs on Windows.")	
 		
 		
 def enableBitLocker(): 
