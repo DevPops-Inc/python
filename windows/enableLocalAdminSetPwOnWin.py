@@ -2,7 +2,7 @@
 
 # enable local admin account and set password on Windows
 
-# you can run this script with: python3 enableLocalAdminAndSetPwOnWindows.py < local admin password > 
+# you can run this script with: python3 enableLocalAdminSetPwOnWin.py < local admin password > 
 
 # haven't successfully tested this script on Windows yet since all of the test passwords I've tried don't meet the minimum security requirements of my OS
 
@@ -25,12 +25,7 @@ def checkOsForWindows():
 		print("")
 
 	else: 
-		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-		
-		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-		exit("")
-		
+		raise Exception("Sorry but this script only runs on Windows.")
 		
 def getLocalAdminPw(): 
 	localAdminPw = getpass.getpass("Please type the password for the local admin account and press the \"Enter\" key (Example: Password123): ")
@@ -59,10 +54,7 @@ def checkParameters(localAdminPw):
 		print("")
 		
 	else: 
-		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-		
-		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-		exit("")
+		raise Exception("One or more parameters are incorrect.")
 		
 
 def enableLocalAdminAndSetPw(): 
