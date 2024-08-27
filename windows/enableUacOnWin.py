@@ -23,14 +23,10 @@ def checkOsForWindows():
 		print("")
 
 	else: 
-		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-
-		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %H:%M %p"))
-
-		exit("")
+		raise Exception("Sorry but this script only runs on Windows.")
 
 
-def enableUserAccessControl(): 
+def enableUac(): 
 	print("\nEnable User Access Control on Windows.\n")
 	checkOsForWindows()
 
@@ -65,4 +61,4 @@ def enableUserAccessControl():
 		exit("" + Style.RESET_ALL)
 
 
-enableUserAccessControl()
+enableUac()
