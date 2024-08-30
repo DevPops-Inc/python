@@ -30,6 +30,7 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -88,10 +89,13 @@ def findMaxValueinList():
             addItemToListOnWin(itemList)
 
         print("Here are the items in your list: {0}".format(items))
+        
         print(Fore.BLUE + "The maximum number in the list is: {0}".format(findMaxValue(items)))
+
         print(Fore.GREEN + "Successfully found maximum value in a list." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
+        
         print("Finished finding maximum value in a list", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
