@@ -2,13 +2,14 @@
 
 # force install application on Windows
 
-# you can run this script with: python3 forceInstallAppOnWindows.py "< installer location >" "< installer name >"
+# you can run this script with: python3 forceInstallAppOnWin.py "< installer location >" "< installer name >"
 
 # need to test this with an .msi file
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style 
 from datetime import datetime
+from pathlib import Path
 colorama.init()
 
 
@@ -25,11 +26,7 @@ def checkOsForWindows():
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs on Windows.")
 
 
 def getInstallerLocation(): 
@@ -73,10 +70,7 @@ def checkParameters(installerLocation, installerName):
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception("One or more parameters are incorrect.")
 
 
 def forceInstallApp(): 
@@ -98,12 +92,17 @@ def forceInstallApp():
         
         print("Started force installing application at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
+        installerLocation = Path(installerLocation)
+
+        if not os.path.exists(installerLocation): 
+            raise Exception("Installer location is invalid.")
+
         os.chdir(installerLocation)
         forceInstall = '"{0}" -i GUI'.format(installerName) # msiexec "{0}" /i
-        
+            
         if os.system(forceInstall) != 0: 
-            raise Exception("Attempt threw an error!")
-
+            raise Exception("Error occurred during installiation of application.")
+    
         print(Fore.GREEN + "Successfully force installed application." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
