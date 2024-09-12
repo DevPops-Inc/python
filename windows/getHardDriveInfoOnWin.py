@@ -2,8 +2,6 @@
 
 # get hard drive info on Windows
 
-# haven't tested this script yet
-
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -23,11 +21,7 @@ def checkOsForWindows():
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs on Windows.")
 
 
 def getHardDriveInfo():
@@ -36,6 +30,7 @@ def getHardDriveInfo():
 
     try: 
         startDateTime = datetime.now()
+        
         print("Started getting hard drive info at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         if os.system('PowerShell "Get-PhysicalDisk | Format-Table -AutoSize"') != 0: 
