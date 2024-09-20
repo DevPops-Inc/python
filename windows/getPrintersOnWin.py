@@ -2,7 +2,7 @@
 
 # get printers on Windows 
 
-import colorama, os, sys, traceback
+import colorama, os, subprocess, sys, traceback
 from colorama import Fore, Style 
 from datetime import datetime
 colorama.init()
@@ -21,11 +21,7 @@ def checkOsForWindows():
         print("")
     
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs on Windows.")
 
 
 def getPrinters(): 
@@ -36,10 +32,15 @@ def getPrinters():
         startDateTime = datetime.now()
         print("Started getting printers at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        print(Fore.BLUE)
+        result = subprocess.run(
+            ['PowerShell', 'Get-WmiObject -Class Win32_Printer | Select-Object -ExpandProperty Name'], 
+            capture_output=True, text=True
+        )
 
-        if os.system('wmic printer get name /value') != 0: 
+        if result.returncode != 0:
             raise Exception("Error occurred while getting printers.")
+        else:
+            print(f"{Fore.BLUE}{result.stdout.strip()}{Style.RESET_ALL}")
 
         print(Fore.GREEN + "Successfully got printers." + Style.RESET_ALL)
 
