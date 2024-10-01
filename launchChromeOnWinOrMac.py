@@ -25,15 +25,12 @@ def checkOsForWinOrMac():
 
     if operatingSystem == "Windows" or operatingSystem == "macOS": 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
+        return operatingSystem
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Windows or Mac." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
-
-    return operatingSystem
+        raise Exception("Sorry but this script only runs on Windows or Mac.")
 
 
 def checkChrome(operatingSystem): 
@@ -49,10 +46,7 @@ def checkChrome(operatingSystem):
             print("")
 
         else: 
-            print(Fore.RED + "Google Chrome is not installed." + Style.RESET_ALL)
-
-            print("Finished checking Chrome at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-            exit("")
+            raise Exception(Fore.RED + "Google Chrome is not installed.")
 
     elif operatingSystem == "macOS": 
         chromeInApps = os.system('open -Ra "Google Chrome.app"')
@@ -64,11 +58,8 @@ def checkChrome(operatingSystem):
             print("")
 
         else: 
-            print(Fore.RED + "Chrome is not installed." + Style.RESET_ALL)
-
-            print("Finished checking Chrome at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-            exit("")
-
+            raise Exception("Chrome is not installed.")
+        
 
 def launchChrome(): 
     print("\nLaunch Chrome on Windows or Mac.\n")
