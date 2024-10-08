@@ -90,10 +90,7 @@ def checkParameters(color1, color2):
 		print("")
 		
 	else: 
-		print(Fore.RED + "One or more parameter checks are incorrect." + Style.RESET_ALL)
-		
-		print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-		exit("")
+		raise Exception("One or more parameter checks are incorrect.")
 	
 
 def mixPrimaryColors(): 
@@ -134,7 +131,7 @@ def mixPrimaryColors():
 
 		primaryColors = [ "red", "blue", "yellow" ]
 
-		if color1 != primaryColors or color2 != primaryColors:
+		if color1 not in primaryColors or color2 not in primaryColors:
 			raise Exception("You didn't choose a primary color!")
 				
 		print(Fore.GREEN + "Successfully mixed colors." + Style.RESET_ALL)
