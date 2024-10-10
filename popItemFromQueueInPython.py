@@ -1,6 +1,6 @@
 #!/bin/python
 
-# pop item from front of queue in Python
+# pop item from queue in Python
 
 import colorama, os, sys, traceback
 from collections import deque
@@ -31,6 +31,7 @@ def checkOs():
         operatingSystem = "Linux"
     
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
@@ -39,11 +40,14 @@ def addItemsToQueue(operatingSystem):
     queue = deque()
 
     if operatingSystem == "Windows": 
+        
         answer = int(input("Please type how many items you would like to add to the queue and press the \"Enter\" key (Example: 4): "))
+
         print("")
 
         def getAppendOnWin(answer): 
             if answer > 0:
+
                 queueItem = str(input("Please type the item you wish to add into the queue and press the \"Enter\" key (Example: 1): "))
 
                 queue.append(queueItem)
@@ -52,11 +56,14 @@ def addItemsToQueue(operatingSystem):
         getAppendOnWin(answer)
             
     elif operatingSystem == "macOS" or operatingSystem == "Linux": 
+        
         answer = int(input("Please type how many items you would like to add to the queue and press the \"return\" key (Example: 4): "))
+        
         print("")
 
         def getAppendOnMacOrLinux(answer): 
             if answer > 0: 
+                
                 queueItem = str(input("Please type the item you wish to add into the queue and press the \"return\" key (Example: 1): "))
                 
                 queue.append(queueItem)
@@ -69,32 +76,34 @@ def addItemsToQueue(operatingSystem):
     return queue
 
 
-def popItemFromFrontOfQueue(): 
-    print("\nPop item from front of queue in Python.\n")
+def popItemFromQueue(): 
+    print("\nPop item from queue in Python.\n")
     operatingSystem = checkOs()
 
     queue = addItemsToQueue(operatingSystem)
 
     try: 
         startDateTime = datetime.now()
-        print("Started popping item from front of queue at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
+
+        print("Started popping item from queue at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         frontQueueItem = queue.popleft()
-        print("Popping this item from the front of the queue: {0}".format(frontQueueItem))
+        print("Popping this item from the queue: {0}".format(frontQueueItem))
         print(Fore.BLUE + "Your queue is now: {0}".format(queue))
-        print(Fore.GREEN + "Successfully popped item from front of queue." + Style.RESET_ALL)
+        print(Fore.GREEN + "Successfully popped item from queue." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
-        print("Finished popping item from front of queue at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+
+        print("Finished popping item from queue at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
         print("Total execution time: {0} second(s)".format(duration.seconds))
         print("")
 
     except Exception: 
-        print(Fore.RED + "Failed to add items to queue.")
+        print(Fore.RED + "Failed to pop item from queue.")
         traceback.print_exc()
         exit("" + Style.RESET_ALL)
 
 
-popItemFromFrontOfQueue()
+popItemFromQueue()
