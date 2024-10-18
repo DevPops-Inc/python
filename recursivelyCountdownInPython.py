@@ -32,15 +32,18 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
 
 def getCountdownNum(operatingSystem): 
     if sys.platform == "Windows": 
+
         countdownNum = int(input("Please type the number you would like to countdown from and press the \"Enter\" key (Example: 5): "))
 
     else: 
+
         countdownNum = int(input("Please type the number you would like to countdown from and press the \"Enter\" key (Example: 5): "))
 
     print("")
@@ -67,10 +70,7 @@ def checkParameters(countdownNum):
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameters at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception("One or more parameters are incorrect.")
 
 
 def countdown(countdownNum):
@@ -101,6 +101,7 @@ def recursivelyCountdown():
 
     try:
         startDateTime = datetime.now()
+
         print("Started recursively counting down at {0}".format(startDateTime.strftime("%m-%d-%Y %I:%M %p")), end="")
 
         countdown(countdownNum)
