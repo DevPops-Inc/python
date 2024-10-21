@@ -5,7 +5,7 @@
 # haven't tested this script on local PC without being on domain yet
 
 # run this script as admin
-# you can run this script: python3 renameComputerOnWindows.py < new name > 
+# you can run this script: python3 renameComputerOnWin.py < new name > 
 
 import colorama, os, sys, traceback
 from colorama import Fore, Style
@@ -14,6 +14,7 @@ colorama.init()
 
 
 def checkOsForWindows():
+
     print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M: %p"))
 
     if sys.platform == "win32": 
@@ -22,20 +23,18 @@ def checkOsForWindows():
         print(Style.RESET_ALL, end="")
 
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M: %p"))
+
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M: %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs on Windows.")
 
 
 def getOldName(): 
     oldName = os.getenv('COMPUTERNAME') 
     
     if oldName == None: 
+
         oldName = str(input("Please type the computer's current name and press the \"Enter\" key (Example: Victors-PC): "))
         
     print("")
@@ -43,6 +42,7 @@ def getOldName():
 
 
 def getNewName(): 
+
     newName = str(input("Please type the new name and press the \"Enter\" key (Example: Vics-PC): "))
 
     print("")
@@ -71,13 +71,11 @@ def checkParameters(oldName, newName):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M: %p"))
+
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M: %p"))
-        exit("")
+        raise Exception("One or more parameters are incorrect.")
 
 
 def renameComputer(): 
@@ -110,6 +108,7 @@ def renameComputer():
         print(Fore.GREEN + "Successfully renamed computer." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
+
         print("Finished renaming computer at", finishedDateTime.strftime("%m-%d-%Y %I:%M: %p"))
 
         duration = finishedDateTime - startDateTime
