@@ -34,15 +34,18 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
 
 def getPathToFolder(operatingSystem): 
     if operatingSystem == "Windows": 
+
         pathToFolder = str(input("Please type the path to the folder you wish to rename and press the \"Enter\" key (Example: C:\\Users\\%USERNAME%\\Desktop): "))
 
     else: 
+
         pathToFolder = str(input("Please type the path to the folder you wish to rename and press the \"return\" key (Example: /Users/$USER/Desktop): "))
 
     pathToFolder = os.path.expandvars(pathToFolder)
@@ -52,9 +55,11 @@ def getPathToFolder(operatingSystem):
 
 def getFolderName(operatingSystem): 
     if operatingSystem == "Windows": 
+
         folderName = str(input("Please type the name of the folder you wish to rename and press the \"Enter\" key (Example: Exes): "))
 
     else: 
+
         folderName = str(input("Please type the name of the folder you wish to rename and press the \"return\" key (Example: Exes): "))
 
     print("")
@@ -63,9 +68,11 @@ def getFolderName(operatingSystem):
 
 def getNewFolderName(operatingSystem):
     if operatingSystem == "Windows": 
+
         newFolderName = str(input("Please type the new folder name and press the \"Enter\" key (Example: Forgotten): "))
 
     else:
+
         newFolderName = str(input("Please type the new folder name and press the \"return\" key (Example: Forgotten): "))
 
     print("")
@@ -99,13 +106,11 @@ def checkParameters(pathToFolder, folderName, newFolderName):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameter(s) are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception("One or more parameter(s) are incorrect.")
 
 
 def renameFolder(): 
