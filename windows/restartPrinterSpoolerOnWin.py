@@ -11,6 +11,7 @@ colorama.init()
 
 
 def checkOsForWindows(): 
+
 	print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	
 	if sys.platform == "win32": 
@@ -23,11 +24,7 @@ def checkOsForWindows():
 		print("")
 		
 	else: 
-		print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-		
-		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-		exit("")
+		raise Exception("Sorry but this script only runs on Windows.")
 		
 		
 def restartPrinterSpooler(): 
@@ -36,6 +33,7 @@ def restartPrinterSpooler():
 	
 	try: 
 		startDateTime = datetime.now()
+
 		print("Started restarting printer spooler at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
 		printerSpooler = ['net stop spooler', 'net start spooler']
@@ -47,6 +45,7 @@ def restartPrinterSpooler():
 		print(Fore.GREEN + "Successfully restarted printer spooler." + Style.RESET_ALL)
 	
 		finishedDateTime = datetime.now()
+		
 		print("Finished restarting printer spooler at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
 		duration = finishedDateTime - startDateTime 
