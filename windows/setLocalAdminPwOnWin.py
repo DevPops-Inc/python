@@ -3,7 +3,7 @@
 # set local admin password on Windows 
 
 # run this script as administrator
-# you can run this script with: python3 setLocalAdminPwOnWindows.py < local admin password >
+# you can run this script with: python3 setLocalAdminPwOnWin.py < local admin password >
 
 import colorama, getpass, os, sys, traceback
 from colorama import Fore, Style 
@@ -12,6 +12,7 @@ colorama.init()
 
 
 def checkOsForWindows(): 
+
     print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
@@ -25,14 +26,11 @@ def checkOsForWindows():
 
 
     else:
-        print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs on Windows.")
 
 
 def getAdminPw(): 
+
     adminPw = getpass.getpass("Please type the local admin default password and press the \"Enter\" key (Example: Password123): ")
 
     print("")
@@ -56,13 +54,11 @@ def checkParameters(adminPw):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+        
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception("One or more parameters are incorrect.")
 
 
 def setLocalAdminPw(): 
