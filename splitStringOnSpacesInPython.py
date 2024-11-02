@@ -11,12 +11,13 @@ colorama.init()
 
 
 def checkOs(): 
+
     print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
         print(Fore.GREEN + "Operating System:", end=""); sys.stdout.flush()
         os.system('ver')
-        print(Style.RESET, end="")
+        print(Style.RESET_ALL, end="")
         operatingSystem = "Windows"
 
     elif sys.platform == "darwin": 
@@ -32,15 +33,18 @@ def checkOs():
         operatingSystem = "Linux"
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
     print("")
     return operatingSystem
 
 
 def getStringWithSpaces(operatingSystem): 
     if sys.platform == "Windows": 
+
         stringWithSpaces = str(input("Please type a string with spaces and press the \"Enter\" key (Example: string with spaces): "))
 
     else: 
+
         stringWithSpaces = str(input("Please type a string with spaces and press the \"return\" key (Example: string with spaces): "))
 
     print("")
@@ -67,10 +71,7 @@ def checkParameters(stringWithSpaces):
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception("One or more parameters are incorrect.")
 
 
 def splitStringOnSpaces(): 
