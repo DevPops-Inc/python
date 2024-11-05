@@ -12,6 +12,7 @@ colorama.init()
 
 
 def checkOsForWindows(): 
+
     print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
@@ -24,11 +25,7 @@ def checkOsForWindows():
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs on Windows.")
         
 
 def systemsFileCheck(): 
@@ -45,6 +42,7 @@ def systemsFileCheck():
         print(Fore.GREEN + "Successfully ran systems file check." + Style.RESET_ALL)
 
         finishedDateTime = datetime.now()
+        
         print("Finished systems file check at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
         duration = finishedDateTime - startDateTime
