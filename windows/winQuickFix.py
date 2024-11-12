@@ -11,6 +11,7 @@ colorama.init()
 
 
 def checkOsForWindows(): 
+
     print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
@@ -22,10 +23,7 @@ def checkOsForWindows():
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception("Sorry but this script only runs on Windows.")
 
 
 def winQuickFix(): 
