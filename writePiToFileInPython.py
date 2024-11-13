@@ -12,6 +12,7 @@ colorama.init()
 
 
 def checkOs(): 
+
 	print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 	
 	if sys.platform == "win32": 
@@ -33,15 +34,18 @@ def checkOs():
 		operatingSystem = "Linux"
 		
 	print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+
 	print("")
 	return operatingSystem
 	
 	
 def getFilename(operatingSystem): 
 	if operatingSystem == "Windows": 
+
 		filename = str(input("Please type the filename and press the \"Enter\" key (Example: pi.txt): "))
 		
 	else: 
+
 		filename = str(input("Please type the filename and press the \"return\" key (Example: pi.txt): "))
 		
 	print("")
@@ -70,14 +74,11 @@ def checkParameters(filename):
 		print("")
 		
 	else: 
-		print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-		
-		print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-		exit("")
+		raise Exception("One or more parameters are incorrect.")
 
 
 def checkIfFileExists(operatingSystem, filename): 
+
 	print(Fore.BLUE + "Do you want to overwrite the {0} file?".format(filename) + Style.RESET_ALL)
 
 	if operatingSystem == "Windows":
@@ -134,8 +135,9 @@ def writePiToFile():
 		r=open(filename)
 		print(Fore.BLUE + r.read())
 		print(Fore.GREEN + "Successfully wrote the value of Pi to a file." + Style.RESET_ALL)
-
+		r.close()
 		print("")
+
 		choice = deletePiFile(operatingSystem, filename)
 		
 		if choice == "Y" or choice == "y": 
@@ -156,5 +158,3 @@ def writePiToFile():
 		
 		
 writePiToFile()
-
-		
