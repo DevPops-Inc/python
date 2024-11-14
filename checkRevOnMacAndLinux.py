@@ -22,11 +22,7 @@ def checkOsForMacOrLinux():
         print(Style.RESET_ALL, end="")
 
     else: 
-        print(Fore.RED + "Sorry but this only runs on Mac or Linux." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p)"))
-
-        exit("")
+        raise Exception("Sorry but this only runs on Mac or Linux.")
     
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
@@ -58,15 +54,7 @@ def checkRev():
             print("")
 
         else: 
-            print(Fore.RED + "rev is not installed." + Style.RESET_ALL)
-            
-            finishedDateTime = datetime.now()
-
-            print("Finished checking rev at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            exit("")
+            raise Exception("rev is not installed.")
         
     except Exception: 
         print(Fore.RED + "Failed to check rev.")
