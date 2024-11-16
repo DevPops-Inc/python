@@ -22,11 +22,7 @@ def checkOsForMac():
         print(Style.RESET_ALL, enc="")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
-        
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs on Mac or Linux.")
 
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
@@ -57,15 +53,8 @@ def checkYes():
             print("")
 
         else: 
-            print(Fore.RED + "yes is not installed." + Style.RESET_ALL)
-            
-            finishedDateTime = datetime.now()
-            print("Finished checking yes at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
+            raise Exception("yes is not installed.")
 
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            exit("")
-        
     except Exception: 
         print(Fore.RED + "Failed to check yes.")
         traceback.print_exc()
