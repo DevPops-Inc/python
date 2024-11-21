@@ -38,9 +38,11 @@ def checkOs():
 
 def getStringWithCommas(operatingSystem): 
     if sys.platform == "Windows": 
+
         stringWithCommas = str(input("Please type a string with commas and press the \"Enter\" (Example: string, with, commas): "))
 
     else: 
+        
         stringWithCommas = str(input("Please type a string with commas and press the \"return\" (Example: string, with, commas): "))
     
     print("")
@@ -67,10 +69,7 @@ def checkParameters(stringWithCommas):
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameter check(s) are incorrect." + Style.RESET_ALL)
-
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception(Fore.RED + "One or more parameter check(s) are incorrect.")
 
 
 def splitStringOnCommas(): 
