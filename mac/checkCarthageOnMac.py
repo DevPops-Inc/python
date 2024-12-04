@@ -21,11 +21,7 @@ def checkOsForMac():
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
-        
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs on Mac.")
 
 
 def checkCarthage(): 
@@ -41,27 +37,19 @@ def checkCarthage():
 
         if checkAnsibleOnMacOrLinux == 0:
             print(Fore.GREEN + "carthage is installed."+ Style.RESET_ALL)
-            os.system('brew --version')
+            os.system('carthage version')
             print(Fore.GREEN + "Successfully checked carthage." + Style.RESET_ALL)
 
-            finishedDateTime = datetime.now()
-
-            print("Finished checking Hombrew at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            print("")
-
-        else: 
-            print(Fore.RED + "carthage is not installed." + Style.RESET_ALL)
-            
             finishedDateTime = datetime.now()
 
             print("Finished checking carthage at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
             duration = finishedDateTime - startDateTime
             print("Total execution time: {0} second(s)".format(duration.seconds))
-            exit("")
+            print("")
+
+        else: 
+            raise Exception("carthage is not installed.")
         
     except Exception: 
         print(Fore.RED + "Failed to check carthage.")
