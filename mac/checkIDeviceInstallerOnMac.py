@@ -21,11 +21,7 @@ def checkOsForMac():
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
-        
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs on Mac.")
 
 
 def checkIDeviceInstaller(): 
@@ -52,15 +48,8 @@ def checkIDeviceInstaller():
             print("")
 
         else: 
-            print(Fore.RED + "ideviceinstaller is not installed." + Style.RESET_ALL)
-            
-            finishedDateTime = datetime.now()
+            raise Exception("ideviceinstaller is not installed.")
 
-            print("Finished checking ideviceinstaller at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            exit("")
         
     except Exception: 
         print(Fore.RED + "Failed to check ideviceinstaller.")
