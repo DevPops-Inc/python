@@ -21,11 +21,7 @@ def checkOsForMac():
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
-        
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs on Mac.")
 
 
 def checkXCodeCommandLineTools(): 
@@ -55,15 +51,8 @@ def checkXCodeCommandLineTools():
             print("")
 
         else: 
-            print(Fore.RED + "XCode command line tools are not installed." + Style.RESET_ALL)
-            
-            finishedDateTime = datetime.now()
+            raise Exception("XCode command line tools are not installed.")
 
-            print("Finished checking XCode command line tools at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            exit("")
         
     except Exception: 
         print(Fore.RED + "Failed to check XCode command line tools.")
