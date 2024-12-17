@@ -22,11 +22,7 @@ def checkOsForMac():
 
         print("")
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs on Mac.")
 
 
 def getWifiSsid(): 
@@ -68,10 +64,7 @@ def checkParameters(wifiSsid, wifiPassword):
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect.", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception("One or more parameters are incorrect.")
 
 
 def connectToWifi(): 
