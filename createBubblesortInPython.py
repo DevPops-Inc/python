@@ -43,7 +43,7 @@ def bubbleSort(dataset):
                 dataset[j] = dataset[j+1]
                 dataset[j+1] = temp
         time.sleep(.25)
-        print(dataset)
+    print(dataset)
 
 
 def createBubblesort():
@@ -88,8 +88,9 @@ def createBubblesort():
 
             addItemToListOnMacOrLinux(numList)
 
-            print(Fore.BLUE + "Here is your bubblesort:")
+            print(Fore.BLUE + "Here is your dataset:")
             print(list)
+            print("Here is your bubblesort:")
             bubbleSort(list)
             print(Fore.GREEN + "Successfully created bubblesort." + Style.RESET_ALL)
 
