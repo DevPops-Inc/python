@@ -23,11 +23,7 @@ def checkOsForMac():
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Mac." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        print("")
+        raise Exception("Sorry but this script only runs on Mac.")
 
         
 def checkDocker(): 
@@ -44,10 +40,7 @@ def checkDocker():
         print("")
 
     else: 
-        print(Fore.GREEN + "Docker is not installed." + Style.RESET_ALL)
-
-        print("Finished checking Docker at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception("Docker is not installed.")
 
 
 def getDockerProcessId(): # TODO: auto getting the PID
@@ -84,10 +77,7 @@ def checkParameters(processId):
         print("")
 
     else: 
-        print(Fore.RED + "One or more parameters are incorrect." + Style.RESET_ALL)
-        
-        print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        exit("")
+        raise Exception("One or more parameters are incorrect.")
 
 
 def stopAndRestartDocker(processId): 
@@ -105,18 +95,17 @@ def stopAndRestartDocker(processId):
 def resolveDockerBackendApiError(): 
     print("\nResolve Docker failed to ping backend API error on Mac.\n")
 
-    checkOsForMac()
-    checkDocker()
-
-    if len(sys.argv) >= 2: 
-        processId = str(sys.argv[1])
-
-    else: 
-        processId = getDockerProcessId()
-
-    checkParameters(processId)
-
     try: 
+        checkOsForMac()
+        checkDocker()
+
+        if len(sys.argv) >= 2: 
+            processId = str(sys.argv[1])
+
+        else: 
+            processId = getDockerProcessId()
+
+        checkParameters(processId)
         startDateTime = datetime.now()
         
         print("Started resolving Docker backend API error at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
