@@ -84,9 +84,9 @@ def splitStringIntoChars():
     else: 
         stringWithChars = getStringWithChars(operatingSystem)
 
-    checkParameters(stringWithChars)
-
     try: 
+        checkParameters(stringWithChars)
+        
         startDateTime = datetime.now()
         
         print("Started splitting string into characters at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
