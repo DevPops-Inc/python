@@ -82,9 +82,9 @@ def splitStringOnCommas():
     else: 
         stringWithCommas = getStringWithCommas(operatingSystem)
 
-    checkParameters(stringWithCommas)
-
     try: 
+        checkParameters(stringWithCommas)
+        
         startDateTime = datetime.now()
         
         print("Started splitting string on commas at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
