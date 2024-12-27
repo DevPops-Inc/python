@@ -84,9 +84,9 @@ def splitStringOnSpaces():
     else: 
         stringWithSpaces = getStringWithSpaces(operatingSystem)
 
-    checkParameters(stringWithSpaces)
-
     try: 
+        checkParameters(stringWithSpaces)
+        
         startDateTime = datetime.now()
         
         print("Started splitting string on spaces at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
