@@ -62,20 +62,16 @@ def checkOutlook(operatingSystem):
             print("")
 
         else: 
-            print(Fore.RED + "Outlook is not installed." + Style.RESET_ALL)
-
-            print("Finished checking Outlook at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-            
-            exit("")
+            raise Exception(Fore.RED + "Outlook is not installed.")
 
 
 def stopAndRelaunchOutlook(): 
     print("\nStop and relaunch Outlook on Windows or Mac.\n")
-    
-    operatingSystem = checkOsForWinOrMac()
-    outlookPath = checkOutlook(operatingSystem)
 
     try: 
+        operatingSystem = checkOsForWinOrMac()
+        outlookPath = checkOutlook(operatingSystem)
+    
         startDateTime = datetime.now()
         
         print("Started stopping and relauching Outlook at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
