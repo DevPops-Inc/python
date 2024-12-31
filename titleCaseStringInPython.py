@@ -85,9 +85,9 @@ def titleCaseString():
     else: 
         titleString = getTitleString(operatingSystem)
 
-    checkParameters(titleString) 
-
     try: 
+        checkParameters(titleString) 
+        
         startDateTime = datetime.now()
         
         print("Started title casing \"{0}\" at {1}".format(titleString, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
