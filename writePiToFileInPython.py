@@ -113,16 +113,16 @@ def writePiToFile():
 		
 	else: 
 		filename = getFilename(operatingSystem)
-		
-	checkParameters(filename)
-
-	if	os.path.exists(filename) == True: 
-		choice = checkIfFileExists(operatingSystem, filename)
-
-		if choice == "N" or choice == "n": 
-			exit("Please run this script again and type a different filename next time around.")
 
 	try: 
+		checkParameters(filename)
+
+		if	os.path.exists(filename) == True: 
+			choice = checkIfFileExists(operatingSystem, filename)
+
+			if choice == "N" or choice == "n": 
+				exit("Please run this script again and type a different filename next time around.")
+
 		startDateTime = datetime.now()
 
 		print("Started writing the value of Pi to file at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
