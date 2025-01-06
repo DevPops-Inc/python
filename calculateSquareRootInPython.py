@@ -81,9 +81,9 @@ def calculateSquareRoot():
 	else: 
 		radicand = getRadicand(operatingSystem)
 	
-	checkParameters(radicand)
-	
 	try: 
+		checkParameters(radicand)
+		
 		startDateTime = datetime.now()
 		print("Started calculating square root at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
