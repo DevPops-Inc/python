@@ -99,9 +99,9 @@ def calculateTotalProfit():
         totalSale    = getTotalSale(operatingSystem)
         profitMargin = getProfitMargin(operatingSystem)
 
-    checkParameters(totalSale, profitMargin)
-
     try: 
+        checkParameters(totalSale, profitMargin)
+        
         startDateTime = datetime.now()
         print("Started calculating total profit at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
         
