@@ -81,9 +81,9 @@ def capsFirstWordInString():
     else: 
         titleString = getTitleString(operatingSystem)
 
-    checkParameters(titleString)
-
     try: 
+        checkParameters(titleString)
+        
         startDateTime = datetime.now()
         
         print("Started capitalizing first word in string at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
