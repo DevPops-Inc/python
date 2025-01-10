@@ -27,13 +27,10 @@ def checkOsForWinOrMac():
         print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
         print("")
+        return operatingSystem
 
     else: 
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
-
-    return operatingSystem
+        raise Exception("Sorry this script only runs on Windows or macOS.")
 
 
 def checkChromeOnWinOrMac(): 
