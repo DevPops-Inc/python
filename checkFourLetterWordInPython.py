@@ -81,9 +81,9 @@ def checkFourLetterWord():
     else: 
         fourLetterWord = getFourLetterWord(operatingSystem)
 
-    checkParameters(fourLetterWord)
-
     try: 
+        checkParameters(fourLetterWord)
+        
         startDateTime = datetime.now()
 
         print("Started checking four letter word at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
