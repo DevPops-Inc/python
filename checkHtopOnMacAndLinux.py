@@ -22,11 +22,7 @@ def checkOsForMacOrLinux():
         print(Style.RESET_ALL, end="")
 
     else: 
-        print(Fore.RED + "Sorry but this only runs on Mac or Linux." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p)"))
-
-        exit("")
+        raise Exception("Sorry but this only runs on Mac or Linux.")
     
     print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
     print("")
@@ -34,9 +30,11 @@ def checkOsForMacOrLinux():
 
 def checkHtop(): 
     print("\nCheck htop on Mac.\n")
-    checkOsForMacOrLinux()
+
 
     try:
+        checkOsForMacOrLinux()
+
         startDateTime = datetime.now()
         print("Started checking htop at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
@@ -58,15 +56,7 @@ def checkHtop():
             print("")
 
         else: 
-            print(Fore.RED + "htop is not installed." + Style.RESET_ALL)
-            
-            finishedDateTime = datetime.now()
-
-            print("Finished checking htop at", finishedDateTime.strftime("%m-%d-%Y %I:%M %p"))
-
-            duration = finishedDateTime - startDateTime
-            print("Total execution time: {0} second(s)".format(duration.seconds))
-            exit("")
+            raise Exception("htop is not installed.")
         
     except Exception: 
         print(Fore.RED + "Failed to check htop.")
