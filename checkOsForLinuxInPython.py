@@ -21,11 +21,7 @@ def checkOsForLinux():
         print("")
         
     else:
-        print(Fore.RED + "Sorry this script only runs on Linux." + Style.RESET_ALL)
-    
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-        
-        exit("")
+        raise Exception("Sorry this script only runs on Linux.")
 
 
 checkOsForLinux()
