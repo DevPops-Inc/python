@@ -84,9 +84,9 @@ def calculatePi():
     else: 
         numPlaces = getNumPlaces(operatingSystem)
 
-    checkParameters(numPlaces)
-
     try: 
+        checkParameters(numPlaces)
+
         startDateTime = datetime.now()
         print("Started calculating pi at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
@@ -99,7 +99,7 @@ def calculatePi():
             k = 0
 
             for k in range(n):
-                t = (Decimal(-1)**k)*(math.factorial(Decimal(6)*k))*(13591409+545140134*k)
+                t = (Decimal(-1)**k)*(math.factorial(int(Decimal(6)*k)))*(13591409+545140134*k)
                 deno = math.factorial(3*k)*(math.factorial(k)**Decimal(3))*(640320**(3*k))
                 pi += Decimal(t)/Decimal(deno)
 
