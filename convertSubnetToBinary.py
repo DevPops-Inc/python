@@ -81,9 +81,9 @@ def convertSubnetToBinary():
 	else: 
 		subnet = getSubnet(operatingSystem)
 	
-	checkParameters(subnet)
-	
 	try: 
+		checkParameters(subnet)
+		
 		startDateTime = datetime.now()
 		
 		print("Started converting subnet to binary at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
