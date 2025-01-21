@@ -81,9 +81,9 @@ def countCharsInInputString():
     else: 
         inputString = getInputString(operatingSystem)
 
-    checkParameters(inputString)
-
     try: 
+        checkParameters(inputString)
+        
         startDateTime = datetime.now()
         print("Started counting characters at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
