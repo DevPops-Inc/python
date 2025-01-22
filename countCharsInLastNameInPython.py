@@ -80,9 +80,9 @@ def countCharsInLastName():
     else: 
         lastName = getLastName(operatingSystem)
 
-    checkParameters(lastName)
-
     try: 
+        checkParameters(lastName)
+        
         startDateTime = datetime.now()
         
         print("Started counting characters in last name at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
