@@ -98,9 +98,9 @@ def countDaysOfMonth():
         year  = getYear(operatingSystem)
         month = getMonth(operatingSystem)
 
-    checkParameters(year, month)
-
     try: 
+        checkParameters(year, month)
+        
         startDateTime = datetime.now()
         print("Started counting days in a month at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
