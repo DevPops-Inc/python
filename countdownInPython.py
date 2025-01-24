@@ -80,9 +80,9 @@ def countdown():
     else: 
         countdownNum = getCountdownNumber(operatingSystem)
 
-    checkParameters(countdownNum)
-
     try: 
+        checkParameters(countdownNum)
+        
         startDateTime = datetime.now()
         print("Started counting down at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
