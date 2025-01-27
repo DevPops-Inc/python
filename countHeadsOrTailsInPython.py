@@ -81,9 +81,9 @@ def countHeadsOrTails():
     else: 
         coinFlip = getCoinFlips(operatingSystem)
 
-    checkParameters(coinFlip)
-
     try: 
+        checkParameters(coinFlip)
+        
         startDateTime = datetime.now()
 
         print("Started counting heads and tails in {0} coin flip(s) at".format(coinFlip), startDateTime.strftime("%m-%d-%Y %I:%M %p"))
