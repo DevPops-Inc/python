@@ -100,9 +100,9 @@ def leapYearCounter():
         firstYear  = getFirstYear(operatingSystem)
         secondYear = getSecondYear(operatingSystem)
 
-    checkParameters(firstYear, secondYear)
-
     try: 
+        checkParameters(firstYear, secondYear)
+        
         startDateTime = datetime.now()
         print("Started counting leap years at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
