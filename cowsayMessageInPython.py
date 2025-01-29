@@ -2,11 +2,9 @@
 
 # Cowsay message in Python
  
-# you can run this script: python3 cowsayMessageInPython.py '< message >'
+# you can run this script: python3 cowsayMessageInPython.py "< message >"
 
-# haven't figured out to get script to work with strings containing single quotes
-
-import colorama, os, subprocess, sys, traceback
+import colorama, os, shlex, subprocess, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
 colorama.init()
@@ -113,14 +111,14 @@ def cowsayMessage():
 
 	else: 
 		cowMessage = getCowMessage(operatingSystem)
-		
-	checkParameters(cowMessage)
 
 	try: 
+		checkParameters(cowMessage)
+
 		startDateTime = datetime.now()
 		print("Cow started message at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-		cmd = "cowsay {0}".format(cowMessage)
+		cmd = "cowsay {}".format(shlex.quote(cowMessage))
 		os.system(cmd)
 		print(Fore.GREEN + "Cow successfully said message." + Style.RESET_ALL)
 
