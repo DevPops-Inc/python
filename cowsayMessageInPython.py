@@ -113,10 +113,10 @@ def cowsayMessage():
 
 	else: 
 		cowMessage = getCowMessage(operatingSystem)
-		
-	checkParameters(cowMessage)
 
 	try: 
+		checkParameters(cowMessage)
+		
 		startDateTime = datetime.now()
 		print("Cow started message at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
