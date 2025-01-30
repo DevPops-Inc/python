@@ -100,9 +100,9 @@ def deleteFolder():
         pathToFolder = getPathToFolder(operatingSystem)
         folderName   = getFolderName(operatingSystem)
 
-    checkParameters(pathToFolder, folderName)
-
     try: 
+        checkParameters(pathToFolder, folderName)
+
         startDateTime = datetime.now()
         
         print("Started deleting {0} folder at {1}".format(folderName, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
