@@ -81,10 +81,10 @@ def displayYear():
 		
 	else: 
 		calendarYear = getCalendarYear(operatingSystem)
-		
-	checkParameters(calendarYear)
 	
-	try: 
+	try: 		
+		checkParameters(calendarYear)
+		
 		startDateTime = datetime.now()
 		print("Started displaying calendar year at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
