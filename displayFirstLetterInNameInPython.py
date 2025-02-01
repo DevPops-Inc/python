@@ -82,9 +82,9 @@ def displayFirstLetterInName():
     else: 
         name = getName(operatingSystem)
 
-    checkParameters(name)
-
     try: 
+        checkParameters(name)
+        
         startDateTime = datetime.now()
         print("Started displaying first letter in name at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
