@@ -14,19 +14,19 @@ def checkOs():
     print("Started checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
 
     if sys.platform == "win32": 
-        print("Operating System:", end="")
+        print(Fore.GREEN + "Operating System:", end="")
         os.system('ver')
         print(Style.RESET_ALL, end="")
         operatingSystem = "Windows"
 
     elif sys.platform == "darwin": 
-        print("Operating System:")
+        print(Fore.GREEN + "Operating System:")
         os.system('sw_vers')
         print(Style.RESET_ALL, end="")
         operatingSystem = "macOS"
 
     elif sys.platform == "linux": 
-        print("Operating System:")
+        print(Fore.GREEN + "Operating System:")
         os.system('uname -r')
         print(Style.RESET_ALL, end="")
         operatingSystem = "Linux"
@@ -99,9 +99,9 @@ def drawSquare():
         borderColor = getBorderColor(operatingSystem)
         fillColor   = getFillColor(operatingSystem)
 
-    checkParameters(borderColor, fillColor)
-
     try: 
+        checkParameters(borderColor, fillColor)
+
         startDateTime = datetime.now()
         print("Started drawing square at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
