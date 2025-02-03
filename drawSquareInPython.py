@@ -99,9 +99,9 @@ def drawSquare():
         borderColor = getBorderColor(operatingSystem)
         fillColor   = getFillColor(operatingSystem)
 
-    checkParameters(borderColor, fillColor)
-
     try: 
+        checkParameters(borderColor, fillColor)
+        
         startDateTime = datetime.now()
         print("Started drawing square at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
