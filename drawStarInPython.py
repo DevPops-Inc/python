@@ -100,9 +100,9 @@ def drawStar():
         borderColor = getBorderColor(operatingSystem)
         insideColor = getInsideColor(operatingSystem)
 
-    checkParameters(borderColor, insideColor)
-
     try: 
+        checkParameters(borderColor, insideColor)
+        
         startDateTime = datetime.now()
         print("Started drawing star at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
