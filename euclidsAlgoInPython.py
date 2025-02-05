@@ -109,9 +109,9 @@ def euclidsAlgo():
         firstNumber  = getFirstNumber(operatingSystem)
         secondNumber = getSecondNumber(operatingSystem)
 
-    checkParameters(firstNumber, secondNumber)
-
     try: 
+        checkParameters(firstNumber, secondNumber)
+        
         startDateTime = datetime.now()
         print("Started finding greatest common divisor at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
