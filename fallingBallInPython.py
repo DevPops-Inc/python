@@ -100,9 +100,9 @@ def fallingBall():
         backgroundColor = getBackgroundColor(operatingSystem)
         fillColor       = getFillColor(operatingSystem)
 
-    checkParameters(backgroundColor, fillColor)
-
     try: 
+        checkParameters(backgroundColor, fillColor)
+        
         startDateTime = datetime.now()
         print("Started falling ball at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
