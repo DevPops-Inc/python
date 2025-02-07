@@ -81,9 +81,9 @@ def firstRecurringChar():
     else: 
         randomString = getRandomString(operatingSystem)
 
-    checkParameters(randomString)
-
     try: 
+        checkParameters(randomString)
+        
         startDateTime = datetime.now()
         
         print("Started finding first recurring character at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
