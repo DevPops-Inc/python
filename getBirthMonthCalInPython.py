@@ -99,9 +99,9 @@ def getBirthMonthCal():
         year  = getYear(operatingSystem)
         month = getMonth(operatingSystem)
 
-    checkParameters(year, month)
-
     try: 
+        checkParameters(year, month)
+        
         startDateTime = datetime.now()
 
         print("Started getting birthday month calendar at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
