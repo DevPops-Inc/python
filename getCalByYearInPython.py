@@ -81,9 +81,9 @@ def getCalendarByYear():
     else: 
         year = getYear(operatingSystem)
 
-    checkParameters(year)
-
     try: 
+        checkParameters(year)
+        
         startDateTime = datetime.now()
         print("Started getting calendar by year at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
