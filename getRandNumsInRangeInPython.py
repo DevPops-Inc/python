@@ -117,9 +117,9 @@ def getRandomNumsInRange():
         endNumRange   = getEndNumRange(operatingSystem)
         numRangeNum   = getNumRandomNum(operatingSystem)
 
-    checkParameters(beginNumRange, endNumRange, numRangeNum)
-
     try: 
+        checkParameters(beginNumRange, endNumRange, numRangeNum)
+        
         startDateTime = datetime.now()
         
         print("Started getting random numbers in range at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
