@@ -69,9 +69,9 @@ def checkDesktopApp():
     else: 
         desktopApp = getDesktopApp()
 
-    checkParameters(desktopApp)
-
     try: 
+        checkParameters(desktopApp)
+        
         startDateTime = datetime.now()
 
         print("Started checking {0} at {1}".format(desktopApp, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
