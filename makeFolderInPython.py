@@ -101,9 +101,9 @@ def makeFolder():
         pathToFolder = getPathToFolder(operatingSystem)
         folderName   = getFolderName(operatingSystem)
 
-    checkParameters(pathToFolder, folderName)
-
     try: 
+        checkParameters(pathToFolder, folderName)
+        
         startDateTime = datetime.now()
         
         print("Started making {0} at {1}".format(folderName, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
