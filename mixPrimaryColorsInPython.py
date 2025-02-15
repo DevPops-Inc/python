@@ -105,9 +105,9 @@ def mixPrimaryColors():
 		color1 = getColor1(operatingSystem)
 		color2 = getColor2(operatingSystem) 
 	
-	checkParameters(color1, color2)
-	
 	try:
+		checkParameters(color1, color2)
+		
 		startDateTime = datetime.now()
 		print("Started mixing colors at", startDateTime.strftime("%m-%d-%Y %I:%M %p")) 
 
