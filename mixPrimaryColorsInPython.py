@@ -107,7 +107,7 @@ def mixPrimaryColors():
 	
 	try:
 		checkParameters(color1, color2)
-		
+
 		startDateTime = datetime.now()
 		print("Started mixing colors at", startDateTime.strftime("%m-%d-%Y %I:%M %p")) 
 
@@ -119,15 +119,12 @@ def mixPrimaryColors():
 
 		if (color1 == "red" or color1 == "blue") and (color2 == "blue" or color2 == "red"):
 			print(purple + "You just made purple!" + Style.RESET_ALL) 
-			print("")
 
 		if (color1 == "red" or color1 == "yellow") and (color2 == "yellow" or color2 == "red"):
 			print(orange + "You just made orange!" + Style.RESET_ALL) 
-			print("")
 
 		if (color1 == "blue" or color1 == "yellow") and (color2 == "yellow" or color2 == "blue"):
 			print(Fore.GREEN + "You just made green!" + Style.RESET_ALL)
-			print("")
 
 		primaryColors = [ "red", "blue", "yellow" ]
 
