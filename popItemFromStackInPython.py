@@ -99,9 +99,9 @@ def popItemFromStack():
     operatingSystem = checkOs()
     stack           = createStack(operatingSystem)
 
-    checkParameters(stack)
-
     try: 
+        checkParameters(stack)
+        
         startDateTime = datetime.now()
         print("Started popping item from stack at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
