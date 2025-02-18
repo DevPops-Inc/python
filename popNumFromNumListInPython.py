@@ -125,9 +125,9 @@ def popNumFromNumList():
     numberList      = createNumList(operatingSystem)
     popNum          = getPopNum(numberList, operatingSystem)
     
-    checkParameters(numberList, popNum)
-    
     try:
+        checkParameters(numberList, popNum)
+        
         startDateTime = datetime.now()
 
         print("Started popping item from number list at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
