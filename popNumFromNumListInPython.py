@@ -79,11 +79,11 @@ def getPopNum(numberList, operatingSystem):
 
     if operatingSystem == "Windows": 
 
-        popNum = int(input("Please type the index you wish to pop from the number list and press the \"Enter\" key: "))
+        popNum = int(input("Please type the index (starting from zero) you wish to pop from the number list and press the \"Enter\" key: "))
 
     else: 
 
-        popNum = int(input("Please type the index you wish to pop from the number list and press the \"return\" key: "))
+        popNum = int(input("Please type the index (starting from zero) you wish to pop from the number list and press the \"return\" key: "))
     
     print("")
     return popNum
