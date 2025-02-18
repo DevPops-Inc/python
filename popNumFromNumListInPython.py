@@ -79,11 +79,11 @@ def getPopNum(numberList, operatingSystem):
 
     if operatingSystem == "Windows": 
 
-        popNum = int(input("Please type the item you wish to pop from the number list and press the \"Enter\" key: "))
+        popNum = int(input("Please type the index (starting from zero) you wish to pop from the number list and press the \"Enter\" key: "))
 
     else: 
 
-        popNum = int(input("Please type the item you wish to pop from the number list and press the \"return\" key: "))
+        popNum = int(input("Please type the index (starting from zero) you wish to pop from the number list and press the \"return\" key: "))
     
     print("")
     return popNum
@@ -125,14 +125,14 @@ def popNumFromNumList():
     numberList      = createNumList(operatingSystem)
     popNum          = getPopNum(numberList, operatingSystem)
     
-    checkParameters(numberList, popNum)
-    
     try:
+        checkParameters(numberList, popNum)
+
         startDateTime = datetime.now()
 
         print("Started popping item from number list at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        numberList.pop(popNum-1)
+        numberList.pop(popNum)
         print(Fore.BLUE + "The number list is now: {0}".format(numberList))
         print(Fore.GREEN + "Successfully popped item from number list." + Style.RESET_ALL)
 
