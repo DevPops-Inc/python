@@ -81,9 +81,9 @@ def progressivelyPrintChars():
     else: 
         inputString = getInputString(operatingSystem)
 
-    checkParameters(inputString)
-
     try: 
+        checkParameters(inputString)
+        
         startDateTime = datetime.now()
         print("Started progressively printing chars at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
