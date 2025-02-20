@@ -84,9 +84,9 @@ def progressivelyPrintVerticalString():
     else: 
         verticalString = getVerticalString(operatingSystem)
 
-    checkParameters(verticalString)
-
     try: 
+        checkParameters(verticalString)
+        
         startDateTime = datetime.now()
 
         print("Started progressively printing {0} at {1}".format(verticalString, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
