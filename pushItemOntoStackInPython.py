@@ -105,9 +105,9 @@ def pushItemFromStack():
     operatingSystem = checkOs()
     stack           = createStack(operatingSystem)
 
-    checkParameters(stack)
-
-    try: 
+    try:         
+        checkParameters(stack)
+        
         startDateTime = datetime.now()
 
         print("Started pushing item from stack at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
