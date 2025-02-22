@@ -97,9 +97,9 @@ def recursivelyCountdown():
     else: 
         countdownNum = getCountdownNum(operatingSystem)
 
-    checkParameters(countdownNum)
-
     try:
+        checkParameters(countdownNum)
+        
         startDateTime = datetime.now()
 
         print("Started recursively counting down at {0}".format(startDateTime.strftime("%m-%d-%Y %I:%M %p")), end="")
