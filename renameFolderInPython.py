@@ -127,9 +127,9 @@ def renameFolder():
         folderName    = getFolderName(operatingSystem)
         newFolderName = getNewFolderName(operatingSystem)
 
-    checkParameters(pathToFolder, folderName, newFolderName)
-
     try: 
+        checkParameters(pathToFolder, folderName, newFolderName)
+        
         startDateTime = datetime.now()
         
         print("Started renaming \"{0}\" folder at {1}".format(folderName, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
