@@ -79,10 +79,10 @@ def changeLocalUserPw():
     else: 
         localUser   = getLocalUser()
         newPassword = getNewPw() 
-
-    checkParameters(localUser, newPassword)
     
     try: 
+        checkParameters(localUser, newPassword)
+        
         startDateTime = datetime.now()
 
         print("Started changing password for {0} at {1}".format(localUser,startDateTime.strftime("%m-%d-%Y %I:%M %p")))
