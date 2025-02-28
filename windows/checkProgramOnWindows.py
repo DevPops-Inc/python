@@ -23,11 +23,7 @@ def checkOsForWindows():
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception("Sorry but this script only runs on Windows.")
         
 
 def getProgam(): 
@@ -62,17 +58,18 @@ def checkParameters(program):
 
 def checkProgram(): 
     print("\nCheck program on Windows.\n")
-    checkOsForWindows()
-
-    if len(sys.argv) >= 2: 
-        program = str(sys.argv[1])
-
-    else: 
-        program = getProgam()
-
-    checkParameters(program)
 
     try: 
+        checkOsForWindows()
+
+        if len(sys.argv) >= 2: 
+            program = str(sys.argv[1])
+
+        else: 
+            program = getProgam()
+
+        checkParameters(program)
+        
         startDateTime = datetime.now()
         
         print("Started checking {0} at {1}".format(program, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
