@@ -71,19 +71,20 @@ def checkParameters(localAdmin, localAdminPassword):
 
 def createLocalAdmin(): 
 	print("\nCreate local admin on Windows.\n")
-	checkOsForWindows()
-
-	if len(sys.argv) > 2: 
-		localAdmin         = str(sys.argv[1])
-		localAdminPassword = str(sys.argv[2])
-
-	else: 
-		localAdmin         = getLocalAdmin()
-		localAdminPassword = getLocalAdminPassword()
-
-	checkParameters(localAdmin, localAdminPassword)
 
 	try: 
+		checkOsForWindows()
+
+		if len(sys.argv) > 2: 
+			localAdmin         = str(sys.argv[1])
+			localAdminPassword = str(sys.argv[2])
+
+		else: 
+			localAdmin         = getLocalAdmin()
+			localAdminPassword = getLocalAdminPassword()
+
+		checkParameters(localAdmin, localAdminPassword)
+		
 		startDateTime = datetime.now()
 		print("Started creating local admin at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
