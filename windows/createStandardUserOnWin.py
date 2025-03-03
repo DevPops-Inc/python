@@ -72,19 +72,20 @@ def checkParameters(standardUser, standardUserPassword):
 		
 def createStandardUser(): 
 	print("\nCreate standard user on Windows.\n")
-	checkOsForWindows()
-	
-	if len(sys.argv) > 2: 
-		standardUser         = str(sys.argv[1])
-		standardUserPassword = str(sys.argv[2])
-		
-	else: 
-		standardUser         = str(getStandardUser())
-		standardUserPassword = str(getStandardUserPassword())
-		
-	checkParameters(standardUser, standardUserPassword)
 	
 	try: 
+		checkOsForWindows()
+	
+		if len(sys.argv) > 2: 
+			standardUser         = str(sys.argv[1])
+			standardUserPassword = str(sys.argv[2])
+			
+		else: 
+			standardUser         = str(getStandardUser())
+			standardUserPassword = str(getStandardUserPassword())
+			
+		checkParameters(standardUser, standardUserPassword)
+
 		startDateTime = datetime.now()
 
 		print("Started creating {0} at {1}".format(standardUser,startDateTime.strftime("%m-%d-%Y %I:%M %p")))
