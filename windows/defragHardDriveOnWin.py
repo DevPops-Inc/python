@@ -25,9 +25,10 @@ def checkOsForWindows():
 
 def defragHardDrive():
     print("\nDefrag Hard Drive on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         print("Started checking hard drive at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
