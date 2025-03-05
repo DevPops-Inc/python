@@ -60,17 +60,18 @@ def checkParameters(localUser):
 
 def deleteLocalUser(): 
 	print("\nDelete local users on Windows.\n")
-	checkOsForWindows()
-
-	if len(sys.argv) >= 2: 
-		localUser = str(sys.argv[1])
-
-	else: 
-		localUser = getLocalUser()
-
-	checkParameters(localUser)
 
 	try: 
+		checkOsForWindows()
+
+		if len(sys.argv) >= 2: 
+			localUser = str(sys.argv[1])
+
+		else: 
+			localUser = getLocalUser()
+
+		checkParameters(localUser)
+		
 		startDateTime = datetime.now()
 		
 		print("Started deleting {0} at {1}".format(localUser, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
