@@ -27,9 +27,10 @@ def checkOsForWindows():
 		
 def enableBitLocker(): 
 	print("\nEnable BitLocker on Windows.\n")
-	checkOsForWindows()
 	
 	try: 
+		checkOsForWindows()
+		
 		startDateTime = datetime.now()
 		print("Started enabling BitLocker at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
