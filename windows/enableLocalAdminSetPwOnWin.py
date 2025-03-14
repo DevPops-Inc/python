@@ -27,6 +27,7 @@ def checkOsForWindows():
 	else: 
 		raise Exception("Sorry but this script only runs on Windows.")
 		
+		
 def getLocalAdminPw(): 
 	localAdminPw = getpass.getpass("Please type the password for the local admin account and press the \"Enter\" key (Example: Password123): ")
 	
@@ -59,17 +60,18 @@ def checkParameters(localAdminPw):
 
 def enableLocalAdminAndSetPw(): 
 	print("\nEnable local admin and set passsword on Windows.\n")
-	checkOsForWindows()
-
-	if len(sys.argv) >= 2: 
-		localAdminPw = str(sys.argv[1])
-
-	else: 
-		localAdminPw = getLocalAdminPw()
-
-	checkParameters(localAdminPw)
 	
 	try:
+		checkOsForWindows()
+
+		if len(sys.argv) >= 2: 
+			localAdminPw = str(sys.argv[1])
+
+		else: 
+			localAdminPw = getLocalAdminPw()
+
+		checkParameters(localAdminPw)
+
 		startDateTime = datetime.now()
 
 		print("Started enabling local admin and setting password at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
