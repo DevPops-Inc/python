@@ -60,17 +60,18 @@ def checkParameters(networkAdapter):
 
 def enableNetworkAdapter(): 
 	print("\nEnable network adapter on Windows.\n")
-	checkOsForWindows()
-	
-	if len(sys.argv) >= 2:
-		networkAdapter = str(sys.argv[1])
-
-	else: 
-		networkAdapter = getNetworkAdapter()
-
-	checkParameters(networkAdapter)
 
 	try: 
+		checkOsForWindows()
+	
+		if len(sys.argv) >= 2:
+			networkAdapter = str(sys.argv[1])
+
+		else: 
+			networkAdapter = getNetworkAdapter()
+
+		checkParameters(networkAdapter)
+
 		startDateTime = datetime.now()
 		
 		print("Started enabling {0} at {1}".format(networkAdapter, startDateTime.strftime("%m-%d-%Y %I:%M: %p")))
