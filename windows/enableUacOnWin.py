@@ -28,9 +28,10 @@ def checkOsForWindows():
 
 def enableUac(): 
 	print("\nEnable User Access Control on Windows.\n")
-	checkOsForWindows()
 
 	try:
+		checkOsForWindows()
+		
 		startDateTime = datetime.now()
 		
 		print("Started disabling User Access Control at", startDateTime.strftime("%m-%d-%Y %H:%M %p"))
