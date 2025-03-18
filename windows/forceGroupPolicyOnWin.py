@@ -27,9 +27,10 @@ def checkOsForWindows():
 
 def forceGroupPolicy(): 
     print("\nForce group policy on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         print("Started forcing group policy at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
         
