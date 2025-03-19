@@ -75,19 +75,20 @@ def checkParameters(installerLocation, installerName):
 
 def forceInstallApp(): 
     print("\nForce install application on Windows.\n")
-    checkOsForWindows()
-
-    if len(sys.argv) >= 2: 
-        installerLocation = str(sys.argv[1])
-        installerName     = str(sys.argv[2])
-
-    else: 
-        installerLocation = getInstallerLocation()
-        installerName     = getInstallerName()
-
-    checkParameters(installerLocation, installerName)
 
     try: 
+        checkOsForWindows()
+
+        if len(sys.argv) >= 2: 
+            installerLocation = str(sys.argv[1])
+            installerName     = str(sys.argv[2])
+
+        else: 
+            installerLocation = getInstallerLocation()
+            installerName     = getInstallerName()
+
+        checkParameters(installerLocation, installerName)
+        
         startDateTime = datetime.now()
         
         print("Started force installing application at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
