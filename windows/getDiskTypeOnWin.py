@@ -26,9 +26,10 @@ def checkOsForWindows():
 
 def getDiskType(): 
     print("\nGet disk type on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         print("Started getting disk type at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
