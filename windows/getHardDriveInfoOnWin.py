@@ -26,9 +26,10 @@ def checkOsForWindows():
 
 def getHardDriveInfo():
     print("\nGet Hard Drive Info on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         
         print("Started getting hard drive info at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
