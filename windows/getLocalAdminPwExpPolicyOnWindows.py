@@ -21,18 +21,15 @@ def checkOsForWindows():
         print("")
 
     else: 
-        print(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
-
-        print("Finished checking operating system at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
-
-        exit("")
+        raise Exception(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
 
 
 def getLocalAdminExpirationPolicy(): 
     print("\nGet local admin password expiration policy on Windows.\n")
-    checkOsForWindows()
 
     try:
+        checkOsForWindows()
+
         startDateTime = datetime.now()
         
         print("Started getting local admin password expiration policy at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
