@@ -60,17 +60,18 @@ def checkParameters(localUser):
 
 def getLocalUserPwExpiry(): 
     print("\nGet local user password expiration policy on Windows.\n")
-    checkOsForWindows()
 
-    if len(sys.argv) >= 2: 
-        localUser = str(sys.argv[1])
-
-    else: 
-        localUser = getLocalUser()
-
-    checkParameters(localUser)
 
     try:
+        checkOsForWindows()
+        
+        if len(sys.argv) >= 2: 
+            localUser = str(sys.argv[1])
+
+        else: 
+            localUser = getLocalUser()
+
+        checkParameters(localUser)
         startDateTime = datetime.now()
         
         print("Started getting \"{0}\" password expiration policy at {1}".format(localUser, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
