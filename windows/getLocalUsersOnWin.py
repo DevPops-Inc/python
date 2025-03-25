@@ -26,9 +26,10 @@ def checkOsForWindows():
 
 def getLocalUsers(): 
     print("\nGet local users on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         print("Started getting local users at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
