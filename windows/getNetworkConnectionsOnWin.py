@@ -26,9 +26,10 @@ def checkOsForWindows():
 
 def getNetworkConnections(): 
     print("\nGet network connections on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         
         print("Started getting network connections at", startDateTime.strftime("%m-%d-%Y %I:M %p"))
