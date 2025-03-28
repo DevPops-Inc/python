@@ -26,9 +26,10 @@ def checkOsForWindows():
 
 def getPrinters(): 
     print("\nGet printers on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         print("Started getting printers at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
