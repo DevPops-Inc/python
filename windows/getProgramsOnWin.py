@@ -26,9 +26,10 @@ def checkOsForWindows():
 
 def getPrograms(): 
     print("\nGet Programs on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         print("Started getting programs at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
