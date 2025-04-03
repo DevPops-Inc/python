@@ -26,9 +26,10 @@ def checkOsForWindows():
 
 def getRam(): 
     print("\nGet RAM on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         print("Started getting RAM at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
