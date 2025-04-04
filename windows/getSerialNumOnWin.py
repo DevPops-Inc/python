@@ -26,9 +26,10 @@ def checkOsForWindows():
 
 def getSerialNumber(): 
     print("\nGet serial number on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         print("Started getting serial number at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
