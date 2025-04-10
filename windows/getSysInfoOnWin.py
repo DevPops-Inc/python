@@ -26,9 +26,11 @@ def checkOsFoWindows():
 
 def getSystemInfo(): 
     print("\nGet system information on Windows.\n")
-    checkOsFoWindows()
+
 
     try: 
+        checkOsFoWindows()
+        
         startDateTime = datetime.now()
         
         print("Started getting system information at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
