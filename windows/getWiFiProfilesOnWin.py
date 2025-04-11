@@ -26,9 +26,10 @@ def checkOsForWindows():
 
 def getWiFiProfiles(): 
     print("\nGet Wi-Fi profiles on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         
         print("Started getting Wi-Fi profiles at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
