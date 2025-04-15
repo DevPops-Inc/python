@@ -26,13 +26,14 @@ def checkOsForWindows():
 
 def logOut(): 
     print("\nLog out of Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+
         startDateTime = datetime.now()
         print("Started logging out at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
-        if os.system('logoff') != 0: 
+        if os.system('Powershell "shutdown /l') != 0: 
             raise Exception("Error occurred while logging off.")
 
         print(Fore.GREEN + "Successfully logged out." + Style.RESET_ALL)
