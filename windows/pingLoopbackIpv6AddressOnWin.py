@@ -26,9 +26,10 @@ def checkOsForWindows():
 			
 def pingLoopbackIpv6Address(): 
 	print("\nPing loopback IPv6 address on Windows.\n")
-	checkOsForWindows()
 	
 	try: 
+		checkOsForWindows()
+		
 		startDateTime = datetime.now()
 
 		print("Started pinging loopback IPv6 address at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
