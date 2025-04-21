@@ -3,7 +3,6 @@
 # rename computer on Windows
 
 # haven't tested this script on local PC without being on domain yet
-
 # run this script as admin
 # you can run this script: python3 renameComputerOnWin.py < new name > 
 
@@ -42,7 +41,6 @@ def getOldName():
 
 
 def getNewName(): 
-
     newName = str(input("Please type the new name and press the \"Enter\" key (Example: Vics-PC): "))
 
     print("")
@@ -80,19 +78,20 @@ def checkParameters(oldName, newName):
 
 def renameComputer(): 
     print("\nRename computer on Windows.\n")
-    checkOsForWindows()
-
-    oldName = getOldName()
-
-    if len(sys.argv) >= 2: 
-        newName = sys.argv[1]
-
-    else: 
-        newName = getNewName()
-
-    checkParameters(oldName, newName)
 
     try: 
+        checkOsForWindows()
+        
+        oldName = getOldName()
+
+        if len(sys.argv) >= 2: 
+            newName = sys.argv[1]
+
+        else: 
+            newName = getNewName()
+
+        checkParameters(oldName, newName)
+
         startDateTime = datetime.now()
         print("Started renaming computer at", startDateTime.strftime("%m-%d-%Y %I:%M: %p"))
 
