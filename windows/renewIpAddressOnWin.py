@@ -27,9 +27,10 @@ def checkOsForWindows():
 
 def renewIpAddress(): 
     print("\nRenew IP address on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         print("Started renewing IP address at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
