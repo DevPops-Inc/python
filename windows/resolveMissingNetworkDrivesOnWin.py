@@ -29,9 +29,10 @@ def checkOsForWindows():
 
 def resolveMissingNetworkDrives(): 
     print("\nResolve missing network drives on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
 
         print("Started resolving missing network drives at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
