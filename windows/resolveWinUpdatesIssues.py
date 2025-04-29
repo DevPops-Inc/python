@@ -28,9 +28,10 @@ def checkOsForWindows():
 
 def resolveWinUpdates(): 
     print("\nResolve Windows updates issues.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         
         print("Started resolving Windows updates issues at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
