@@ -1,7 +1,6 @@
 #!/bin/python
 
 # restart printer spooler on Windows
-
 # run this script as admin
 
 import colorama, os, sys, traceback
@@ -29,9 +28,10 @@ def checkOsForWindows():
 		
 def restartPrinterSpooler(): 
 	print("\nRestart printer spooler on Windows.\n")
-	checkOsForWindows()
 	
 	try: 
+		checkOsForWindows()
+		
 		startDateTime = datetime.now()
 
 		print("Started restarting printer spooler at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
