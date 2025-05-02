@@ -26,9 +26,10 @@ def checkOsForWindows():
 
 def restartWin():
     print("\nRestart Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         print("Started restarting Windows at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
