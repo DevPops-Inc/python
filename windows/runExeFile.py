@@ -75,19 +75,20 @@ def checkParameters(exeFileLocation, exeFilename):
 
 def runExeFile(): 
     print("\nRun .exe file.\n")
-    checkOsForWindows()
-
-    if len(sys.argv) >= 2: 
-        exeFileLocation = str(sys.argv[1])
-        exeFilename     = str(sys.argv[2])
-
-    else: 
-        exeFileLocation = getExeFileLocation()
-        exeFilename     = getExeFileName()
-
-    checkParameters(exeFileLocation, exeFilename)
 
     try: 
+        checkOsForWindows()
+
+        if len(sys.argv) >= 2: 
+            exeFileLocation = str(sys.argv[1])
+            exeFilename     = str(sys.argv[2])
+
+        else: 
+            exeFileLocation = getExeFileLocation()
+            exeFilename     = getExeFileName()
+
+        checkParameters(exeFileLocation, exeFilename)
+
         startDateTime = datetime.now()
         
         print("Started running .exe file at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
