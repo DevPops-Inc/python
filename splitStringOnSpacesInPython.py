@@ -76,15 +76,16 @@ def checkParameters(stringWithSpaces):
 
 def splitStringOnSpaces(): 
     print("\nSplit string on spaces in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        stringWithSpaces = str(sys.argv[1])
-
-    else: 
-        stringWithSpaces = getStringWithSpaces(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            stringWithSpaces = str(sys.argv[1])
+
+        else: 
+            stringWithSpaces = getStringWithSpaces(operatingSystem)
+
         checkParameters(stringWithSpaces)
         
         startDateTime = datetime.now()

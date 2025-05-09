@@ -76,17 +76,18 @@ def checkParameters(stringWithChars):
     
 def splitStringIntoChars(): 
     print("\nSplit string into characters in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        stringWithChars = str(sys.argv[1])
-
-    else: 
-        stringWithChars = getStringWithChars(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            stringWithChars = str(sys.argv[1])
+
+        else: 
+            stringWithChars = getStringWithChars(operatingSystem)
+
         checkParameters(stringWithChars)
-        
+
         startDateTime = datetime.now()
         
         print("Started splitting string into characters at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
