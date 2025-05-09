@@ -74,15 +74,16 @@ def checkParameters(stringWithCommas):
 
 def splitStringOnCommas(): 
     print("\nSplit string on commas in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        stringWithCommas = str(sys.argv[1])
-
-    else: 
-        stringWithCommas = getStringWithCommas(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            stringWithCommas = str(sys.argv[1])
+
+        else: 
+            stringWithCommas = getStringWithCommas(operatingSystem)
+
         checkParameters(stringWithCommas)
         
         startDateTime = datetime.now()
