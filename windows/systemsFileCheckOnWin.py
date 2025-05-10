@@ -30,9 +30,10 @@ def checkOsForWindows():
 
 def systemsFileCheck(): 
     print("\nSystems file check on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+
         startDateTime = datetime.now()
         print("Started systems file check at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
