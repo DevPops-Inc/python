@@ -29,9 +29,10 @@ def checkOsForWindows():
 
 def viewConnectedServers(): 
     print("View connected servers on Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         
         print("Started viewing connected servers at", startDateTime.strftime("%m-%d-%Y %I:%M %p")) 
