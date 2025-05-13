@@ -28,9 +28,10 @@ def checkOsForWindows():
 
 def winQuickFix(): 
     print("\nWindows quick fix.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         print("Started Windows quick fix at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
