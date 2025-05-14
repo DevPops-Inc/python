@@ -106,15 +106,16 @@ def deletePiFile(operatingSystem, filename):
 
 def writePiToFile(): 
 	print("\nLet's write the value of Pi to a file in Python.\n")
-	operatingSystem = checkOs()
-	
-	if len(sys.argv) >= 2: 
-		filename = str(sys.argv[1])
-		
-	else: 
-		filename = getFilename(operatingSystem)
 
 	try: 
+		operatingSystem = checkOs()
+	
+		if len(sys.argv) >= 2: 
+			filename = str(sys.argv[1])
+			
+		else: 
+			filename = getFilename(operatingSystem)
+
 		checkParameters(filename)
 
 		if	os.path.exists(filename) == True: 
