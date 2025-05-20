@@ -89,19 +89,20 @@ def checkParameters(firstNumber, secondNumber):
 
 def addFunction():
     print("\nLet's add in Python!\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) > 2: 
-        firstNumber  = int(sys.argv[1]) 
-        secondNumber = int(sys.argv[2])
-        
-    else: 
-        firstNumber  = getFirstNumber(operatingSystem)
-        secondNumber = getSecondNumber(operatingSystem)
-        
-    checkParameters(firstNumber, secondNumber)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) > 2: 
+            firstNumber  = int(sys.argv[1]) 
+            secondNumber = int(sys.argv[2])
+            
+        else: 
+            firstNumber  = getFirstNumber(operatingSystem)
+            secondNumber = getSecondNumber(operatingSystem)
+            
+        checkParameters(firstNumber, secondNumber)
+
         startDateTime = datetime.now()
         print("Started adding at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
         
