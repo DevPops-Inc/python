@@ -93,19 +93,20 @@ def checkParameters(choice, num1):
 
 def basicMath():
     print("\nLet's perform basic math in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2:
-        choice = str(sys.argv[1])
-        num1   = int(sys.argv[2])
-
-    else:
-        choice = getChoice(operatingSystem)
-        num1   = getNum1(operatingSystem)
-
-    checkParameters(choice, num1)
 
     try:
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2:
+            choice = str(sys.argv[1])
+            num1   = int(sys.argv[2])
+
+        else:
+            choice = getChoice(operatingSystem)
+            num1   = getNum1(operatingSystem)
+
+        checkParameters(choice, num1)
+
         startDateTime = datetime.now()
         print("Started basic math at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
  
