@@ -37,19 +37,20 @@ def checkOs():
 
 def bestProgrammingLanguage():
     print("\nBest programming language GUI.\n")
-    operatingSystem = checkOs()
-
-    if operatingSystem == "Windows":
-        input("Press any key to continue or press the \"Ctrl\" and \"C\" keys to quit: ")
-
-    elif operatingSystem == "macOS" or operatingSystem == "Linux": 
-        input("Press any key to continue or press the \"control\" and \"C\" keys to quit: ")
-
-    print("")
-    root = Tk()
-    v = IntVar()
     
     try:
+        operatingSystem = checkOs()
+
+        if operatingSystem == "Windows":
+            input("Press any key to continue or press the \"Ctrl\" and \"C\" keys to quit: ")
+
+        elif operatingSystem == "macOS" or operatingSystem == "Linux": 
+            input("Press any key to continue or press the \"control\" and \"C\" keys to quit: ")
+
+        print("")
+        root = Tk()
+        v = IntVar()
+        
         startDateTime = datetime.now()
         
         print("Started best programming launch GUI at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
