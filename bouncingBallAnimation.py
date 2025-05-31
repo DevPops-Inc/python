@@ -33,20 +33,21 @@ def checkOs():
 
 def bouncingBall():
     print("\nBouncing ball anmiation in Python.\n")
-    checkOs()
     
-    gui = Tk()
-    gui.geometry("800x600")
-    gui.title("Pi Animation")
-    canvas = Canvas(gui,width=800,height=600,bg='white')
-    canvas.pack()
-
-    ball1 = canvas.create_oval(5,5,60,60, fill='red')
-
-    xa = 5
-    ya = 10
-
     try:
+        checkOs()
+    
+        gui = Tk()
+        gui.geometry("800x600")
+        gui.title("Pi Animation")
+        canvas = Canvas(gui,width=800,height=600,bg='white')
+        canvas.pack()
+
+        ball1 = canvas.create_oval(5,5,60,60, fill='red')
+
+        xa = 5
+        ya = 10
+
         startDateTime = datetime.now()
 
         print("Started bouncing ball animation at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
