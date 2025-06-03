@@ -73,15 +73,16 @@ def checkParameters(radicand):
 		
 def calculateSquareRoot(): 
 	print("\nCalculate square root in Python.\n")
-	operatingSystem = checkOs()
-
-	if len(sys.argv) >= 2: 
-		radicand = int(sys.argv[1])
-
-	else: 
-		radicand = getRadicand(operatingSystem)
-	
+		
 	try: 
+		operatingSystem = checkOs()
+
+		if len(sys.argv) >= 2: 
+			radicand = int(sys.argv[1])
+
+		else: 
+			radicand = getRadicand(operatingSystem)
+
 		checkParameters(radicand)
 		
 		startDateTime = datetime.now()
