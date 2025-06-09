@@ -89,20 +89,21 @@ def checkParameters(totalSale, profitMargin):
 
 def calculateTotalProfit(): 
     print("\nCalculate total profit in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) > 2: 
-        totalSale    = float(sys.argv[1])
-        profitMargin = float(sys.argv[2])
-
-    else: 
-        totalSale    = getTotalSale(operatingSystem)
-        profitMargin = getProfitMargin(operatingSystem)
 
     try: 
-        checkParameters(totalSale, profitMargin)
+        operatingSystem = checkOs()
+
+        if len(sys.argv) > 2: 
+            totalSale    = float(sys.argv[1])
+            profitMargin = float(sys.argv[2])
+
+        else: 
+            totalSale    = getTotalSale(operatingSystem)
+            profitMargin = getProfitMargin(operatingSystem)
+            checkParameters(totalSale, profitMargin)
         
         startDateTime = datetime.now()
+        
         print("Started calculating total profit at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
         
         totalProfit = totalSale * (profitMargin/100)
