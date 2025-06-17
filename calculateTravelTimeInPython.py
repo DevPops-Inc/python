@@ -90,19 +90,20 @@ def checkParameters(rate, distance):
 
 def calculateTravelTime(): 
     print("\nCalculate travel time in Python!\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) > 2: 
-        rate     = float(sys.argv[1])
-        distance = float(sys.argv[2])
-
-    else: 
-        rate = getRate(operatingSystem)
-        distance = getDistance(operatingSystem)
-
-    checkParameters(rate, distance)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) > 2: 
+            rate     = float(sys.argv[1])
+            distance = float(sys.argv[2])
+
+        else: 
+            rate = getRate(operatingSystem)
+            distance = getDistance(operatingSystem)
+
+        checkParameters(rate, distance)
+
         startDateTime = datetime.now()
         print("Started calculating travel time at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
