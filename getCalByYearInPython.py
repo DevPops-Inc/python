@@ -73,15 +73,16 @@ def checkParameters(year):
 
 def getCalendarByYear(): 
     print("\Let's get a calendar by year in Python!\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        year = int(sys.argv[1])
-
-    else: 
-        year = getYear(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            year = int(sys.argv[1])
+
+        else: 
+            year = getYear(operatingSystem)
+
         checkParameters(year)
         
         startDateTime = datetime.now()
