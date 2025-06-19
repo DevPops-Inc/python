@@ -73,15 +73,16 @@ def checkParameters(titleString):
 
 def capsFirstWordInString():
     print("\nLet's capitalize the first word in a string in Python!\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        titleString = str(sys.argv[1])
-        
-    else: 
-        titleString = getTitleString(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            titleString = str(sys.argv[1])
+            
+        else: 
+            titleString = getTitleString(operatingSystem)
+
         checkParameters(titleString)
         
         startDateTime = datetime.now()
