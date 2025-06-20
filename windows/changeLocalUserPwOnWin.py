@@ -70,17 +70,18 @@ def checkParameters(localUser, newPassword):
 
 def changeLocalUserPw():
     print("\nChange local user password on Windows.\n")
-    checkOsForWindows()
-
-    if len(sys.argv) >= 2:
-        localUser   = str(sys.argv[1])
-        newPassword = str(sys.argv[2])
-
-    else: 
-        localUser   = getLocalUser()
-        newPassword = getNewPw() 
     
     try: 
+        checkOsForWindows()
+
+        if len(sys.argv) >= 2:
+            localUser   = str(sys.argv[1])
+            newPassword = str(sys.argv[2])
+
+        else: 
+            localUser   = getLocalUser()
+            newPassword = getNewPw() 
+
         checkParameters(localUser, newPassword)
         
         startDateTime = datetime.now()
