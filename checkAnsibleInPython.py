@@ -37,9 +37,10 @@ def checkOs():
 
 def checkAnsible(): 
     print("\nCheck Ansible in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started checking Ansible at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
