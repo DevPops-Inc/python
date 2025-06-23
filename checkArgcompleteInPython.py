@@ -37,9 +37,10 @@ def checkOs():
 
 def checkArgcomplete(): 
     print("\nCheck argcomplete in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started checking argcomplete at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
