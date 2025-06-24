@@ -35,9 +35,10 @@ def checkOsForWinOrMac():
 
 def checkChromeOnWinOrMac(): 
     print("\nCheck Chrome on Windows or Mac.\n")
-    operatingSystem = checkOsForWinOrMac()
 
     try:
+        operatingSystem = checkOsForWinOrMac()
+        
         startDateTime = datetime.now()
         print("Started checking Chrome at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
