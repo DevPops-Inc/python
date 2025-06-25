@@ -37,9 +37,10 @@ def checkOs():
 
 def checkAwsCli(): 
     print("\nCheck AWS CLI in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started checking AWS CLI at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
