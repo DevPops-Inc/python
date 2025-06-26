@@ -37,9 +37,10 @@ def checkOs():
 
 def checkAzureCli(): 
     print("\nCheck Azure CLI in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started checking Azure CLI at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
