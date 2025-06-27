@@ -37,9 +37,10 @@ def checkOs():
 
 def checkCmatrix(): 
     print("\nCheck cmatrix in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started checking cmatrix at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
