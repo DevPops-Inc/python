@@ -37,9 +37,10 @@ def checkOs():
 
 def checkCowthink(): 
     print("\nCheck Cowthink in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started checking Cowthink at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 

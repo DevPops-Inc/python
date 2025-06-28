@@ -37,9 +37,10 @@ def checkOs():
 
 def checkCowsay(): 
     print("\nCheck Cowsay in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started checking Cowsay at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
