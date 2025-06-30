@@ -29,9 +29,10 @@ def checkOsForWindows():
 
 def checkDiskAndRestartWindows():
     print("\nCheck disk and restart Windows.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
 
         print("Started checking disk and restarting Windows at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
