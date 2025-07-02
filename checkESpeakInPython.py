@@ -37,9 +37,10 @@ def checkOs():
 
 def checkESpeak(): 
     print("\nCheck eSpeak in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started checking eSpeak at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
