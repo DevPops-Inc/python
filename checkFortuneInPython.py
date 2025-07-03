@@ -37,9 +37,10 @@ def checkOs():
 
 def checkFortune(): 
     print("\nCheck Fortune in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started checking Fortune at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
