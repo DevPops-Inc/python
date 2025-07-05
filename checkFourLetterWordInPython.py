@@ -73,15 +73,16 @@ def checkParameters(fourLetterWord):
 
 def checkFourLetterWord():
     print("\nLet's check a four letter word in Python!\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        fourLetterWord = str(sys.argv[1])
-
-    else: 
-        fourLetterWord = getFourLetterWord(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            fourLetterWord = str(sys.argv[1])
+
+        else: 
+            fourLetterWord = getFourLetterWord(operatingSystem)
+
         checkParameters(fourLetterWord)
         
         startDateTime = datetime.now()
