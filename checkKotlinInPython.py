@@ -37,9 +37,10 @@ def checkOs():
 
 def checkKotlin(): 
     print("\nCheck Kotlin in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started checking Kotlin at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
