@@ -37,9 +37,10 @@ def checkOs():
 
 def checkNode(): 
     print("\nCheck Node in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started checking Node at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
