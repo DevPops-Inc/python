@@ -27,9 +27,10 @@ def checkOsForWindows():
 
 def checkOutlook():
     print("\nCheck Outlook on Mac.\n")
-    checkOsForWindows()
 
     try: 
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         print("Started checking Outlook at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
