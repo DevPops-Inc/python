@@ -37,9 +37,10 @@ def checkOs():
 
 def checkSteamLocomotive(): 
     print("\nCheck Steam Locomotive in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         
         print("Started checking Steam Locomotive at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
