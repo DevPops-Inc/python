@@ -78,17 +78,18 @@ def checkParameters(terminalApp):
 
 def checkTerminalApp(): 
     print("\nCheck terminal application in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        terminalApp = str(sys.argv[1])
-
-    else: 
-        terminalApp = getTerminalApp(operatingSystem)
-
-    checkParameters(terminalApp)
 
     try:
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            terminalApp = str(sys.argv[1])
+
+        else: 
+            terminalApp = getTerminalApp(operatingSystem)
+
+        checkParameters(terminalApp)
+        
         startDateTime = datetime.now()
         
         print("Started checking {0} at {1}".format(terminalApp, startDateTime.strftime("%m-%d-%Y %I:%M %p")))
