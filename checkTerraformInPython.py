@@ -37,9 +37,10 @@ def checkOs():
 
 def checkTerraform(): 
     print("\nCheck Terraform in Python.\n")
-    operatingSystem = checkOs()
 
     try:
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started checking Terraform at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
