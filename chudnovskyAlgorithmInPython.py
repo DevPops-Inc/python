@@ -74,15 +74,16 @@ def checkParameters(numPlaces):
 
 def calculatePi():
     print("\nLet's calculate the value of pi using Chudnovsky's Algorithm.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        numPlaces = int(sys.argv[1])
-
-    else: 
-        numPlaces = getNumPlaces(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            numPlaces = int(sys.argv[1])
+
+        else: 
+            numPlaces = getNumPlaces(operatingSystem)
+
         checkParameters(numPlaces)
 
         startDateTime = datetime.now()
