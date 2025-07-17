@@ -73,15 +73,15 @@ def checkParameters(subnet):
 			
 def convertSubnetToBinary(): 
 	print("\nConvert subnet to binary in Python.\n")
-	operatingSystem = checkOs()
-	
-	if len(sys.argv) >= 2: 
-		subnet = int(sys.argv[1])
-		
-	else: 
-		subnet = getSubnet(operatingSystem)
 	
 	try: 
+		operatingSystem = checkOs()
+	
+		if len(sys.argv) >= 2: 
+			subnet = int(sys.argv[1])
+			
+		else: 
+			subnet = getSubnet(operatingSystem)
 		checkParameters(subnet)
 		
 		startDateTime = datetime.now()
