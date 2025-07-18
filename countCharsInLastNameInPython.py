@@ -73,14 +73,15 @@ def checkParameters(lastName):
 
 def countCharsInLastName(): 
     print("\nCount characters in last name in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        lastName = str(sys.argv[1])
-    else: 
-        lastName = getLastName(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            lastName = str(sys.argv[1])
+        else: 
+            lastName = getLastName(operatingSystem)
+
         checkParameters(lastName)
         
         startDateTime = datetime.now()
