@@ -88,17 +88,18 @@ def checkParameters(year, month):
 
 def countDaysOfMonth(): 
     print("\nLet's count the days in a month in Python!\n")
-    operatingSystem = checkOS()
-
-    if len(sys.argv) >= 2: 
-        year  = int(sys.argv[1])
-        month = int(sys.argv[2])
-
-    else: 
-        year  = getYear(operatingSystem)
-        month = getMonth(operatingSystem)
 
     try: 
+        operatingSystem = checkOS()
+
+        if len(sys.argv) >= 2: 
+            year  = int(sys.argv[1])
+            month = int(sys.argv[2])
+
+        else: 
+            year  = getYear(operatingSystem)
+            month = getMonth(operatingSystem)
+
         checkParameters(year, month)
         
         startDateTime = datetime.now()
