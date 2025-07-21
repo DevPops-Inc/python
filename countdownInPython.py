@@ -72,15 +72,16 @@ def checkParameters(countdownNum):
 
 def countdown():
     print("\nLet's countdown in Python!\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        countdownNum = int(sys.argv[1])
-
-    else: 
-        countdownNum = getCountdownNumber(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            countdownNum = int(sys.argv[1])
+
+        else: 
+            countdownNum = getCountdownNumber(operatingSystem)
+        
         checkParameters(countdownNum)
         
         startDateTime = datetime.now()
