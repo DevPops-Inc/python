@@ -90,17 +90,18 @@ def checkParameters(firstYear, secondYear):
         
 def leapYearCounter(): 
     print("\nLet's count number of leap years between two years in Python!\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        firstYear  = int(sys.argv[1])
-        secondYear = int(sys.argv[2])
-
-    else: 
-        firstYear  = getFirstYear(operatingSystem)
-        secondYear = getSecondYear(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            firstYear  = int(sys.argv[1])
+            secondYear = int(sys.argv[2])
+
+        else: 
+            firstYear  = getFirstYear(operatingSystem)
+            secondYear = getSecondYear(operatingSystem)
+
         checkParameters(firstYear, secondYear)
         
         startDateTime = datetime.now()
