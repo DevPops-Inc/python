@@ -73,9 +73,10 @@ def checkParameters(coinFlip):
     
 def countHeadsOrTails(): 
     print("\nLet's count heads or tails in coin flips!\n")
-    operatingSystem = checkOs()
 
     try: 
+        operatingSystem = checkOs()
+        
         if len(sys.argv) >= 2: 
             coinFlip = int(sys.argv[1])
 
