@@ -102,17 +102,17 @@ def checkParameters(cowMessage):
 
 def cowsayMessage(): 
 	print("\nCowsay message in Python.\n")
-	
-	operatingSystem = checkOs()
-	checkCowsay(operatingSystem)
-
-	if len(sys.argv) >= 2: 
-		cowMessage = str(sys.argv[1])
-
-	else: 
-		cowMessage = getCowMessage(operatingSystem)
 
 	try: 
+		operatingSystem = checkOs()
+		
+		checkCowsay(operatingSystem)
+
+		if len(sys.argv) >= 2: 
+			cowMessage = str(sys.argv[1])
+
+		else: 
+			cowMessage = getCowMessage(operatingSystem)
 		checkParameters(cowMessage)
 
 		startDateTime = datetime.now()
