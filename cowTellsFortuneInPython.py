@@ -99,12 +99,12 @@ def checkCowsay(operatingSystem):
 
 def cowTellsFortune():
     print("\nCow tell fortune in Python.\n")    
-    
-    operatingSystem = checkOs()
-    checkFortune(operatingSystem)
-    checkCowsay(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+        checkFortune(operatingSystem)
+        checkCowsay(operatingSystem)
+        
         startDateTime = datetime.now()
         print("Cow started telling fortune at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
