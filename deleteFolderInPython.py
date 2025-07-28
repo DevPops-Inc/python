@@ -82,6 +82,7 @@ def checkParameters(pathToFolder, folderName):
         print(Fore.GREEN + "All parameter check(s) passed." + Style.RESET_ALL)
 
         print("Finished checking parameter(s) at", datetime.now().strftime("%m-%d-%Y %I:%M %p"))
+        
         print("")
 
     else: 
@@ -90,17 +91,18 @@ def checkParameters(pathToFolder, folderName):
 
 def deleteFolder(): 
     print("\nDelete folder in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        pathToFolder = str(sys.argv[1])
-        folderName   = str(sys.argv[2])
-
-    else: 
-        pathToFolder = getPathToFolder(operatingSystem)
-        folderName   = getFolderName(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            pathToFolder = str(sys.argv[1])
+            folderName   = str(sys.argv[2])
+
+        else: 
+            pathToFolder = getPathToFolder(operatingSystem)
+            folderName   = getFolderName(operatingSystem)
+            
         checkParameters(pathToFolder, folderName)
 
         startDateTime = datetime.now()
