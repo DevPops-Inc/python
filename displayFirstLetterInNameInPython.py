@@ -74,15 +74,16 @@ def checkParameters(name):
 
 def displayFirstLetterInName(): 
     print("\nDisplay first letter in name in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        name = str(sys.argv[1])
-
-    else: 
-        name = getName(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            name = str(sys.argv[1])
+
+        else: 
+            name = getName(operatingSystem)
+
         checkParameters(name)
         
         startDateTime = datetime.now()
