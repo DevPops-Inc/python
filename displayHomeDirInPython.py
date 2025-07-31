@@ -37,9 +37,10 @@ def checkOs():
 
 def displayHomeDir(): 
     print("\nDisplay directory directory.\n")
-    checkOs()
 
     try: 
+        checkOs()
+        
         startDateTime = datetime.now()
         print("Started displaying home directory at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
