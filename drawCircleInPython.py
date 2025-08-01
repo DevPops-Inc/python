@@ -33,9 +33,10 @@ def checkOs():
 
 def drawCircle(): 
     print("\nLet's draw a circle in Python!\n")
-    checkOs()
 
     try: 
+        checkOs()
+        
         startDateTime = datetime.now()
         print("Started drawing circle at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
