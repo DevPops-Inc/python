@@ -89,17 +89,18 @@ def checkParameters(borderColor, fillColor):
 
 def drawSquare(): 
     print("\nLet's draw a square in Python!\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) > 2: 
-        borderColor = str(sys.argv[1])
-        fillColor   = str(sys.argv[2])
-
-    else: 
-        borderColor = getBorderColor(operatingSystem)
-        fillColor   = getFillColor(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) > 2: 
+            borderColor = str(sys.argv[1])
+            fillColor   = str(sys.argv[2])
+
+        else: 
+            borderColor = getBorderColor(operatingSystem)
+            fillColor   = getFillColor(operatingSystem)
+            
         checkParameters(borderColor, fillColor)
 
         startDateTime = datetime.now()
