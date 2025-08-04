@@ -99,17 +99,17 @@ def greatestCommonDivisor(firstNumber, secondNumber):
 def euclidsAlgo():
     print("\nFind the greatest common divisor of two numbers with Euclid's Algorithm in Python.\n")
 
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        firstNumber  = int(sys.argv[1])
-        secondNumber = int(sys.argv[2])
-
-    else: 
-        firstNumber  = getFirstNumber(operatingSystem)
-        secondNumber = getSecondNumber(operatingSystem)
-
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            firstNumber  = int(sys.argv[1])
+            secondNumber = int(sys.argv[2])
+
+        else: 
+            firstNumber  = getFirstNumber(operatingSystem)
+            secondNumber = getSecondNumber(operatingSystem)
+
         checkParameters(firstNumber, secondNumber)
         
         startDateTime = datetime.now()
