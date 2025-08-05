@@ -90,17 +90,18 @@ def checkParameters(backgroundColor, fillColor):
 
 def fallingBall(): 
     print("\nFalling ball in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        backgroundColor = str(sys.argv[1])
-        fillColor       = str(sys.argv[2])
-
-    else: 
-        backgroundColor = getBackgroundColor(operatingSystem)
-        fillColor       = getFillColor(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            backgroundColor = str(sys.argv[1])
+            fillColor       = str(sys.argv[2])
+
+        else: 
+            backgroundColor = getBackgroundColor(operatingSystem)
+            fillColor       = getFillColor(operatingSystem)
+
         checkParameters(backgroundColor, fillColor)
         
         startDateTime = datetime.now()
