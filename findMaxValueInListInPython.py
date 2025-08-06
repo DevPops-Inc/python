@@ -50,9 +50,10 @@ def findMaxValue(items):
 
 def findMaxValueinList(): 
     print("\nLet's find the maximum value in a list in Python!\n")
-    operatingSystem = checkOs()
 
     try: 
+        operatingSystem = checkOs()
+        
         startDateTime = datetime.now()
         print("Started finding maximum value in list at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
