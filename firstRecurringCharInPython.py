@@ -73,15 +73,16 @@ def checkParameters(randomString):
 
 def firstRecurringChar(): 
     print("\nFirst recurring character in Python\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        randomString = str(sys.argv[1])
-
-    else: 
-        randomString = getRandomString(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            randomString = str(sys.argv[1])
+
+        else: 
+            randomString = getRandomString(operatingSystem)
+
         checkParameters(randomString)
         
         startDateTime = datetime.now()
