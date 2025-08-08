@@ -89,17 +89,18 @@ def checkParameters(year, month):
 
 def getBirthMonthCal(): 
     print("\Let's get birthday month calendar in Python!\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        year  = int(sys.argv[1])
-        month = int(sys.argv[2])
-
-    else: 
-        year  = getYear(operatingSystem)
-        month = getMonth(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            year  = int(sys.argv[1])
+            month = int(sys.argv[2])
+
+        else: 
+            year  = getYear(operatingSystem)
+            month = getMonth(operatingSystem)
+
         checkParameters(year, month)
         
         startDateTime = datetime.now()
