@@ -32,9 +32,10 @@ def checkOs():
 		
 def getComputerName(): 
 	print("\nGet computer name in Python.\n")
-	checkOs()
 	
 	try: 
+		checkOs()
+		
 		startDateTime = datetime.now()
 		print("Started getting computer name at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
