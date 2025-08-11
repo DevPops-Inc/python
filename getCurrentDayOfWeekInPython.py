@@ -33,9 +33,10 @@ def checkOs():
 
 def getCurrentDayOfWeek(): 
     print("\nGet current day of the week in Python.\n")
-    checkOs()
 
     try: 
+        checkOs()
+        
         startDateTime = datetime.now()
         
         print("Started getting current day of the week at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
