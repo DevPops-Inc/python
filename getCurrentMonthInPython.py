@@ -33,9 +33,10 @@ def checkOs():
 
 def getCurrentMonthInPython():
     print("\nGet current month in Python.\n")
-    checkOs()
 
     try: 
+        checkOs()
+        
         startDateTime = datetime.now()
         print("Started getting current month at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
