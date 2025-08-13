@@ -32,9 +32,10 @@ def checkOs():
 
 def getDaysOfWeek(): 
     print("\nLet's get the days of the week in Python!\n")
-    checkOs()
 
     try: 
+        checkOs()
+        
         startDateTime = datetime.now()
         print("Started getting the days of the week at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
