@@ -21,7 +21,7 @@ def checkOsForWindows():
         print("")
 
     else: 
-        raise Exception(Fore.RED + "Sorry but this script only runs on Windows." + Style.RESET_ALL)
+        raise Exception("Sorry but this script only runs on Windows.")
 
 
 def getLocalAdminExpirationPolicy(): 
