@@ -33,9 +33,10 @@ def checkOs():
 
 def getLocalTime():
     print("\nGet local time in Python.\n")
-    checkOs()
 
     try: 
+        checkOs()
+        
         startDateTime = datetime.now()
         print("Started getting local time at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
