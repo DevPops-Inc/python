@@ -33,10 +33,11 @@ def checkOs():
 
 def getMonths(): 
     print("\nLet's get months in Python!\n")
-    checkOs()
 
     try:
+        checkOs()
         startDateTime = datetime.now()
+
         print("Started getting months in Python at", startDateTime.strftime("%m-%d-%Y %I:%M %p"), end="")
 
         for name in calendar.month_name:
