@@ -33,9 +33,10 @@ def checkOs():
 
 def helloWorldExercise():
 	print("\nHello world exercise in Python.\n")
-	checkOs()
 	
 	try: 
+		checkOs()
+		
 		startDateTime = datetime.now()
 		print("Started hello world exercise at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 		
