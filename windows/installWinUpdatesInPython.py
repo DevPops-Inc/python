@@ -28,9 +28,10 @@ def checkOsForWindows():
 
 def installWindowsUpdates():
     print("\nInstall Windows updates in Python.\n")
-    checkOsForWindows()
 
     try:
+        checkOsForWindows()
+        
         startDateTime = datetime.now()
         
         print("Started installing Windows updates at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
