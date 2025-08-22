@@ -64,10 +64,10 @@ def checkChrome(operatingSystem):
 def launchChrome(): 
     print("\nLaunch Chrome on Windows or Mac.\n")
 
-    operatingSystem = checkOsForWinOrMac()
-    checkChrome(operatingSystem)
-
     try: 
+        operatingSystem = checkOsForWinOrMac()
+        checkChrome(operatingSystem)
+
         startDateTime = datetime.now()
         print("Started launching Chrome at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
