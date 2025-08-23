@@ -63,11 +63,11 @@ def checkChromeOnWinOrMac(operatingSystem):
 
 def launchYouTubeInChrome(): 
     print("\nLaunch YouTube in Chrome.\n")
-    
-    operatingSystem = checkOsForWinOrMac()
-    checkChromeOnWinOrMac(operatingSystem)
 
     try: 
+        operatingSystem = checkOsForWinOrMac()
+        checkChromeOnWinOrMac(operatingSystem)
+
         startDateTime = datetime.now()
         print("Started lauching YouToube in Chrome at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 
