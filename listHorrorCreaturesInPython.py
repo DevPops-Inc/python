@@ -33,9 +33,10 @@ def checkOs():
 
 def listHorrorCreatures(): 
 	print("\Let's list horror creatures in Python.\n")
-	checkOs()
 	
 	try: 
+		checkOs()
+		
 		startDateTime = datetime.now()
 		print("Started listing horror creatures at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
 			
