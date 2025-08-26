@@ -91,17 +91,18 @@ def checkParameters(pathToFolder, folderName):
 
 def makeFolder(): 
     print("\nMake folder in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        pathToFolder = str(sys.argv[1])
-        folderName   = str(sys.argv[2])
-
-    else: 
-        pathToFolder = getPathToFolder(operatingSystem)
-        folderName   = getFolderName(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            pathToFolder = str(sys.argv[1])
+            folderName   = str(sys.argv[2])
+
+        else: 
+            pathToFolder = getPathToFolder(operatingSystem)
+            folderName   = getFolderName(operatingSystem)
+
         checkParameters(pathToFolder, folderName)
         
         startDateTime = datetime.now()
