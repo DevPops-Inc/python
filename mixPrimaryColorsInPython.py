@@ -95,17 +95,18 @@ def checkParameters(color1, color2):
 
 def mixPrimaryColors(): 
 	print("\nLet's mix primary colors in Python.\n")
-	operatingSystem =	checkOs() 
-	
-	if len(sys.argv) > 2: 
-		color1 = str(sys.argv[1])
-		color2 = str(sys.argv[2])
-
-	else: 
-		color1 = getColor1(operatingSystem)
-		color2 = getColor2(operatingSystem) 
 	
 	try:
+		operatingSystem =	checkOs() 
+		
+		if len(sys.argv) > 2: 
+			color1 = str(sys.argv[1])
+			color2 = str(sys.argv[2])
+
+		else: 
+			color1 = getColor1(operatingSystem)
+			color2 = getColor2(operatingSystem) 
+
 		checkParameters(color1, color2)
 
 		startDateTime = datetime.now()
