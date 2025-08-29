@@ -78,11 +78,11 @@ def addItemsToQueue(operatingSystem):
 
 def popItemFromQueue(): 
     print("\nPop item from queue in Python.\n")
-    operatingSystem = checkOs()
-
-    queue = addItemsToQueue(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+        queue = addItemsToQueue(operatingSystem)
+
         startDateTime = datetime.now()
 
         print("Started popping item from queue at", startDateTime.strftime("%m-%d-%Y %I:%M %p"))
