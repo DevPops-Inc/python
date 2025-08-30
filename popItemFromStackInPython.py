@@ -96,10 +96,10 @@ def checkParameters(stack):
 def popItemFromStack(): 
     print("\nPop item from stack in Python.\n")
 
-    operatingSystem = checkOs()
-    stack           = createStack(operatingSystem)
-
     try: 
+        operatingSystem = checkOs()
+        stack           = createStack(operatingSystem)
+
         checkParameters(stack)
         
         startDateTime = datetime.now()
