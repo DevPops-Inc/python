@@ -120,12 +120,12 @@ def checkParameters(numberList, popNum):
 
 def popNumFromNumList(): 
     print("\nPop number from number list in Python.\n")
-
-    operatingSystem = checkOs()
-    numberList      = createNumList(operatingSystem)
-    popNum          = getPopNum(numberList, operatingSystem)
     
     try:
+        operatingSystem = checkOs()
+        numberList      = createNumList(operatingSystem)
+        popNum          = getPopNum(numberList, operatingSystem)
+
         checkParameters(numberList, popNum)
 
         startDateTime = datetime.now()
