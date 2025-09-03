@@ -73,15 +73,16 @@ def checkParameters(inputString):
 
 def progressivelyPrintChars(): 
     print("\nProgressively print chars at in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        inputString = str(sys.argv[1])
-
-    else: 
-        inputString = getInputString(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            inputString = str(sys.argv[1])
+
+        else: 
+            inputString = getInputString(operatingSystem)
+
         checkParameters(inputString)
         
         startDateTime = datetime.now()
