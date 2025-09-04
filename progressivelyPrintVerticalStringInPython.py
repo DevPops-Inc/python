@@ -76,15 +76,16 @@ def checkParameters(verticalString):
 
 def progressivelyPrintVerticalString(): 
     print("Progressively print vertical string in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        verticalString = sys.argv[1]
-
-    else: 
-        verticalString = getVerticalString(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            verticalString = sys.argv[1]
+
+        else: 
+            verticalString = getVerticalString(operatingSystem)
+
         checkParameters(verticalString)
         
         startDateTime = datetime.now()
