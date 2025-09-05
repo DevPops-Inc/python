@@ -102,10 +102,10 @@ def checkParameters(stack):
 def pushItemFromStack(): 
     print("\nPush item onto Stack in Python.\n")
 
-    operatingSystem = checkOs()
-    stack           = createStack(operatingSystem)
-
-    try:         
+    try:        
+        operatingSystem = checkOs()
+        stack           = createStack(operatingSystem)
+        
         checkParameters(stack)
         
         startDateTime = datetime.now()
