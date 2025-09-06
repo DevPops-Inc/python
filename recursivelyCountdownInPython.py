@@ -89,15 +89,16 @@ def countdown(countdownNum):
 
 def recursivelyCountdown(): 
     print("\nLet's recursively countdown in Python!\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        countdownNum = int(sys.argv[1])
-
-    else: 
-        countdownNum = getCountdownNum(operatingSystem)
 
     try:
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            countdownNum = int(sys.argv[1])
+
+        else: 
+            countdownNum = getCountdownNum(operatingSystem)
+
         checkParameters(countdownNum)
         
         startDateTime = datetime.now()
