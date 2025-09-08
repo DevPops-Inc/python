@@ -4,8 +4,6 @@
 
 # you can run this script with: python3 renameFolderInPython.py "< path to folder >" "< folder name >" "< new folder name >"
 
-# haven't successfully tested this script on Windows yet 
-
 import colorama, os, sys, traceback
 from colorama import Fore, Style
 from datetime import datetime
@@ -115,19 +113,20 @@ def checkParameters(pathToFolder, folderName, newFolderName):
 
 def renameFolder(): 
     print("\nRename folder in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        pathToFolder  = str(sys.argv[1])
-        folderName    = str(sys.argv[2])
-        newFolderName = str(sys.argv[3])
-
-    else: 
-        pathToFolder  = getPathToFolder(operatingSystem)
-        folderName    = getFolderName(operatingSystem)
-        newFolderName = getNewFolderName(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            pathToFolder  = str(sys.argv[1])
+            folderName    = str(sys.argv[2])
+            newFolderName = str(sys.argv[3])
+
+        else: 
+            pathToFolder  = getPathToFolder(operatingSystem)
+            folderName    = getFolderName(operatingSystem)
+            newFolderName = getNewFolderName(operatingSystem)
+
         checkParameters(pathToFolder, folderName, newFolderName)
         
         startDateTime = datetime.now()
