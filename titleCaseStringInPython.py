@@ -77,15 +77,16 @@ def checkParameters(titleString):
 
 def titleCaseString(): 
     print("\nTitle case string in Python.\n")
-    operatingSystem = checkOs()
-
-    if len(sys.argv) >= 2: 
-        titleString = str(sys.argv[1])
-
-    else: 
-        titleString = getTitleString(operatingSystem)
 
     try: 
+        operatingSystem = checkOs()
+
+        if len(sys.argv) >= 2: 
+            titleString = str(sys.argv[1])
+
+        else: 
+            titleString = getTitleString(operatingSystem)
+
         checkParameters(titleString) 
         
         startDateTime = datetime.now()
